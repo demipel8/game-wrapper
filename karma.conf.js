@@ -7,10 +7,17 @@ module.exports = function(config) {
     frameworks: ['mocha', 'chai'],
     files: [
       // all files ending in "_test"
+      //'node_modules/babel-core/browser-polyfill.js',
       'spec/*_test.js',
-      'spec/**/*_test.js'
+      'spec/**/*_test.js',
+      {pattern: 'spec/assets/**/*.png', watched: false, included: false, served: true},
+      {pattern: 'spec/assets/*.jpg', watched: false, included: false, served: true, nocache: true}
       // each file acts as entry point for the webpack configuration
     ],
+
+    proxies:{
+      '/assets/': 'spec/assets/'
+    },
 
     preprocessors: {
       // add webpack as preprocessor

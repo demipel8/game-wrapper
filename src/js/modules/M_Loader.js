@@ -17,7 +17,7 @@ function initialize() {
   * Returns a promise that will be resolved once all queued resources are loaded
   **/
 function start() {
-  return new promise(
+  return new Promise(
     function( resolve, reject ) {
       loader.load(function (loader, resources) {
         loadedResources = resources;
@@ -42,7 +42,7 @@ base.initialize = initialize;
 base.start = start;
 base.image = genericLoad;
 base.audio = genericLoad;
-base.loader = loader;
+base.json = genericLoad;
 base.resources = loadedResources;
 
 export default base;
