@@ -3,29 +3,43 @@
  */
 import base from '../interfaces/I_Controller'
 
+/**
+ * Loads and starts game loop
+ * @param jsonData {object} - assets the game must load. Can have 3 subobjects: audio, image, json
+ * @param game
+ * @returns {*} {Promise<object>} - if all assets are loaded, it returns an instance of the game
+ * @example
+ * GW({}, {
+ *    image: { 'icon': './assets/icon.png' },
+ *    audio: { 'audio': './assets/audio.mp3' },
+ *    json: { 'icon': './assets/data.json' }
+ * } ).then( function( game ){} );
+ */
 base.launch = function( [ jsonData ], game ) {
-  let keys;
+  const types = [ 'image', 'audio', 'json' ];
 
-  if( jsonData.images ){
-    keys = Object.keys( jsonData.images );
+  /**
+   * Adds every element of one type to the loader queue
+   * @param type {string} - type name
+     */
+  function loadType( type ) {
+    if( jsonData[ type ] ){
+      let keys = Object.keys( jsonData[ type ] );
 
-    keys.forEach( function( image ) {
-      game.loader.image( image, jsonData.images[ image ]);
-    });
+      keys.forEach( function( element ) {
+        game.loader[ type ]( element, jsonData[ type ][ element ]);
+      });
+    }
   }
 
-  if( jsonData.audio ){
-    keys = Object.keys( jsonData.audio );
 
-    keys.forEach( function( image ) {
-      game.loader.audio( image, jsonData.audio[ image ]);
-    });
-  }
+  types.forEach( loadType );
 
-  return game.loader.start().then( () => { return game } );
+  return game.loader.start().then( () => {
+    game.loop.start();
+    return game;
+  } );
 };
 
 export default base
 
-//TODO la promesa tiene que devolver el objeto juego
-//TODO cargar jsons

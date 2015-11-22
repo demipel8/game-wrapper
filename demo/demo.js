@@ -3,8 +3,6 @@
  */
 
 function myGame( game ) {
-  console.log( 'llego' );
-  console.log( game );
 }
 
-GW({}, { images: { 'icon': './assets/icon.png' } } ).then( myGame );
+GW({}, { image: { 'icon': './assets/icon.png' } } ).then( myGame );

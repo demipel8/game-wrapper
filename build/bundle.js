@@ -5450,7 +5450,8 @@
 	  initialize: empty,
 	  start: empty,
 	  image: empty,
-	  audio: empty
+	  audio: empty,
+	  json: empty
 	};
 	module.exports = exports["default"];
 
@@ -6634,41 +6635,48 @@
 
 	var _interfacesI_Controller2 = _interopRequireDefault(_interfacesI_Controller);
 
+	/**
+	 * Loads and starts game loop
+	 * @param jsonData {object} - assets the game must load. Can have 3 subobjects: audio, image, json
+	 * @param game
+	 * @returns {*} {Promise<object>} - if all assets are loaded, it returns an instance of the game
+	 * @example
+	 * GW({}, {
+	 *    image: { 'icon': './assets/icon.png' },
+	 *    audio: { 'audio': './assets/audio.mp3' },
+	 *    json: { 'icon': './assets/data.json' }
+	 * } ).then( function( game ){} );
+	 */
 	_interfacesI_Controller2['default'].launch = function (_ref, game) {
 	  var _ref2 = _slicedToArray(_ref, 1);
 
 	  var jsonData = _ref2[0];
 
-	  var keys = undefined;
+	  var types = ['image', 'audio', 'json'];
 
-	  if (jsonData.images) {
-	    keys = Object.keys(jsonData.images);
+	  /**
+	   * Adds every element of one type to the loader queue
+	   * @param type {string} - type name
+	     */
+	  function loadType(type) {
+	    if (jsonData[type]) {
+	      var keys = Object.keys(jsonData[type]);
 
-	    keys.forEach(function (image) {
-	      console.log(image, jsonData.images[image]);
-	      game.loader.image(image, jsonData.images[image]);
-	    });
+	      keys.forEach(function (element) {
+	        game.loader[type](element, jsonData[type][element]);
+	      });
+	    }
 	  }
 
-	  if (jsonData.audio) {
-	    keys = Object.keys(jsonData.audio);
-
-	    keys.forEach(function (image) {
-	      game.loader.audio(image, jsonData.audio[image]);
-	    });
-	  }
-
-	  console.log('mellaman', jsonData);
+	  types.forEach(loadType);
 
 	  return game.loader.start().then(function () {
+	    game.loop.start();
 	    return game;
 	  });
 	};
 
 	exports['default'] = _interfacesI_Controller2['default'];
-
-	//TODO la promesa tiene que devolver el objeto juego
-	//TODO cargar jsons
 	module.exports = exports['default'];
 
 /***/ },
