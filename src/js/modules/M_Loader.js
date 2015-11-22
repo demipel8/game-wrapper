@@ -12,9 +12,11 @@ let loadedResources = [];
  */
 function initialize() {
   loader = new RL();
+  return base;
 }
  /**
   * Returns a promise that will be resolved once all queued resources are loaded
+  * @returns promise
   **/
 function start() {
   return new Promise(

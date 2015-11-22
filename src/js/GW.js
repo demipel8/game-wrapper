@@ -1,18 +1,13 @@
 /**
  * Created by demi on 11/7/15.
  */
-import defaultConfig from '../config/default';
+import defaultModules from '../config/default';
 
-function GW( userConfig = {}) {
+function GW( userModules = {}, ...gameData ) {
 
-  const config = Object.assign( defaultConfig, userConfig );
+  const modules = Object.assign( defaultModules, userModules, { gameObjects: [] } );
 
-  return {
-    config,
-    gameObjects: []
-  }
-
+  return modules.controller.launch( gameData, modules );
 }
-
 
 export default GW;

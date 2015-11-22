@@ -8,5 +8,6 @@ export default {
   initialize : empty,
   start: empty,
   image: empty,
-  audio: empty
+  audio: empty,
+  json: empty
 }
