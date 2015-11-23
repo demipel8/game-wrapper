@@ -18,6 +18,10 @@ import base from '../interfaces/I_Controller'
 base.launch = function( [ jsonData ], game ) {
   const types = [ 'image', 'audio', 'json' ];
 
+  //Initialize modules
+  game.loader.initialize();
+  game.render.initialize( game, 800, 600); //temporalmente size fijo
+
   /**
    * Adds every element of one type to the loader queue
    * @param type {string} - type name
@@ -32,7 +36,6 @@ base.launch = function( [ jsonData ], game ) {
     }
   }
 
-
   types.forEach( loadType );
 
   return game.loader.start().then( () => {
@@ -42,4 +45,3 @@ base.launch = function( [ jsonData ], game ) {
 };
 
 export default base
-

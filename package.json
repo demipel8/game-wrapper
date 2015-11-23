@@ -29,6 +29,8 @@
     "mocha": "^2.3.3",
     "mocha-loader": "^0.7.1",
     "phantomjs-polyfill": "0.0.1",
+    "pixi": "^0.3.1",
+    "pixi.js": "^3.0.8",
     "webpack": "^1.8.11",
     "webpack-dev-server": "^1.8.2"
   }

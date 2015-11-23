@@ -5,7 +5,7 @@ import base from '../interfaces/I_Loader'
 import RL from '../../../libs/resource-loader.min'
 
 let loader = {};
-let loadedResources = [];
+let loadedResources = {};
 
 /**
  * Instantiates the resource-loader object
@@ -22,7 +22,7 @@ function start() {
   return new Promise(
     function( resolve, reject ) {
       loader.load(function (loader, resources) {
-        loadedResources = resources;
+        loadedResources = Object.assign( loadedResources, resources );
       });
 
       loader.on( 'complete', resolve );
@@ -33,11 +33,15 @@ function start() {
 
 /**
  * Adds an element to the resource queue
- * @param name
+ * @param nameRender
  * @param url
  */
 function genericLoad( name, url ) {
   loader.add( name, url );
+}
+
+function getResources( name ) {
+  return loadedResources[ name ];
 }
 
 base.initialize = initialize;
@@ -45,6 +49,6 @@ base.start = start;
 base.image = genericLoad;
 base.audio = genericLoad;
 base.json = genericLoad;
-base.resources = loadedResources;
+base.resources = getResources;
 
 export default base;

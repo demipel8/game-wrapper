@@ -9,13 +9,21 @@ module.exports = {
         publicPath: '/',
         filename: 'bundle.js'
     },
+    node: {
+      fs: 'empty'
+    },
     module: {
         loaders: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
-            }
+            },
+          {
+            test: /\.json$/,
+            include: path.join(__dirname, 'node_modules', 'pixi.js'),
+            loader: 'json'
+          }
         ]
     },
     plugins: []
