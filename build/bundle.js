@@ -5491,7 +5491,7 @@
 	  /**
 	   *
 	   * @param name {string} - name of the resource
-	   * @return {object} - resource
+	   * @return {Resource}
 	   */
 	  getResource: function getResource(name) {}
 	};
@@ -9864,32 +9864,31 @@
 
 	var _interface2 = _interopRequireDefault(_interface);
 
-	var _node_modulesMainloopJsBuildMainloopMin = __webpack_require__(214);
+	var _mainloopJsBuildMainloopMin = __webpack_require__(214);
 
-	var _node_modulesMainloopJsBuildMainloopMin2 = _interopRequireDefault(_node_modulesMainloopJsBuildMainloopMin);
+	var _mainloopJsBuildMainloopMin2 = _interopRequireDefault(_mainloopJsBuildMainloopMin);
 
-	function executeAll(stage) {
-	  //TODO signaling system???
-	  _interface2['default'].functions[stage].forEach(function (func) {
+	function executeAll(bucket) {
+	  bucket.forEach(function (func) {
 	    func();
 	  });
 	}
 
 	_interface2['default'].setFPS = function (fps) {
-	  _node_modulesMainloopJsBuildMainloopMin2['default'].setMaxAllowedFPS(fps);
+	  _mainloopJsBuildMainloopMin2['default'].setMaxAllowedFPS(fps);
 	};
 
 	_interface2['default'].getFPS = function (fps) {
-	  _node_modulesMainloopJsBuildMainloopMin2['default'].getFPS(fps);
+	  _mainloopJsBuildMainloopMin2['default'].getFPS(fps);
 	};
 
-	_interface2['default'].process = executeAll.bind(null, 'process');
-	_interface2['default'].update = executeAll.bind(null, 'update');
-	_interface2['default'].render = executeAll.bind(null, 'render');
-	_interface2['default'].postRender = executeAll.bind(null, 'postRender');
+	_interface2['default'].process.bind(executeAll);
+	_interface2['default'].update.bind(executeAll);
+	_interface2['default'].render.bind(executeAll);
+	_interface2['default'].postRender.bind(executeAll);
 
 	_interface2['default'].start = function () {
-	  _node_modulesMainloopJsBuildMainloopMin2['default'].setBegin(_interface2['default'].process).setUpdate(_interface2['default'].update).setDraw(_interface2['default'].render).setEnd(_interface2['default'].postRender).start();
+	  _mainloopJsBuildMainloopMin2['default'].setBegin(_interface2['default'].process).setUpdate(_interface2['default'].update).setDraw(_interface2['default'].render).setEnd(_interface2['default'].postRender).start();
 	};
 
 	exports['default'] = _interface2['default'];
@@ -9910,7 +9909,7 @@
 	});
 	var empty = function empty() {};
 	var loop = {};
-	var functions = {
+	var buckets = {
 	  process: [],
 	  update: [],
 	  render: [],
@@ -9922,7 +9921,7 @@
 	 * @param func {function} - function to add to the arrays
 	 */
 	function add(stage, func) {
-	  functions[stage].push(func);
+	  buckets[stage].push(func);
 	}
 
 	/**
@@ -9931,16 +9930,27 @@
 	 * @param func {function} - function to remove from the arrays
 	 */
 	function remove(stage, func) {
-	  var index = functions[stage].indexOf(func);
+	  var index = buckets[stage].indexOf(func);
 
 	  if (! ~index) {
 	    throw new Error('function is not part of ' + stage);
 	  }
 
-	  functions[type].splice(index, 1);
+	  buckets[type].splice(index, 1);
 	}
 
-	for (var stage in functions) {
+	/**
+	 * Injects the asked bucket on to a callback function
+	 * @param bucket { object } - list of functions
+	 * @param callback { fucntion } - callback function
+	 * @private
+	 *
+	 */
+	function _callbackWithBucket(bucket, callback) {
+	  callback(bucket);
+	}
+
+	for (var stage in buckets) {
 	  var capitalizeFistLetter = stage.charAt(0).toUpperCase() + stage.slice(1);
 	  loop['add' + capitalizeFistLetter] = add.bind(null, stage);
 	  loop['remove' + capitalizeFistLetter] = remove.bind(null, stage);
@@ -9954,19 +9964,19 @@
 	  /**
 	   * executed before the update method to perform activities such as user input
 	   */
-	  process: empty,
+	  process: _callbackWithBucket.bind(null, buckets.process),
 	  /**
 	   * Updates state of the objects
 	   */
-	  update: empty,
+	  update: _callbackWithBucket.bind(null, buckets.update),
 	  /**
 	   * render function
 	   */
-	  render: empty,
+	  render: _callbackWithBucket.bind(null, buckets.render),
 	  /**
 	   * Executes after rendering function to polish results
 	   */
-	  postRender: empty,
+	  postRender: _callbackWithBucket.bind(null, buckets.postRender),
 	  /**
 	   * get the number of FPS the game is running at
 	   */
@@ -9978,8 +9988,7 @@
 	  /**
 	   * Default FPS
 	   */
-	  FPS: 60,
-	  functions: functions
+	  FPS: 60
 	});
 	module.exports = exports['default'];
 

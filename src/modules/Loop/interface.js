@@ -4,7 +4,7 @@
 
 const empty = () => {};
 const loop = {};
-const functions = {
+const buckets = {
   process: [],
   update: [],
   render: [],
@@ -16,7 +16,7 @@ const functions = {
  * @param func {function} - function to add to the arrays
  */
 function add( stage , func ) {
-  functions[ stage ].push( func );
+  buckets[ stage ].push( func );
 }
 
 /**
@@ -25,16 +25,27 @@ function add( stage , func ) {
  * @param func {function} - function to remove from the arrays
  */
 function remove( stage , func ) {
-  var index = functions[ stage ].indexOf( func );
+  var index = buckets[ stage ].indexOf( func );
 
   if( !~index ) {
     throw new Error( 'function is not part of ' + stage );
   }
 
-  functions[type].splice(index, 1);
+  buckets[type].splice(index, 1);
 }
 
-for( let stage in functions ) {
+/**
+ * Injects the asked bucket on to a callback function
+ * @param bucket { object } - list of functions
+ * @param callback { fucntion } - callback function
+ * @private
+ *
+ */
+function _callbackWithBucket( bucket, callback ) {
+  callback( bucket );
+}
+
+for( let stage in buckets ) {
   let capitalizeFistLetter = stage.charAt(0).toUpperCase() + stage.slice(1);
   loop[ `add${capitalizeFistLetter}`] = add.bind( null, stage );
   loop[ `remove${capitalizeFistLetter}`] = remove.bind( null, stage );
@@ -49,19 +60,19 @@ export default Object.assign( loop, {
   /**
    * executed before the update method to perform activities such as user input
    */
-  process: empty,
+  process: _callbackWithBucket.bind( null, buckets.process ),
   /**
    * Updates state of the objects
    */
-  update: empty,
+  update: _callbackWithBucket.bind( null, buckets.update ),
   /**
    * render function
    */
-  render: empty,
+  render: _callbackWithBucket.bind( null, buckets.render ),
   /**
    * Executes after rendering function to polish results
    */
-  postRender: empty,
+  postRender: _callbackWithBucket.bind( null, buckets.postRender ),
   /**
    * get the number of FPS the game is running at
    */
@@ -73,6 +84,5 @@ export default Object.assign( loop, {
   /**
    * Default FPS
    */
-  FPS: 60,
-  functions
+  FPS: 60
 });

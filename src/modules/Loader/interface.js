@@ -36,7 +36,7 @@ export default {
   /**
    *
    * @param name {string} - name of the resource
-   * @return {object} - resource
+   * @return {Resource}
    */
   getResource: function( name ){}
 }

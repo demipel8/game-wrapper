@@ -2,10 +2,10 @@
  * Created by demi on 11/21/15.
  */
 import base from './interface'
-import MainLoop from '../../../node_modules/mainloop.js/build/mainloop.min'
+import MainLoop from 'mainloop.js/build/mainloop.min'
 
-function executeAll( stage ) { //TODO signaling system???
-  base.functions[ stage ].forEach( function( func ) {
+function executeAll( bucket ) {
+  bucket.forEach( function( func ) {
     func();
   })
 }
@@ -18,10 +18,10 @@ base.getFPS = function( fps ) {
   MainLoop.getFPS( fps );
 };
 
-base.process = executeAll.bind( null, 'process' );
-base.update = executeAll.bind( null, 'update' );
-base.render = executeAll.bind( null, 'render' );
-base.postRender = executeAll.bind( null, 'postRender' );
+base.process.bind( executeAll );
+base.update.bind( executeAll );
+base.render.bind( executeAll );
+base.postRender.bind( executeAll );
 
 base.start = function() {
   MainLoop
