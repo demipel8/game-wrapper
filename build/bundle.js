@@ -71,7 +71,7 @@
 
 	var _GW2 = _interopRequireDefault(_GW);
 
-	__webpack_require__(338);exports['default'] = _GW2['default'];
+	__webpack_require__(340);exports['default'] = _GW2['default'];
 	module.exports = exports['default'];
 
 /***/ },
@@ -5365,12 +5365,18 @@
 
 	var _jsModulesM_Sprite2 = _interopRequireDefault(_jsModulesM_Sprite);
 
+	var _jsModulesM_Resource = __webpack_require__(338);
+
+	var _jsModulesM_Resource2 = _interopRequireDefault(_jsModulesM_Resource);
+
+	console.log((0, _jsModulesM_Resource2['default'])({ name: '', url: '' }));
 	exports['default'] = {
 	  loader: _jsModulesM_Loader2['default'],
 	  loop: _jsModulesM_Loop2['default'],
 	  controller: _jsModulesM_Controller2['default'],
 	  render: _jsModulesM_Render2['default'],
-	  sprite: _jsModulesM_Sprite2['default']
+	  sprite: _jsModulesM_Sprite2['default'],
+	  resource: _jsModulesM_Resource2['default']
 	};
 	module.exports = exports['default'];
 
@@ -5399,18 +5405,15 @@
 
 	var loader = {};
 	var loadedResources = {};
+	var gameRef = undefined;
 
-	/**
-	 * Instantiates the resource-loader object
-	 */
-	function initialize() {
+	function initialize(game) {
+	  //TODO ¿Inject game reference?
+	  gameRef = game;
 	  loader = new _libsResourceLoaderMin2['default']();
 	  return _interfacesI_Loader2['default'];
 	}
-	/**
-	 * Returns a promise that will be resolved once all queued resources are loaded
-	 * @returns promise
-	 **/
+
 	function start() {
 	  return new Promise(function (resolve, reject) {
 	    loader.load(function (loader, resources) {
@@ -5422,17 +5425,12 @@
 	  });
 	}
 
-	/**
-	 * Adds an element to the resource queue
-	 * @param nameRender
-	 * @param url
-	 */
 	function genericLoad(name, url) {
 	  loader.add(name, url);
 	}
 
-	function getResources(name) {
-	  return loadedResources[name];
+	function getResource(name) {
+	  return gameRef.resource(loadedResources[name]);
 	}
 
 	_interfacesI_Loader2['default'].initialize = initialize;
@@ -5440,7 +5438,7 @@
 	_interfacesI_Loader2['default'].image = genericLoad;
 	_interfacesI_Loader2['default'].audio = genericLoad;
 	_interfacesI_Loader2['default'].json = genericLoad;
-	_interfacesI_Loader2['default'].resources = getResources;
+	_interfacesI_Loader2['default'].getResource = getResource;
 
 	exports['default'] = _interfacesI_Loader2['default'];
 	module.exports = exports['default'];
@@ -5450,7 +5448,9 @@
 /***/ function(module, exports) {
 
 	/**
-	 * Created by demi on 11/8/15.
+	 * Loader modules. Loads assets onto the clients browser
+	 * @module GW.Loader
+	 * @author demipel8 [demipel8@gmail.com]
 	 */
 
 	"use strict";
@@ -5458,14 +5458,43 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var empty = function empty() {};
-
 	exports["default"] = {
-	  initialize: empty,
-	  start: empty,
-	  image: empty,
-	  audio: empty,
-	  json: empty
+	  /**
+	   * Used to configure any initial state required by the implementation
+	   * @param game - game object
+	   */
+	  initialize: function initialize(game) {},
+	  /**
+	   * Starts loading all the elements queued
+	   * @return {Promise} - Resolved when loading has finished
+	   */
+	  start: function start() {
+	    return new Promise();
+	  },
+	  /**
+	   * Adds an image to the queue
+	   * @param name {string} - name of the asset
+	   * @param url {string} - path to the asset
+	   */
+	  image: function image(name, url) {},
+	  /**
+	   * Adds an audio to the queue
+	   * @param name {string} - name of the asset
+	   * @param url {string} - path to the asset
+	   */
+	  audio: function audio(name, url) {},
+	  /**
+	   * Adds a json file to the queue
+	   * @param name {string} - name of the file
+	   * @param url {string} - path to the file
+	   */
+	  json: function json(name, url) {},
+	  /**
+	   *
+	   * @param name {string} - name of the resource
+	   * @return {object} - resource
+	   */
+	  getResource: function getResource(name) {}
 	};
 	module.exports = exports["default"];
 
@@ -6669,7 +6698,7 @@
 	  var types = ['image', 'audio', 'json'];
 
 	  //Initialize modules
-	  game.loader.initialize();
+	  game.loader.initialize(game);
 	  game.render.initialize(game, 800, 600); //temporalmente size fijo
 
 	  /**
@@ -35094,7 +35123,7 @@
 
 	exports["default"] = function (game, image, x, y) {
 
-	  var loadedImage = game.loader.resources(image);
+	  var loadedImage = game.loader.getResource(image);
 	  var sprite = game.render.addSprite(loadedImage.url, x, y);
 
 	  function scale(x, y) {
@@ -35132,6 +35161,64 @@
 
 /***/ },
 /* 338 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _interfacesI_Resource = __webpack_require__(339);
+
+	var _interfacesI_Resource2 = _interopRequireDefault(_interfacesI_Resource);
+
+	exports['default'] = function () {
+	  var data = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+	  var keys = Object.keys(_interfacesI_Resource2['default']);
+
+	  keys.forEach(function (name) {
+	    if (typeof data[name] === 'undefined') {
+	      throw new Error('data not compatible with resource interface: ' + name + ' is missing');
+	    } else {
+	      _interfacesI_Resource2['default'][name] = data[name];
+	    }
+	  });
+
+	  return _interfacesI_Resource2['default'];
+	};
+
+	;
+	module.exports = exports['default'];
+
+/***/ },
+/* 339 */
+/***/ function(module, exports) {
+
+	/**
+	 * Object Factory. Parses a set of data into a defined resource object
+	 * @module GW.Resource
+	 * @param data {object} - resource data
+	 * @author demipel8 [demipel8@gmail.com]
+	 */
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	exports['default'] = {
+	  /** Logic name of the resource */
+	  name: '',
+	  /** Path to the resource */
+	  url: ''
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 340 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["GW"] = __webpack_require__(193);

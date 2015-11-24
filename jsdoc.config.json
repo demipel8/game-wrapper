@@ -1,0 +1,11 @@
+{
+  "plugins": [],
+  "opts": {
+    "destination": "docs",          // same as -d
+    "recurse": true                 // same as -r
+  },
+  "source": {
+    "include": [ "src" ],
+    "exclude": [ ]
+  }
+}

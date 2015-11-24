@@ -19,7 +19,7 @@ base.launch = function( [ jsonData ], game ) {
   const types = [ 'image', 'audio', 'json' ];
 
   //Initialize modules
-  game.loader.initialize();
+  game.loader.initialize( game );
   game.render.initialize( game, 800, 600); //temporalmente size fijo
 
   /**

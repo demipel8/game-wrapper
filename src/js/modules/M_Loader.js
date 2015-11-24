@@ -6,18 +6,14 @@ import RL from '../../../libs/resource-loader.min'
 
 let loader = {};
 let loadedResources = {};
+let gameRef;
 
-/**
- * Instantiates the resource-loader object
- */
-function initialize() {
+function initialize( game ) { //TODO ¿Inject game reference?
+  gameRef = game;
   loader = new RL();
   return base;
 }
- /**
-  * Returns a promise that will be resolved once all queued resources are loaded
-  * @returns promise
-  **/
+
 function start() {
   return new Promise(
     function( resolve, reject ) {
@@ -31,17 +27,12 @@ function start() {
   )
 }
 
-/**
- * Adds an element to the resource queue
- * @param nameRender
- * @param url
- */
 function genericLoad( name, url ) {
   loader.add( name, url );
 }
 
-function getResources( name ) {
-  return loadedResources[ name ];
+function getResource( name ) {
+  return gameRef.resource( loadedResources[ name ] );
 }
 
 base.initialize = initialize;
@@ -49,6 +40,6 @@ base.start = start;
 base.image = genericLoad;
 base.audio = genericLoad;
 base.json = genericLoad;
-base.resources = getResources;
+base.getResource = getResource;
 
 export default base;

@@ -3,7 +3,7 @@
  */
 export default function( game, image, x, y ) {
 
-  let loadedImage = game.loader.resources( image );
+  let loadedImage = game.loader.getResource( image );
   let sprite = game.render.addSprite( loadedImage.url , x, y );
 
   function scale( x, y ) {

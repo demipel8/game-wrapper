@@ -6,11 +6,13 @@ import Loop from '../js/modules/M_Loop'
 import Controller from '../js/modules/M_Controller'
 import Render from '../js/modules/M_Render'
 import Sprite from '../js/modules/M_Sprite'
+import Resource from '../js/modules/M_Resource'
 
 export default {
   loader: Loader,
   loop: Loop,
   controller: Controller,
   render: Render,
-  sprite: Sprite
+  sprite: Sprite,
+  resource: Resource
 }
