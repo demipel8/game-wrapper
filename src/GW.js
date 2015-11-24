@@ -1,7 +1,7 @@
 /**
  * Created by demi on 11/7/15.
  */
-import defaultModules from '../config/default';
+import defaultModules from './config/default';
 
 function GW( userModules = {}, ...gameData ) {
 

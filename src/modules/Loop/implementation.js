@@ -1,7 +1,7 @@
 /**
  * Created by demi on 11/21/15.
  */
-import base from '../interfaces/I_Loop'
+import base from './interface'
 import MainLoop from '../../../node_modules/mainloop.js/build/mainloop.min'
 
 function executeAll( stage ) { //TODO signaling system???

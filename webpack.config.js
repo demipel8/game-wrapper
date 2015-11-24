@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
     entry: {
-        app: ['./src/js/app.js']
+        app: ['./src/app.js']
     },
     output: {
         path: require('path').resolve('build'),

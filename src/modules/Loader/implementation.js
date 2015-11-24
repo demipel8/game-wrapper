@@ -1,8 +1,8 @@
 /**
  * Created by demi on 11/8/15.
  */
-import base from '../interfaces/I_Loader'
-import RL from '../../../libs/resource-loader.min'
+import base from './interface'
+import RL from 'resource-loader/src/index'
 
 let loader = {};
 let loadedResources = {};

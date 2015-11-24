@@ -1,7 +1,7 @@
 /**
  * Created by demi on 11/22/15.
  */
-import base from '../interfaces/I_Render'
+import base from './interface'
 import pixi from 'pixi.js'
 
 let stage;

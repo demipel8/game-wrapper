@@ -1,7 +1,7 @@
 /**
  * Created by demi on 11/21/15.
  */
-import base from '../interfaces/I_Controller'
+import base from './interface'
 
 /**
  * Loads and starts game loop

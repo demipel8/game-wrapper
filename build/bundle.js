@@ -52,8 +52,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	* Entry point for webpack bundle
-	**/
+	 * Entry point for webpack bundle
+	 **/
 
 	'use strict';
 
@@ -71,7 +71,7 @@
 
 	var _GW2 = _interopRequireDefault(_GW);
 
-	__webpack_require__(340);exports['default'] = _GW2['default'];
+	__webpack_require__(339);exports['default'] = _GW2['default'];
 	module.exports = exports['default'];
 
 /***/ },
@@ -5345,38 +5345,37 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _jsModulesM_Loader = __webpack_require__(195);
+	var _modulesLoaderImplementation = __webpack_require__(195);
 
-	var _jsModulesM_Loader2 = _interopRequireDefault(_jsModulesM_Loader);
+	var _modulesLoaderImplementation2 = _interopRequireDefault(_modulesLoaderImplementation);
 
-	var _jsModulesM_Loop = __webpack_require__(199);
+	var _modulesLoopImplementation = __webpack_require__(212);
 
-	var _jsModulesM_Loop2 = _interopRequireDefault(_jsModulesM_Loop);
+	var _modulesLoopImplementation2 = _interopRequireDefault(_modulesLoopImplementation);
 
-	var _jsModulesM_Controller = __webpack_require__(202);
+	var _modulesControllerImplementation = __webpack_require__(215);
 
-	var _jsModulesM_Controller2 = _interopRequireDefault(_jsModulesM_Controller);
+	var _modulesControllerImplementation2 = _interopRequireDefault(_modulesControllerImplementation);
 
-	var _jsModulesM_Render = __webpack_require__(204);
+	var _modulesRenderImplementation = __webpack_require__(217);
 
-	var _jsModulesM_Render2 = _interopRequireDefault(_jsModulesM_Render);
+	var _modulesRenderImplementation2 = _interopRequireDefault(_modulesRenderImplementation);
 
-	var _jsModulesM_Sprite = __webpack_require__(337);
+	var _modulesSpriteImplementation = __webpack_require__(336);
 
-	var _jsModulesM_Sprite2 = _interopRequireDefault(_jsModulesM_Sprite);
+	var _modulesSpriteImplementation2 = _interopRequireDefault(_modulesSpriteImplementation);
 
-	var _jsModulesM_Resource = __webpack_require__(338);
+	var _modulesResourceImplementation = __webpack_require__(337);
 
-	var _jsModulesM_Resource2 = _interopRequireDefault(_jsModulesM_Resource);
+	var _modulesResourceImplementation2 = _interopRequireDefault(_modulesResourceImplementation);
 
-	console.log((0, _jsModulesM_Resource2['default'])({ name: '', url: '' }));
 	exports['default'] = {
-	  loader: _jsModulesM_Loader2['default'],
-	  loop: _jsModulesM_Loop2['default'],
-	  controller: _jsModulesM_Controller2['default'],
-	  render: _jsModulesM_Render2['default'],
-	  sprite: _jsModulesM_Sprite2['default'],
-	  resource: _jsModulesM_Resource2['default']
+	  loader: _modulesLoaderImplementation2['default'],
+	  loop: _modulesLoopImplementation2['default'],
+	  controller: _modulesControllerImplementation2['default'],
+	  render: _modulesRenderImplementation2['default'],
+	  sprite: _modulesSpriteImplementation2['default'],
+	  resource: _modulesResourceImplementation2['default']
 	};
 	module.exports = exports['default'];
 
@@ -5395,13 +5394,13 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interfacesI_Loader = __webpack_require__(196);
+	var _interface = __webpack_require__(196);
 
-	var _interfacesI_Loader2 = _interopRequireDefault(_interfacesI_Loader);
+	var _interface2 = _interopRequireDefault(_interface);
 
-	var _libsResourceLoaderMin = __webpack_require__(197);
+	var _resourceLoaderSrcIndex = __webpack_require__(197);
 
-	var _libsResourceLoaderMin2 = _interopRequireDefault(_libsResourceLoaderMin);
+	var _resourceLoaderSrcIndex2 = _interopRequireDefault(_resourceLoaderSrcIndex);
 
 	var loader = {};
 	var loadedResources = {};
@@ -5410,8 +5409,8 @@
 	function initialize(game) {
 	  //TODO ¿Inject game reference?
 	  gameRef = game;
-	  loader = new _libsResourceLoaderMin2['default']();
-	  return _interfacesI_Loader2['default'];
+	  loader = new _resourceLoaderSrcIndex2['default']();
+	  return _interface2['default'];
 	}
 
 	function start() {
@@ -5433,14 +5432,14 @@
 	  return gameRef.resource(loadedResources[name]);
 	}
 
-	_interfacesI_Loader2['default'].initialize = initialize;
-	_interfacesI_Loader2['default'].start = start;
-	_interfacesI_Loader2['default'].image = genericLoad;
-	_interfacesI_Loader2['default'].audio = genericLoad;
-	_interfacesI_Loader2['default'].json = genericLoad;
-	_interfacesI_Loader2['default'].getResource = getResource;
+	_interface2['default'].initialize = initialize;
+	_interface2['default'].start = start;
+	_interface2['default'].image = genericLoad;
+	_interface2['default'].audio = genericLoad;
+	_interface2['default'].json = genericLoad;
+	_interface2['default'].getResource = getResource;
 
-	exports['default'] = _interfacesI_Loader2['default'];
+	exports['default'] = _interface2['default'];
 	module.exports = exports['default'];
 
 /***/ },
@@ -5502,929 +5501,1614 @@
 /* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var require;var require;/* WEBPACK VAR INJECTION */(function(setImmediate, global) {"use strict";
+	module.exports = __webpack_require__(198);
 
-	!(function (t) {
-	  if (true) module.exports = t();else if ("function" == typeof define && define.amd) define([], t);else {
-	    var e;e = "undefined" != typeof window ? window : "undefined" != typeof global ? global : "undefined" != typeof self ? self : this, e.Loader = t();
-	  }
-	})(function () {
-	  var t;return (function e(t, n, r) {
-	    function o(s, a) {
-	      if (!n[s]) {
-	        if (!t[s]) {
-	          var u = "function" == typeof require && require;if (!a && u) return require(s, !0);if (i) return i(s, !0);var h = new Error("Cannot find module '" + s + "'");throw (h.code = "MODULE_NOT_FOUND", h);
-	        }var c = n[s] = { exports: {} };t[s][0].call(c.exports, function (e) {
-	          var n = t[s][1][e];return o(n ? n : e);
-	        }, c, c.exports, e, t, n, r);
-	      }return n[s].exports;
-	    }for (var i = "function" == typeof require && require, s = 0; s < r.length; s++) o(r[s]);return o;
-	  })({ 1: [function (e, n, r) {
-	      (function (e) {
-	        !(function () {
-	          function r(t) {
-	            var e = !1;return function () {
-	              if (e) throw new Error("Callback was already called.");e = !0, t.apply(o, arguments);
-	            };
-	          }var o,
-	              i,
-	              s = {};o = this, null != o && (i = o.async), s.noConflict = function () {
-	            return o.async = i, s;
-	          };var a = Object.prototype.toString,
-	              u = Array.isArray || function (t) {
-	            return "[object Array]" === a.call(t);
-	          },
-	              h = function h(t, e) {
-	            for (var n = 0; n < t.length; n += 1) e(t[n], n, t);
-	          },
-	              c = function c(t, e) {
-	            if (t.map) return t.map(e);var n = [];return h(t, function (t, r, o) {
-	              n.push(e(t, r, o));
-	            }), n;
-	          },
-	              l = function l(t, e, n) {
-	            return t.reduce ? t.reduce(e, n) : (h(t, function (t, r, o) {
-	              n = e(n, t, r, o);
-	            }), n);
-	          },
-	              f = function f(t) {
-	            if (Object.keys) return Object.keys(t);var e = [];for (var n in t) t.hasOwnProperty(n) && e.push(n);return e;
-	          };"undefined" != typeof e && e.nextTick ? (s.nextTick = e.nextTick, "undefined" != typeof setImmediate ? s.setImmediate = function (t) {
-	            setImmediate(t);
-	          } : s.setImmediate = s.nextTick) : "function" == typeof setImmediate ? (s.nextTick = function (t) {
-	            setImmediate(t);
-	          }, s.setImmediate = s.nextTick) : (s.nextTick = function (t) {
-	            setTimeout(t, 0);
-	          }, s.setImmediate = s.nextTick), s.each = function (t, e, n) {
-	            function o(e) {
-	              e ? (n(e), n = function () {}) : (i += 1, i >= t.length && n());
-	            }if ((n = n || function () {}, !t.length)) return n();var i = 0;h(t, function (t) {
-	              e(t, r(o));
-	            });
-	          }, s.forEach = s.each, s.eachSeries = function (t, e, n) {
-	            if ((n = n || function () {}, !t.length)) return n();var r = 0,
-	                o = function o() {
-	              e(t[r], function (e) {
-	                e ? (n(e), n = function () {}) : (r += 1, r >= t.length ? n() : o());
-	              });
-	            };o();
-	          }, s.forEachSeries = s.eachSeries, s.eachLimit = function (t, e, n, r) {
-	            var o = p(e);o.apply(null, [t, n, r]);
-	          }, s.forEachLimit = s.eachLimit;var p = function p(t) {
-	            return function (e, n, r) {
-	              if ((r = r || function () {}, !e.length || 0 >= t)) return r();var o = 0,
-	                  i = 0,
-	                  s = 0;!(function a() {
-	                if (o >= e.length) return r();for (; t > s && i < e.length;) i += 1, s += 1, n(e[i - 1], function (t) {
-	                  t ? (r(t), r = function () {}) : (o += 1, s -= 1, o >= e.length ? r() : a());
-	                });
-	              })();
-	            };
-	          },
-	              d = function d(t) {
-	            return function () {
-	              var e = Array.prototype.slice.call(arguments);return t.apply(null, [s.each].concat(e));
-	            };
-	          },
-	              m = function m(t, e) {
-	            return function () {
-	              var n = Array.prototype.slice.call(arguments);return e.apply(null, [p(t)].concat(n));
-	            };
-	          },
-	              y = function y(t) {
-	            return function () {
-	              var e = Array.prototype.slice.call(arguments);return t.apply(null, [s.eachSeries].concat(e));
-	            };
-	          },
-	              v = function v(t, e, n, r) {
-	            if ((e = c(e, function (t, e) {
-	              return { index: e, value: t };
-	            }), r)) {
-	              var o = [];t(e, function (t, e) {
-	                n(t.value, function (n, r) {
-	                  o[t.index] = r, e(n);
-	                });
-	              }, function (t) {
-	                r(t, o);
-	              });
-	            } else t(e, function (t, e) {
-	              n(t.value, function (t) {
-	                e(t);
-	              });
-	            });
-	          };s.map = d(v), s.mapSeries = y(v), s.mapLimit = function (t, e, n, r) {
-	            return g(e)(t, n, r);
-	          };var g = function g(t) {
-	            return m(t, v);
-	          };s.reduce = function (t, e, n, r) {
-	            s.eachSeries(t, function (t, r) {
-	              n(e, t, function (t, n) {
-	                e = n, r(t);
-	              });
-	            }, function (t) {
-	              r(t, e);
-	            });
-	          }, s.inject = s.reduce, s.foldl = s.reduce, s.reduceRight = function (t, e, n, r) {
-	            var o = c(t, function (t) {
-	              return t;
-	            }).reverse();s.reduce(o, e, n, r);
-	          }, s.foldr = s.reduceRight;var _ = function _(t, e, n, r) {
-	            var o = [];e = c(e, function (t, e) {
-	              return { index: e, value: t };
-	            }), t(e, function (t, e) {
-	              n(t.value, function (n) {
-	                n && o.push(t), e();
-	              });
-	            }, function (t) {
-	              r(c(o.sort(function (t, e) {
-	                return t.index - e.index;
-	              }), function (t) {
-	                return t.value;
-	              }));
-	            });
-	          };s.filter = d(_), s.filterSeries = y(_), s.select = s.filter, s.selectSeries = s.filterSeries;var E = function E(t, e, n, r) {
-	            var o = [];e = c(e, function (t, e) {
-	              return { index: e, value: t };
-	            }), t(e, function (t, e) {
-	              n(t.value, function (n) {
-	                n || o.push(t), e();
-	              });
-	            }, function (t) {
-	              r(c(o.sort(function (t, e) {
-	                return t.index - e.index;
-	              }), function (t) {
-	                return t.value;
-	              }));
-	            });
-	          };s.reject = d(E), s.rejectSeries = y(E);var O = function O(t, e, n, r) {
-	            t(e, function (t, e) {
-	              n(t, function (n) {
-	                n ? (r(t), r = function () {}) : e();
-	              });
-	            }, function (t) {
-	              r();
-	            });
-	          };s.detect = d(O), s.detectSeries = y(O), s.some = function (t, e, n) {
-	            s.each(t, function (t, r) {
-	              e(t, function (t) {
-	                t && (n(!0), n = function () {}), r();
-	              });
-	            }, function (t) {
-	              n(!1);
-	            });
-	          }, s.any = s.some, s.every = function (t, e, n) {
-	            s.each(t, function (t, r) {
-	              e(t, function (t) {
-	                t || (n(!1), n = function () {}), r();
-	              });
-	            }, function (t) {
-	              n(!0);
-	            });
-	          }, s.all = s.every, s.sortBy = function (t, e, n) {
-	            s.map(t, function (t, n) {
-	              e(t, function (e, r) {
-	                e ? n(e) : n(null, { value: t, criteria: r });
-	              });
-	            }, function (t, e) {
-	              if (t) return n(t);var r = function r(t, e) {
-	                var n = t.criteria,
-	                    r = e.criteria;return r > n ? -1 : n > r ? 1 : 0;
-	              };n(null, c(e.sort(r), function (t) {
-	                return t.value;
-	              }));
-	            });
-	          }, s.auto = function (t, e) {
-	            e = e || function () {};var n = f(t),
-	                r = n.length;if (!r) return e();var o = {},
-	                i = [],
-	                a = function a(t) {
-	              i.unshift(t);
-	            },
-	                c = function c(t) {
-	              for (var e = 0; e < i.length; e += 1) if (i[e] === t) return void i.splice(e, 1);
-	            },
-	                p = function p() {
-	              r--, h(i.slice(0), function (t) {
-	                t();
-	              });
-	            };a(function () {
-	              if (!r) {
-	                var t = e;e = function () {}, t(null, o);
-	              }
-	            }), h(n, function (n) {
-	              var r = u(t[n]) ? t[n] : [t[n]],
-	                  i = function i(t) {
-	                var r = Array.prototype.slice.call(arguments, 1);if ((r.length <= 1 && (r = r[0]), t)) {
-	                  var i = {};h(f(o), function (t) {
-	                    i[t] = o[t];
-	                  }), i[n] = r, e(t, i), e = function () {};
-	                } else o[n] = r, s.setImmediate(p);
-	              },
-	                  d = r.slice(0, Math.abs(r.length - 1)) || [],
-	                  m = function m() {
-	                return l(d, function (t, e) {
-	                  return t && o.hasOwnProperty(e);
-	                }, !0) && !o.hasOwnProperty(n);
-	              };if (m()) r[r.length - 1](i, o);else {
-	                var y = function y() {
-	                  m() && (c(y), r[r.length - 1](i, o));
-	                };a(y);
-	              }
-	            });
-	          }, s.retry = function (t, e, n) {
-	            var r = 5,
-	                o = [];"function" == typeof t && (n = e, e = t, t = r), t = parseInt(t, 10) || r;var i = function i(r, _i) {
-	              for (var a = function a(t, e) {
-	                return function (n) {
-	                  t(function (t, r) {
-	                    n(!t || e, { err: t, result: r });
-	                  }, _i);
-	                };
-	              }; t;) o.push(a(e, !(t -= 1)));s.series(o, function (t, e) {
-	                e = e[e.length - 1], (r || n)(e.err, e.result);
-	              });
-	            };return n ? i() : i;
-	          }, s.waterfall = function (t, e) {
-	            if ((e = e || function () {}, !u(t))) {
-	              var n = new Error("First argument to waterfall must be an array of functions");return e(n);
-	            }if (!t.length) return e();var r = function r(t) {
-	              return function (n) {
-	                if (n) e.apply(null, arguments), e = function () {};else {
-	                  var o = Array.prototype.slice.call(arguments, 1),
-	                      i = t.next();i ? o.push(r(i)) : o.push(e), s.setImmediate(function () {
-	                    t.apply(null, o);
-	                  });
-	                }
-	              };
-	            };r(s.iterator(t))();
-	          };var b = function b(t, e, n) {
-	            if ((n = n || function () {}, u(e))) t.map(e, function (t, e) {
-	              t && t(function (t) {
-	                var n = Array.prototype.slice.call(arguments, 1);n.length <= 1 && (n = n[0]), e.call(null, t, n);
-	              });
-	            }, n);else {
-	              var r = {};t.each(f(e), function (t, n) {
-	                e[t](function (e) {
-	                  var o = Array.prototype.slice.call(arguments, 1);o.length <= 1 && (o = o[0]), r[t] = o, n(e);
-	                });
-	              }, function (t) {
-	                n(t, r);
-	              });
-	            }
-	          };s.parallel = function (t, e) {
-	            b({ map: s.map, each: s.each }, t, e);
-	          }, s.parallelLimit = function (t, e, n) {
-	            b({ map: g(e), each: p(e) }, t, n);
-	          }, s.series = function (t, e) {
-	            if ((e = e || function () {}, u(t))) s.mapSeries(t, function (t, e) {
-	              t && t(function (t) {
-	                var n = Array.prototype.slice.call(arguments, 1);n.length <= 1 && (n = n[0]), e.call(null, t, n);
-	              });
-	            }, e);else {
-	              var n = {};s.eachSeries(f(t), function (e, r) {
-	                t[e](function (t) {
-	                  var o = Array.prototype.slice.call(arguments, 1);o.length <= 1 && (o = o[0]), n[e] = o, r(t);
-	                });
-	              }, function (t) {
-	                e(t, n);
-	              });
-	            }
-	          }, s.iterator = function (t) {
-	            var e = function e(n) {
-	              var r = function r() {
-	                return t.length && t[n].apply(null, arguments), r.next();
-	              };return r.next = function () {
-	                return n < t.length - 1 ? e(n + 1) : null;
-	              }, r;
-	            };return e(0);
-	          }, s.apply = function (t) {
-	            var e = Array.prototype.slice.call(arguments, 1);return function () {
-	              return t.apply(null, e.concat(Array.prototype.slice.call(arguments)));
-	            };
-	          };var x = function x(t, e, n, r) {
-	            var o = [];t(e, function (t, e) {
-	              n(t, function (t, n) {
-	                o = o.concat(n || []), e(t);
-	              });
-	            }, function (t) {
-	              r(t, o);
-	            });
-	          };s.concat = d(x), s.concatSeries = y(x), s.whilst = function (t, e, n) {
-	            t() ? e(function (r) {
-	              return r ? n(r) : void s.whilst(t, e, n);
-	            }) : n();
-	          }, s.doWhilst = function (t, e, n) {
-	            t(function (r) {
-	              if (r) return n(r);var o = Array.prototype.slice.call(arguments, 1);e.apply(null, o) ? s.doWhilst(t, e, n) : n();
-	            });
-	          }, s.until = function (t, e, n) {
-	            t() ? n() : e(function (r) {
-	              return r ? n(r) : void s.until(t, e, n);
-	            });
-	          }, s.doUntil = function (t, e, n) {
-	            t(function (r) {
-	              if (r) return n(r);var o = Array.prototype.slice.call(arguments, 1);e.apply(null, o) ? n() : s.doUntil(t, e, n);
-	            });
-	          }, s.queue = function (t, e) {
-	            function n(t, e, n, r) {
-	              return t.started || (t.started = !0), u(e) || (e = [e]), 0 == e.length ? s.setImmediate(function () {
-	                t.drain && t.drain();
-	              }) : void h(e, function (e) {
-	                var o = { data: e, callback: "function" == typeof r ? r : null };n ? t.tasks.unshift(o) : t.tasks.push(o), t.saturated && t.tasks.length === t.concurrency && t.saturated(), s.setImmediate(t.process);
-	              });
-	            }void 0 === e && (e = 1);var o = 0,
-	                i = { tasks: [], concurrency: e, saturated: null, empty: null, drain: null, started: !1, paused: !1, push: function push(t, e) {
-	                n(i, t, !1, e);
-	              }, kill: function kill() {
-	                i.drain = null, i.tasks = [];
-	              }, unshift: function unshift(t, e) {
-	                n(i, t, !0, e);
-	              }, process: function process() {
-	                if (!i.paused && o < i.concurrency && i.tasks.length) {
-	                  var e = i.tasks.shift();i.empty && 0 === i.tasks.length && i.empty(), o += 1;var n = function n() {
-	                    o -= 1, e.callback && e.callback.apply(e, arguments), i.drain && i.tasks.length + o === 0 && i.drain(), i.process();
-	                  },
-	                      s = r(n);t(e.data, s);
-	                }
-	              }, length: function length() {
-	                return i.tasks.length;
-	              }, running: function running() {
-	                return o;
-	              }, idle: function idle() {
-	                return i.tasks.length + o === 0;
-	              }, pause: function pause() {
-	                i.paused !== !0 && (i.paused = !0);
-	              }, resume: function resume() {
-	                if (i.paused !== !1) {
-	                  i.paused = !1;for (var t = 1; t <= i.concurrency; t++) s.setImmediate(i.process);
-	                }
-	              } };return i;
-	          }, s.priorityQueue = function (t, e) {
-	            function n(t, e) {
-	              return t.priority - e.priority;
-	            }function r(t, e, n) {
-	              for (var r = -1, o = t.length - 1; o > r;) {
-	                var i = r + (o - r + 1 >>> 1);n(e, t[i]) >= 0 ? r = i : o = i - 1;
-	              }return r;
-	            }function o(t, e, o, i) {
-	              return t.started || (t.started = !0), u(e) || (e = [e]), 0 == e.length ? s.setImmediate(function () {
-	                t.drain && t.drain();
-	              }) : void h(e, function (e) {
-	                var a = { data: e, priority: o, callback: "function" == typeof i ? i : null };t.tasks.splice(r(t.tasks, a, n) + 1, 0, a), t.saturated && t.tasks.length === t.concurrency && t.saturated(), s.setImmediate(t.process);
-	              });
-	            }var i = s.queue(t, e);return i.push = function (t, e, n) {
-	              o(i, t, e, n);
-	            }, delete i.unshift, i;
-	          }, s.cargo = function (t, e) {
-	            var n = !1,
-	                r = [],
-	                o = { tasks: r, payload: e, saturated: null, empty: null, drain: null, drained: !0, push: function push(t, n) {
-	                u(t) || (t = [t]), h(t, function (t) {
-	                  r.push({ data: t, callback: "function" == typeof n ? n : null }), o.drained = !1, o.saturated && r.length === e && o.saturated();
-	                }), s.setImmediate(o.process);
-	              }, process: function i() {
-	                if (!n) {
-	                  if (0 === r.length) return o.drain && !o.drained && o.drain(), void (o.drained = !0);var s = "number" == typeof e ? r.splice(0, e) : r.splice(0, r.length),
-	                      a = c(s, function (t) {
-	                    return t.data;
-	                  });o.empty && o.empty(), n = !0, t(a, function () {
-	                    n = !1;var t = arguments;h(s, function (e) {
-	                      e.callback && e.callback.apply(null, t);
-	                    }), i();
-	                  });
-	                }
-	              }, length: function length() {
-	                return r.length;
-	              }, running: function running() {
-	                return n;
-	              } };return o;
-	          };var T = function T(t) {
-	            return function (e) {
-	              var n = Array.prototype.slice.call(arguments, 1);e.apply(null, n.concat([function (e) {
-	                var n = Array.prototype.slice.call(arguments, 1);"undefined" != typeof console && (e ? console.error && console.error(e) : console[t] && h(n, function (e) {
-	                  console[t](e);
-	                }));
-	              }]));
-	            };
-	          };s.log = T("log"), s.dir = T("dir"), s.memoize = function (t, e) {
-	            var n = {},
-	                r = {};e = e || function (t) {
-	              return t;
-	            };var o = function o() {
-	              var o = Array.prototype.slice.call(arguments),
-	                  i = o.pop(),
-	                  a = e.apply(null, o);a in n ? s.nextTick(function () {
-	                i.apply(null, n[a]);
-	              }) : a in r ? r[a].push(i) : (r[a] = [i], t.apply(null, o.concat([function () {
-	                n[a] = arguments;var t = r[a];delete r[a];for (var e = 0, o = t.length; o > e; e++) t[e].apply(null, arguments);
-	              }])));
-	            };return o.memo = n, o.unmemoized = t, o;
-	          }, s.unmemoize = function (t) {
-	            return function () {
-	              return (t.unmemoized || t).apply(null, arguments);
-	            };
-	          }, s.times = function (t, e, n) {
-	            for (var r = [], o = 0; t > o; o++) r.push(o);return s.map(r, e, n);
-	          }, s.timesSeries = function (t, e, n) {
-	            for (var r = [], o = 0; t > o; o++) r.push(o);return s.mapSeries(r, e, n);
-	          }, s.seq = function () {
-	            var t = arguments;return function () {
-	              var e = this,
-	                  n = Array.prototype.slice.call(arguments),
-	                  r = n.pop();s.reduce(t, n, function (t, n, r) {
-	                n.apply(e, t.concat([function () {
-	                  var t = arguments[0],
-	                      e = Array.prototype.slice.call(arguments, 1);r(t, e);
-	                }]));
-	              }, function (t, n) {
-	                r.apply(e, [t].concat(n));
-	              });
-	            };
-	          }, s.compose = function () {
-	            return s.seq.apply(null, Array.prototype.reverse.call(arguments));
-	          };var R = function R(t, e) {
-	            var n = function n() {
-	              var n = this,
-	                  r = Array.prototype.slice.call(arguments),
-	                  o = r.pop();return t(e, function (t, e) {
-	                t.apply(n, r.concat([e]));
-	              }, o);
-	            };if (arguments.length > 2) {
-	              var r = Array.prototype.slice.call(arguments, 2);return n.apply(this, r);
-	            }return n;
-	          };s.applyEach = d(R), s.applyEachSeries = y(R), s.forever = function (t, e) {
-	            function n(r) {
-	              if (r) {
-	                if (e) return e(r);throw r;
-	              }t(n);
-	            }n();
-	          }, "undefined" != typeof n && n.exports ? n.exports = s : "undefined" != typeof t && t.amd ? t([], function () {
-	            return s;
-	          }) : o.async = s;
-	        })();
-	      }).call(this, e("_process"));
-	    }, { _process: 3 }], 2: [function (t, e, n) {
-	      "use strict";function r(t, e, n) {
-	        this.fn = t, this.context = e, this.once = n || !1;
-	      }function o() {}var i = "function" != typeof Object.create ? "~" : !1;o.prototype._events = void 0, o.prototype.listeners = function (t, e) {
-	        var n = i ? i + t : t,
-	            r = this._events && this._events[n];if (e) return !!r;if (!r) return [];if (r.fn) return [r.fn];for (var o = 0, s = r.length, a = new Array(s); s > o; o++) a[o] = r[o].fn;return a;
-	      }, o.prototype.emit = function (t, e, n, r, o, s) {
-	        var a = i ? i + t : t;if (!this._events || !this._events[a]) return !1;var u,
-	            h,
-	            c = this._events[a],
-	            l = arguments.length;if ("function" == typeof c.fn) {
-	          switch ((c.once && this.removeListener(t, c.fn, void 0, !0), l)) {case 1:
-	              return c.fn.call(c.context), !0;case 2:
-	              return c.fn.call(c.context, e), !0;case 3:
-	              return c.fn.call(c.context, e, n), !0;case 4:
-	              return c.fn.call(c.context, e, n, r), !0;case 5:
-	              return c.fn.call(c.context, e, n, r, o), !0;case 6:
-	              return c.fn.call(c.context, e, n, r, o, s), !0;}for (h = 1, u = new Array(l - 1); l > h; h++) u[h - 1] = arguments[h];c.fn.apply(c.context, u);
-	        } else {
-	          var f,
-	              p = c.length;for (h = 0; p > h; h++) switch ((c[h].once && this.removeListener(t, c[h].fn, void 0, !0), l)) {case 1:
-	              c[h].fn.call(c[h].context);break;case 2:
-	              c[h].fn.call(c[h].context, e);break;case 3:
-	              c[h].fn.call(c[h].context, e, n);break;default:
-	              if (!u) for (f = 1, u = new Array(l - 1); l > f; f++) u[f - 1] = arguments[f];c[h].fn.apply(c[h].context, u);}
-	        }return !0;
-	      }, o.prototype.on = function (t, e, n) {
-	        var o = new r(e, n || this),
-	            s = i ? i + t : t;return this._events || (this._events = i ? {} : Object.create(null)), this._events[s] ? this._events[s].fn ? this._events[s] = [this._events[s], o] : this._events[s].push(o) : this._events[s] = o, this;
-	      }, o.prototype.once = function (t, e, n) {
-	        var o = new r(e, n || this, !0),
-	            s = i ? i + t : t;return this._events || (this._events = i ? {} : Object.create(null)), this._events[s] ? this._events[s].fn ? this._events[s] = [this._events[s], o] : this._events[s].push(o) : this._events[s] = o, this;
-	      }, o.prototype.removeListener = function (t, e, n, r) {
-	        var o = i ? i + t : t;if (!this._events || !this._events[o]) return this;var s = this._events[o],
-	            a = [];if (e) if (s.fn) (s.fn !== e || r && !s.once || n && s.context !== n) && a.push(s);else for (var u = 0, h = s.length; h > u; u++) (s[u].fn !== e || r && !s[u].once || n && s[u].context !== n) && a.push(s[u]);return a.length ? this._events[o] = 1 === a.length ? a[0] : a : delete this._events[o], this;
-	      }, o.prototype.removeAllListeners = function (t) {
-	        return this._events ? (t ? delete this._events[i ? i + t : t] : this._events = i ? {} : Object.create(null), this) : this;
-	      }, o.prototype.off = o.prototype.removeListener, o.prototype.addListener = o.prototype.on, o.prototype.setMaxListeners = function () {
-	        return this;
-	      }, o.prefixed = i, "undefined" != typeof e && (e.exports = o);
-	    }, {}], 3: [function (t, e, n) {
-	      function r() {
-	        c = !1, a.length ? h = a.concat(h) : l = -1, h.length && o();
-	      }function o() {
-	        if (!c) {
-	          var t = setTimeout(r);c = !0;for (var e = h.length; e;) {
-	            for (a = h, h = []; ++l < e;) a && a[l].run();l = -1, e = h.length;
-	          }a = null, c = !1, clearTimeout(t);
-	        }
-	      }function i(t, e) {
-	        this.fun = t, this.array = e;
-	      }function s() {}var a,
-	          u = e.exports = {},
-	          h = [],
-	          c = !1,
-	          l = -1;u.nextTick = function (t) {
-	        var e = new Array(arguments.length - 1);if (arguments.length > 1) for (var n = 1; n < arguments.length; n++) e[n - 1] = arguments[n];h.push(new i(t, e)), 1 !== h.length || c || setTimeout(o, 0);
-	      }, i.prototype.run = function () {
-	        this.fun.apply(null, this.array);
-	      }, u.title = "browser", u.browser = !0, u.env = {}, u.argv = [], u.version = "", u.versions = {}, u.on = s, u.addListener = s, u.once = s, u.off = s, u.removeListener = s, u.removeAllListeners = s, u.emit = s, u.binding = function (t) {
-	        throw new Error("process.binding is not supported");
-	      }, u.cwd = function () {
-	        return "/";
-	      }, u.chdir = function (t) {
-	        throw new Error("process.chdir is not supported");
-	      }, u.umask = function () {
-	        return 0;
-	      };
-	    }, {}], 4: [function (e, n, r) {
-	      (function (e) {
-	        !(function (o) {
-	          function i(t) {
-	            throw RangeError(k[t]);
-	          }function s(t, e) {
-	            for (var n = t.length, r = []; n--;) r[n] = e(t[n]);return r;
-	          }function a(t, e) {
-	            var n = t.split("@"),
-	                r = "";n.length > 1 && (r = n[0] + "@", t = n[1]), t = t.replace(j, ".");var o = t.split("."),
-	                i = s(o, e).join(".");return r + i;
-	          }function u(t) {
-	            for (var e, n, r = [], o = 0, i = t.length; i > o;) e = t.charCodeAt(o++), e >= 55296 && 56319 >= e && i > o ? (n = t.charCodeAt(o++), 56320 == (64512 & n) ? r.push(((1023 & e) << 10) + (1023 & n) + 65536) : (r.push(e), o--)) : r.push(e);return r;
-	          }function h(t) {
-	            return s(t, function (t) {
-	              var e = "";return t > 65535 && (t -= 65536, e += Y(t >>> 10 & 1023 | 55296), t = 56320 | 1023 & t), e += Y(t);
-	            }).join("");
-	          }function c(t) {
-	            return 10 > t - 48 ? t - 22 : 26 > t - 65 ? t - 65 : 26 > t - 97 ? t - 97 : x;
-	          }function l(t, e) {
-	            return t + 22 + 75 * (26 > t) - ((0 != e) << 5);
-	          }function f(t, e, n) {
-	            var r = 0;for (t = n ? C(t / S) : t >> 1, t += C(t / e); t > N * R >> 1; r += x) t = C(t / N);return C(r + (N + 1) * t / (t + w));
-	          }function p(t) {
-	            var e,
-	                n,
-	                r,
-	                o,
-	                s,
-	                a,
-	                u,
-	                l,
-	                p,
-	                d,
-	                m = [],
-	                y = t.length,
-	                v = 0,
-	                g = P,
-	                _ = A;for (n = t.lastIndexOf(L), 0 > n && (n = 0), r = 0; n > r; ++r) t.charCodeAt(r) >= 128 && i("not-basic"), m.push(t.charCodeAt(r));for (o = n > 0 ? n + 1 : 0; y > o;) {
-	              for (s = v, a = 1, u = x; o >= y && i("invalid-input"), l = c(t.charCodeAt(o++)), (l >= x || l > C((b - v) / a)) && i("overflow"), v += l * a, p = _ >= u ? T : u >= _ + R ? R : u - _, !(p > l); u += x) d = x - p, a > C(b / d) && i("overflow"), a *= d;e = m.length + 1, _ = f(v - s, e, 0 == s), C(v / e) > b - g && i("overflow"), g += C(v / e), v %= e, m.splice(v++, 0, g);
-	            }return h(m);
-	          }function d(t) {
-	            var e,
-	                n,
-	                r,
-	                o,
-	                s,
-	                a,
-	                h,
-	                c,
-	                p,
-	                d,
-	                m,
-	                y,
-	                v,
-	                g,
-	                _,
-	                E = [];for (t = u(t), y = t.length, e = P, n = 0, s = A, a = 0; y > a; ++a) m = t[a], 128 > m && E.push(Y(m));for (r = o = E.length, o && E.push(L); y > r;) {
-	              for (h = b, a = 0; y > a; ++a) m = t[a], m >= e && h > m && (h = m);for (v = r + 1, h - e > C((b - n) / v) && i("overflow"), n += (h - e) * v, e = h, a = 0; y > a; ++a) if ((m = t[a], e > m && ++n > b && i("overflow"), m == e)) {
-	                for (c = n, p = x; d = s >= p ? T : p >= s + R ? R : p - s, !(d > c); p += x) _ = c - d, g = x - d, E.push(Y(l(d + _ % g, 0))), c = C(_ / g);E.push(Y(l(c, 0))), s = f(n, v, r == o), n = 0, ++r;
-	              }++n, ++e;
-	            }return E.join("");
-	          }function m(t) {
-	            return a(t, function (t) {
-	              return X.test(t) ? p(t.slice(4).toLowerCase()) : t;
-	            });
-	          }function y(t) {
-	            return a(t, function (t) {
-	              return I.test(t) ? "xn--" + d(t) : t;
-	            });
-	          }var v = "object" == typeof r && r && !r.nodeType && r,
-	              g = "object" == typeof n && n && !n.nodeType && n,
-	              _ = "object" == typeof e && e;(_.global === _ || _.window === _ || _.self === _) && (o = _);var E,
-	              O,
-	              b = 2147483647,
-	              x = 36,
-	              T = 1,
-	              R = 26,
-	              w = 38,
-	              S = 700,
-	              A = 72,
-	              P = 128,
-	              L = "-",
-	              X = /^xn--/,
-	              I = /[^\x20-\x7E]/,
-	              j = /[\x2E\u3002\uFF0E\uFF61]/g,
-	              k = { overflow: "Overflow: input needs wider integers to process", "not-basic": "Illegal input >= 0x80 (not a basic code point)", "invalid-input": "Invalid input" },
-	              N = x - T,
-	              C = Math.floor,
-	              Y = String.fromCharCode;if ((E = { version: "1.3.2", ucs2: { decode: u, encode: h }, decode: p, encode: d, toASCII: y, toUnicode: m }, "function" == typeof t && "object" == typeof t.amd && t.amd)) t("punycode", function () {
-	            return E;
-	          });else if (v && g) if (n.exports == v) g.exports = E;else for (O in E) E.hasOwnProperty(O) && (v[O] = E[O]);else o.punycode = E;
-	        })(this);
-	      }).call(this, "undefined" != typeof global ? global : "undefined" != typeof self ? self : "undefined" != typeof window ? window : {});
-	    }, {}], 5: [function (t, e, n) {
-	      "use strict";function r(t, e) {
-	        return Object.prototype.hasOwnProperty.call(t, e);
-	      }e.exports = function (t, e, n, i) {
-	        e = e || "&", n = n || "=";var s = {};if ("string" != typeof t || 0 === t.length) return s;var a = /\+/g;t = t.split(e);var u = 1e3;i && "number" == typeof i.maxKeys && (u = i.maxKeys);var h = t.length;u > 0 && h > u && (h = u);for (var c = 0; h > c; ++c) {
-	          var l,
-	              f,
-	              p,
-	              d,
-	              m = t[c].replace(a, "%20"),
-	              y = m.indexOf(n);y >= 0 ? (l = m.substr(0, y), f = m.substr(y + 1)) : (l = m, f = ""), p = decodeURIComponent(l), d = decodeURIComponent(f), r(s, p) ? o(s[p]) ? s[p].push(d) : s[p] = [s[p], d] : s[p] = d;
-	        }return s;
-	      };var o = Array.isArray || function (t) {
-	        return "[object Array]" === Object.prototype.toString.call(t);
-	      };
-	    }, {}], 6: [function (t, e, n) {
-	      "use strict";function r(t, e) {
-	        if (t.map) return t.map(e);for (var n = [], r = 0; r < t.length; r++) n.push(e(t[r], r));return n;
-	      }var o = function o(t) {
-	        switch (typeof t) {case "string":
-	            return t;case "boolean":
-	            return t ? "true" : "false";case "number":
-	            return isFinite(t) ? t : "";default:
-	            return "";}
-	      };e.exports = function (t, e, n, a) {
-	        return e = e || "&", n = n || "=", null === t && (t = void 0), "object" == typeof t ? r(s(t), function (s) {
-	          var a = encodeURIComponent(o(s)) + n;return i(t[s]) ? r(t[s], function (t) {
-	            return a + encodeURIComponent(o(t));
-	          }).join(e) : a + encodeURIComponent(o(t[s]));
-	        }).join(e) : a ? encodeURIComponent(o(a)) + n + encodeURIComponent(o(t)) : "";
-	      };var i = Array.isArray || function (t) {
-	        return "[object Array]" === Object.prototype.toString.call(t);
-	      },
-	          s = Object.keys || function (t) {
-	        var e = [];for (var n in t) Object.prototype.hasOwnProperty.call(t, n) && e.push(n);return e;
-	      };
-	    }, {}], 7: [function (t, e, n) {
-	      "use strict";n.decode = n.parse = t("./decode"), n.encode = n.stringify = t("./encode");
-	    }, { "./decode": 5, "./encode": 6 }], 8: [function (t, e, n) {
-	      function r() {
-	        this.protocol = null, this.slashes = null, this.auth = null, this.host = null, this.port = null, this.hostname = null, this.hash = null, this.search = null, this.query = null, this.pathname = null, this.path = null, this.href = null;
-	      }function o(t, e, n) {
-	        if (t && h(t) && t instanceof r) return t;var o = new r();return o.parse(t, e, n), o;
-	      }function i(t) {
-	        return u(t) && (t = o(t)), t instanceof r ? t.format() : r.prototype.format.call(t);
-	      }function s(t, e) {
-	        return o(t, !1, !0).resolve(e);
-	      }function a(t, e) {
-	        return t ? o(t, !1, !0).resolveObject(e) : e;
-	      }function u(t) {
-	        return "string" == typeof t;
-	      }function h(t) {
-	        return "object" == typeof t && null !== t;
-	      }function c(t) {
-	        return null === t;
-	      }function l(t) {
-	        return null == t;
-	      }var f = t("punycode");n.parse = o, n.resolve = s, n.resolveObject = a, n.format = i, n.Url = r;var p = /^([a-z0-9.+-]+:)/i,
-	          d = /:[0-9]*$/,
-	          m = ["<", ">", '"', "`", " ", "\r", "\n", "	"],
-	          y = ["{", "}", "|", "\\", "^", "`"].concat(m),
-	          v = ["'"].concat(y),
-	          g = ["%", "/", "?", ";", "#"].concat(v),
-	          _ = ["/", "?", "#"],
-	          E = 255,
-	          O = /^[a-z0-9A-Z_-]{0,63}$/,
-	          b = /^([a-z0-9A-Z_-]{0,63})(.*)$/,
-	          x = { javascript: !0, "javascript:": !0 },
-	          T = { javascript: !0, "javascript:": !0 },
-	          R = { http: !0, https: !0, ftp: !0, gopher: !0, file: !0, "http:": !0, "https:": !0, "ftp:": !0, "gopher:": !0, "file:": !0 },
-	          w = t("querystring");r.prototype.parse = function (t, e, n) {
-	        if (!u(t)) throw new TypeError("Parameter 'url' must be a string, not " + typeof t);var r = t;r = r.trim();var o = p.exec(r);if (o) {
-	          o = o[0];var i = o.toLowerCase();this.protocol = i, r = r.substr(o.length);
-	        }if (n || o || r.match(/^\/\/[^@\/]+@[^@\/]+/)) {
-	          var s = "//" === r.substr(0, 2);!s || o && T[o] || (r = r.substr(2), this.slashes = !0);
-	        }if (!T[o] && (s || o && !R[o])) {
-	          for (var a = -1, h = 0; h < _.length; h++) {
-	            var c = r.indexOf(_[h]);-1 !== c && (-1 === a || a > c) && (a = c);
-	          }var l, d;d = -1 === a ? r.lastIndexOf("@") : r.lastIndexOf("@", a), -1 !== d && (l = r.slice(0, d), r = r.slice(d + 1), this.auth = decodeURIComponent(l)), a = -1;for (var h = 0; h < g.length; h++) {
-	            var c = r.indexOf(g[h]);-1 !== c && (-1 === a || a > c) && (a = c);
-	          }-1 === a && (a = r.length), this.host = r.slice(0, a), r = r.slice(a), this.parseHost(), this.hostname = this.hostname || "";var m = "[" === this.hostname[0] && "]" === this.hostname[this.hostname.length - 1];if (!m) for (var y = this.hostname.split(/\./), h = 0, S = y.length; S > h; h++) {
-	            var A = y[h];if (A && !A.match(O)) {
-	              for (var P = "", L = 0, X = A.length; X > L; L++) P += A.charCodeAt(L) > 127 ? "x" : A[L];if (!P.match(O)) {
-	                var I = y.slice(0, h),
-	                    j = y.slice(h + 1),
-	                    k = A.match(b);k && (I.push(k[1]), j.unshift(k[2])), j.length && (r = "/" + j.join(".") + r), this.hostname = I.join(".");break;
-	              }
-	            }
-	          }if ((this.hostname.length > E ? this.hostname = "" : this.hostname = this.hostname.toLowerCase(), !m)) {
-	            for (var N = this.hostname.split("."), C = [], h = 0; h < N.length; ++h) {
-	              var Y = N[h];C.push(Y.match(/[^A-Za-z0-9_-]/) ? "xn--" + f.encode(Y) : Y);
-	            }this.hostname = C.join(".");
-	          }var U = this.port ? ":" + this.port : "",
-	              D = this.hostname || "";this.host = D + U, this.href += this.host, m && (this.hostname = this.hostname.substr(1, this.hostname.length - 2), "/" !== r[0] && (r = "/" + r));
-	        }if (!x[i]) for (var h = 0, S = v.length; S > h; h++) {
-	          var q = v[h],
-	              H = encodeURIComponent(q);H === q && (H = escape(q)), r = r.split(q).join(H);
-	        }var M = r.indexOf("#");-1 !== M && (this.hash = r.substr(M), r = r.slice(0, M));var B = r.indexOf("?");if ((-1 !== B ? (this.search = r.substr(B), this.query = r.substr(B + 1), e && (this.query = w.parse(this.query)), r = r.slice(0, B)) : e && (this.search = "", this.query = {}), r && (this.pathname = r), R[i] && this.hostname && !this.pathname && (this.pathname = "/"), this.pathname || this.search)) {
-	          var U = this.pathname || "",
-	              Y = this.search || "";this.path = U + Y;
-	        }return this.href = this.format(), this;
-	      }, r.prototype.format = function () {
-	        var t = this.auth || "";t && (t = encodeURIComponent(t), t = t.replace(/%3A/i, ":"), t += "@");var e = this.protocol || "",
-	            n = this.pathname || "",
-	            r = this.hash || "",
-	            o = !1,
-	            i = "";this.host ? o = t + this.host : this.hostname && (o = t + (-1 === this.hostname.indexOf(":") ? this.hostname : "[" + this.hostname + "]"), this.port && (o += ":" + this.port)), this.query && h(this.query) && Object.keys(this.query).length && (i = w.stringify(this.query));var s = this.search || i && "?" + i || "";return e && ":" !== e.substr(-1) && (e += ":"), this.slashes || (!e || R[e]) && o !== !1 ? (o = "//" + (o || ""), n && "/" !== n.charAt(0) && (n = "/" + n)) : o || (o = ""), r && "#" !== r.charAt(0) && (r = "#" + r), s && "?" !== s.charAt(0) && (s = "?" + s), n = n.replace(/[?#]/g, function (t) {
-	          return encodeURIComponent(t);
-	        }), s = s.replace("#", "%23"), e + o + n + s + r;
-	      }, r.prototype.resolve = function (t) {
-	        return this.resolveObject(o(t, !1, !0)).format();
-	      }, r.prototype.resolveObject = function (t) {
-	        if (u(t)) {
-	          var e = new r();e.parse(t, !1, !0), t = e;
-	        }var n = new r();if ((Object.keys(this).forEach(function (t) {
-	          n[t] = this[t];
-	        }, this), n.hash = t.hash, "" === t.href)) return n.href = n.format(), n;if (t.slashes && !t.protocol) return Object.keys(t).forEach(function (e) {
-	          "protocol" !== e && (n[e] = t[e]);
-	        }), R[n.protocol] && n.hostname && !n.pathname && (n.path = n.pathname = "/"), n.href = n.format(), n;if (t.protocol && t.protocol !== n.protocol) {
-	          if (!R[t.protocol]) return Object.keys(t).forEach(function (e) {
-	            n[e] = t[e];
-	          }), n.href = n.format(), n;if ((n.protocol = t.protocol, t.host || T[t.protocol])) n.pathname = t.pathname;else {
-	            for (var o = (t.pathname || "").split("/"); o.length && !(t.host = o.shift()););t.host || (t.host = ""), t.hostname || (t.hostname = ""), "" !== o[0] && o.unshift(""), o.length < 2 && o.unshift(""), n.pathname = o.join("/");
-	          }if ((n.search = t.search, n.query = t.query, n.host = t.host || "", n.auth = t.auth, n.hostname = t.hostname || t.host, n.port = t.port, n.pathname || n.search)) {
-	            var i = n.pathname || "",
-	                s = n.search || "";n.path = i + s;
-	          }return n.slashes = n.slashes || t.slashes, n.href = n.format(), n;
-	        }var a = n.pathname && "/" === n.pathname.charAt(0),
-	            h = t.host || t.pathname && "/" === t.pathname.charAt(0),
-	            f = h || a || n.host && t.pathname,
-	            p = f,
-	            d = n.pathname && n.pathname.split("/") || [],
-	            o = t.pathname && t.pathname.split("/") || [],
-	            m = n.protocol && !R[n.protocol];if ((m && (n.hostname = "", n.port = null, n.host && ("" === d[0] ? d[0] = n.host : d.unshift(n.host)), n.host = "", t.protocol && (t.hostname = null, t.port = null, t.host && ("" === o[0] ? o[0] = t.host : o.unshift(t.host)), t.host = null), f = f && ("" === o[0] || "" === d[0])), h)) n.host = t.host || "" === t.host ? t.host : n.host, n.hostname = t.hostname || "" === t.hostname ? t.hostname : n.hostname, n.search = t.search, n.query = t.query, d = o;else if (o.length) d || (d = []), d.pop(), d = d.concat(o), n.search = t.search, n.query = t.query;else if (!l(t.search)) {
-	          if (m) {
-	            n.hostname = n.host = d.shift();var y = n.host && n.host.indexOf("@") > 0 ? n.host.split("@") : !1;y && (n.auth = y.shift(), n.host = n.hostname = y.shift());
-	          }return n.search = t.search, n.query = t.query, c(n.pathname) && c(n.search) || (n.path = (n.pathname ? n.pathname : "") + (n.search ? n.search : "")), n.href = n.format(), n;
-	        }if (!d.length) return n.pathname = null, n.search ? n.path = "/" + n.search : n.path = null, n.href = n.format(), n;for (var v = d.slice(-1)[0], g = (n.host || t.host) && ("." === v || ".." === v) || "" === v, _ = 0, E = d.length; E >= 0; E--) v = d[E], "." == v ? d.splice(E, 1) : ".." === v ? (d.splice(E, 1), _++) : _ && (d.splice(E, 1), _--);if (!f && !p) for (; _--; _) d.unshift("..");!f || "" === d[0] || d[0] && "/" === d[0].charAt(0) || d.unshift(""), g && "/" !== d.join("/").substr(-1) && d.push("");var O = "" === d[0] || d[0] && "/" === d[0].charAt(0);if (m) {
-	          n.hostname = n.host = O ? "" : d.length ? d.shift() : "";var y = n.host && n.host.indexOf("@") > 0 ? n.host.split("@") : !1;y && (n.auth = y.shift(), n.host = n.hostname = y.shift());
-	        }return f = f || n.host && d.length, f && !O && d.unshift(""), d.length ? n.pathname = d.join("/") : (n.pathname = null, n.path = null), c(n.pathname) && c(n.search) || (n.path = (n.pathname ? n.pathname : "") + (n.search ? n.search : "")), n.auth = t.auth || n.auth, n.slashes = n.slashes || t.slashes, n.href = n.format(), n;
-	      }, r.prototype.parseHost = function () {
-	        var t = this.host,
-	            e = d.exec(t);e && (e = e[0], ":" !== e && (this.port = e.substr(1)), t = t.substr(0, t.length - e.length)), t && (this.hostname = t);
-	      };
-	    }, { punycode: 4, querystring: 7 }], 9: [function (t, e, n) {
-	      function r(t, e) {
-	        a.call(this), e = e || 10, this.baseUrl = t || "", this.progress = 0, this.loading = !1, this._progressChunk = 0, this._beforeMiddleware = [], this._afterMiddleware = [], this._boundLoadResource = this._loadResource.bind(this), this._boundOnLoad = this._onLoad.bind(this), this._buffer = [], this._numToLoad = 0, this._queue = o.queue(this._boundLoadResource, e), this.resources = {};
-	      }var o = t("async"),
-	          i = t("url"),
-	          s = t("./Resource"),
-	          a = t("eventemitter3");r.prototype = Object.create(a.prototype), r.prototype.constructor = r, e.exports = r, r.prototype.add = r.prototype.enqueue = function (t, e, n, r) {
-	        if (Array.isArray(t)) {
-	          for (var o = 0; o < t.length; ++o) this.add(t[o]);return this;
-	        }if (("object" == typeof t && (r = e || t.callback || t.onComplete, n = t, e = t.url, t = t.name || t.key || t.url), "string" != typeof e && (r = n, n = e, e = t), "string" != typeof e)) throw new Error("No url passed to add resource to loader.");if (("function" == typeof n && (r = n, n = null), this.resources[t])) throw new Error('Resource with name "' + t + '" already exists.');return e = this._handleBaseUrl(e), this.resources[t] = new s(t, e, n), "function" == typeof r && this.resources[t].once("afterMiddleware", r), this._numToLoad++, this._queue.started ? (this._queue.push(this.resources[t]), this._progressChunk = (100 - this.progress) / (this._queue.length() + this._queue.running())) : (this._buffer.push(this.resources[t]), this._progressChunk = 100 / this._buffer.length), this;
-	      }, r.prototype._handleBaseUrl = function (t) {
-	        var e = i.parse(t);return e.protocol || 0 === e.pathname.indexOf("//") ? t : this.baseUrl.length && this.baseUrl.lastIndexOf("/") !== this.baseUrl.length - 1 && t.lastIndexOf("/") !== t.length - 1 ? this.baseUrl + "/" + t : this.baseUrl + t;
-	      }, r.prototype.before = r.prototype.pre = function (t) {
-	        return this._beforeMiddleware.push(t), this;
-	      }, r.prototype.after = r.prototype.use = function (t) {
-	        return this._afterMiddleware.push(t), this;
-	      }, r.prototype.reset = function () {
-	        this.progress = 0, this.loading = !1, this._progressChunk = 0, this._buffer.length = 0, this._numToLoad = 0, this._queue.kill(), this._queue.started = !1, this.resources = {};
-	      }, r.prototype.load = function (t) {
-	        if (("function" == typeof t && this.once("complete", t), this._queue.started)) return this;this.emit("start", this);for (var e = 0; e < this._buffer.length; ++e) this._queue.push(this._buffer[e]);return this._buffer.length = 0, this;
-	      }, r.prototype._loadResource = function (t, e) {
-	        var n = this;t._dequeue = e, this._runMiddleware(t, this._beforeMiddleware, function () {
-	          t.load(n._boundOnLoad);
-	        });
-	      }, r.prototype._onComplete = function () {
-	        this.emit("complete", this, this.resources);
-	      }, r.prototype._onLoad = function (t) {
-	        this.progress += this._progressChunk, this.emit("progress", this, t), this._runMiddleware(t, this._afterMiddleware, function () {
-	          t.emit("afterMiddleware", t), this._numToLoad--, 0 === this._numToLoad && (this.progress = 100, this._onComplete()), t.error ? this.emit("error", t.error, this, t) : this.emit("load", this, t);
-	        }), t._dequeue();
-	      }, r.prototype._runMiddleware = function (t, e, n) {
-	        var r = this;o.eachSeries(e, function (e, n) {
-	          e.call(r, t, n);
-	        }, n.bind(this, t));
-	      }, r.LOAD_TYPE = s.LOAD_TYPE, r.XHR_READY_STATE = s.XHR_READY_STATE, r.XHR_RESPONSE_TYPE = s.XHR_RESPONSE_TYPE;
-	    }, { "./Resource": 10, async: 1, eventemitter3: 2, url: 8 }], 10: [function (t, e, n) {
-	      function r(t, e, n) {
-	        if ((s.call(this), n = n || {}, "string" != typeof t || "string" != typeof e)) throw new Error("Both name and url are required for constructing a resource.");this.name = t, this.url = e, this.isDataUrl = 0 === this.url.indexOf("data:"), this.data = null, this.crossOrigin = n.crossOrigin === !0 ? "anonymous" : null, this.loadType = n.loadType || this._determineLoadType(), this.xhrType = n.xhrType, this.error = null, this.xhr = null, this.isJson = !1, this.isXml = !1, this.isImage = !1, this.isAudio = !1, this.isVideo = !1, this._dequeue = null, this._boundComplete = this.complete.bind(this), this._boundOnError = this._onError.bind(this), this._boundOnProgress = this._onProgress.bind(this), this._boundXhrOnError = this._xhrOnError.bind(this), this._boundXhrOnAbort = this._xhrOnAbort.bind(this), this._boundXhrOnLoad = this._xhrOnLoad.bind(this), this._boundXdrOnTimeout = this._xdrOnTimeout.bind(this);
-	      }function o(t) {
-	        return t.toString().replace("object ", "");
-	      }function i(t, e, n) {
-	        e && 0 === e.indexOf(".") && (e = e.substring(1)), e && (t[e] = n);
-	      }var s = t("eventemitter3"),
-	          a = t("url"),
-	          u = !(!window.XDomainRequest || "withCredentials" in new XMLHttpRequest()),
-	          h = null;r.prototype = Object.create(s.prototype), r.prototype.constructor = r, e.exports = r, r.prototype.complete = function () {
-	        this.data && this.data.removeEventListener && (this.data.removeEventListener("error", this._boundOnError), this.data.removeEventListener("load", this._boundComplete), this.data.removeEventListener("progress", this._boundOnProgress), this.data.removeEventListener("canplaythrough", this._boundComplete)), this.xhr && (this.xhr.removeEventListener ? (this.xhr.removeEventListener("error", this._boundXhrOnError), this.xhr.removeEventListener("abort", this._boundXhrOnAbort), this.xhr.removeEventListener("progress", this._boundOnProgress), this.xhr.removeEventListener("load", this._boundXhrOnLoad)) : (this.xhr.onerror = null, this.xhr.ontimeout = null, this.xhr.onprogress = null, this.xhr.onload = null)), this.emit("complete", this);
-	      }, r.prototype.load = function (t) {
-	        switch ((this.emit("start", this), t && this.once("complete", t), "string" != typeof this.crossOrigin && (this.crossOrigin = this._determineCrossOrigin(this.url)), this.loadType)) {case r.LOAD_TYPE.IMAGE:
-	            this._loadImage();break;case r.LOAD_TYPE.AUDIO:
-	            this._loadElement("audio");break;case r.LOAD_TYPE.VIDEO:
-	            this._loadElement("video");break;case r.LOAD_TYPE.XHR:default:
-	            u && this.crossOrigin ? this._loadXdr() : this._loadXhr();}
-	      }, r.prototype._loadImage = function () {
-	        this.data = new Image(), this.crossOrigin && (this.data.crossOrigin = this.crossOrigin), this.data.src = this.url, this.isImage = !0, this.data.addEventListener("error", this._boundOnError, !1), this.data.addEventListener("load", this._boundComplete, !1), this.data.addEventListener("progress", this._boundOnProgress, !1);
-	      }, r.prototype._loadElement = function (t) {
-	        if (("audio" === t && "undefined" != typeof Audio ? this.data = new Audio() : this.data = document.createElement(t), null === this.data)) return this.error = new Error("Unsupported element " + t), void this.complete();if (navigator.isCocoonJS) this.data.src = Array.isArray(this.url) ? this.url[0] : this.url;else if (Array.isArray(this.url)) for (var e = 0; e < this.url.length; ++e) this.data.appendChild(this._createSource(t, this.url[e]));else this.data.appendChild(this._createSource(t, this.url));this["is" + t[0].toUpperCase() + t.substring(1)] = !0, this.data.addEventListener("error", this._boundOnError, !1), this.data.addEventListener("load", this._boundComplete, !1), this.data.addEventListener("progress", this._boundOnProgress, !1), this.data.addEventListener("canplaythrough", this._boundComplete, !1), this.data.load();
-	      }, r.prototype._loadXhr = function () {
-	        "string" != typeof this.xhrType && (this.xhrType = this._determineXhrType());var t = this.xhr = new XMLHttpRequest();t.open("GET", this.url, !0), this.xhrType === r.XHR_RESPONSE_TYPE.JSON || this.xhrType === r.XHR_RESPONSE_TYPE.DOCUMENT ? t.responseType = r.XHR_RESPONSE_TYPE.TEXT : t.responseType = this.xhrType, t.addEventListener("error", this._boundXhrOnError, !1), t.addEventListener("abort", this._boundXhrOnAbort, !1), t.addEventListener("progress", this._boundOnProgress, !1), t.addEventListener("load", this._boundXhrOnLoad, !1), t.send();
-	      }, r.prototype._loadXdr = function () {
-	        "string" != typeof this.xhrType && (this.xhrType = this._determineXhrType());var t = this.xhr = new XDomainRequest();t.timeout = 5e3, t.onerror = this._boundXhrOnError, t.ontimeout = this._boundXdrOnTimeout, t.onprogress = this._boundOnProgress, t.onload = this._boundXhrOnLoad, t.open("GET", this.url, !0), setTimeout(function () {
-	          t.send();
-	        }, 0);
-	      }, r.prototype._createSource = function (t, e, n) {
-	        n || (n = t + "/" + e.substr(e.lastIndexOf(".") + 1));var r = document.createElement("source");return r.src = e, r.type = n, r;
-	      }, r.prototype._onError = function (t) {
-	        this.error = new Error("Failed to load element using " + t.target.nodeName), this.complete();
-	      }, r.prototype._onProgress = function (t) {
-	        t && t.lengthComputable && this.emit("progress", this, t.loaded / t.total);
-	      }, r.prototype._xhrOnError = function () {
-	        this.error = new Error(o(this.xhr) + " Request failed. Status: " + this.xhr.status + ', text: "' + this.xhr.statusText + '"'), this.complete();
-	      }, r.prototype._xhrOnAbort = function () {
-	        this.error = new Error(o(this.xhr) + " Request was aborted by the user."), this.complete();
-	      }, r.prototype._xdrOnTimeout = function () {
-	        this.error = new Error(o(this.xhr) + " Request timed out."), this.complete();
-	      }, r.prototype._xhrOnLoad = function () {
-	        var t = this.xhr,
-	            e = void 0 !== t.status ? t.status : 200;if (200 === e || 204 === e || 0 === e && t.responseText.length > 0) if (this.xhrType === r.XHR_RESPONSE_TYPE.TEXT) this.data = t.responseText;else if (this.xhrType === r.XHR_RESPONSE_TYPE.JSON) try {
-	          this.data = JSON.parse(t.responseText), this.isJson = !0;
-	        } catch (n) {
-	          this.error = new Error("Error trying to parse loaded json:", n);
-	        } else if (this.xhrType === r.XHR_RESPONSE_TYPE.DOCUMENT) try {
-	          if (window.DOMParser) {
-	            var o = new DOMParser();this.data = o.parseFromString(t.responseText, "text/xml");
-	          } else {
-	            var i = document.createElement("div");i.innerHTML = t.responseText, this.data = i;
-	          }this.isXml = !0;
-	        } catch (n) {
-	          this.error = new Error("Error trying to parse loaded xml:", n);
-	        } else this.data = t.response || t.responseText;else this.error = new Error("[" + t.status + "]" + t.statusText + ":" + t.responseURL);this.complete();
-	      }, r.prototype._determineCrossOrigin = function (t, e) {
-	        if (0 === t.indexOf("data:")) return "";e = e || window.location, h || (h = document.createElement("a")), h.href = t, t = a.parse(h.href);var n = !t.port && "" === e.port || t.port === e.port;return t.hostname === e.hostname && n && t.protocol === e.protocol ? "" : "anonymous";
-	      }, r.prototype._determineXhrType = function () {
-	        return r._xhrTypeMap[this._getExtension()] || r.XHR_RESPONSE_TYPE.TEXT;
-	      }, r.prototype._determineLoadType = function () {
-	        return r._loadTypeMap[this._getExtension()] || r.LOAD_TYPE.XHR;
-	      }, r.prototype._getExtension = function () {
-	        var t,
-	            e = this.url;if (this.isDataUrl) {
-	          var n = e.indexOf("/");t = e.substring(n + 1, e.indexOf(";", n));
-	        } else {
-	          var r = e.indexOf("?");-1 !== r && (e = e.substring(0, r)), t = e.substring(e.lastIndexOf(".") + 1);
-	        }return t;
-	      }, r.prototype._getMimeFromXhrType = function (t) {
-	        switch (t) {case r.XHR_RESPONSE_TYPE.BUFFER:
-	            return "application/octet-binary";case r.XHR_RESPONSE_TYPE.BLOB:
-	            return "application/blob";case r.XHR_RESPONSE_TYPE.DOCUMENT:
-	            return "application/xml";case r.XHR_RESPONSE_TYPE.JSON:
-	            return "application/json";case r.XHR_RESPONSE_TYPE.DEFAULT:case r.XHR_RESPONSE_TYPE.TEXT:default:
-	            return "text/plain";}
-	      }, r.LOAD_TYPE = { XHR: 1, IMAGE: 2, AUDIO: 3, VIDEO: 4 }, r.XHR_READY_STATE = { UNSENT: 0, OPENED: 1, HEADERS_RECEIVED: 2, LOADING: 3, DONE: 4 }, r.XHR_RESPONSE_TYPE = { DEFAULT: "text", BUFFER: "arraybuffer", BLOB: "blob", DOCUMENT: "document", JSON: "json", TEXT: "text" }, r._loadTypeMap = { gif: r.LOAD_TYPE.IMAGE, png: r.LOAD_TYPE.IMAGE, bmp: r.LOAD_TYPE.IMAGE, jpg: r.LOAD_TYPE.IMAGE, jpeg: r.LOAD_TYPE.IMAGE, tif: r.LOAD_TYPE.IMAGE, tiff: r.LOAD_TYPE.IMAGE, webp: r.LOAD_TYPE.IMAGE, tga: r.LOAD_TYPE.IMAGE }, r._xhrTypeMap = { xhtml: r.XHR_RESPONSE_TYPE.DOCUMENT, html: r.XHR_RESPONSE_TYPE.DOCUMENT, htm: r.XHR_RESPONSE_TYPE.DOCUMENT, xml: r.XHR_RESPONSE_TYPE.DOCUMENT, tmx: r.XHR_RESPONSE_TYPE.DOCUMENT, tsx: r.XHR_RESPONSE_TYPE.DOCUMENT, svg: r.XHR_RESPONSE_TYPE.DOCUMENT, gif: r.XHR_RESPONSE_TYPE.BLOB, png: r.XHR_RESPONSE_TYPE.BLOB, bmp: r.XHR_RESPONSE_TYPE.BLOB, jpg: r.XHR_RESPONSE_TYPE.BLOB, jpeg: r.XHR_RESPONSE_TYPE.BLOB, tif: r.XHR_RESPONSE_TYPE.BLOB, tiff: r.XHR_RESPONSE_TYPE.BLOB, webp: r.XHR_RESPONSE_TYPE.BLOB, tga: r.XHR_RESPONSE_TYPE.BLOB, json: r.XHR_RESPONSE_TYPE.JSON, text: r.XHR_RESPONSE_TYPE.TEXT, txt: r.XHR_RESPONSE_TYPE.TEXT }, r.setExtensionLoadType = function (t, e) {
-	        i(r._loadTypeMap, t, e);
-	      }, r.setExtensionXhrType = function (t, e) {
-	        i(r._xhrTypeMap, t, e);
-	      };
-	    }, { eventemitter3: 2, url: 8 }], 11: [function (t, e, n) {
-	      e.exports = { _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", encodeBinary: function encodeBinary(t) {
-	          for (var e, n = "", r = new Array(4), o = 0, i = 0, s = 0; o < t.length;) {
-	            for (e = new Array(3), i = 0; i < e.length; i++) o < t.length ? e[i] = 255 & t.charCodeAt(o++) : e[i] = 0;switch ((r[0] = e[0] >> 2, r[1] = (3 & e[0]) << 4 | e[1] >> 4, r[2] = (15 & e[1]) << 2 | e[2] >> 6, r[3] = 63 & e[2], s = o - (t.length - 1))) {case 2:
-	                r[3] = 64, r[2] = 64;break;case 1:
-	                r[3] = 64;}for (i = 0; i < r.length; i++) n += this._keyStr.charAt(r[i]);
-	          }return n;
-	        } };
-	    }, {}], 12: [function (t, e, n) {
-	      e.exports = t("./Loader"), e.exports.Resource = t("./Resource"), e.exports.middleware = { caching: { memory: t("./middlewares/caching/memory") }, parsing: { blob: t("./middlewares/parsing/blob") } };
-	    }, { "./Loader": 9, "./Resource": 10, "./middlewares/caching/memory": 13, "./middlewares/parsing/blob": 14 }], 13: [function (t, e, n) {
-	      var r = {};e.exports = function () {
-	        return function (t, e) {
-	          r[t.url] ? (t.data = r[t.url], t.complete()) : (t.once("complete", function () {
-	            r[this.url] = this.data;
-	          }), e());
-	        };
-	      };
-	    }, {}], 14: [function (t, e, n) {
-	      var r = t("../../Resource"),
-	          o = t("../../b64");window.URL = window.URL || window.webkitURL, e.exports = function () {
-	        return function (t, e) {
-	          if (!t.data) return e();if (t.xhr && t.xhrType === r.XHR_RESPONSE_TYPE.BLOB) if (window.Blob && "string" != typeof t.data) {
-	            if (0 === t.data.type.indexOf("image")) {
-	              var n = URL.createObjectURL(t.data);t.blob = t.data, t.data = new Image(), t.data.src = n, t.isImage = !0, t.data.onload = function () {
-	                URL.revokeObjectURL(n), t.data.onload = null, e();
-	              };
-	            }
-	          } else {
-	            var i = t.xhr.getResponseHeader("content-type");i && 0 === i.indexOf("image") && (t.data = new Image(), t.data.src = "data:" + i + ";base64," + o.encodeBinary(t.xhr.responseText), t.isImage = !0, t.data.onload = function () {
-	              t.data.onload = null, e();
-	            });
-	          } else e();
-	        };
-	      };
-	    }, { "../../Resource": 10, "../../b64": 11 }] }, {}, [12])(12);
-	});
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(198).setImmediate, (function() { return this; }())))
+	module.exports.Resource = __webpack_require__(207);
+
+	module.exports.middleware = {
+	    caching: {
+	        memory: __webpack_require__(209)
+	    },
+	    parsing: {
+	        blob: __webpack_require__(210)
+	    }
+	};
+
 
 /***/ },
 /* 198 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var async       = __webpack_require__(199),
+	    urlParser   = __webpack_require__(201),
+	    Resource    = __webpack_require__(207),
+	    EventEmitter = __webpack_require__(208);
+
+	/**
+	 * Manages the state and loading of multiple resources to load.
+	 *
+	 * @class
+	 * @param [baseUrl=''] {string} The base url for all resources loaded by this loader.
+	 * @param [concurrency=10] {number} The number of resources to load concurrently.
+	 */
+	function Loader(baseUrl, concurrency) {
+	    EventEmitter.call(this);
+
+	    concurrency = concurrency || 10;
+
+	    /**
+	     * The base url for all resources loaded by this loader.
+	     *
+	     * @member {string}
+	     */
+	    this.baseUrl = baseUrl || '';
+
+	    /**
+	     * The progress percent of the loader going through the queue.
+	     *
+	     * @member {number}
+	     */
+	    this.progress = 0;
+
+	    /**
+	     * Loading state of the loader, true if it is currently loading resources.
+	     *
+	     * @member {boolean}
+	     */
+	    this.loading = false;
+
+	    /**
+	     * The percentage of total progress that a single resource represents.
+	     *
+	     * @member {number}
+	     */
+	    this._progressChunk = 0;
+
+	    /**
+	     * The middleware to run before loading each resource.
+	     *
+	     * @member {function[]}
+	     */
+	    this._beforeMiddleware = [];
+
+	    /**
+	     * The middleware to run after loading each resource.
+	     *
+	     * @member {function[]}
+	     */
+	    this._afterMiddleware = [];
+
+	    /**
+	     * The `_loadResource` function bound with this object context.
+	     *
+	     * @private
+	     * @member {function}
+	     */
+	    this._boundLoadResource = this._loadResource.bind(this);
+
+	    /**
+	     * The `_onLoad` function bound with this object context.
+	     *
+	     * @private
+	     * @member {function}
+	     */
+	    this._boundOnLoad = this._onLoad.bind(this);
+
+	    /**
+	     * The resource buffer that fills until `load` is called to start loading resources.
+	     *
+	     * @private
+	     * @member {Resource[]}
+	     */
+	    this._buffer = [];
+
+	    /**
+	     * Used to track load completion.
+	     *
+	     * @private
+	     * @member {number}
+	     */
+	    this._numToLoad = 0;
+
+	    /**
+	     * The resources waiting to be loaded.
+	     *
+	     * @private
+	     * @member {Resource[]}
+	     */
+	    this._queue = async.queue(this._boundLoadResource, concurrency);
+
+	    /**
+	     * All the resources for this loader keyed by name.
+	     *
+	     * @member {object<string, Resource>}
+	     */
+	    this.resources = {};
+
+	    /**
+	     * Emitted once per loaded or errored resource.
+	     *
+	     * @event progress
+	     * @memberof Loader#
+	     */
+
+	    /**
+	     * Emitted once per errored resource.
+	     *
+	     * @event error
+	     * @memberof Loader#
+	     */
+
+	    /**
+	     * Emitted once per loaded resource.
+	     *
+	     * @event load
+	     * @memberof Loader#
+	     */
+
+	    /**
+	     * Emitted when the loader begins to process the queue.
+	     *
+	     * @event start
+	     * @memberof Loader#
+	     */
+
+	    /**
+	     * Emitted when the queued resources all load.
+	     *
+	     * @event complete
+	     * @memberof Loader#
+	     */
+	}
+
+	Loader.prototype = Object.create(EventEmitter.prototype);
+	Loader.prototype.constructor = Loader;
+	module.exports = Loader;
+
+	/**
+	 * Adds a resource (or multiple resources) to the loader queue.
+	 *
+	 * This function can take a wide variety of different parameters. The only thing that is always
+	 * required the url to load. All the following will work:
+	 *
+	 * ```js
+	 * loader
+	 *     // normal param syntax
+	 *     .add('key', 'http://...', function () {})
+	 *     .add('http://...', function () {})
+	 *     .add('http://...')
+	 *
+	 *     // object syntax
+	 *     .add({
+	 *         name: 'key2',
+	 *         url: 'http://...'
+	 *     }, function () {})
+	 *     .add({
+	 *         url: 'http://...'
+	 *     }, function () {})
+	 *     .add({
+	 *         name: 'key3',
+	 *         url: 'http://...'
+	 *         onComplete: function () {}
+	 *     })
+	 *     .add({
+	 *         url: 'https://...',
+	 *         onComplete: function () {},
+	 *         crossOrigin: true
+	 *     })
+	 *
+	 *     // you can also pass an array of objects or urls or both
+	 *     .add([
+	 *         { name: 'key4', url: 'http://...', onComplete: function () {} },
+	 *         { url: 'http://...', onComplete: function () {} },
+	 *         'http://...'
+	 *     ]);
+	 * ```
+	 *
+	 * @alias enqueue
+	 * @param [name] {string} The name of the resource to load, if not passed the url is used.
+	 * @param url {string} The url for this resource, relative to the baseUrl of this loader.
+	 * @param [options] {object} The options for the load.
+	 * @param [options.crossOrigin] {boolean} Is this request cross-origin? Default is to determine automatically.
+	 * @param [options.loadType=Resource.LOAD_TYPE.XHR] {Resource.XHR_LOAD_TYPE} How should this resource be loaded?
+	 * @param [options.xhrType=Resource.XHR_RESPONSE_TYPE.DEFAULT] {Resource.XHR_RESPONSE_TYPE} How should the data being
+	 *      loaded be interpreted when using XHR?
+	 * @param [callback] {function} Function to call when this specific resource completes loading.
+	 * @return {Loader}
+	 */
+	Loader.prototype.add = Loader.prototype.enqueue = function (name, url, options, cb) {
+	    // special case of an array of objects or urls
+	    if (Array.isArray(name)) {
+	        for (var i = 0; i < name.length; ++i) {
+	            this.add(name[i]);
+	        }
+
+	        return this;
+	    }
+
+	    // if an object is passed instead of params
+	    if (typeof name === 'object') {
+	        cb = url || name.callback || name.onComplete;
+	        options = name;
+	        url = name.url;
+	        name = name.name || name.key || name.url;
+	    }
+
+	    // case where no name is passed shift all args over by one.
+	    if (typeof url !== 'string') {
+	        cb = options;
+	        options = url;
+	        url = name;
+	    }
+
+	    // now that we shifted make sure we have a proper url.
+	    if (typeof url !== 'string') {
+	        throw new Error('No url passed to add resource to loader.');
+	    }
+
+	    // options are optional so people might pass a function and no options
+	    if (typeof options === 'function') {
+	        cb = options;
+	        options = null;
+	    }
+
+	    // check if resource already exists.
+	    if (this.resources[name]) {
+	        throw new Error('Resource with name "' + name + '" already exists.');
+	    }
+
+	    // add base url if this isn't an absolute url
+	    url = this._handleBaseUrl(url);
+
+	    // create the store the resource
+	    this.resources[name] = new Resource(name, url, options);
+
+	    if (typeof cb === 'function') {
+	        this.resources[name].once('afterMiddleware', cb);
+	    }
+
+	    this._numToLoad++;
+
+	    // if already loading add it to the worker queue
+	    if (this._queue.started) {
+	        this._queue.push(this.resources[name]);
+	        this._progressChunk = (100 - this.progress) / (this._queue.length() + this._queue.running());
+	    }
+	    // otherwise buffer it to be added to the queue later
+	    else {
+	        this._buffer.push(this.resources[name]);
+	        this._progressChunk = 100 / this._buffer.length;
+	    }
+
+	    return this;
+	};
+
+	Loader.prototype._handleBaseUrl = function (url) {
+	    var parsedUrl = urlParser.parse(url);
+
+	    // absolute url, just use it as is.
+	    if (parsedUrl.protocol || parsedUrl.pathname.indexOf('//') === 0) {
+	        return url;
+	    }
+
+	    // if baseUrl doesn't end in slash and url doesn't start with slash, then add a slash inbetween
+	    if (
+	        this.baseUrl.length &&
+	        this.baseUrl.lastIndexOf('/') !== this.baseUrl.length - 1 &&
+	        url.lastIndexOf('/') !== url.length - 1
+	    ) {
+	        return this.baseUrl + '/' + url;
+	    }
+	    else {
+	        return this.baseUrl + url;
+	    }
+	};
+
+
+	/**
+	 * Sets up a middleware function that will run *before* the
+	 * resource is loaded.
+	 *
+	 * @alias pre
+	 * @param middleware {function} The middleware function to register.
+	 * @return {Loader}
+	 */
+	Loader.prototype.before = Loader.prototype.pre = function (fn) {
+	    this._beforeMiddleware.push(fn);
+
+	    return this;
+	};
+
+	/**
+	 * Sets up a middleware function that will run *after* the
+	 * resource is loaded.
+	 *
+	 * @alias use
+	 * @param middleware {function} The middleware function to register.
+	 * @return {Loader}
+	 */
+	Loader.prototype.after = Loader.prototype.use = function (fn) {
+	    this._afterMiddleware.push(fn);
+
+	    return this;
+	};
+
+	/**
+	 * Resets the queue of the loader to prepare for a new load.
+	 *
+	 * @return {Loader}
+	 */
+	Loader.prototype.reset = function () {
+	    // this.baseUrl = baseUrl || '';
+
+	    this.progress = 0;
+
+	    this.loading = false;
+
+	    this._progressChunk = 0;
+
+	    // this._beforeMiddleware.length = 0;
+	    // this._afterMiddleware.length = 0;
+
+	    this._buffer.length = 0;
+
+	    this._numToLoad = 0;
+
+	    this._queue.kill();
+	    this._queue.started = false;
+
+	    this.resources = {};
+	};
+
+	/**
+	 * Starts loading the queued resources.
+	 *
+	 * @fires start
+	 * @param [callback] {function} Optional callback that will be bound to the `complete` event.
+	 * @return {Loader}
+	 */
+	Loader.prototype.load = function (cb) {
+	    // register complete callback if they pass one
+	    if (typeof cb === 'function') {
+	        this.once('complete', cb);
+	    }
+
+	    // if the queue has already started we are done here
+	    if (this._queue.started) {
+	        return this;
+	    }
+
+	    // notify of start
+	    this.emit('start', this);
+
+	    // start the internal queue
+	    for (var i = 0; i < this._buffer.length; ++i) {
+	        this._queue.push(this._buffer[i]);
+	    }
+
+	    // empty the buffer
+	    this._buffer.length = 0;
+
+	    return this;
+	};
+
+	/**
+	 * Loads a single resource.
+	 *
+	 * @fires progress
+	 * @private
+	 */
+	Loader.prototype._loadResource = function (resource, dequeue) {
+	    var self = this;
+
+	    resource._dequeue = dequeue;
+
+	    this._runMiddleware(resource, this._beforeMiddleware, function () {
+	        // resource.on('progress', self.emit.bind(self, 'progress'));
+
+	        resource.load(self._boundOnLoad);
+	    });
+	};
+
+	/**
+	 * Called once each resource has loaded.
+	 *
+	 * @fires complete
+	 * @private
+	 */
+	Loader.prototype._onComplete = function () {
+	    this.emit('complete', this, this.resources);
+	};
+
+	/**
+	 * Called each time a resources is loaded.
+	 *
+	 * @fires progress
+	 * @fires error
+	 * @fires load
+	 * @private
+	 */
+	Loader.prototype._onLoad = function (resource) {
+	    this.progress += this._progressChunk;
+
+	    this.emit('progress', this, resource);
+
+	    // run middleware, this *must* happen before dequeue so sub-assets get added properly
+	    this._runMiddleware(resource, this._afterMiddleware, function () {
+	        resource.emit('afterMiddleware', resource);
+
+	        this._numToLoad--;
+
+	        // do completion check
+	        if (this._numToLoad === 0) {
+	            this.progress = 100;
+	            this._onComplete();
+	        }
+	        
+	        if (resource.error) {
+	            this.emit('error', resource.error, this, resource);
+	        }
+	        else {
+	            this.emit('load', this, resource);
+	        }
+	    });
+	    
+
+
+	    // remove this resource from the async queue
+	    resource._dequeue();
+	};
+
+	/**
+	 * Run middleware functions on a resource.
+	 *
+	 * @private
+	 */
+	Loader.prototype._runMiddleware = function (resource, fns, cb) {
+	    var self = this;
+
+	    async.eachSeries(fns, function (fn, next) {
+	        fn.call(self, resource, next);
+	    }, cb.bind(this, resource));
+	};
+
+	Loader.LOAD_TYPE = Resource.LOAD_TYPE;
+	Loader.XHR_READY_STATE = Resource.XHR_READY_STATE;
+	Loader.XHR_RESPONSE_TYPE = Resource.XHR_RESPONSE_TYPE;
+
+
+/***/ },
+/* 199 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, setImmediate) {/*!
+	 * async
+	 * https://github.com/caolan/async
+	 *
+	 * Copyright 2010-2014 Caolan McMahon
+	 * Released under the MIT license
+	 */
+	/*jshint onevar: false, indent:4 */
+	/*global setImmediate: false, setTimeout: false, console: false */
+	(function () {
+
+	    var async = {};
+
+	    // global on the server, window in the browser
+	    var root, previous_async;
+
+	    root = this;
+	    if (root != null) {
+	      previous_async = root.async;
+	    }
+
+	    async.noConflict = function () {
+	        root.async = previous_async;
+	        return async;
+	    };
+
+	    function only_once(fn) {
+	        var called = false;
+	        return function() {
+	            if (called) throw new Error("Callback was already called.");
+	            called = true;
+	            fn.apply(root, arguments);
+	        }
+	    }
+
+	    //// cross-browser compatiblity functions ////
+
+	    var _toString = Object.prototype.toString;
+
+	    var _isArray = Array.isArray || function (obj) {
+	        return _toString.call(obj) === '[object Array]';
+	    };
+
+	    var _each = function (arr, iterator) {
+	        for (var i = 0; i < arr.length; i += 1) {
+	            iterator(arr[i], i, arr);
+	        }
+	    };
+
+	    var _map = function (arr, iterator) {
+	        if (arr.map) {
+	            return arr.map(iterator);
+	        }
+	        var results = [];
+	        _each(arr, function (x, i, a) {
+	            results.push(iterator(x, i, a));
+	        });
+	        return results;
+	    };
+
+	    var _reduce = function (arr, iterator, memo) {
+	        if (arr.reduce) {
+	            return arr.reduce(iterator, memo);
+	        }
+	        _each(arr, function (x, i, a) {
+	            memo = iterator(memo, x, i, a);
+	        });
+	        return memo;
+	    };
+
+	    var _keys = function (obj) {
+	        if (Object.keys) {
+	            return Object.keys(obj);
+	        }
+	        var keys = [];
+	        for (var k in obj) {
+	            if (obj.hasOwnProperty(k)) {
+	                keys.push(k);
+	            }
+	        }
+	        return keys;
+	    };
+
+	    //// exported async module functions ////
+
+	    //// nextTick implementation with browser-compatible fallback ////
+	    if (typeof process === 'undefined' || !(process.nextTick)) {
+	        if (typeof setImmediate === 'function') {
+	            async.nextTick = function (fn) {
+	                // not a direct alias for IE10 compatibility
+	                setImmediate(fn);
+	            };
+	            async.setImmediate = async.nextTick;
+	        }
+	        else {
+	            async.nextTick = function (fn) {
+	                setTimeout(fn, 0);
+	            };
+	            async.setImmediate = async.nextTick;
+	        }
+	    }
+	    else {
+	        async.nextTick = process.nextTick;
+	        if (typeof setImmediate !== 'undefined') {
+	            async.setImmediate = function (fn) {
+	              // not a direct alias for IE10 compatibility
+	              setImmediate(fn);
+	            };
+	        }
+	        else {
+	            async.setImmediate = async.nextTick;
+	        }
+	    }
+
+	    async.each = function (arr, iterator, callback) {
+	        callback = callback || function () {};
+	        if (!arr.length) {
+	            return callback();
+	        }
+	        var completed = 0;
+	        _each(arr, function (x) {
+	            iterator(x, only_once(done) );
+	        });
+	        function done(err) {
+	          if (err) {
+	              callback(err);
+	              callback = function () {};
+	          }
+	          else {
+	              completed += 1;
+	              if (completed >= arr.length) {
+	                  callback();
+	              }
+	          }
+	        }
+	    };
+	    async.forEach = async.each;
+
+	    async.eachSeries = function (arr, iterator, callback) {
+	        callback = callback || function () {};
+	        if (!arr.length) {
+	            return callback();
+	        }
+	        var completed = 0;
+	        var iterate = function () {
+	            iterator(arr[completed], function (err) {
+	                if (err) {
+	                    callback(err);
+	                    callback = function () {};
+	                }
+	                else {
+	                    completed += 1;
+	                    if (completed >= arr.length) {
+	                        callback();
+	                    }
+	                    else {
+	                        iterate();
+	                    }
+	                }
+	            });
+	        };
+	        iterate();
+	    };
+	    async.forEachSeries = async.eachSeries;
+
+	    async.eachLimit = function (arr, limit, iterator, callback) {
+	        var fn = _eachLimit(limit);
+	        fn.apply(null, [arr, iterator, callback]);
+	    };
+	    async.forEachLimit = async.eachLimit;
+
+	    var _eachLimit = function (limit) {
+
+	        return function (arr, iterator, callback) {
+	            callback = callback || function () {};
+	            if (!arr.length || limit <= 0) {
+	                return callback();
+	            }
+	            var completed = 0;
+	            var started = 0;
+	            var running = 0;
+
+	            (function replenish () {
+	                if (completed >= arr.length) {
+	                    return callback();
+	                }
+
+	                while (running < limit && started < arr.length) {
+	                    started += 1;
+	                    running += 1;
+	                    iterator(arr[started - 1], function (err) {
+	                        if (err) {
+	                            callback(err);
+	                            callback = function () {};
+	                        }
+	                        else {
+	                            completed += 1;
+	                            running -= 1;
+	                            if (completed >= arr.length) {
+	                                callback();
+	                            }
+	                            else {
+	                                replenish();
+	                            }
+	                        }
+	                    });
+	                }
+	            })();
+	        };
+	    };
+
+
+	    var doParallel = function (fn) {
+	        return function () {
+	            var args = Array.prototype.slice.call(arguments);
+	            return fn.apply(null, [async.each].concat(args));
+	        };
+	    };
+	    var doParallelLimit = function(limit, fn) {
+	        return function () {
+	            var args = Array.prototype.slice.call(arguments);
+	            return fn.apply(null, [_eachLimit(limit)].concat(args));
+	        };
+	    };
+	    var doSeries = function (fn) {
+	        return function () {
+	            var args = Array.prototype.slice.call(arguments);
+	            return fn.apply(null, [async.eachSeries].concat(args));
+	        };
+	    };
+
+
+	    var _asyncMap = function (eachfn, arr, iterator, callback) {
+	        arr = _map(arr, function (x, i) {
+	            return {index: i, value: x};
+	        });
+	        if (!callback) {
+	            eachfn(arr, function (x, callback) {
+	                iterator(x.value, function (err) {
+	                    callback(err);
+	                });
+	            });
+	        } else {
+	            var results = [];
+	            eachfn(arr, function (x, callback) {
+	                iterator(x.value, function (err, v) {
+	                    results[x.index] = v;
+	                    callback(err);
+	                });
+	            }, function (err) {
+	                callback(err, results);
+	            });
+	        }
+	    };
+	    async.map = doParallel(_asyncMap);
+	    async.mapSeries = doSeries(_asyncMap);
+	    async.mapLimit = function (arr, limit, iterator, callback) {
+	        return _mapLimit(limit)(arr, iterator, callback);
+	    };
+
+	    var _mapLimit = function(limit) {
+	        return doParallelLimit(limit, _asyncMap);
+	    };
+
+	    // reduce only has a series version, as doing reduce in parallel won't
+	    // work in many situations.
+	    async.reduce = function (arr, memo, iterator, callback) {
+	        async.eachSeries(arr, function (x, callback) {
+	            iterator(memo, x, function (err, v) {
+	                memo = v;
+	                callback(err);
+	            });
+	        }, function (err) {
+	            callback(err, memo);
+	        });
+	    };
+	    // inject alias
+	    async.inject = async.reduce;
+	    // foldl alias
+	    async.foldl = async.reduce;
+
+	    async.reduceRight = function (arr, memo, iterator, callback) {
+	        var reversed = _map(arr, function (x) {
+	            return x;
+	        }).reverse();
+	        async.reduce(reversed, memo, iterator, callback);
+	    };
+	    // foldr alias
+	    async.foldr = async.reduceRight;
+
+	    var _filter = function (eachfn, arr, iterator, callback) {
+	        var results = [];
+	        arr = _map(arr, function (x, i) {
+	            return {index: i, value: x};
+	        });
+	        eachfn(arr, function (x, callback) {
+	            iterator(x.value, function (v) {
+	                if (v) {
+	                    results.push(x);
+	                }
+	                callback();
+	            });
+	        }, function (err) {
+	            callback(_map(results.sort(function (a, b) {
+	                return a.index - b.index;
+	            }), function (x) {
+	                return x.value;
+	            }));
+	        });
+	    };
+	    async.filter = doParallel(_filter);
+	    async.filterSeries = doSeries(_filter);
+	    // select alias
+	    async.select = async.filter;
+	    async.selectSeries = async.filterSeries;
+
+	    var _reject = function (eachfn, arr, iterator, callback) {
+	        var results = [];
+	        arr = _map(arr, function (x, i) {
+	            return {index: i, value: x};
+	        });
+	        eachfn(arr, function (x, callback) {
+	            iterator(x.value, function (v) {
+	                if (!v) {
+	                    results.push(x);
+	                }
+	                callback();
+	            });
+	        }, function (err) {
+	            callback(_map(results.sort(function (a, b) {
+	                return a.index - b.index;
+	            }), function (x) {
+	                return x.value;
+	            }));
+	        });
+	    };
+	    async.reject = doParallel(_reject);
+	    async.rejectSeries = doSeries(_reject);
+
+	    var _detect = function (eachfn, arr, iterator, main_callback) {
+	        eachfn(arr, function (x, callback) {
+	            iterator(x, function (result) {
+	                if (result) {
+	                    main_callback(x);
+	                    main_callback = function () {};
+	                }
+	                else {
+	                    callback();
+	                }
+	            });
+	        }, function (err) {
+	            main_callback();
+	        });
+	    };
+	    async.detect = doParallel(_detect);
+	    async.detectSeries = doSeries(_detect);
+
+	    async.some = function (arr, iterator, main_callback) {
+	        async.each(arr, function (x, callback) {
+	            iterator(x, function (v) {
+	                if (v) {
+	                    main_callback(true);
+	                    main_callback = function () {};
+	                }
+	                callback();
+	            });
+	        }, function (err) {
+	            main_callback(false);
+	        });
+	    };
+	    // any alias
+	    async.any = async.some;
+
+	    async.every = function (arr, iterator, main_callback) {
+	        async.each(arr, function (x, callback) {
+	            iterator(x, function (v) {
+	                if (!v) {
+	                    main_callback(false);
+	                    main_callback = function () {};
+	                }
+	                callback();
+	            });
+	        }, function (err) {
+	            main_callback(true);
+	        });
+	    };
+	    // all alias
+	    async.all = async.every;
+
+	    async.sortBy = function (arr, iterator, callback) {
+	        async.map(arr, function (x, callback) {
+	            iterator(x, function (err, criteria) {
+	                if (err) {
+	                    callback(err);
+	                }
+	                else {
+	                    callback(null, {value: x, criteria: criteria});
+	                }
+	            });
+	        }, function (err, results) {
+	            if (err) {
+	                return callback(err);
+	            }
+	            else {
+	                var fn = function (left, right) {
+	                    var a = left.criteria, b = right.criteria;
+	                    return a < b ? -1 : a > b ? 1 : 0;
+	                };
+	                callback(null, _map(results.sort(fn), function (x) {
+	                    return x.value;
+	                }));
+	            }
+	        });
+	    };
+
+	    async.auto = function (tasks, callback) {
+	        callback = callback || function () {};
+	        var keys = _keys(tasks);
+	        var remainingTasks = keys.length
+	        if (!remainingTasks) {
+	            return callback();
+	        }
+
+	        var results = {};
+
+	        var listeners = [];
+	        var addListener = function (fn) {
+	            listeners.unshift(fn);
+	        };
+	        var removeListener = function (fn) {
+	            for (var i = 0; i < listeners.length; i += 1) {
+	                if (listeners[i] === fn) {
+	                    listeners.splice(i, 1);
+	                    return;
+	                }
+	            }
+	        };
+	        var taskComplete = function () {
+	            remainingTasks--
+	            _each(listeners.slice(0), function (fn) {
+	                fn();
+	            });
+	        };
+
+	        addListener(function () {
+	            if (!remainingTasks) {
+	                var theCallback = callback;
+	                // prevent final callback from calling itself if it errors
+	                callback = function () {};
+
+	                theCallback(null, results);
+	            }
+	        });
+
+	        _each(keys, function (k) {
+	            var task = _isArray(tasks[k]) ? tasks[k]: [tasks[k]];
+	            var taskCallback = function (err) {
+	                var args = Array.prototype.slice.call(arguments, 1);
+	                if (args.length <= 1) {
+	                    args = args[0];
+	                }
+	                if (err) {
+	                    var safeResults = {};
+	                    _each(_keys(results), function(rkey) {
+	                        safeResults[rkey] = results[rkey];
+	                    });
+	                    safeResults[k] = args;
+	                    callback(err, safeResults);
+	                    // stop subsequent errors hitting callback multiple times
+	                    callback = function () {};
+	                }
+	                else {
+	                    results[k] = args;
+	                    async.setImmediate(taskComplete);
+	                }
+	            };
+	            var requires = task.slice(0, Math.abs(task.length - 1)) || [];
+	            var ready = function () {
+	                return _reduce(requires, function (a, x) {
+	                    return (a && results.hasOwnProperty(x));
+	                }, true) && !results.hasOwnProperty(k);
+	            };
+	            if (ready()) {
+	                task[task.length - 1](taskCallback, results);
+	            }
+	            else {
+	                var listener = function () {
+	                    if (ready()) {
+	                        removeListener(listener);
+	                        task[task.length - 1](taskCallback, results);
+	                    }
+	                };
+	                addListener(listener);
+	            }
+	        });
+	    };
+
+	    async.retry = function(times, task, callback) {
+	        var DEFAULT_TIMES = 5;
+	        var attempts = [];
+	        // Use defaults if times not passed
+	        if (typeof times === 'function') {
+	            callback = task;
+	            task = times;
+	            times = DEFAULT_TIMES;
+	        }
+	        // Make sure times is a number
+	        times = parseInt(times, 10) || DEFAULT_TIMES;
+	        var wrappedTask = function(wrappedCallback, wrappedResults) {
+	            var retryAttempt = function(task, finalAttempt) {
+	                return function(seriesCallback) {
+	                    task(function(err, result){
+	                        seriesCallback(!err || finalAttempt, {err: err, result: result});
+	                    }, wrappedResults);
+	                };
+	            };
+	            while (times) {
+	                attempts.push(retryAttempt(task, !(times-=1)));
+	            }
+	            async.series(attempts, function(done, data){
+	                data = data[data.length - 1];
+	                (wrappedCallback || callback)(data.err, data.result);
+	            });
+	        }
+	        // If a callback is passed, run this as a controll flow
+	        return callback ? wrappedTask() : wrappedTask
+	    };
+
+	    async.waterfall = function (tasks, callback) {
+	        callback = callback || function () {};
+	        if (!_isArray(tasks)) {
+	          var err = new Error('First argument to waterfall must be an array of functions');
+	          return callback(err);
+	        }
+	        if (!tasks.length) {
+	            return callback();
+	        }
+	        var wrapIterator = function (iterator) {
+	            return function (err) {
+	                if (err) {
+	                    callback.apply(null, arguments);
+	                    callback = function () {};
+	                }
+	                else {
+	                    var args = Array.prototype.slice.call(arguments, 1);
+	                    var next = iterator.next();
+	                    if (next) {
+	                        args.push(wrapIterator(next));
+	                    }
+	                    else {
+	                        args.push(callback);
+	                    }
+	                    async.setImmediate(function () {
+	                        iterator.apply(null, args);
+	                    });
+	                }
+	            };
+	        };
+	        wrapIterator(async.iterator(tasks))();
+	    };
+
+	    var _parallel = function(eachfn, tasks, callback) {
+	        callback = callback || function () {};
+	        if (_isArray(tasks)) {
+	            eachfn.map(tasks, function (fn, callback) {
+	                if (fn) {
+	                    fn(function (err) {
+	                        var args = Array.prototype.slice.call(arguments, 1);
+	                        if (args.length <= 1) {
+	                            args = args[0];
+	                        }
+	                        callback.call(null, err, args);
+	                    });
+	                }
+	            }, callback);
+	        }
+	        else {
+	            var results = {};
+	            eachfn.each(_keys(tasks), function (k, callback) {
+	                tasks[k](function (err) {
+	                    var args = Array.prototype.slice.call(arguments, 1);
+	                    if (args.length <= 1) {
+	                        args = args[0];
+	                    }
+	                    results[k] = args;
+	                    callback(err);
+	                });
+	            }, function (err) {
+	                callback(err, results);
+	            });
+	        }
+	    };
+
+	    async.parallel = function (tasks, callback) {
+	        _parallel({ map: async.map, each: async.each }, tasks, callback);
+	    };
+
+	    async.parallelLimit = function(tasks, limit, callback) {
+	        _parallel({ map: _mapLimit(limit), each: _eachLimit(limit) }, tasks, callback);
+	    };
+
+	    async.series = function (tasks, callback) {
+	        callback = callback || function () {};
+	        if (_isArray(tasks)) {
+	            async.mapSeries(tasks, function (fn, callback) {
+	                if (fn) {
+	                    fn(function (err) {
+	                        var args = Array.prototype.slice.call(arguments, 1);
+	                        if (args.length <= 1) {
+	                            args = args[0];
+	                        }
+	                        callback.call(null, err, args);
+	                    });
+	                }
+	            }, callback);
+	        }
+	        else {
+	            var results = {};
+	            async.eachSeries(_keys(tasks), function (k, callback) {
+	                tasks[k](function (err) {
+	                    var args = Array.prototype.slice.call(arguments, 1);
+	                    if (args.length <= 1) {
+	                        args = args[0];
+	                    }
+	                    results[k] = args;
+	                    callback(err);
+	                });
+	            }, function (err) {
+	                callback(err, results);
+	            });
+	        }
+	    };
+
+	    async.iterator = function (tasks) {
+	        var makeCallback = function (index) {
+	            var fn = function () {
+	                if (tasks.length) {
+	                    tasks[index].apply(null, arguments);
+	                }
+	                return fn.next();
+	            };
+	            fn.next = function () {
+	                return (index < tasks.length - 1) ? makeCallback(index + 1): null;
+	            };
+	            return fn;
+	        };
+	        return makeCallback(0);
+	    };
+
+	    async.apply = function (fn) {
+	        var args = Array.prototype.slice.call(arguments, 1);
+	        return function () {
+	            return fn.apply(
+	                null, args.concat(Array.prototype.slice.call(arguments))
+	            );
+	        };
+	    };
+
+	    var _concat = function (eachfn, arr, fn, callback) {
+	        var r = [];
+	        eachfn(arr, function (x, cb) {
+	            fn(x, function (err, y) {
+	                r = r.concat(y || []);
+	                cb(err);
+	            });
+	        }, function (err) {
+	            callback(err, r);
+	        });
+	    };
+	    async.concat = doParallel(_concat);
+	    async.concatSeries = doSeries(_concat);
+
+	    async.whilst = function (test, iterator, callback) {
+	        if (test()) {
+	            iterator(function (err) {
+	                if (err) {
+	                    return callback(err);
+	                }
+	                async.whilst(test, iterator, callback);
+	            });
+	        }
+	        else {
+	            callback();
+	        }
+	    };
+
+	    async.doWhilst = function (iterator, test, callback) {
+	        iterator(function (err) {
+	            if (err) {
+	                return callback(err);
+	            }
+	            var args = Array.prototype.slice.call(arguments, 1);
+	            if (test.apply(null, args)) {
+	                async.doWhilst(iterator, test, callback);
+	            }
+	            else {
+	                callback();
+	            }
+	        });
+	    };
+
+	    async.until = function (test, iterator, callback) {
+	        if (!test()) {
+	            iterator(function (err) {
+	                if (err) {
+	                    return callback(err);
+	                }
+	                async.until(test, iterator, callback);
+	            });
+	        }
+	        else {
+	            callback();
+	        }
+	    };
+
+	    async.doUntil = function (iterator, test, callback) {
+	        iterator(function (err) {
+	            if (err) {
+	                return callback(err);
+	            }
+	            var args = Array.prototype.slice.call(arguments, 1);
+	            if (!test.apply(null, args)) {
+	                async.doUntil(iterator, test, callback);
+	            }
+	            else {
+	                callback();
+	            }
+	        });
+	    };
+
+	    async.queue = function (worker, concurrency) {
+	        if (concurrency === undefined) {
+	            concurrency = 1;
+	        }
+	        function _insert(q, data, pos, callback) {
+	          if (!q.started){
+	            q.started = true;
+	          }
+	          if (!_isArray(data)) {
+	              data = [data];
+	          }
+	          if(data.length == 0) {
+	             // call drain immediately if there are no tasks
+	             return async.setImmediate(function() {
+	                 if (q.drain) {
+	                     q.drain();
+	                 }
+	             });
+	          }
+	          _each(data, function(task) {
+	              var item = {
+	                  data: task,
+	                  callback: typeof callback === 'function' ? callback : null
+	              };
+
+	              if (pos) {
+	                q.tasks.unshift(item);
+	              } else {
+	                q.tasks.push(item);
+	              }
+
+	              if (q.saturated && q.tasks.length === q.concurrency) {
+	                  q.saturated();
+	              }
+	              async.setImmediate(q.process);
+	          });
+	        }
+
+	        var workers = 0;
+	        var q = {
+	            tasks: [],
+	            concurrency: concurrency,
+	            saturated: null,
+	            empty: null,
+	            drain: null,
+	            started: false,
+	            paused: false,
+	            push: function (data, callback) {
+	              _insert(q, data, false, callback);
+	            },
+	            kill: function () {
+	              q.drain = null;
+	              q.tasks = [];
+	            },
+	            unshift: function (data, callback) {
+	              _insert(q, data, true, callback);
+	            },
+	            process: function () {
+	                if (!q.paused && workers < q.concurrency && q.tasks.length) {
+	                    var task = q.tasks.shift();
+	                    if (q.empty && q.tasks.length === 0) {
+	                        q.empty();
+	                    }
+	                    workers += 1;
+	                    var next = function () {
+	                        workers -= 1;
+	                        if (task.callback) {
+	                            task.callback.apply(task, arguments);
+	                        }
+	                        if (q.drain && q.tasks.length + workers === 0) {
+	                            q.drain();
+	                        }
+	                        q.process();
+	                    };
+	                    var cb = only_once(next);
+	                    worker(task.data, cb);
+	                }
+	            },
+	            length: function () {
+	                return q.tasks.length;
+	            },
+	            running: function () {
+	                return workers;
+	            },
+	            idle: function() {
+	                return q.tasks.length + workers === 0;
+	            },
+	            pause: function () {
+	                if (q.paused === true) { return; }
+	                q.paused = true;
+	            },
+	            resume: function () {
+	                if (q.paused === false) { return; }
+	                q.paused = false;
+	                // Need to call q.process once per concurrent
+	                // worker to preserve full concurrency after pause
+	                for (var w = 1; w <= q.concurrency; w++) {
+	                    async.setImmediate(q.process);
+	                }
+	            }
+	        };
+	        return q;
+	    };
+
+	    async.priorityQueue = function (worker, concurrency) {
+
+	        function _compareTasks(a, b){
+	          return a.priority - b.priority;
+	        };
+
+	        function _binarySearch(sequence, item, compare) {
+	          var beg = -1,
+	              end = sequence.length - 1;
+	          while (beg < end) {
+	            var mid = beg + ((end - beg + 1) >>> 1);
+	            if (compare(item, sequence[mid]) >= 0) {
+	              beg = mid;
+	            } else {
+	              end = mid - 1;
+	            }
+	          }
+	          return beg;
+	        }
+
+	        function _insert(q, data, priority, callback) {
+	          if (!q.started){
+	            q.started = true;
+	          }
+	          if (!_isArray(data)) {
+	              data = [data];
+	          }
+	          if(data.length == 0) {
+	             // call drain immediately if there are no tasks
+	             return async.setImmediate(function() {
+	                 if (q.drain) {
+	                     q.drain();
+	                 }
+	             });
+	          }
+	          _each(data, function(task) {
+	              var item = {
+	                  data: task,
+	                  priority: priority,
+	                  callback: typeof callback === 'function' ? callback : null
+	              };
+
+	              q.tasks.splice(_binarySearch(q.tasks, item, _compareTasks) + 1, 0, item);
+
+	              if (q.saturated && q.tasks.length === q.concurrency) {
+	                  q.saturated();
+	              }
+	              async.setImmediate(q.process);
+	          });
+	        }
+
+	        // Start with a normal queue
+	        var q = async.queue(worker, concurrency);
+
+	        // Override push to accept second parameter representing priority
+	        q.push = function (data, priority, callback) {
+	          _insert(q, data, priority, callback);
+	        };
+
+	        // Remove unshift function
+	        delete q.unshift;
+
+	        return q;
+	    };
+
+	    async.cargo = function (worker, payload) {
+	        var working     = false,
+	            tasks       = [];
+
+	        var cargo = {
+	            tasks: tasks,
+	            payload: payload,
+	            saturated: null,
+	            empty: null,
+	            drain: null,
+	            drained: true,
+	            push: function (data, callback) {
+	                if (!_isArray(data)) {
+	                    data = [data];
+	                }
+	                _each(data, function(task) {
+	                    tasks.push({
+	                        data: task,
+	                        callback: typeof callback === 'function' ? callback : null
+	                    });
+	                    cargo.drained = false;
+	                    if (cargo.saturated && tasks.length === payload) {
+	                        cargo.saturated();
+	                    }
+	                });
+	                async.setImmediate(cargo.process);
+	            },
+	            process: function process() {
+	                if (working) return;
+	                if (tasks.length === 0) {
+	                    if(cargo.drain && !cargo.drained) cargo.drain();
+	                    cargo.drained = true;
+	                    return;
+	                }
+
+	                var ts = typeof payload === 'number'
+	                            ? tasks.splice(0, payload)
+	                            : tasks.splice(0, tasks.length);
+
+	                var ds = _map(ts, function (task) {
+	                    return task.data;
+	                });
+
+	                if(cargo.empty) cargo.empty();
+	                working = true;
+	                worker(ds, function () {
+	                    working = false;
+
+	                    var args = arguments;
+	                    _each(ts, function (data) {
+	                        if (data.callback) {
+	                            data.callback.apply(null, args);
+	                        }
+	                    });
+
+	                    process();
+	                });
+	            },
+	            length: function () {
+	                return tasks.length;
+	            },
+	            running: function () {
+	                return working;
+	            }
+	        };
+	        return cargo;
+	    };
+
+	    var _console_fn = function (name) {
+	        return function (fn) {
+	            var args = Array.prototype.slice.call(arguments, 1);
+	            fn.apply(null, args.concat([function (err) {
+	                var args = Array.prototype.slice.call(arguments, 1);
+	                if (typeof console !== 'undefined') {
+	                    if (err) {
+	                        if (console.error) {
+	                            console.error(err);
+	                        }
+	                    }
+	                    else if (console[name]) {
+	                        _each(args, function (x) {
+	                            console[name](x);
+	                        });
+	                    }
+	                }
+	            }]));
+	        };
+	    };
+	    async.log = _console_fn('log');
+	    async.dir = _console_fn('dir');
+	    /*async.info = _console_fn('info');
+	    async.warn = _console_fn('warn');
+	    async.error = _console_fn('error');*/
+
+	    async.memoize = function (fn, hasher) {
+	        var memo = {};
+	        var queues = {};
+	        hasher = hasher || function (x) {
+	            return x;
+	        };
+	        var memoized = function () {
+	            var args = Array.prototype.slice.call(arguments);
+	            var callback = args.pop();
+	            var key = hasher.apply(null, args);
+	            if (key in memo) {
+	                async.nextTick(function () {
+	                    callback.apply(null, memo[key]);
+	                });
+	            }
+	            else if (key in queues) {
+	                queues[key].push(callback);
+	            }
+	            else {
+	                queues[key] = [callback];
+	                fn.apply(null, args.concat([function () {
+	                    memo[key] = arguments;
+	                    var q = queues[key];
+	                    delete queues[key];
+	                    for (var i = 0, l = q.length; i < l; i++) {
+	                      q[i].apply(null, arguments);
+	                    }
+	                }]));
+	            }
+	        };
+	        memoized.memo = memo;
+	        memoized.unmemoized = fn;
+	        return memoized;
+	    };
+
+	    async.unmemoize = function (fn) {
+	      return function () {
+	        return (fn.unmemoized || fn).apply(null, arguments);
+	      };
+	    };
+
+	    async.times = function (count, iterator, callback) {
+	        var counter = [];
+	        for (var i = 0; i < count; i++) {
+	            counter.push(i);
+	        }
+	        return async.map(counter, iterator, callback);
+	    };
+
+	    async.timesSeries = function (count, iterator, callback) {
+	        var counter = [];
+	        for (var i = 0; i < count; i++) {
+	            counter.push(i);
+	        }
+	        return async.mapSeries(counter, iterator, callback);
+	    };
+
+	    async.seq = function (/* functions... */) {
+	        var fns = arguments;
+	        return function () {
+	            var that = this;
+	            var args = Array.prototype.slice.call(arguments);
+	            var callback = args.pop();
+	            async.reduce(fns, args, function (newargs, fn, cb) {
+	                fn.apply(that, newargs.concat([function () {
+	                    var err = arguments[0];
+	                    var nextargs = Array.prototype.slice.call(arguments, 1);
+	                    cb(err, nextargs);
+	                }]))
+	            },
+	            function (err, results) {
+	                callback.apply(that, [err].concat(results));
+	            });
+	        };
+	    };
+
+	    async.compose = function (/* functions... */) {
+	      return async.seq.apply(null, Array.prototype.reverse.call(arguments));
+	    };
+
+	    var _applyEach = function (eachfn, fns /*args...*/) {
+	        var go = function () {
+	            var that = this;
+	            var args = Array.prototype.slice.call(arguments);
+	            var callback = args.pop();
+	            return eachfn(fns, function (fn, cb) {
+	                fn.apply(that, args.concat([cb]));
+	            },
+	            callback);
+	        };
+	        if (arguments.length > 2) {
+	            var args = Array.prototype.slice.call(arguments, 2);
+	            return go.apply(this, args);
+	        }
+	        else {
+	            return go;
+	        }
+	    };
+	    async.applyEach = doParallel(_applyEach);
+	    async.applyEachSeries = doSeries(_applyEach);
+
+	    async.forever = function (fn, callback) {
+	        function next(err) {
+	            if (err) {
+	                if (callback) {
+	                    return callback(err);
+	                }
+	                throw err;
+	            }
+	            fn(next);
+	        }
+	        next();
+	    };
+
+	    // Node.js
+	    if (typeof module !== 'undefined' && module.exports) {
+	        module.exports = async;
+	    }
+	    // AMD / RequireJS
+	    else if (true) {
+	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	            return async;
+	        }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    }
+	    // included directly via <script> tag
+	    else {
+	        root.async = async;
+	    }
+
+	}());
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(192), __webpack_require__(200).setImmediate))
+
+/***/ },
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(192).nextTick;
@@ -6503,10 +7187,2666 @@
 	exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
 	  delete immediateIds[id];
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(198).setImmediate, __webpack_require__(198).clearImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(200).setImmediate, __webpack_require__(200).clearImmediate))
 
 /***/ },
-/* 199 */
+/* 201 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	var punycode = __webpack_require__(202);
+
+	exports.parse = urlParse;
+	exports.resolve = urlResolve;
+	exports.resolveObject = urlResolveObject;
+	exports.format = urlFormat;
+
+	exports.Url = Url;
+
+	function Url() {
+	  this.protocol = null;
+	  this.slashes = null;
+	  this.auth = null;
+	  this.host = null;
+	  this.port = null;
+	  this.hostname = null;
+	  this.hash = null;
+	  this.search = null;
+	  this.query = null;
+	  this.pathname = null;
+	  this.path = null;
+	  this.href = null;
+	}
+
+	// Reference: RFC 3986, RFC 1808, RFC 2396
+
+	// define these here so at least they only have to be
+	// compiled once on the first module load.
+	var protocolPattern = /^([a-z0-9.+-]+:)/i,
+	    portPattern = /:[0-9]*$/,
+
+	    // RFC 2396: characters reserved for delimiting URLs.
+	    // We actually just auto-escape these.
+	    delims = ['<', '>', '"', '`', ' ', '\r', '\n', '\t'],
+
+	    // RFC 2396: characters not allowed for various reasons.
+	    unwise = ['{', '}', '|', '\\', '^', '`'].concat(delims),
+
+	    // Allowed by RFCs, but cause of XSS attacks.  Always escape these.
+	    autoEscape = ['\''].concat(unwise),
+	    // Characters that are never ever allowed in a hostname.
+	    // Note that any invalid chars are also handled, but these
+	    // are the ones that are *expected* to be seen, so we fast-path
+	    // them.
+	    nonHostChars = ['%', '/', '?', ';', '#'].concat(autoEscape),
+	    hostEndingChars = ['/', '?', '#'],
+	    hostnameMaxLen = 255,
+	    hostnamePartPattern = /^[a-z0-9A-Z_-]{0,63}$/,
+	    hostnamePartStart = /^([a-z0-9A-Z_-]{0,63})(.*)$/,
+	    // protocols that can allow "unsafe" and "unwise" chars.
+	    unsafeProtocol = {
+	      'javascript': true,
+	      'javascript:': true
+	    },
+	    // protocols that never have a hostname.
+	    hostlessProtocol = {
+	      'javascript': true,
+	      'javascript:': true
+	    },
+	    // protocols that always contain a // bit.
+	    slashedProtocol = {
+	      'http': true,
+	      'https': true,
+	      'ftp': true,
+	      'gopher': true,
+	      'file': true,
+	      'http:': true,
+	      'https:': true,
+	      'ftp:': true,
+	      'gopher:': true,
+	      'file:': true
+	    },
+	    querystring = __webpack_require__(204);
+
+	function urlParse(url, parseQueryString, slashesDenoteHost) {
+	  if (url && isObject(url) && url instanceof Url) return url;
+
+	  var u = new Url;
+	  u.parse(url, parseQueryString, slashesDenoteHost);
+	  return u;
+	}
+
+	Url.prototype.parse = function(url, parseQueryString, slashesDenoteHost) {
+	  if (!isString(url)) {
+	    throw new TypeError("Parameter 'url' must be a string, not " + typeof url);
+	  }
+
+	  var rest = url;
+
+	  // trim before proceeding.
+	  // This is to support parse stuff like "  http://foo.com  \n"
+	  rest = rest.trim();
+
+	  var proto = protocolPattern.exec(rest);
+	  if (proto) {
+	    proto = proto[0];
+	    var lowerProto = proto.toLowerCase();
+	    this.protocol = lowerProto;
+	    rest = rest.substr(proto.length);
+	  }
+
+	  // figure out if it's got a host
+	  // user@server is *always* interpreted as a hostname, and url
+	  // resolution will treat //foo/bar as host=foo,path=bar because that's
+	  // how the browser resolves relative URLs.
+	  if (slashesDenoteHost || proto || rest.match(/^\/\/[^@\/]+@[^@\/]+/)) {
+	    var slashes = rest.substr(0, 2) === '//';
+	    if (slashes && !(proto && hostlessProtocol[proto])) {
+	      rest = rest.substr(2);
+	      this.slashes = true;
+	    }
+	  }
+
+	  if (!hostlessProtocol[proto] &&
+	      (slashes || (proto && !slashedProtocol[proto]))) {
+
+	    // there's a hostname.
+	    // the first instance of /, ?, ;, or # ends the host.
+	    //
+	    // If there is an @ in the hostname, then non-host chars *are* allowed
+	    // to the left of the last @ sign, unless some host-ending character
+	    // comes *before* the @-sign.
+	    // URLs are obnoxious.
+	    //
+	    // ex:
+	    // http://a@b@c/ => user:a@b host:c
+	    // http://a@b?@c => user:a host:c path:/?@c
+
+	    // v0.12 TODO(isaacs): This is not quite how Chrome does things.
+	    // Review our test case against browsers more comprehensively.
+
+	    // find the first instance of any hostEndingChars
+	    var hostEnd = -1;
+	    for (var i = 0; i < hostEndingChars.length; i++) {
+	      var hec = rest.indexOf(hostEndingChars[i]);
+	      if (hec !== -1 && (hostEnd === -1 || hec < hostEnd))
+	        hostEnd = hec;
+	    }
+
+	    // at this point, either we have an explicit point where the
+	    // auth portion cannot go past, or the last @ char is the decider.
+	    var auth, atSign;
+	    if (hostEnd === -1) {
+	      // atSign can be anywhere.
+	      atSign = rest.lastIndexOf('@');
+	    } else {
+	      // atSign must be in auth portion.
+	      // http://a@b/c@d => host:b auth:a path:/c@d
+	      atSign = rest.lastIndexOf('@', hostEnd);
+	    }
+
+	    // Now we have a portion which is definitely the auth.
+	    // Pull that off.
+	    if (atSign !== -1) {
+	      auth = rest.slice(0, atSign);
+	      rest = rest.slice(atSign + 1);
+	      this.auth = decodeURIComponent(auth);
+	    }
+
+	    // the host is the remaining to the left of the first non-host char
+	    hostEnd = -1;
+	    for (var i = 0; i < nonHostChars.length; i++) {
+	      var hec = rest.indexOf(nonHostChars[i]);
+	      if (hec !== -1 && (hostEnd === -1 || hec < hostEnd))
+	        hostEnd = hec;
+	    }
+	    // if we still have not hit it, then the entire thing is a host.
+	    if (hostEnd === -1)
+	      hostEnd = rest.length;
+
+	    this.host = rest.slice(0, hostEnd);
+	    rest = rest.slice(hostEnd);
+
+	    // pull out port.
+	    this.parseHost();
+
+	    // we've indicated that there is a hostname,
+	    // so even if it's empty, it has to be present.
+	    this.hostname = this.hostname || '';
+
+	    // if hostname begins with [ and ends with ]
+	    // assume that it's an IPv6 address.
+	    var ipv6Hostname = this.hostname[0] === '[' &&
+	        this.hostname[this.hostname.length - 1] === ']';
+
+	    // validate a little.
+	    if (!ipv6Hostname) {
+	      var hostparts = this.hostname.split(/\./);
+	      for (var i = 0, l = hostparts.length; i < l; i++) {
+	        var part = hostparts[i];
+	        if (!part) continue;
+	        if (!part.match(hostnamePartPattern)) {
+	          var newpart = '';
+	          for (var j = 0, k = part.length; j < k; j++) {
+	            if (part.charCodeAt(j) > 127) {
+	              // we replace non-ASCII char with a temporary placeholder
+	              // we need this to make sure size of hostname is not
+	              // broken by replacing non-ASCII by nothing
+	              newpart += 'x';
+	            } else {
+	              newpart += part[j];
+	            }
+	          }
+	          // we test again with ASCII char only
+	          if (!newpart.match(hostnamePartPattern)) {
+	            var validParts = hostparts.slice(0, i);
+	            var notHost = hostparts.slice(i + 1);
+	            var bit = part.match(hostnamePartStart);
+	            if (bit) {
+	              validParts.push(bit[1]);
+	              notHost.unshift(bit[2]);
+	            }
+	            if (notHost.length) {
+	              rest = '/' + notHost.join('.') + rest;
+	            }
+	            this.hostname = validParts.join('.');
+	            break;
+	          }
+	        }
+	      }
+	    }
+
+	    if (this.hostname.length > hostnameMaxLen) {
+	      this.hostname = '';
+	    } else {
+	      // hostnames are always lower case.
+	      this.hostname = this.hostname.toLowerCase();
+	    }
+
+	    if (!ipv6Hostname) {
+	      // IDNA Support: Returns a puny coded representation of "domain".
+	      // It only converts the part of the domain name that
+	      // has non ASCII characters. I.e. it dosent matter if
+	      // you call it with a domain that already is in ASCII.
+	      var domainArray = this.hostname.split('.');
+	      var newOut = [];
+	      for (var i = 0; i < domainArray.length; ++i) {
+	        var s = domainArray[i];
+	        newOut.push(s.match(/[^A-Za-z0-9_-]/) ?
+	            'xn--' + punycode.encode(s) : s);
+	      }
+	      this.hostname = newOut.join('.');
+	    }
+
+	    var p = this.port ? ':' + this.port : '';
+	    var h = this.hostname || '';
+	    this.host = h + p;
+	    this.href += this.host;
+
+	    // strip [ and ] from the hostname
+	    // the host field still retains them, though
+	    if (ipv6Hostname) {
+	      this.hostname = this.hostname.substr(1, this.hostname.length - 2);
+	      if (rest[0] !== '/') {
+	        rest = '/' + rest;
+	      }
+	    }
+	  }
+
+	  // now rest is set to the post-host stuff.
+	  // chop off any delim chars.
+	  if (!unsafeProtocol[lowerProto]) {
+
+	    // First, make 100% sure that any "autoEscape" chars get
+	    // escaped, even if encodeURIComponent doesn't think they
+	    // need to be.
+	    for (var i = 0, l = autoEscape.length; i < l; i++) {
+	      var ae = autoEscape[i];
+	      var esc = encodeURIComponent(ae);
+	      if (esc === ae) {
+	        esc = escape(ae);
+	      }
+	      rest = rest.split(ae).join(esc);
+	    }
+	  }
+
+
+	  // chop off from the tail first.
+	  var hash = rest.indexOf('#');
+	  if (hash !== -1) {
+	    // got a fragment string.
+	    this.hash = rest.substr(hash);
+	    rest = rest.slice(0, hash);
+	  }
+	  var qm = rest.indexOf('?');
+	  if (qm !== -1) {
+	    this.search = rest.substr(qm);
+	    this.query = rest.substr(qm + 1);
+	    if (parseQueryString) {
+	      this.query = querystring.parse(this.query);
+	    }
+	    rest = rest.slice(0, qm);
+	  } else if (parseQueryString) {
+	    // no query string, but parseQueryString still requested
+	    this.search = '';
+	    this.query = {};
+	  }
+	  if (rest) this.pathname = rest;
+	  if (slashedProtocol[lowerProto] &&
+	      this.hostname && !this.pathname) {
+	    this.pathname = '/';
+	  }
+
+	  //to support http.request
+	  if (this.pathname || this.search) {
+	    var p = this.pathname || '';
+	    var s = this.search || '';
+	    this.path = p + s;
+	  }
+
+	  // finally, reconstruct the href based on what has been validated.
+	  this.href = this.format();
+	  return this;
+	};
+
+	// format a parsed object into a url string
+	function urlFormat(obj) {
+	  // ensure it's an object, and not a string url.
+	  // If it's an obj, this is a no-op.
+	  // this way, you can call url_format() on strings
+	  // to clean up potentially wonky urls.
+	  if (isString(obj)) obj = urlParse(obj);
+	  if (!(obj instanceof Url)) return Url.prototype.format.call(obj);
+	  return obj.format();
+	}
+
+	Url.prototype.format = function() {
+	  var auth = this.auth || '';
+	  if (auth) {
+	    auth = encodeURIComponent(auth);
+	    auth = auth.replace(/%3A/i, ':');
+	    auth += '@';
+	  }
+
+	  var protocol = this.protocol || '',
+	      pathname = this.pathname || '',
+	      hash = this.hash || '',
+	      host = false,
+	      query = '';
+
+	  if (this.host) {
+	    host = auth + this.host;
+	  } else if (this.hostname) {
+	    host = auth + (this.hostname.indexOf(':') === -1 ?
+	        this.hostname :
+	        '[' + this.hostname + ']');
+	    if (this.port) {
+	      host += ':' + this.port;
+	    }
+	  }
+
+	  if (this.query &&
+	      isObject(this.query) &&
+	      Object.keys(this.query).length) {
+	    query = querystring.stringify(this.query);
+	  }
+
+	  var search = this.search || (query && ('?' + query)) || '';
+
+	  if (protocol && protocol.substr(-1) !== ':') protocol += ':';
+
+	  // only the slashedProtocols get the //.  Not mailto:, xmpp:, etc.
+	  // unless they had them to begin with.
+	  if (this.slashes ||
+	      (!protocol || slashedProtocol[protocol]) && host !== false) {
+	    host = '//' + (host || '');
+	    if (pathname && pathname.charAt(0) !== '/') pathname = '/' + pathname;
+	  } else if (!host) {
+	    host = '';
+	  }
+
+	  if (hash && hash.charAt(0) !== '#') hash = '#' + hash;
+	  if (search && search.charAt(0) !== '?') search = '?' + search;
+
+	  pathname = pathname.replace(/[?#]/g, function(match) {
+	    return encodeURIComponent(match);
+	  });
+	  search = search.replace('#', '%23');
+
+	  return protocol + host + pathname + search + hash;
+	};
+
+	function urlResolve(source, relative) {
+	  return urlParse(source, false, true).resolve(relative);
+	}
+
+	Url.prototype.resolve = function(relative) {
+	  return this.resolveObject(urlParse(relative, false, true)).format();
+	};
+
+	function urlResolveObject(source, relative) {
+	  if (!source) return relative;
+	  return urlParse(source, false, true).resolveObject(relative);
+	}
+
+	Url.prototype.resolveObject = function(relative) {
+	  if (isString(relative)) {
+	    var rel = new Url();
+	    rel.parse(relative, false, true);
+	    relative = rel;
+	  }
+
+	  var result = new Url();
+	  Object.keys(this).forEach(function(k) {
+	    result[k] = this[k];
+	  }, this);
+
+	  // hash is always overridden, no matter what.
+	  // even href="" will remove it.
+	  result.hash = relative.hash;
+
+	  // if the relative url is empty, then there's nothing left to do here.
+	  if (relative.href === '') {
+	    result.href = result.format();
+	    return result;
+	  }
+
+	  // hrefs like //foo/bar always cut to the protocol.
+	  if (relative.slashes && !relative.protocol) {
+	    // take everything except the protocol from relative
+	    Object.keys(relative).forEach(function(k) {
+	      if (k !== 'protocol')
+	        result[k] = relative[k];
+	    });
+
+	    //urlParse appends trailing / to urls like http://www.example.com
+	    if (slashedProtocol[result.protocol] &&
+	        result.hostname && !result.pathname) {
+	      result.path = result.pathname = '/';
+	    }
+
+	    result.href = result.format();
+	    return result;
+	  }
+
+	  if (relative.protocol && relative.protocol !== result.protocol) {
+	    // if it's a known url protocol, then changing
+	    // the protocol does weird things
+	    // first, if it's not file:, then we MUST have a host,
+	    // and if there was a path
+	    // to begin with, then we MUST have a path.
+	    // if it is file:, then the host is dropped,
+	    // because that's known to be hostless.
+	    // anything else is assumed to be absolute.
+	    if (!slashedProtocol[relative.protocol]) {
+	      Object.keys(relative).forEach(function(k) {
+	        result[k] = relative[k];
+	      });
+	      result.href = result.format();
+	      return result;
+	    }
+
+	    result.protocol = relative.protocol;
+	    if (!relative.host && !hostlessProtocol[relative.protocol]) {
+	      var relPath = (relative.pathname || '').split('/');
+	      while (relPath.length && !(relative.host = relPath.shift()));
+	      if (!relative.host) relative.host = '';
+	      if (!relative.hostname) relative.hostname = '';
+	      if (relPath[0] !== '') relPath.unshift('');
+	      if (relPath.length < 2) relPath.unshift('');
+	      result.pathname = relPath.join('/');
+	    } else {
+	      result.pathname = relative.pathname;
+	    }
+	    result.search = relative.search;
+	    result.query = relative.query;
+	    result.host = relative.host || '';
+	    result.auth = relative.auth;
+	    result.hostname = relative.hostname || relative.host;
+	    result.port = relative.port;
+	    // to support http.request
+	    if (result.pathname || result.search) {
+	      var p = result.pathname || '';
+	      var s = result.search || '';
+	      result.path = p + s;
+	    }
+	    result.slashes = result.slashes || relative.slashes;
+	    result.href = result.format();
+	    return result;
+	  }
+
+	  var isSourceAbs = (result.pathname && result.pathname.charAt(0) === '/'),
+	      isRelAbs = (
+	          relative.host ||
+	          relative.pathname && relative.pathname.charAt(0) === '/'
+	      ),
+	      mustEndAbs = (isRelAbs || isSourceAbs ||
+	                    (result.host && relative.pathname)),
+	      removeAllDots = mustEndAbs,
+	      srcPath = result.pathname && result.pathname.split('/') || [],
+	      relPath = relative.pathname && relative.pathname.split('/') || [],
+	      psychotic = result.protocol && !slashedProtocol[result.protocol];
+
+	  // if the url is a non-slashed url, then relative
+	  // links like ../.. should be able
+	  // to crawl up to the hostname, as well.  This is strange.
+	  // result.protocol has already been set by now.
+	  // Later on, put the first path part into the host field.
+	  if (psychotic) {
+	    result.hostname = '';
+	    result.port = null;
+	    if (result.host) {
+	      if (srcPath[0] === '') srcPath[0] = result.host;
+	      else srcPath.unshift(result.host);
+	    }
+	    result.host = '';
+	    if (relative.protocol) {
+	      relative.hostname = null;
+	      relative.port = null;
+	      if (relative.host) {
+	        if (relPath[0] === '') relPath[0] = relative.host;
+	        else relPath.unshift(relative.host);
+	      }
+	      relative.host = null;
+	    }
+	    mustEndAbs = mustEndAbs && (relPath[0] === '' || srcPath[0] === '');
+	  }
+
+	  if (isRelAbs) {
+	    // it's absolute.
+	    result.host = (relative.host || relative.host === '') ?
+	                  relative.host : result.host;
+	    result.hostname = (relative.hostname || relative.hostname === '') ?
+	                      relative.hostname : result.hostname;
+	    result.search = relative.search;
+	    result.query = relative.query;
+	    srcPath = relPath;
+	    // fall through to the dot-handling below.
+	  } else if (relPath.length) {
+	    // it's relative
+	    // throw away the existing file, and take the new path instead.
+	    if (!srcPath) srcPath = [];
+	    srcPath.pop();
+	    srcPath = srcPath.concat(relPath);
+	    result.search = relative.search;
+	    result.query = relative.query;
+	  } else if (!isNullOrUndefined(relative.search)) {
+	    // just pull out the search.
+	    // like href='?foo'.
+	    // Put this after the other two cases because it simplifies the booleans
+	    if (psychotic) {
+	      result.hostname = result.host = srcPath.shift();
+	      //occationaly the auth can get stuck only in host
+	      //this especialy happens in cases like
+	      //url.resolveObject('mailto:local1@domain1', 'local2@domain2')
+	      var authInHost = result.host && result.host.indexOf('@') > 0 ?
+	                       result.host.split('@') : false;
+	      if (authInHost) {
+	        result.auth = authInHost.shift();
+	        result.host = result.hostname = authInHost.shift();
+	      }
+	    }
+	    result.search = relative.search;
+	    result.query = relative.query;
+	    //to support http.request
+	    if (!isNull(result.pathname) || !isNull(result.search)) {
+	      result.path = (result.pathname ? result.pathname : '') +
+	                    (result.search ? result.search : '');
+	    }
+	    result.href = result.format();
+	    return result;
+	  }
+
+	  if (!srcPath.length) {
+	    // no path at all.  easy.
+	    // we've already handled the other stuff above.
+	    result.pathname = null;
+	    //to support http.request
+	    if (result.search) {
+	      result.path = '/' + result.search;
+	    } else {
+	      result.path = null;
+	    }
+	    result.href = result.format();
+	    return result;
+	  }
+
+	  // if a url ENDs in . or .., then it must get a trailing slash.
+	  // however, if it ends in anything else non-slashy,
+	  // then it must NOT get a trailing slash.
+	  var last = srcPath.slice(-1)[0];
+	  var hasTrailingSlash = (
+	      (result.host || relative.host) && (last === '.' || last === '..') ||
+	      last === '');
+
+	  // strip single dots, resolve double dots to parent dir
+	  // if the path tries to go above the root, `up` ends up > 0
+	  var up = 0;
+	  for (var i = srcPath.length; i >= 0; i--) {
+	    last = srcPath[i];
+	    if (last == '.') {
+	      srcPath.splice(i, 1);
+	    } else if (last === '..') {
+	      srcPath.splice(i, 1);
+	      up++;
+	    } else if (up) {
+	      srcPath.splice(i, 1);
+	      up--;
+	    }
+	  }
+
+	  // if the path is allowed to go above the root, restore leading ..s
+	  if (!mustEndAbs && !removeAllDots) {
+	    for (; up--; up) {
+	      srcPath.unshift('..');
+	    }
+	  }
+
+	  if (mustEndAbs && srcPath[0] !== '' &&
+	      (!srcPath[0] || srcPath[0].charAt(0) !== '/')) {
+	    srcPath.unshift('');
+	  }
+
+	  if (hasTrailingSlash && (srcPath.join('/').substr(-1) !== '/')) {
+	    srcPath.push('');
+	  }
+
+	  var isAbsolute = srcPath[0] === '' ||
+	      (srcPath[0] && srcPath[0].charAt(0) === '/');
+
+	  // put the host back
+	  if (psychotic) {
+	    result.hostname = result.host = isAbsolute ? '' :
+	                                    srcPath.length ? srcPath.shift() : '';
+	    //occationaly the auth can get stuck only in host
+	    //this especialy happens in cases like
+	    //url.resolveObject('mailto:local1@domain1', 'local2@domain2')
+	    var authInHost = result.host && result.host.indexOf('@') > 0 ?
+	                     result.host.split('@') : false;
+	    if (authInHost) {
+	      result.auth = authInHost.shift();
+	      result.host = result.hostname = authInHost.shift();
+	    }
+	  }
+
+	  mustEndAbs = mustEndAbs || (result.host && srcPath.length);
+
+	  if (mustEndAbs && !isAbsolute) {
+	    srcPath.unshift('');
+	  }
+
+	  if (!srcPath.length) {
+	    result.pathname = null;
+	    result.path = null;
+	  } else {
+	    result.pathname = srcPath.join('/');
+	  }
+
+	  //to support request.http
+	  if (!isNull(result.pathname) || !isNull(result.search)) {
+	    result.path = (result.pathname ? result.pathname : '') +
+	                  (result.search ? result.search : '');
+	  }
+	  result.auth = relative.auth || result.auth;
+	  result.slashes = result.slashes || relative.slashes;
+	  result.href = result.format();
+	  return result;
+	};
+
+	Url.prototype.parseHost = function() {
+	  var host = this.host;
+	  var port = portPattern.exec(host);
+	  if (port) {
+	    port = port[0];
+	    if (port !== ':') {
+	      this.port = port.substr(1);
+	    }
+	    host = host.substr(0, host.length - port.length);
+	  }
+	  if (host) this.hostname = host;
+	};
+
+	function isString(arg) {
+	  return typeof arg === "string";
+	}
+
+	function isObject(arg) {
+	  return typeof arg === 'object' && arg !== null;
+	}
+
+	function isNull(arg) {
+	  return arg === null;
+	}
+	function isNullOrUndefined(arg) {
+	  return  arg == null;
+	}
+
+
+/***/ },
+/* 202 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/*! https://mths.be/punycode v1.3.2 by @mathias */
+	;(function(root) {
+
+		/** Detect free variables */
+		var freeExports = typeof exports == 'object' && exports &&
+			!exports.nodeType && exports;
+		var freeModule = typeof module == 'object' && module &&
+			!module.nodeType && module;
+		var freeGlobal = typeof global == 'object' && global;
+		if (
+			freeGlobal.global === freeGlobal ||
+			freeGlobal.window === freeGlobal ||
+			freeGlobal.self === freeGlobal
+		) {
+			root = freeGlobal;
+		}
+
+		/**
+		 * The `punycode` object.
+		 * @name punycode
+		 * @type Object
+		 */
+		var punycode,
+
+		/** Highest positive signed 32-bit float value */
+		maxInt = 2147483647, // aka. 0x7FFFFFFF or 2^31-1
+
+		/** Bootstring parameters */
+		base = 36,
+		tMin = 1,
+		tMax = 26,
+		skew = 38,
+		damp = 700,
+		initialBias = 72,
+		initialN = 128, // 0x80
+		delimiter = '-', // '\x2D'
+
+		/** Regular expressions */
+		regexPunycode = /^xn--/,
+		regexNonASCII = /[^\x20-\x7E]/, // unprintable ASCII chars + non-ASCII chars
+		regexSeparators = /[\x2E\u3002\uFF0E\uFF61]/g, // RFC 3490 separators
+
+		/** Error messages */
+		errors = {
+			'overflow': 'Overflow: input needs wider integers to process',
+			'not-basic': 'Illegal input >= 0x80 (not a basic code point)',
+			'invalid-input': 'Invalid input'
+		},
+
+		/** Convenience shortcuts */
+		baseMinusTMin = base - tMin,
+		floor = Math.floor,
+		stringFromCharCode = String.fromCharCode,
+
+		/** Temporary variable */
+		key;
+
+		/*--------------------------------------------------------------------------*/
+
+		/**
+		 * A generic error utility function.
+		 * @private
+		 * @param {String} type The error type.
+		 * @returns {Error} Throws a `RangeError` with the applicable error message.
+		 */
+		function error(type) {
+			throw RangeError(errors[type]);
+		}
+
+		/**
+		 * A generic `Array#map` utility function.
+		 * @private
+		 * @param {Array} array The array to iterate over.
+		 * @param {Function} callback The function that gets called for every array
+		 * item.
+		 * @returns {Array} A new array of values returned by the callback function.
+		 */
+		function map(array, fn) {
+			var length = array.length;
+			var result = [];
+			while (length--) {
+				result[length] = fn(array[length]);
+			}
+			return result;
+		}
+
+		/**
+		 * A simple `Array#map`-like wrapper to work with domain name strings or email
+		 * addresses.
+		 * @private
+		 * @param {String} domain The domain name or email address.
+		 * @param {Function} callback The function that gets called for every
+		 * character.
+		 * @returns {Array} A new string of characters returned by the callback
+		 * function.
+		 */
+		function mapDomain(string, fn) {
+			var parts = string.split('@');
+			var result = '';
+			if (parts.length > 1) {
+				// In email addresses, only the domain name should be punycoded. Leave
+				// the local part (i.e. everything up to `@`) intact.
+				result = parts[0] + '@';
+				string = parts[1];
+			}
+			// Avoid `split(regex)` for IE8 compatibility. See #17.
+			string = string.replace(regexSeparators, '\x2E');
+			var labels = string.split('.');
+			var encoded = map(labels, fn).join('.');
+			return result + encoded;
+		}
+
+		/**
+		 * Creates an array containing the numeric code points of each Unicode
+		 * character in the string. While JavaScript uses UCS-2 internally,
+		 * this function will convert a pair of surrogate halves (each of which
+		 * UCS-2 exposes as separate characters) into a single code point,
+		 * matching UTF-16.
+		 * @see `punycode.ucs2.encode`
+		 * @see <https://mathiasbynens.be/notes/javascript-encoding>
+		 * @memberOf punycode.ucs2
+		 * @name decode
+		 * @param {String} string The Unicode input string (UCS-2).
+		 * @returns {Array} The new array of code points.
+		 */
+		function ucs2decode(string) {
+			var output = [],
+			    counter = 0,
+			    length = string.length,
+			    value,
+			    extra;
+			while (counter < length) {
+				value = string.charCodeAt(counter++);
+				if (value >= 0xD800 && value <= 0xDBFF && counter < length) {
+					// high surrogate, and there is a next character
+					extra = string.charCodeAt(counter++);
+					if ((extra & 0xFC00) == 0xDC00) { // low surrogate
+						output.push(((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000);
+					} else {
+						// unmatched surrogate; only append this code unit, in case the next
+						// code unit is the high surrogate of a surrogate pair
+						output.push(value);
+						counter--;
+					}
+				} else {
+					output.push(value);
+				}
+			}
+			return output;
+		}
+
+		/**
+		 * Creates a string based on an array of numeric code points.
+		 * @see `punycode.ucs2.decode`
+		 * @memberOf punycode.ucs2
+		 * @name encode
+		 * @param {Array} codePoints The array of numeric code points.
+		 * @returns {String} The new Unicode string (UCS-2).
+		 */
+		function ucs2encode(array) {
+			return map(array, function(value) {
+				var output = '';
+				if (value > 0xFFFF) {
+					value -= 0x10000;
+					output += stringFromCharCode(value >>> 10 & 0x3FF | 0xD800);
+					value = 0xDC00 | value & 0x3FF;
+				}
+				output += stringFromCharCode(value);
+				return output;
+			}).join('');
+		}
+
+		/**
+		 * Converts a basic code point into a digit/integer.
+		 * @see `digitToBasic()`
+		 * @private
+		 * @param {Number} codePoint The basic numeric code point value.
+		 * @returns {Number} The numeric value of a basic code point (for use in
+		 * representing integers) in the range `0` to `base - 1`, or `base` if
+		 * the code point does not represent a value.
+		 */
+		function basicToDigit(codePoint) {
+			if (codePoint - 48 < 10) {
+				return codePoint - 22;
+			}
+			if (codePoint - 65 < 26) {
+				return codePoint - 65;
+			}
+			if (codePoint - 97 < 26) {
+				return codePoint - 97;
+			}
+			return base;
+		}
+
+		/**
+		 * Converts a digit/integer into a basic code point.
+		 * @see `basicToDigit()`
+		 * @private
+		 * @param {Number} digit The numeric value of a basic code point.
+		 * @returns {Number} The basic code point whose value (when used for
+		 * representing integers) is `digit`, which needs to be in the range
+		 * `0` to `base - 1`. If `flag` is non-zero, the uppercase form is
+		 * used; else, the lowercase form is used. The behavior is undefined
+		 * if `flag` is non-zero and `digit` has no uppercase form.
+		 */
+		function digitToBasic(digit, flag) {
+			//  0..25 map to ASCII a..z or A..Z
+			// 26..35 map to ASCII 0..9
+			return digit + 22 + 75 * (digit < 26) - ((flag != 0) << 5);
+		}
+
+		/**
+		 * Bias adaptation function as per section 3.4 of RFC 3492.
+		 * http://tools.ietf.org/html/rfc3492#section-3.4
+		 * @private
+		 */
+		function adapt(delta, numPoints, firstTime) {
+			var k = 0;
+			delta = firstTime ? floor(delta / damp) : delta >> 1;
+			delta += floor(delta / numPoints);
+			for (/* no initialization */; delta > baseMinusTMin * tMax >> 1; k += base) {
+				delta = floor(delta / baseMinusTMin);
+			}
+			return floor(k + (baseMinusTMin + 1) * delta / (delta + skew));
+		}
+
+		/**
+		 * Converts a Punycode string of ASCII-only symbols to a string of Unicode
+		 * symbols.
+		 * @memberOf punycode
+		 * @param {String} input The Punycode string of ASCII-only symbols.
+		 * @returns {String} The resulting string of Unicode symbols.
+		 */
+		function decode(input) {
+			// Don't use UCS-2
+			var output = [],
+			    inputLength = input.length,
+			    out,
+			    i = 0,
+			    n = initialN,
+			    bias = initialBias,
+			    basic,
+			    j,
+			    index,
+			    oldi,
+			    w,
+			    k,
+			    digit,
+			    t,
+			    /** Cached calculation results */
+			    baseMinusT;
+
+			// Handle the basic code points: let `basic` be the number of input code
+			// points before the last delimiter, or `0` if there is none, then copy
+			// the first basic code points to the output.
+
+			basic = input.lastIndexOf(delimiter);
+			if (basic < 0) {
+				basic = 0;
+			}
+
+			for (j = 0; j < basic; ++j) {
+				// if it's not a basic code point
+				if (input.charCodeAt(j) >= 0x80) {
+					error('not-basic');
+				}
+				output.push(input.charCodeAt(j));
+			}
+
+			// Main decoding loop: start just after the last delimiter if any basic code
+			// points were copied; start at the beginning otherwise.
+
+			for (index = basic > 0 ? basic + 1 : 0; index < inputLength; /* no final expression */) {
+
+				// `index` is the index of the next character to be consumed.
+				// Decode a generalized variable-length integer into `delta`,
+				// which gets added to `i`. The overflow checking is easier
+				// if we increase `i` as we go, then subtract off its starting
+				// value at the end to obtain `delta`.
+				for (oldi = i, w = 1, k = base; /* no condition */; k += base) {
+
+					if (index >= inputLength) {
+						error('invalid-input');
+					}
+
+					digit = basicToDigit(input.charCodeAt(index++));
+
+					if (digit >= base || digit > floor((maxInt - i) / w)) {
+						error('overflow');
+					}
+
+					i += digit * w;
+					t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
+
+					if (digit < t) {
+						break;
+					}
+
+					baseMinusT = base - t;
+					if (w > floor(maxInt / baseMinusT)) {
+						error('overflow');
+					}
+
+					w *= baseMinusT;
+
+				}
+
+				out = output.length + 1;
+				bias = adapt(i - oldi, out, oldi == 0);
+
+				// `i` was supposed to wrap around from `out` to `0`,
+				// incrementing `n` each time, so we'll fix that now:
+				if (floor(i / out) > maxInt - n) {
+					error('overflow');
+				}
+
+				n += floor(i / out);
+				i %= out;
+
+				// Insert `n` at position `i` of the output
+				output.splice(i++, 0, n);
+
+			}
+
+			return ucs2encode(output);
+		}
+
+		/**
+		 * Converts a string of Unicode symbols (e.g. a domain name label) to a
+		 * Punycode string of ASCII-only symbols.
+		 * @memberOf punycode
+		 * @param {String} input The string of Unicode symbols.
+		 * @returns {String} The resulting Punycode string of ASCII-only symbols.
+		 */
+		function encode(input) {
+			var n,
+			    delta,
+			    handledCPCount,
+			    basicLength,
+			    bias,
+			    j,
+			    m,
+			    q,
+			    k,
+			    t,
+			    currentValue,
+			    output = [],
+			    /** `inputLength` will hold the number of code points in `input`. */
+			    inputLength,
+			    /** Cached calculation results */
+			    handledCPCountPlusOne,
+			    baseMinusT,
+			    qMinusT;
+
+			// Convert the input in UCS-2 to Unicode
+			input = ucs2decode(input);
+
+			// Cache the length
+			inputLength = input.length;
+
+			// Initialize the state
+			n = initialN;
+			delta = 0;
+			bias = initialBias;
+
+			// Handle the basic code points
+			for (j = 0; j < inputLength; ++j) {
+				currentValue = input[j];
+				if (currentValue < 0x80) {
+					output.push(stringFromCharCode(currentValue));
+				}
+			}
+
+			handledCPCount = basicLength = output.length;
+
+			// `handledCPCount` is the number of code points that have been handled;
+			// `basicLength` is the number of basic code points.
+
+			// Finish the basic string - if it is not empty - with a delimiter
+			if (basicLength) {
+				output.push(delimiter);
+			}
+
+			// Main encoding loop:
+			while (handledCPCount < inputLength) {
+
+				// All non-basic code points < n have been handled already. Find the next
+				// larger one:
+				for (m = maxInt, j = 0; j < inputLength; ++j) {
+					currentValue = input[j];
+					if (currentValue >= n && currentValue < m) {
+						m = currentValue;
+					}
+				}
+
+				// Increase `delta` enough to advance the decoder's <n,i> state to <m,0>,
+				// but guard against overflow
+				handledCPCountPlusOne = handledCPCount + 1;
+				if (m - n > floor((maxInt - delta) / handledCPCountPlusOne)) {
+					error('overflow');
+				}
+
+				delta += (m - n) * handledCPCountPlusOne;
+				n = m;
+
+				for (j = 0; j < inputLength; ++j) {
+					currentValue = input[j];
+
+					if (currentValue < n && ++delta > maxInt) {
+						error('overflow');
+					}
+
+					if (currentValue == n) {
+						// Represent delta as a generalized variable-length integer
+						for (q = delta, k = base; /* no condition */; k += base) {
+							t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
+							if (q < t) {
+								break;
+							}
+							qMinusT = q - t;
+							baseMinusT = base - t;
+							output.push(
+								stringFromCharCode(digitToBasic(t + qMinusT % baseMinusT, 0))
+							);
+							q = floor(qMinusT / baseMinusT);
+						}
+
+						output.push(stringFromCharCode(digitToBasic(q, 0)));
+						bias = adapt(delta, handledCPCountPlusOne, handledCPCount == basicLength);
+						delta = 0;
+						++handledCPCount;
+					}
+				}
+
+				++delta;
+				++n;
+
+			}
+			return output.join('');
+		}
+
+		/**
+		 * Converts a Punycode string representing a domain name or an email address
+		 * to Unicode. Only the Punycoded parts of the input will be converted, i.e.
+		 * it doesn't matter if you call it on a string that has already been
+		 * converted to Unicode.
+		 * @memberOf punycode
+		 * @param {String} input The Punycoded domain name or email address to
+		 * convert to Unicode.
+		 * @returns {String} The Unicode representation of the given Punycode
+		 * string.
+		 */
+		function toUnicode(input) {
+			return mapDomain(input, function(string) {
+				return regexPunycode.test(string)
+					? decode(string.slice(4).toLowerCase())
+					: string;
+			});
+		}
+
+		/**
+		 * Converts a Unicode string representing a domain name or an email address to
+		 * Punycode. Only the non-ASCII parts of the domain name will be converted,
+		 * i.e. it doesn't matter if you call it with a domain that's already in
+		 * ASCII.
+		 * @memberOf punycode
+		 * @param {String} input The domain name or email address to convert, as a
+		 * Unicode string.
+		 * @returns {String} The Punycode representation of the given domain name or
+		 * email address.
+		 */
+		function toASCII(input) {
+			return mapDomain(input, function(string) {
+				return regexNonASCII.test(string)
+					? 'xn--' + encode(string)
+					: string;
+			});
+		}
+
+		/*--------------------------------------------------------------------------*/
+
+		/** Define the public API */
+		punycode = {
+			/**
+			 * A string representing the current Punycode.js version number.
+			 * @memberOf punycode
+			 * @type String
+			 */
+			'version': '1.3.2',
+			/**
+			 * An object of methods to convert from JavaScript's internal character
+			 * representation (UCS-2) to Unicode code points, and back.
+			 * @see <https://mathiasbynens.be/notes/javascript-encoding>
+			 * @memberOf punycode
+			 * @type Object
+			 */
+			'ucs2': {
+				'decode': ucs2decode,
+				'encode': ucs2encode
+			},
+			'decode': decode,
+			'encode': encode,
+			'toASCII': toASCII,
+			'toUnicode': toUnicode
+		};
+
+		/** Expose `punycode` */
+		// Some AMD build optimizers, like r.js, check for specific condition patterns
+		// like the following:
+		if (
+			true
+		) {
+			!(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
+				return punycode;
+			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else if (freeExports && freeModule) {
+			if (module.exports == freeExports) { // in Node.js or RingoJS v0.8.0+
+				freeModule.exports = punycode;
+			} else { // in Narwhal or RingoJS v0.7.0-
+				for (key in punycode) {
+					punycode.hasOwnProperty(key) && (freeExports[key] = punycode[key]);
+				}
+			}
+		} else { // in Rhino or a web browser
+			root.punycode = punycode;
+		}
+
+	}(this));
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(203)(module), (function() { return this; }())))
+
+/***/ },
+/* 203 */
+/***/ function(module, exports) {
+
+	module.exports = function(module) {
+		if(!module.webpackPolyfill) {
+			module.deprecate = function() {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	}
+
+
+/***/ },
+/* 204 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.decode = exports.parse = __webpack_require__(205);
+	exports.encode = exports.stringify = __webpack_require__(206);
+
+
+/***/ },
+/* 205 */
+/***/ function(module, exports) {
+
+	// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	'use strict';
+
+	// If obj.hasOwnProperty has been overridden, then calling
+	// obj.hasOwnProperty(prop) will break.
+	// See: https://github.com/joyent/node/issues/1707
+	function hasOwnProperty(obj, prop) {
+	  return Object.prototype.hasOwnProperty.call(obj, prop);
+	}
+
+	module.exports = function(qs, sep, eq, options) {
+	  sep = sep || '&';
+	  eq = eq || '=';
+	  var obj = {};
+
+	  if (typeof qs !== 'string' || qs.length === 0) {
+	    return obj;
+	  }
+
+	  var regexp = /\+/g;
+	  qs = qs.split(sep);
+
+	  var maxKeys = 1000;
+	  if (options && typeof options.maxKeys === 'number') {
+	    maxKeys = options.maxKeys;
+	  }
+
+	  var len = qs.length;
+	  // maxKeys <= 0 means that we should not limit keys count
+	  if (maxKeys > 0 && len > maxKeys) {
+	    len = maxKeys;
+	  }
+
+	  for (var i = 0; i < len; ++i) {
+	    var x = qs[i].replace(regexp, '%20'),
+	        idx = x.indexOf(eq),
+	        kstr, vstr, k, v;
+
+	    if (idx >= 0) {
+	      kstr = x.substr(0, idx);
+	      vstr = x.substr(idx + 1);
+	    } else {
+	      kstr = x;
+	      vstr = '';
+	    }
+
+	    k = decodeURIComponent(kstr);
+	    v = decodeURIComponent(vstr);
+
+	    if (!hasOwnProperty(obj, k)) {
+	      obj[k] = v;
+	    } else if (Array.isArray(obj[k])) {
+	      obj[k].push(v);
+	    } else {
+	      obj[k] = [obj[k], v];
+	    }
+	  }
+
+	  return obj;
+	};
+
+
+/***/ },
+/* 206 */
+/***/ function(module, exports) {
+
+	// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	'use strict';
+
+	var stringifyPrimitive = function(v) {
+	  switch (typeof v) {
+	    case 'string':
+	      return v;
+
+	    case 'boolean':
+	      return v ? 'true' : 'false';
+
+	    case 'number':
+	      return isFinite(v) ? v : '';
+
+	    default:
+	      return '';
+	  }
+	};
+
+	module.exports = function(obj, sep, eq, name) {
+	  sep = sep || '&';
+	  eq = eq || '=';
+	  if (obj === null) {
+	    obj = undefined;
+	  }
+
+	  if (typeof obj === 'object') {
+	    return Object.keys(obj).map(function(k) {
+	      var ks = encodeURIComponent(stringifyPrimitive(k)) + eq;
+	      if (Array.isArray(obj[k])) {
+	        return obj[k].map(function(v) {
+	          return ks + encodeURIComponent(stringifyPrimitive(v));
+	        }).join(sep);
+	      } else {
+	        return ks + encodeURIComponent(stringifyPrimitive(obj[k]));
+	      }
+	    }).join(sep);
+
+	  }
+
+	  if (!name) return '';
+	  return encodeURIComponent(stringifyPrimitive(name)) + eq +
+	         encodeURIComponent(stringifyPrimitive(obj));
+	};
+
+
+/***/ },
+/* 207 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var EventEmitter = __webpack_require__(208),
+	    _url = __webpack_require__(201),
+	    // tests is CORS is supported in XHR, if not we need to use XDR
+	    useXdr = !!(window.XDomainRequest && !('withCredentials' in (new XMLHttpRequest()))),
+	    tempAnchor = null;
+
+	/**
+	 * Manages the state and loading of a single resource represented by
+	 * a single URL.
+	 *
+	 * @class
+	 * @param name {string} The name of the resource to load.
+	 * @param url {string|string[]} The url for this resource, for audio/video loads you can pass an array of sources.
+	 * @param [options] {object} The options for the load.
+	 * @param [options.crossOrigin] {boolean} Is this request cross-origin? Default is to determine automatically.
+	 * @param [options.loadType=Resource.LOAD_TYPE.XHR] {Resource.LOAD_TYPE} How should this resource be loaded?
+	 * @param [options.xhrType=Resource.XHR_RESPONSE_TYPE.DEFAULT] {Resource.XHR_RESPONSE_TYPE} How should the data being
+	 *      loaded be interpreted when using XHR?
+	 */
+	function Resource(name, url, options) {
+	    EventEmitter.call(this);
+
+	    options = options || {};
+
+	    if (typeof name !== 'string' || typeof url !== 'string') {
+	        throw new Error('Both name and url are required for constructing a resource.');
+	    }
+
+	    /**
+	     * The name of this resource.
+	     *
+	     * @member {string}
+	     * @readonly
+	     */
+	    this.name = name;
+
+	    /**
+	     * The url used to load this resource.
+	     *
+	     * @member {string}
+	     * @readonly
+	     */
+	    this.url = url;
+
+	    /**
+	     * Stores whether or not this url is a data url.
+	     *
+	     * @member {boolean}
+	     * @readonly
+	     */
+	    this.isDataUrl = this.url.indexOf('data:') === 0;
+
+	    /**
+	     * The data that was loaded by the resource.
+	     *
+	     * @member {any}
+	     */
+	    this.data = null;
+
+	    /**
+	     * Is this request cross-origin? If unset, determined automatically.
+	     *
+	     * @member {string}
+	     */
+	    this.crossOrigin = options.crossOrigin === true ? 'anonymous' : null;
+
+	    /**
+	     * The method of loading to use for this resource.
+	     *
+	     * @member {Resource.LOAD_TYPE}
+	     */
+	    this.loadType = options.loadType || this._determineLoadType();
+
+	    /**
+	     * The type used to load the resource via XHR. If unset, determined automatically.
+	     *
+	     * @member {string}
+	     */
+	    this.xhrType = options.xhrType;
+
+	    /**
+	     * The error that occurred while loading (if any).
+	     *
+	     * @member {Error}
+	     * @readonly
+	     */
+	    this.error = null;
+
+	    /**
+	     * The XHR object that was used to load this resource. This is only set
+	     * when `loadType` is `Resource.LOAD_TYPE.XHR`.
+	     *
+	     * @member {XMLHttpRequest}
+	     */
+	    this.xhr = null;
+
+	    /**
+	     * Describes if this resource was loaded as json. Only valid after the resource
+	     * has completely loaded.
+	     *
+	     * @member {boolean}
+	     */
+	    this.isJson = false;
+
+	    /**
+	     * Describes if this resource was loaded as xml. Only valid after the resource
+	     * has completely loaded.
+	     *
+	     * @member {boolean}
+	     */
+	    this.isXml = false;
+
+	    /**
+	     * Describes if this resource was loaded as an image tag. Only valid after the resource
+	     * has completely loaded.
+	     *
+	     * @member {boolean}
+	     */
+	    this.isImage = false;
+
+	    /**
+	     * Describes if this resource was loaded as an audio tag. Only valid after the resource
+	     * has completely loaded.
+	     *
+	     * @member {boolean}
+	     */
+	    this.isAudio = false;
+
+	    /**
+	     * Describes if this resource was loaded as a video tag. Only valid after the resource
+	     * has completely loaded.
+	     *
+	     * @member {boolean}
+	     */
+	    this.isVideo = false;
+
+	    /**
+	     * The `dequeue` method that will be used a storage place for the async queue dequeue method
+	     * used privately by the loader.
+	     *
+	     * @member {function}
+	     * @private
+	     */
+	    this._dequeue = null;
+
+	    /**
+	     * The `complete` function bound to this resource's context.
+	     *
+	     * @member {function}
+	     * @private
+	     */
+	    this._boundComplete = this.complete.bind(this);
+
+	    /**
+	     * The `_onError` function bound to this resource's context.
+	     *
+	     * @member {function}
+	     * @private
+	     */
+	    this._boundOnError = this._onError.bind(this);
+
+	    /**
+	     * The `_onProgress` function bound to this resource's context.
+	     *
+	     * @member {function}
+	     * @private
+	     */
+	    this._boundOnProgress = this._onProgress.bind(this);
+
+	    // xhr callbacks
+	    this._boundXhrOnError = this._xhrOnError.bind(this);
+	    this._boundXhrOnAbort = this._xhrOnAbort.bind(this);
+	    this._boundXhrOnLoad = this._xhrOnLoad.bind(this);
+	    this._boundXdrOnTimeout = this._xdrOnTimeout.bind(this);
+
+	    /**
+	     * Emitted when the resource beings to load.
+	     *
+	     * @event start
+	     * @memberof Resource#
+	     */
+
+	    /**
+	     * Emitted each time progress of this resource load updates.
+	     * Not all resources types and loader systems can support this event
+	     * so sometimes it may not be available. If the resource
+	     * is being loaded on a modern browser, using XHR, and the remote server
+	     * properly sets Content-Length headers, then this will be available.
+	     *
+	     * @event progress
+	     * @memberof Resource#
+	     */
+
+	    /**
+	     * Emitted once this resource has loaded, if there was an error it will
+	     * be in the `error` property.
+	     *
+	     * @event complete
+	     * @memberof Resource#
+	     */
+	}
+
+	Resource.prototype = Object.create(EventEmitter.prototype);
+	Resource.prototype.constructor = Resource;
+	module.exports = Resource;
+
+	/**
+	 * Marks the resource as complete.
+	 *
+	 * @fires complete
+	 */
+	Resource.prototype.complete = function () {
+	    // TODO: Clean this up in a wrapper or something...gross....
+	    if (this.data && this.data.removeEventListener) {
+	        this.data.removeEventListener('error', this._boundOnError);
+	        this.data.removeEventListener('load', this._boundComplete);
+	        this.data.removeEventListener('progress', this._boundOnProgress);
+	        this.data.removeEventListener('canplaythrough', this._boundComplete);
+	    }
+
+	    if (this.xhr) {
+	        if (this.xhr.removeEventListener) {
+	            this.xhr.removeEventListener('error', this._boundXhrOnError);
+	            this.xhr.removeEventListener('abort', this._boundXhrOnAbort);
+	            this.xhr.removeEventListener('progress', this._boundOnProgress);
+	            this.xhr.removeEventListener('load', this._boundXhrOnLoad);
+	        }
+	        else {
+	            this.xhr.onerror = null;
+	            this.xhr.ontimeout = null;
+	            this.xhr.onprogress = null;
+	            this.xhr.onload = null;
+	        }
+	    }
+
+	    this.emit('complete', this);
+	};
+
+	/**
+	 * Kicks off loading of this resource.
+	 *
+	 * @fires start
+	 * @param [callback] {function} Optional callback to call once the resource is loaded.
+	 */
+	Resource.prototype.load = function (cb) {
+	    this.emit('start', this);
+
+	    // if a callback is set, listen for complete event
+	    if (cb) {
+	        this.once('complete', cb);
+	    }
+
+	    // if unset, determine the value
+	    if (typeof this.crossOrigin !== 'string') {
+	        this.crossOrigin = this._determineCrossOrigin(this.url);
+	    }
+
+	    switch(this.loadType) {
+	        case Resource.LOAD_TYPE.IMAGE:
+	            this._loadImage();
+	            break;
+
+	        case Resource.LOAD_TYPE.AUDIO:
+	            this._loadElement('audio');
+	            break;
+
+	        case Resource.LOAD_TYPE.VIDEO:
+	            this._loadElement('video');
+	            break;
+
+	        case Resource.LOAD_TYPE.XHR:
+	            /* falls through */
+	        default:
+	            if (useXdr && this.crossOrigin) {
+	                this._loadXdr();
+	            }
+	            else {
+	                this._loadXhr();
+	            }
+	            break;
+	    }
+	};
+
+	/**
+	 * Loads this resources using an Image object.
+	 *
+	 * @private
+	 */
+	Resource.prototype._loadImage = function () {
+	    this.data = new Image();
+
+	    if (this.crossOrigin) {
+	        this.data.crossOrigin = this.crossOrigin;
+	    }
+
+	    this.data.src = this.url;
+
+	    this.isImage = true;
+
+	    this.data.addEventListener('error', this._boundOnError, false);
+	    this.data.addEventListener('load', this._boundComplete, false);
+	    this.data.addEventListener('progress', this._boundOnProgress, false);
+	};
+
+	/**
+	 * Loads this resources using an HTMLAudioElement or HTMLVideoElement.
+	 *
+	 * @private
+	 */
+	Resource.prototype._loadElement = function (type) {
+	    if (type === 'audio' && typeof Audio !== 'undefined') {
+	        this.data = new Audio();
+	    }
+	    else {
+	        this.data = document.createElement(type);
+	    }
+
+	    if (this.data === null) {
+	        this.error = new Error('Unsupported element ' + type);
+	        this.complete();
+	        return;
+	    }
+
+	    // support for CocoonJS Canvas+ runtime, lacks document.createElement('source')
+	    if (navigator.isCocoonJS) {
+	        this.data.src = Array.isArray(this.url) ? this.url[0] : this.url;
+	    }
+	    else {
+	        if (Array.isArray(this.url)) {
+	            for (var i = 0; i < this.url.length; ++i) {
+	                this.data.appendChild(this._createSource(type, this.url[i]));
+	            }
+	        }
+	        else {
+	            this.data.appendChild(this._createSource(type, this.url));
+	        }
+	    }
+
+	    this['is' + type[0].toUpperCase() + type.substring(1)] = true;
+
+	    this.data.addEventListener('error', this._boundOnError, false);
+	    this.data.addEventListener('load', this._boundComplete, false);
+	    this.data.addEventListener('progress', this._boundOnProgress, false);
+	    this.data.addEventListener('canplaythrough', this._boundComplete, false);
+
+	    this.data.load();
+	};
+
+	/**
+	 * Loads this resources using an XMLHttpRequest.
+	 *
+	 * @private
+	 */
+	Resource.prototype._loadXhr = function () {
+	    // if unset, determine the value
+	    if (typeof this.xhrType !== 'string') {
+	        this.xhrType = this._determineXhrType();
+	    }
+
+	    var xhr = this.xhr = new XMLHttpRequest();
+
+	    // set the request type and url
+	    xhr.open('GET', this.url, true);
+
+	    // load json as text and parse it ourselves. We do this because some browsers
+	    // *cough* safari *cough* can't deal with it.
+	    if (this.xhrType === Resource.XHR_RESPONSE_TYPE.JSON || this.xhrType === Resource.XHR_RESPONSE_TYPE.DOCUMENT) {
+	        xhr.responseType = Resource.XHR_RESPONSE_TYPE.TEXT;
+	    }
+	    else {
+	        xhr.responseType = this.xhrType;
+	    }
+
+	    xhr.addEventListener('error', this._boundXhrOnError, false);
+	    xhr.addEventListener('abort', this._boundXhrOnAbort, false);
+	    xhr.addEventListener('progress', this._boundOnProgress, false);
+	    xhr.addEventListener('load', this._boundXhrOnLoad, false);
+
+	    xhr.send();
+	};
+
+	/**
+	 * Loads this resources using an XDomainRequest. This is here because we need to support IE9 (gross).
+	 *
+	 * @private
+	 */
+	Resource.prototype._loadXdr = function () {
+	    // if unset, determine the value
+	    if (typeof this.xhrType !== 'string') {
+	        this.xhrType = this._determineXhrType();
+	    }
+
+	    var xdr = this.xhr = new XDomainRequest();
+
+	    // XDomainRequest has a few quirks. Occasionally it will abort requests
+	    // A way to avoid this is to make sure ALL callbacks are set even if not used
+	    // More info here: http://stackoverflow.com/questions/15786966/xdomainrequest-aborts-post-on-ie-9
+	    xdr.timeout = 5000;
+
+	    xdr.onerror = this._boundXhrOnError;
+	    xdr.ontimeout = this._boundXdrOnTimeout;
+	    xdr.onprogress = this._boundOnProgress;
+	    xdr.onload = this._boundXhrOnLoad;
+
+	    xdr.open('GET', this.url, true);
+
+	    //  Note: The xdr.send() call is wrapped in a timeout to prevent an issue with the interface where some requests are lost
+	    //  if multiple XDomainRequests are being sent at the same time.
+	    // Some info here: https://github.com/photonstorm/phaser/issues/1248
+	    setTimeout(function () {
+	        xdr.send();
+	    }, 0);
+	};
+
+	/**
+	 * Creates a source used in loading via an element.
+	 *
+	 * @param type {string} The element type (video or audio).
+	 * @param url {string} The source URL to load from.
+	 * @param [mime] {string} The mime type of the video
+	 * @private
+	 */
+	Resource.prototype._createSource = function (type, url, mime) {
+	    if (!mime) {
+	        mime = type + '/' + url.substr(url.lastIndexOf('.') + 1);
+	    }
+
+	    var source = document.createElement('source');
+
+	    source.src = url;
+	    source.type = mime;
+
+	    return source;
+	};
+
+	/**
+	 * Called if a load errors out.
+	 *
+	 * @param event {Event} The error event from the element that emits it.
+	 * @private
+	 */
+	Resource.prototype._onError = function (event) {
+	    this.error = new Error('Failed to load element using ' + event.target.nodeName);
+	    this.complete();
+	};
+
+	/**
+	 * Called if a load progress event fires for xhr/xdr.
+	 *
+	 * @fires progress
+	 * @param event {XMLHttpRequestProgressEvent|Event}
+	 * @private
+	 */
+	Resource.prototype._onProgress =  function (event) {
+	    if (event && event.lengthComputable) {
+	        this.emit('progress', this, event.loaded / event.total);
+	    }
+	};
+
+	/**
+	 * Called if an error event fires for xhr/xdr.
+	 *
+	 * @param event {XMLHttpRequestErrorEvent|Event}
+	 * @private
+	 */
+	Resource.prototype._xhrOnError = function () {
+	    this.error = new Error(
+	        reqType(this.xhr) + ' Request failed. ' +
+	        'Status: ' + this.xhr.status + ', text: "' + this.xhr.statusText + '"'
+	    );
+
+	    this.complete();
+	};
+
+	/**
+	 * Called if an abort event fires for xhr.
+	 *
+	 * @param event {XMLHttpRequestAbortEvent}
+	 * @private
+	 */
+	Resource.prototype._xhrOnAbort = function () {
+	    this.error = new Error(reqType(this.xhr) + ' Request was aborted by the user.');
+	    this.complete();
+	};
+
+	/**
+	 * Called if a timeout event fires for xdr.
+	 *
+	 * @param event {Event}
+	 * @private
+	 */
+	Resource.prototype._xdrOnTimeout = function () {
+	    this.error = new Error(reqType(this.xhr) + ' Request timed out.');
+	    this.complete();
+	};
+
+	/**
+	 * Called when data successfully loads from an xhr/xdr request.
+	 *
+	 * @param event {XMLHttpRequestLoadEvent|Event}
+	 * @private
+	 */
+	Resource.prototype._xhrOnLoad = function () {
+	    var xhr = this.xhr,
+	        status = xhr.status !== undefined ? xhr.status : 200; //XDR has no `.status`, assume 200.
+
+	    // status can be 0 when using the file:// protocol, also check if a response was found
+	    if (status === 200 || status === 204 || (status === 0 && xhr.responseText.length > 0)) {
+	        // if text, just return it
+	        if (this.xhrType === Resource.XHR_RESPONSE_TYPE.TEXT) {
+	            this.data = xhr.responseText;
+	        }
+	        // if json, parse into json object
+	        else if (this.xhrType === Resource.XHR_RESPONSE_TYPE.JSON) {
+	            try {
+	                this.data = JSON.parse(xhr.responseText);
+	                this.isJson = true;
+	            } catch(e) {
+	                this.error = new Error('Error trying to parse loaded json:', e);
+	            }
+	        }
+	        // if xml, parse into an xml document or div element
+	        else if (this.xhrType === Resource.XHR_RESPONSE_TYPE.DOCUMENT) {
+	            try {
+	                if (window.DOMParser) {
+	                    var domparser = new DOMParser();
+	                    this.data = domparser.parseFromString(xhr.responseText, 'text/xml');
+	                }
+	                else {
+	                    var div = document.createElement('div');
+	                    div.innerHTML = xhr.responseText;
+	                    this.data = div;
+	                }
+	                this.isXml = true;
+	            } catch (e) {
+	                this.error = new Error('Error trying to parse loaded xml:', e);
+	            }
+	        }
+	        // other types just return the response
+	        else {
+	            this.data = xhr.response || xhr.responseText;
+	        }
+	    }
+	    else {
+	        this.error = new Error('[' + xhr.status + ']' + xhr.statusText + ':' + xhr.responseURL);
+	    }
+
+	    this.complete();
+	};
+
+	function reqType(xhr) {
+	    return xhr.toString().replace('object ', '');
+	}
+
+	/**
+	 * Sets the `crossOrigin` property for this resource based on if the url
+	 * for this resource is cross-origin. If crossOrigin was manually set, this
+	 * function does nothing.
+	 *
+	 * @private
+	 * @param url {string} The url to test.
+	 * @param [location=window.location] {object} The location object to test against.
+	 * @return {string} The crossOrigin value to use (or empty string for none).
+	 */
+	Resource.prototype._determineCrossOrigin = function (url, loc) {
+	    // data: and javascript: urls are considered same-origin
+	    if (url.indexOf('data:') === 0) {
+	        return '';
+	    }
+
+	    // default is window.location
+	    loc = loc || window.location;
+
+	    if (!tempAnchor) {
+	        tempAnchor = document.createElement('a');
+	    }
+
+	    // let the browser determine the full href for the url of this resource and then
+	    // parse with the node url lib, we can't use the properties of the anchor element
+	    // because they don't work in IE9 :(
+	    tempAnchor.href = url;
+	    url = _url.parse(tempAnchor.href);
+
+	    var samePort = (!url.port && loc.port === '') || (url.port === loc.port);
+
+	    // if cross origin
+	    if (url.hostname !== loc.hostname || !samePort || url.protocol !== loc.protocol) {
+	        return 'anonymous';
+	    }
+
+	    return '';
+	};
+
+	/**
+	 * Determines the responseType of an XHR request based on the extension of the
+	 * resource being loaded.
+	 *
+	 * @private
+	 * @return {Resource.XHR_RESPONSE_TYPE} The responseType to use.
+	 */
+	Resource.prototype._determineXhrType = function () {
+	    return Resource._xhrTypeMap[this._getExtension()] || Resource.XHR_RESPONSE_TYPE.TEXT;
+	};
+
+	Resource.prototype._determineLoadType = function () {
+	    return Resource._loadTypeMap[this._getExtension()] || Resource.LOAD_TYPE.XHR;
+	};
+
+	Resource.prototype._getExtension = function () {
+	    var url = this.url,
+	        ext;
+
+	    if (this.isDataUrl) {
+	        var slashIndex = url.indexOf('/');
+	        ext = url.substring(slashIndex + 1, url.indexOf(';', slashIndex));
+	    }
+	    else {
+	        var queryStart = url.indexOf('?');
+	        if (queryStart !== -1) {
+	            url = url.substring(0, queryStart);
+	        }
+
+	        ext = url.substring(url.lastIndexOf('.') + 1);
+	    }
+
+	    return ext;
+	};
+
+	/**
+	 * Determines the mime type of an XHR request based on the responseType of
+	 * resource being loaded.
+	 *
+	 * @private
+	 * @return {string} The mime type to use.
+	 */
+	Resource.prototype._getMimeFromXhrType = function (type) {
+	    switch(type) {
+	        case Resource.XHR_RESPONSE_TYPE.BUFFER:
+	            return 'application/octet-binary';
+
+	        case Resource.XHR_RESPONSE_TYPE.BLOB:
+	            return 'application/blob';
+
+	        case Resource.XHR_RESPONSE_TYPE.DOCUMENT:
+	            return 'application/xml';
+
+	        case Resource.XHR_RESPONSE_TYPE.JSON:
+	            return 'application/json';
+
+	        case Resource.XHR_RESPONSE_TYPE.DEFAULT:
+	        case Resource.XHR_RESPONSE_TYPE.TEXT:
+	            /* falls through */
+	        default:
+	            return 'text/plain';
+
+	    }
+	};
+
+	/**
+	 * The types of loading a resource can use.
+	 *
+	 * @static
+	 * @constant
+	 * @property {object} LOAD_TYPE
+	 * @property {number} LOAD_TYPE.XHR - Uses XMLHttpRequest to load the resource.
+	 * @property {number} LOAD_TYPE.IMAGE - Uses an `Image` object to load the resource.
+	 * @property {number} LOAD_TYPE.AUDIO - Uses an `Audio` object to load the resource.
+	 * @property {number} LOAD_TYPE.VIDEO - Uses a `Video` object to load the resource.
+	 */
+	Resource.LOAD_TYPE = {
+	    XHR:    1,
+	    IMAGE:  2,
+	    AUDIO:  3,
+	    VIDEO:  4
+	};
+
+	/**
+	 * The XHR ready states, used internally.
+	 *
+	 * @static
+	 * @constant
+	 * @property {object} XHR_READY_STATE
+	 * @property {number} XHR_READY_STATE.UNSENT - open()has not been called yet.
+	 * @property {number} XHR_READY_STATE.OPENED - send()has not been called yet.
+	 * @property {number} XHR_READY_STATE.HEADERS_RECEIVED - send() has been called, and headers and status are available.
+	 * @property {number} XHR_READY_STATE.LOADING - Downloading; responseText holds partial data.
+	 * @property {number} XHR_READY_STATE.DONE - The operation is complete.
+	 */
+	Resource.XHR_READY_STATE = {
+	    UNSENT: 0,
+	    OPENED: 1,
+	    HEADERS_RECEIVED: 2,
+	    LOADING: 3,
+	    DONE: 4
+	};
+
+	/**
+	 * The XHR ready states, used internally.
+	 *
+	 * @static
+	 * @constant
+	 * @property {object} XHR_RESPONSE_TYPE
+	 * @property {string} XHR_RESPONSE_TYPE.DEFAULT - defaults to text
+	 * @property {string} XHR_RESPONSE_TYPE.BUFFER - ArrayBuffer
+	 * @property {string} XHR_RESPONSE_TYPE.BLOB - Blob
+	 * @property {string} XHR_RESPONSE_TYPE.DOCUMENT - Document
+	 * @property {string} XHR_RESPONSE_TYPE.JSON - Object
+	 * @property {string} XHR_RESPONSE_TYPE.TEXT - String
+	 */
+	Resource.XHR_RESPONSE_TYPE = {
+	    DEFAULT:    'text',
+	    BUFFER:     'arraybuffer',
+	    BLOB:       'blob',
+	    DOCUMENT:   'document',
+	    JSON:       'json',
+	    TEXT:       'text'
+	};
+
+	Resource._loadTypeMap = {
+	    'gif':      Resource.LOAD_TYPE.IMAGE,
+	    'png':      Resource.LOAD_TYPE.IMAGE,
+	    'bmp':      Resource.LOAD_TYPE.IMAGE,
+	    'jpg':      Resource.LOAD_TYPE.IMAGE,
+	    'jpeg':     Resource.LOAD_TYPE.IMAGE,
+	    'tif':      Resource.LOAD_TYPE.IMAGE,
+	    'tiff':     Resource.LOAD_TYPE.IMAGE,
+	    'webp':     Resource.LOAD_TYPE.IMAGE,
+	    'tga':      Resource.LOAD_TYPE.IMAGE
+	};
+
+	Resource._xhrTypeMap = {
+	    // xml
+	    'xhtml':    Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+	    'html':     Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+	    'htm':      Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+	    'xml':      Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+	    'tmx':      Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+	    'tsx':      Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+	    'svg':      Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+
+	    // images
+	    'gif':      Resource.XHR_RESPONSE_TYPE.BLOB,
+	    'png':      Resource.XHR_RESPONSE_TYPE.BLOB,
+	    'bmp':      Resource.XHR_RESPONSE_TYPE.BLOB,
+	    'jpg':      Resource.XHR_RESPONSE_TYPE.BLOB,
+	    'jpeg':     Resource.XHR_RESPONSE_TYPE.BLOB,
+	    'tif':      Resource.XHR_RESPONSE_TYPE.BLOB,
+	    'tiff':     Resource.XHR_RESPONSE_TYPE.BLOB,
+	    'webp':     Resource.XHR_RESPONSE_TYPE.BLOB,
+	    'tga':      Resource.XHR_RESPONSE_TYPE.BLOB,
+
+	    // json
+	    'json':     Resource.XHR_RESPONSE_TYPE.JSON,
+
+	    // text
+	    'text':     Resource.XHR_RESPONSE_TYPE.TEXT,
+	    'txt':      Resource.XHR_RESPONSE_TYPE.TEXT
+	};
+
+	/**
+	 * Sets the load type to be used for a specific extension.
+	 *
+	 * @static
+	 * @param extname {string} The extension to set the type for, e.g. "png" or "fnt"
+	 * @param loadType {Resource.LOAD_TYPE} The load type to set it to.
+	 */
+	Resource.setExtensionLoadType = function (extname, loadType) {
+	    setExtMap(Resource._loadTypeMap, extname, loadType);
+	};
+
+	/**
+	 * Sets the load type to be used for a specific extension.
+	 *
+	 * @static
+	 * @param extname {string} The extension to set the type for, e.g. "png" or "fnt"
+	 * @param xhrType {Resource.XHR_RESPONSE_TYPE} The xhr type to set it to.
+	 */
+	Resource.setExtensionXhrType = function (extname, xhrType) {
+	    setExtMap(Resource._xhrTypeMap, extname, xhrType);
+	};
+
+	function setExtMap(map, extname, val) {
+	    if (extname && extname.indexOf('.') === 0) {
+	        extname = extname.substring(1);
+	    }
+
+	    if (!extname) {
+	        return;
+	    }
+
+	    map[extname] = val;
+	}
+
+
+/***/ },
+/* 208 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	//
+	// We store our EE objects in a plain object whose properties are event names.
+	// If `Object.create(null)` is not supported we prefix the event names with a
+	// `~` to make sure that the built-in object properties are not overridden or
+	// used as an attack vector.
+	// We also assume that `Object.create(null)` is available when the event name
+	// is an ES6 Symbol.
+	//
+	var prefix = typeof Object.create !== 'function' ? '~' : false;
+
+	/**
+	 * Representation of a single EventEmitter function.
+	 *
+	 * @param {Function} fn Event handler to be called.
+	 * @param {Mixed} context Context for function execution.
+	 * @param {Boolean} once Only emit once
+	 * @api private
+	 */
+	function EE(fn, context, once) {
+	  this.fn = fn;
+	  this.context = context;
+	  this.once = once || false;
+	}
+
+	/**
+	 * Minimal EventEmitter interface that is molded against the Node.js
+	 * EventEmitter interface.
+	 *
+	 * @constructor
+	 * @api public
+	 */
+	function EventEmitter() { /* Nothing to set */ }
+
+	/**
+	 * Holds the assigned EventEmitters by name.
+	 *
+	 * @type {Object}
+	 * @private
+	 */
+	EventEmitter.prototype._events = undefined;
+
+	/**
+	 * Return a list of assigned event listeners.
+	 *
+	 * @param {String} event The events that should be listed.
+	 * @param {Boolean} exists We only need to know if there are listeners.
+	 * @returns {Array|Boolean}
+	 * @api public
+	 */
+	EventEmitter.prototype.listeners = function listeners(event, exists) {
+	  var evt = prefix ? prefix + event : event
+	    , available = this._events && this._events[evt];
+
+	  if (exists) return !!available;
+	  if (!available) return [];
+	  if (available.fn) return [available.fn];
+
+	  for (var i = 0, l = available.length, ee = new Array(l); i < l; i++) {
+	    ee[i] = available[i].fn;
+	  }
+
+	  return ee;
+	};
+
+	/**
+	 * Emit an event to all registered event listeners.
+	 *
+	 * @param {String} event The name of the event.
+	 * @returns {Boolean} Indication if we've emitted an event.
+	 * @api public
+	 */
+	EventEmitter.prototype.emit = function emit(event, a1, a2, a3, a4, a5) {
+	  var evt = prefix ? prefix + event : event;
+
+	  if (!this._events || !this._events[evt]) return false;
+
+	  var listeners = this._events[evt]
+	    , len = arguments.length
+	    , args
+	    , i;
+
+	  if ('function' === typeof listeners.fn) {
+	    if (listeners.once) this.removeListener(event, listeners.fn, undefined, true);
+
+	    switch (len) {
+	      case 1: return listeners.fn.call(listeners.context), true;
+	      case 2: return listeners.fn.call(listeners.context, a1), true;
+	      case 3: return listeners.fn.call(listeners.context, a1, a2), true;
+	      case 4: return listeners.fn.call(listeners.context, a1, a2, a3), true;
+	      case 5: return listeners.fn.call(listeners.context, a1, a2, a3, a4), true;
+	      case 6: return listeners.fn.call(listeners.context, a1, a2, a3, a4, a5), true;
+	    }
+
+	    for (i = 1, args = new Array(len -1); i < len; i++) {
+	      args[i - 1] = arguments[i];
+	    }
+
+	    listeners.fn.apply(listeners.context, args);
+	  } else {
+	    var length = listeners.length
+	      , j;
+
+	    for (i = 0; i < length; i++) {
+	      if (listeners[i].once) this.removeListener(event, listeners[i].fn, undefined, true);
+
+	      switch (len) {
+	        case 1: listeners[i].fn.call(listeners[i].context); break;
+	        case 2: listeners[i].fn.call(listeners[i].context, a1); break;
+	        case 3: listeners[i].fn.call(listeners[i].context, a1, a2); break;
+	        default:
+	          if (!args) for (j = 1, args = new Array(len -1); j < len; j++) {
+	            args[j - 1] = arguments[j];
+	          }
+
+	          listeners[i].fn.apply(listeners[i].context, args);
+	      }
+	    }
+	  }
+
+	  return true;
+	};
+
+	/**
+	 * Register a new EventListener for the given event.
+	 *
+	 * @param {String} event Name of the event.
+	 * @param {Functon} fn Callback function.
+	 * @param {Mixed} context The context of the function.
+	 * @api public
+	 */
+	EventEmitter.prototype.on = function on(event, fn, context) {
+	  var listener = new EE(fn, context || this)
+	    , evt = prefix ? prefix + event : event;
+
+	  if (!this._events) this._events = prefix ? {} : Object.create(null);
+	  if (!this._events[evt]) this._events[evt] = listener;
+	  else {
+	    if (!this._events[evt].fn) this._events[evt].push(listener);
+	    else this._events[evt] = [
+	      this._events[evt], listener
+	    ];
+	  }
+
+	  return this;
+	};
+
+	/**
+	 * Add an EventListener that's only called once.
+	 *
+	 * @param {String} event Name of the event.
+	 * @param {Function} fn Callback function.
+	 * @param {Mixed} context The context of the function.
+	 * @api public
+	 */
+	EventEmitter.prototype.once = function once(event, fn, context) {
+	  var listener = new EE(fn, context || this, true)
+	    , evt = prefix ? prefix + event : event;
+
+	  if (!this._events) this._events = prefix ? {} : Object.create(null);
+	  if (!this._events[evt]) this._events[evt] = listener;
+	  else {
+	    if (!this._events[evt].fn) this._events[evt].push(listener);
+	    else this._events[evt] = [
+	      this._events[evt], listener
+	    ];
+	  }
+
+	  return this;
+	};
+
+	/**
+	 * Remove event listeners.
+	 *
+	 * @param {String} event The event we want to remove.
+	 * @param {Function} fn The listener that we need to find.
+	 * @param {Mixed} context Only remove listeners matching this context.
+	 * @param {Boolean} once Only remove once listeners.
+	 * @api public
+	 */
+	EventEmitter.prototype.removeListener = function removeListener(event, fn, context, once) {
+	  var evt = prefix ? prefix + event : event;
+
+	  if (!this._events || !this._events[evt]) return this;
+
+	  var listeners = this._events[evt]
+	    , events = [];
+
+	  if (fn) {
+	    if (listeners.fn) {
+	      if (
+	           listeners.fn !== fn
+	        || (once && !listeners.once)
+	        || (context && listeners.context !== context)
+	      ) {
+	        events.push(listeners);
+	      }
+	    } else {
+	      for (var i = 0, length = listeners.length; i < length; i++) {
+	        if (
+	             listeners[i].fn !== fn
+	          || (once && !listeners[i].once)
+	          || (context && listeners[i].context !== context)
+	        ) {
+	          events.push(listeners[i]);
+	        }
+	      }
+	    }
+	  }
+
+	  //
+	  // Reset the array, or remove it completely if we have no more listeners.
+	  //
+	  if (events.length) {
+	    this._events[evt] = events.length === 1 ? events[0] : events;
+	  } else {
+	    delete this._events[evt];
+	  }
+
+	  return this;
+	};
+
+	/**
+	 * Remove all listeners or only the listeners for the specified event.
+	 *
+	 * @param {String} event The event want to remove all listeners for.
+	 * @api public
+	 */
+	EventEmitter.prototype.removeAllListeners = function removeAllListeners(event) {
+	  if (!this._events) return this;
+
+	  if (event) delete this._events[prefix ? prefix + event : event];
+	  else this._events = prefix ? {} : Object.create(null);
+
+	  return this;
+	};
+
+	//
+	// Alias methods names because people roll like that.
+	//
+	EventEmitter.prototype.off = EventEmitter.prototype.removeListener;
+	EventEmitter.prototype.addListener = EventEmitter.prototype.on;
+
+	//
+	// This function doesn't apply anymore.
+	//
+	EventEmitter.prototype.setMaxListeners = function setMaxListeners() {
+	  return this;
+	};
+
+	//
+	// Expose the prefix.
+	//
+	EventEmitter.prefixed = prefix;
+
+	//
+	// Expose the module.
+	//
+	if (true) {
+	  module.exports = EventEmitter;
+	}
+
+
+/***/ },
+/* 209 */
+/***/ function(module, exports) {
+
+	// a simple in-memory cache for resources
+	var cache = {};
+
+	module.exports = function () {
+	    return function (resource, next) {
+	        // if cached, then set data and complete the resource
+	        if (cache[resource.url]) {
+	            resource.data = cache[resource.url];
+	            resource.complete();
+	        }
+	        // if not cached, wait for complete and store it in the cache.
+	        else {
+	            resource.once('complete', function () {
+	               cache[this.url] = this.data;
+	            });
+
+	            next();
+	        }
+	    };
+	};
+
+
+/***/ },
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Resource = __webpack_require__(207),
+	    b64 = __webpack_require__(211);
+
+	window.URL = window.URL || window.webkitURL;
+
+	// a middleware for transforming XHR loaded Blobs into more useful objects
+
+	module.exports = function () {
+	    return function (resource, next) {
+	        if (!resource.data) {
+	            return next();
+	        }
+
+	        // if this was an XHR load of a blob
+	        if (resource.xhr && resource.xhrType === Resource.XHR_RESPONSE_TYPE.BLOB) {
+	            // if there is no blob support we probably got a binary string back
+	            if (!window.Blob || typeof resource.data === 'string') {
+	                var type = resource.xhr.getResponseHeader('content-type');
+
+	                // this is an image, convert the binary string into a data url
+	                if (type && type.indexOf('image') === 0) {
+	                    resource.data = new Image();
+	                    resource.data.src = 'data:' + type + ';base64,' + b64.encodeBinary(resource.xhr.responseText);
+
+	                    resource.isImage = true;
+
+	                    // wait until the image loads and then callback
+	                    resource.data.onload = function () {
+	                        resource.data.onload = null;
+
+	                        next();
+	                    };
+	                }
+	            }
+	            // if content type says this is an image, then we should transform the blob into an Image object
+	            else if (resource.data.type.indexOf('image') === 0) {
+	                var src = URL.createObjectURL(resource.data);
+
+	                resource.blob = resource.data;
+	                resource.data = new Image();
+	                resource.data.src = src;
+
+	                resource.isImage = true;
+
+	                // cleanup the no longer used blob after the image loads
+	                resource.data.onload = function () {
+	                    URL.revokeObjectURL(src);
+	                    resource.data.onload = null;
+
+	                    next();
+	                };
+	            }
+	        }
+	        else {
+	            next();
+	        }
+	    };
+	};
+
+
+/***/ },
+/* 211 */
+/***/ function(module, exports) {
+
+	module.exports = {
+
+	    // private property
+	    _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+	    encodeBinary: function (input) {
+	        var output = "";
+	        var bytebuffer;
+	        var encodedCharIndexes = new Array(4);
+	        var inx = 0;
+	        var jnx = 0;
+	        var paddingBytes = 0;
+
+	        while (inx < input.length) {
+	            // Fill byte buffer array
+	            bytebuffer = new Array(3);
+	            for (jnx = 0; jnx < bytebuffer.length; jnx++) {
+	                if (inx < input.length) {
+	                    // throw away high-order byte, as documented at:
+	                    // https://developer.mozilla.org/En/Using_XMLHttpRequest#Handling_binary_data
+	                    bytebuffer[jnx] = input.charCodeAt(inx++) & 0xff;
+	                }
+	                else {
+	                    bytebuffer[jnx] = 0;
+	                }
+	            }
+
+	            // Get each encoded character, 6 bits at a time
+	            // index 1: first 6 bits
+	            encodedCharIndexes[0] = bytebuffer[0] >> 2;
+	            // index 2: second 6 bits (2 least significant bits from input byte 1 + 4 most significant bits from byte 2)
+	            encodedCharIndexes[1] = ((bytebuffer[0] & 0x3) << 4) | (bytebuffer[1] >> 4);
+	            // index 3: third 6 bits (4 least significant bits from input byte 2 + 2 most significant bits from byte 3)
+	            encodedCharIndexes[2] = ((bytebuffer[1] & 0x0f) << 2) | (bytebuffer[2] >> 6);
+	            // index 3: forth 6 bits (6 least significant bits from input byte 3)
+	            encodedCharIndexes[3] = bytebuffer[2] & 0x3f;
+
+	            // Determine whether padding happened, and adjust accordingly
+	            paddingBytes = inx - (input.length - 1);
+	            switch (paddingBytes) {
+	                case 2:
+	                    // Set last 2 characters to padding char
+	                    encodedCharIndexes[3] = 64;
+	                    encodedCharIndexes[2] = 64;
+	                    break;
+
+	                case 1:
+	                    // Set last character to padding char
+	                    encodedCharIndexes[3] = 64;
+	                    break;
+
+	                default:
+	                    break; // No padding - proceed
+	            }
+
+	            // Now we will grab each appropriate character out of our keystring
+	            // based on our index array and append it to the output string
+	            for (jnx = 0; jnx < encodedCharIndexes.length; jnx++) {
+	                output += this._keyStr.charAt(encodedCharIndexes[jnx]);
+	            }
+	        }
+	        return output;
+	    }
+	};
+
+
+/***/ },
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -6520,43 +9860,43 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interfacesI_Loop = __webpack_require__(200);
+	var _interface = __webpack_require__(213);
 
-	var _interfacesI_Loop2 = _interopRequireDefault(_interfacesI_Loop);
+	var _interface2 = _interopRequireDefault(_interface);
 
-	var _node_modulesMainloopJsBuildMainloopMin = __webpack_require__(201);
+	var _node_modulesMainloopJsBuildMainloopMin = __webpack_require__(214);
 
 	var _node_modulesMainloopJsBuildMainloopMin2 = _interopRequireDefault(_node_modulesMainloopJsBuildMainloopMin);
 
 	function executeAll(stage) {
 	  //TODO signaling system???
-	  _interfacesI_Loop2['default'].functions[stage].forEach(function (func) {
+	  _interface2['default'].functions[stage].forEach(function (func) {
 	    func();
 	  });
 	}
 
-	_interfacesI_Loop2['default'].setFPS = function (fps) {
+	_interface2['default'].setFPS = function (fps) {
 	  _node_modulesMainloopJsBuildMainloopMin2['default'].setMaxAllowedFPS(fps);
 	};
 
-	_interfacesI_Loop2['default'].getFPS = function (fps) {
+	_interface2['default'].getFPS = function (fps) {
 	  _node_modulesMainloopJsBuildMainloopMin2['default'].getFPS(fps);
 	};
 
-	_interfacesI_Loop2['default'].process = executeAll.bind(null, 'process');
-	_interfacesI_Loop2['default'].update = executeAll.bind(null, 'update');
-	_interfacesI_Loop2['default'].render = executeAll.bind(null, 'render');
-	_interfacesI_Loop2['default'].postRender = executeAll.bind(null, 'postRender');
+	_interface2['default'].process = executeAll.bind(null, 'process');
+	_interface2['default'].update = executeAll.bind(null, 'update');
+	_interface2['default'].render = executeAll.bind(null, 'render');
+	_interface2['default'].postRender = executeAll.bind(null, 'postRender');
 
-	_interfacesI_Loop2['default'].start = function () {
-	  _node_modulesMainloopJsBuildMainloopMin2['default'].setBegin(_interfacesI_Loop2['default'].process).setUpdate(_interfacesI_Loop2['default'].update).setDraw(_interfacesI_Loop2['default'].render).setEnd(_interfacesI_Loop2['default'].postRender).start();
+	_interface2['default'].start = function () {
+	  _node_modulesMainloopJsBuildMainloopMin2['default'].setBegin(_interface2['default'].process).setUpdate(_interface2['default'].update).setDraw(_interface2['default'].render).setEnd(_interface2['default'].postRender).start();
 	};
 
-	exports['default'] = _interfacesI_Loop2['default'];
+	exports['default'] = _interface2['default'];
 	module.exports = exports['default'];
 
 /***/ },
-/* 200 */
+/* 213 */
 /***/ function(module, exports) {
 
 	/**
@@ -6644,7 +9984,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 201 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -6658,7 +9998,7 @@
 	//# sourceMappingURL=mainloop.min.js.map
 
 /***/ },
-/* 202 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -6674,9 +10014,9 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interfacesI_Controller = __webpack_require__(203);
+	var _interface = __webpack_require__(216);
 
-	var _interfacesI_Controller2 = _interopRequireDefault(_interfacesI_Controller);
+	var _interface2 = _interopRequireDefault(_interface);
 
 	/**
 	 * Loads and starts game loop
@@ -6690,7 +10030,7 @@
 	 *    json: { 'icon': './assets/data.json' }
 	 * } ).then( function( game ){} );
 	 */
-	_interfacesI_Controller2['default'].launch = function (_ref, game) {
+	_interface2['default'].launch = function (_ref, game) {
 	  var _ref2 = _slicedToArray(_ref, 1);
 
 	  var jsonData = _ref2[0];
@@ -6723,11 +10063,11 @@
 	  });
 	};
 
-	exports['default'] = _interfacesI_Controller2['default'];
+	exports['default'] = _interface2['default'];
 	module.exports = exports['default'];
 
 /***/ },
-/* 203 */
+/* 216 */
 /***/ function(module, exports) {
 
 	/**
@@ -6742,12 +10082,12 @@
 	var empty = function empty() {};
 
 	exports["default"] = {
-	  launch: empty
+	  launch: function launch(game) {}
 	};
 	module.exports = exports["default"];
 
 /***/ },
-/* 204 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -6761,17 +10101,17 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interfacesI_Render = __webpack_require__(205);
+	var _interface = __webpack_require__(218);
 
-	var _interfacesI_Render2 = _interopRequireDefault(_interfacesI_Render);
+	var _interface2 = _interopRequireDefault(_interface);
 
-	var _pixiJs = __webpack_require__(206);
+	var _pixiJs = __webpack_require__(219);
 
 	var _pixiJs2 = _interopRequireDefault(_pixiJs);
 
 	var stage = undefined;
 
-	_interfacesI_Render2['default'].initialize = function (game, width, height) {
+	_interface2['default'].initialize = function (game, width, height) {
 
 	  var renderer = new _pixiJs2['default'].WebGLRenderer(width, height);
 	  document.body.appendChild(renderer.view);
@@ -6781,7 +10121,7 @@
 	  game.loop.addRender(renderer.render.bind(renderer, stage));
 	};
 
-	_interfacesI_Render2['default'].addSprite = function (image, x, y) {
+	_interface2['default'].addSprite = function (image, x, y) {
 	  var sprite = new PIXI.Sprite.fromImage(image);
 
 	  sprite.position.x = x;
@@ -6792,11 +10132,11 @@
 	  return sprite;
 	};
 
-	exports['default'] = _interfacesI_Render2['default'];
+	exports['default'] = _interface2['default'];
 	module.exports = exports['default'];
 
 /***/ },
-/* 205 */
+/* 218 */
 /***/ function(module, exports) {
 
 	/**
@@ -6820,20 +10160,20 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 206 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {// run the polyfills
-	__webpack_require__(207);
+	__webpack_require__(220);
 
-	var core = module.exports = __webpack_require__(212);
+	var core = module.exports = __webpack_require__(225);
 
 	// add core plugins.
-	core.extras         = __webpack_require__(273);
-	core.filters        = __webpack_require__(280);
-	core.interaction    = __webpack_require__(308);
-	core.loaders        = __webpack_require__(312);
-	core.mesh           = __webpack_require__(331);
+	core.extras         = __webpack_require__(285);
+	core.filters        = __webpack_require__(292);
+	core.interaction    = __webpack_require__(320);
+	core.loaders        = __webpack_require__(324);
+	core.mesh           = __webpack_require__(330);
 
 	// export a premade loader instance
 	/**
@@ -6846,7 +10186,7 @@
 	core.loader = new core.loaders.Loader();
 
 	// mixin the deprecation features.
-	Object.assign(core, __webpack_require__(336));
+	Object.assign(core, __webpack_require__(335));
 
 	// Always export pixi globally.
 	global.PIXI = core;
@@ -6854,16 +10194,16 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 207 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(208);
-	__webpack_require__(210);
-	__webpack_require__(211);
+	__webpack_require__(221);
+	__webpack_require__(223);
+	__webpack_require__(224);
 
 
 /***/ },
-/* 208 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// References:
@@ -6872,12 +10212,12 @@
 
 	if (!Object.assign)
 	{
-	    Object.assign = __webpack_require__(209);
+	    Object.assign = __webpack_require__(222);
 	}
 
 
 /***/ },
-/* 209 */
+/* 222 */
 /***/ function(module, exports) {
 
 	/* eslint-disable no-unused-vars */
@@ -6922,7 +10262,7 @@
 
 
 /***/ },
-/* 210 */
+/* 223 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {// References:
@@ -6995,7 +10335,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 211 */
+/* 224 */
 /***/ function(module, exports) {
 
 	// References:
@@ -7015,7 +10355,7 @@
 
 
 /***/ },
-/* 212 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -7029,52 +10369,52 @@
 	 * @namespace PIXI
 	 */
 	// export core and const. We assign core to const so that the non-reference types in const remain in-tact
-	var core = module.exports = Object.assign(__webpack_require__(213), __webpack_require__(215), {
+	var core = module.exports = Object.assign(__webpack_require__(226), __webpack_require__(228), {
 	    // utils
-	    utils: __webpack_require__(223),
-	    ticker: __webpack_require__(227),
+	    utils: __webpack_require__(236),
+	    ticker: __webpack_require__(239),
 
 	    // display
-	    DisplayObject:          __webpack_require__(229),
-	    Container:              __webpack_require__(241),
+	    DisplayObject:          __webpack_require__(241),
+	    Container:              __webpack_require__(253),
 
 	    // sprites
-	    Sprite:                 __webpack_require__(242),
-	    ParticleContainer:      __webpack_require__(244),
-	    SpriteRenderer:         __webpack_require__(245),
-	    ParticleRenderer:       __webpack_require__(261),
+	    Sprite:                 __webpack_require__(254),
+	    ParticleContainer:      __webpack_require__(256),
+	    SpriteRenderer:         __webpack_require__(257),
+	    ParticleRenderer:       __webpack_require__(273),
 
 	    // text
-	    Text:                   __webpack_require__(264),
+	    Text:                   __webpack_require__(276),
 
 	    // primitives
-	    Graphics:               __webpack_require__(265),
-	    GraphicsData:           __webpack_require__(267),
-	    GraphicsRenderer:       __webpack_require__(268),
+	    Graphics:               __webpack_require__(277),
+	    GraphicsData:           __webpack_require__(279),
+	    GraphicsRenderer:       __webpack_require__(280),
 
 	    // textures
-	    Texture:                __webpack_require__(232),
-	    BaseTexture:            __webpack_require__(231),
-	    RenderTexture:          __webpack_require__(230),
-	    VideoBaseTexture:       __webpack_require__(233),
-	    TextureUvs:             __webpack_require__(234),
+	    Texture:                __webpack_require__(244),
+	    BaseTexture:            __webpack_require__(243),
+	    RenderTexture:          __webpack_require__(242),
+	    VideoBaseTexture:       __webpack_require__(245),
+	    TextureUvs:             __webpack_require__(246),
 
 	    // renderers - canvas
-	    CanvasRenderer:         __webpack_require__(271),
-	    CanvasGraphics:         __webpack_require__(266),
-	    CanvasBuffer:           __webpack_require__(240),
+	    CanvasRenderer:         __webpack_require__(283),
+	    CanvasGraphics:         __webpack_require__(278),
+	    CanvasBuffer:           __webpack_require__(252),
 
 	    // renderers - webgl
-	    WebGLRenderer:          __webpack_require__(247),
-	    ShaderManager:          __webpack_require__(249),
-	    Shader:                 __webpack_require__(251),
-	    ObjectRenderer:         __webpack_require__(246),
-	    RenderTarget:           __webpack_require__(235),
+	    WebGLRenderer:          __webpack_require__(259),
+	    ShaderManager:          __webpack_require__(261),
+	    Shader:                 __webpack_require__(263),
+	    ObjectRenderer:         __webpack_require__(258),
+	    RenderTarget:           __webpack_require__(247),
 
 	    // filters - webgl
-	    AbstractFilter:         __webpack_require__(256),
-	    FXAAFilter:             __webpack_require__(260),
-	    SpriteMaskFilter:       __webpack_require__(255),
+	    AbstractFilter:         __webpack_require__(268),
+	    FXAAFilter:             __webpack_require__(272),
+	    SpriteMaskFilter:       __webpack_require__(267),
 
 	    /**
 	     * This helper function will automatically detect which renderer you should be using.
@@ -7111,7 +10451,7 @@
 
 
 /***/ },
-/* 213 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -7127,7 +10467,7 @@
 	     * @constant
 	     * @property {string} VERSION
 	     */
-	    VERSION: __webpack_require__(214).version,
+	    VERSION: __webpack_require__(227).version,
 
 	    /**
 	     * @property {number} PI_2 - Two Pi
@@ -7338,7 +10678,7 @@
 
 
 /***/ },
-/* 214 */
+/* 227 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -7474,7 +10814,7 @@
 	};
 
 /***/ },
-/* 215 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -7488,19 +10828,19 @@
 	    // to avoid circular dependencies and cut down on
 	    // internal module requires.
 
-	    Point:      __webpack_require__(216),
-	    Matrix:     __webpack_require__(217),
+	    Point:      __webpack_require__(229),
+	    Matrix:     __webpack_require__(230),
 
-	    Circle:     __webpack_require__(218),
-	    Ellipse:    __webpack_require__(220),
-	    Polygon:    __webpack_require__(221),
-	    Rectangle:  __webpack_require__(219),
-	    RoundedRectangle: __webpack_require__(222)
+	    Circle:     __webpack_require__(231),
+	    Ellipse:    __webpack_require__(233),
+	    Polygon:    __webpack_require__(234),
+	    Rectangle:  __webpack_require__(232),
+	    RoundedRectangle: __webpack_require__(235)
 	};
 
 
 /***/ },
-/* 216 */
+/* 229 */
 /***/ function(module, exports) {
 
 	/**
@@ -7574,10 +10914,10 @@
 
 
 /***/ },
-/* 217 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Point = __webpack_require__(216);
+	var Point = __webpack_require__(229);
 
 	/**
 	 * The pixi Matrix class as an object, which makes it a lot faster,
@@ -7945,11 +11285,11 @@
 
 
 /***/ },
-/* 218 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Rectangle = __webpack_require__(219),
-	    CONST = __webpack_require__(213);
+	var Rectangle = __webpack_require__(232),
+	    CONST = __webpack_require__(226);
 
 	/**
 	 * The Circle object can be used to specify a hit area for displayObjects
@@ -8037,10 +11377,10 @@
 
 
 /***/ },
-/* 219 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CONST = __webpack_require__(213);
+	var CONST = __webpack_require__(226);
 
 	/**
 	 * the Rectangle object is an area defined by its position, as indicated by its top-left corner point (x, y) and by its width and its height.
@@ -8135,11 +11475,11 @@
 
 
 /***/ },
-/* 220 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Rectangle = __webpack_require__(219),
-	    CONST = __webpack_require__(213);
+	var Rectangle = __webpack_require__(232),
+	    CONST = __webpack_require__(226);
 
 	/**
 	 * The Ellipse object can be used to specify a hit area for displayObjects
@@ -8234,11 +11574,11 @@
 
 
 /***/ },
-/* 221 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Point = __webpack_require__(216),
-	    CONST = __webpack_require__(213);
+	var Point = __webpack_require__(229),
+	    CONST = __webpack_require__(226);
 
 	/**
 	 * @class
@@ -8341,10 +11681,10 @@
 
 
 /***/ },
-/* 222 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CONST = __webpack_require__(213);
+	var CONST = __webpack_require__(226);
 
 	/**
 	 * The Rounded Rectangle object is an area that has nice rounded corners, as indicated by its top-left corner point (x, y) and by its width and its height and its radius.
@@ -8437,10 +11777,10 @@
 
 
 /***/ },
-/* 223 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CONST = __webpack_require__(213);
+	var CONST = __webpack_require__(226);
 
 	/**
 	 * @namespace PIXI.utils
@@ -8449,9 +11789,9 @@
 	    _uid: 0,
 	    _saidHello: false,
 
-	    EventEmitter:   __webpack_require__(224),
-	    pluginTarget:   __webpack_require__(225),
-	    async:          __webpack_require__(226),
+	    EventEmitter:   __webpack_require__(208),
+	    pluginTarget:   __webpack_require__(237),
+	    async:          __webpack_require__(238),
 
 	    /**
 	     * Gets the next unique identifier
@@ -8692,275 +12032,7 @@
 
 
 /***/ },
-/* 224 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	//
-	// We store our EE objects in a plain object whose properties are event names.
-	// If `Object.create(null)` is not supported we prefix the event names with a
-	// `~` to make sure that the built-in object properties are not overridden or
-	// used as an attack vector.
-	// We also assume that `Object.create(null)` is available when the event name
-	// is an ES6 Symbol.
-	//
-	var prefix = typeof Object.create !== 'function' ? '~' : false;
-
-	/**
-	 * Representation of a single EventEmitter function.
-	 *
-	 * @param {Function} fn Event handler to be called.
-	 * @param {Mixed} context Context for function execution.
-	 * @param {Boolean} once Only emit once
-	 * @api private
-	 */
-	function EE(fn, context, once) {
-	  this.fn = fn;
-	  this.context = context;
-	  this.once = once || false;
-	}
-
-	/**
-	 * Minimal EventEmitter interface that is molded against the Node.js
-	 * EventEmitter interface.
-	 *
-	 * @constructor
-	 * @api public
-	 */
-	function EventEmitter() { /* Nothing to set */ }
-
-	/**
-	 * Holds the assigned EventEmitters by name.
-	 *
-	 * @type {Object}
-	 * @private
-	 */
-	EventEmitter.prototype._events = undefined;
-
-	/**
-	 * Return a list of assigned event listeners.
-	 *
-	 * @param {String} event The events that should be listed.
-	 * @param {Boolean} exists We only need to know if there are listeners.
-	 * @returns {Array|Boolean}
-	 * @api public
-	 */
-	EventEmitter.prototype.listeners = function listeners(event, exists) {
-	  var evt = prefix ? prefix + event : event
-	    , available = this._events && this._events[evt];
-
-	  if (exists) return !!available;
-	  if (!available) return [];
-	  if (available.fn) return [available.fn];
-
-	  for (var i = 0, l = available.length, ee = new Array(l); i < l; i++) {
-	    ee[i] = available[i].fn;
-	  }
-
-	  return ee;
-	};
-
-	/**
-	 * Emit an event to all registered event listeners.
-	 *
-	 * @param {String} event The name of the event.
-	 * @returns {Boolean} Indication if we've emitted an event.
-	 * @api public
-	 */
-	EventEmitter.prototype.emit = function emit(event, a1, a2, a3, a4, a5) {
-	  var evt = prefix ? prefix + event : event;
-
-	  if (!this._events || !this._events[evt]) return false;
-
-	  var listeners = this._events[evt]
-	    , len = arguments.length
-	    , args
-	    , i;
-
-	  if ('function' === typeof listeners.fn) {
-	    if (listeners.once) this.removeListener(event, listeners.fn, undefined, true);
-
-	    switch (len) {
-	      case 1: return listeners.fn.call(listeners.context), true;
-	      case 2: return listeners.fn.call(listeners.context, a1), true;
-	      case 3: return listeners.fn.call(listeners.context, a1, a2), true;
-	      case 4: return listeners.fn.call(listeners.context, a1, a2, a3), true;
-	      case 5: return listeners.fn.call(listeners.context, a1, a2, a3, a4), true;
-	      case 6: return listeners.fn.call(listeners.context, a1, a2, a3, a4, a5), true;
-	    }
-
-	    for (i = 1, args = new Array(len -1); i < len; i++) {
-	      args[i - 1] = arguments[i];
-	    }
-
-	    listeners.fn.apply(listeners.context, args);
-	  } else {
-	    var length = listeners.length
-	      , j;
-
-	    for (i = 0; i < length; i++) {
-	      if (listeners[i].once) this.removeListener(event, listeners[i].fn, undefined, true);
-
-	      switch (len) {
-	        case 1: listeners[i].fn.call(listeners[i].context); break;
-	        case 2: listeners[i].fn.call(listeners[i].context, a1); break;
-	        case 3: listeners[i].fn.call(listeners[i].context, a1, a2); break;
-	        default:
-	          if (!args) for (j = 1, args = new Array(len -1); j < len; j++) {
-	            args[j - 1] = arguments[j];
-	          }
-
-	          listeners[i].fn.apply(listeners[i].context, args);
-	      }
-	    }
-	  }
-
-	  return true;
-	};
-
-	/**
-	 * Register a new EventListener for the given event.
-	 *
-	 * @param {String} event Name of the event.
-	 * @param {Functon} fn Callback function.
-	 * @param {Mixed} context The context of the function.
-	 * @api public
-	 */
-	EventEmitter.prototype.on = function on(event, fn, context) {
-	  var listener = new EE(fn, context || this)
-	    , evt = prefix ? prefix + event : event;
-
-	  if (!this._events) this._events = prefix ? {} : Object.create(null);
-	  if (!this._events[evt]) this._events[evt] = listener;
-	  else {
-	    if (!this._events[evt].fn) this._events[evt].push(listener);
-	    else this._events[evt] = [
-	      this._events[evt], listener
-	    ];
-	  }
-
-	  return this;
-	};
-
-	/**
-	 * Add an EventListener that's only called once.
-	 *
-	 * @param {String} event Name of the event.
-	 * @param {Function} fn Callback function.
-	 * @param {Mixed} context The context of the function.
-	 * @api public
-	 */
-	EventEmitter.prototype.once = function once(event, fn, context) {
-	  var listener = new EE(fn, context || this, true)
-	    , evt = prefix ? prefix + event : event;
-
-	  if (!this._events) this._events = prefix ? {} : Object.create(null);
-	  if (!this._events[evt]) this._events[evt] = listener;
-	  else {
-	    if (!this._events[evt].fn) this._events[evt].push(listener);
-	    else this._events[evt] = [
-	      this._events[evt], listener
-	    ];
-	  }
-
-	  return this;
-	};
-
-	/**
-	 * Remove event listeners.
-	 *
-	 * @param {String} event The event we want to remove.
-	 * @param {Function} fn The listener that we need to find.
-	 * @param {Mixed} context Only remove listeners matching this context.
-	 * @param {Boolean} once Only remove once listeners.
-	 * @api public
-	 */
-	EventEmitter.prototype.removeListener = function removeListener(event, fn, context, once) {
-	  var evt = prefix ? prefix + event : event;
-
-	  if (!this._events || !this._events[evt]) return this;
-
-	  var listeners = this._events[evt]
-	    , events = [];
-
-	  if (fn) {
-	    if (listeners.fn) {
-	      if (
-	           listeners.fn !== fn
-	        || (once && !listeners.once)
-	        || (context && listeners.context !== context)
-	      ) {
-	        events.push(listeners);
-	      }
-	    } else {
-	      for (var i = 0, length = listeners.length; i < length; i++) {
-	        if (
-	             listeners[i].fn !== fn
-	          || (once && !listeners[i].once)
-	          || (context && listeners[i].context !== context)
-	        ) {
-	          events.push(listeners[i]);
-	        }
-	      }
-	    }
-	  }
-
-	  //
-	  // Reset the array, or remove it completely if we have no more listeners.
-	  //
-	  if (events.length) {
-	    this._events[evt] = events.length === 1 ? events[0] : events;
-	  } else {
-	    delete this._events[evt];
-	  }
-
-	  return this;
-	};
-
-	/**
-	 * Remove all listeners or only the listeners for the specified event.
-	 *
-	 * @param {String} event The event want to remove all listeners for.
-	 * @api public
-	 */
-	EventEmitter.prototype.removeAllListeners = function removeAllListeners(event) {
-	  if (!this._events) return this;
-
-	  if (event) delete this._events[prefix ? prefix + event : event];
-	  else this._events = prefix ? {} : Object.create(null);
-
-	  return this;
-	};
-
-	//
-	// Alias methods names because people roll like that.
-	//
-	EventEmitter.prototype.off = EventEmitter.prototype.removeListener;
-	EventEmitter.prototype.addListener = EventEmitter.prototype.on;
-
-	//
-	// This function doesn't apply anymore.
-	//
-	EventEmitter.prototype.setMaxListeners = function setMaxListeners() {
-	  return this;
-	};
-
-	//
-	// Expose the prefix.
-	//
-	EventEmitter.prefixed = prefix;
-
-	//
-	// Expose the module.
-	//
-	if (true) {
-	  module.exports = EventEmitter;
-	}
-
-
-/***/ },
-/* 225 */
+/* 237 */
 /***/ function(module, exports) {
 
 	/**
@@ -9034,7 +12106,7 @@
 
 
 /***/ },
-/* 226 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, setImmediate, process) {/*!
@@ -10298,13 +13370,13 @@
 
 	}());
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(198).setImmediate, __webpack_require__(192)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(200).setImmediate, __webpack_require__(192)))
 
 /***/ },
-/* 227 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Ticker = __webpack_require__(228);
+	var Ticker = __webpack_require__(240);
 
 	/**
 	 * The shared ticker instance used by {@link PIXI.extras.MovieClip}.
@@ -10361,11 +13433,11 @@
 
 
 /***/ },
-/* 228 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CONST = __webpack_require__(213),
-	    EventEmitter = __webpack_require__(224),
+	var CONST = __webpack_require__(226),
+	    EventEmitter = __webpack_require__(208),
 	    // Internal event used by composed emitter
 	    TICK = 'tick';
 
@@ -10720,13 +13792,13 @@
 
 
 /***/ },
-/* 229 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var math = __webpack_require__(215),
-	    RenderTexture = __webpack_require__(230),
-	    EventEmitter = __webpack_require__(224),
-	    CONST = __webpack_require__(213),
+	var math = __webpack_require__(228),
+	    RenderTexture = __webpack_require__(242),
+	    EventEmitter = __webpack_require__(208),
+	    CONST = __webpack_require__(226),
 	    _tempMatrix = new math.Matrix(),
 	    _tempDisplayObjectParent = {worldTransform:new math.Matrix(), worldAlpha:1, children:[]};
 
@@ -11223,16 +14295,16 @@
 
 
 /***/ },
-/* 230 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var BaseTexture = __webpack_require__(231),
-	    Texture = __webpack_require__(232),
-	    RenderTarget = __webpack_require__(235),
-	    FilterManager = __webpack_require__(237),
-	    CanvasBuffer = __webpack_require__(240),
-	    math = __webpack_require__(215),
-	    CONST = __webpack_require__(213),
+	var BaseTexture = __webpack_require__(243),
+	    Texture = __webpack_require__(244),
+	    RenderTarget = __webpack_require__(247),
+	    FilterManager = __webpack_require__(249),
+	    CanvasBuffer = __webpack_require__(252),
+	    math = __webpack_require__(228),
+	    CONST = __webpack_require__(226),
 	    tempMatrix = new math.Matrix();
 
 	/**
@@ -11706,12 +14778,12 @@
 
 
 /***/ },
-/* 231 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var utils = __webpack_require__(223),
-	    CONST = __webpack_require__(213),
-	    EventEmitter = __webpack_require__(224);
+	var utils = __webpack_require__(236),
+	    CONST = __webpack_require__(226),
+	    EventEmitter = __webpack_require__(208);
 
 	/**
 	 * A texture stores the information that represents an image. All textures have a base texture.
@@ -12144,15 +15216,15 @@
 
 
 /***/ },
-/* 232 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var BaseTexture = __webpack_require__(231),
-	    VideoBaseTexture = __webpack_require__(233),
-	    TextureUvs = __webpack_require__(234),
-	    EventEmitter = __webpack_require__(224),
-	    math = __webpack_require__(215),
-	    utils = __webpack_require__(223);
+	var BaseTexture = __webpack_require__(243),
+	    VideoBaseTexture = __webpack_require__(245),
+	    TextureUvs = __webpack_require__(246),
+	    EventEmitter = __webpack_require__(208),
+	    math = __webpack_require__(228),
+	    utils = __webpack_require__(236);
 
 	/**
 	 * A texture stores the information that represents an image or part of an image. It cannot be added
@@ -12574,11 +15646,11 @@
 
 
 /***/ },
-/* 233 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var BaseTexture = __webpack_require__(231),
-	    utils = __webpack_require__(223);
+	var BaseTexture = __webpack_require__(243),
+	    utils = __webpack_require__(236);
 
 	/**
 	 * A texture of a [playing] Video.
@@ -12815,7 +15887,7 @@
 
 
 /***/ },
-/* 234 */
+/* 246 */
 /***/ function(module, exports) {
 
 	
@@ -12888,14 +15960,14 @@
 
 
 /***/ },
-/* 235 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var math = __webpack_require__(215),
-	    utils = __webpack_require__(223),
-	    CONST = __webpack_require__(213),
+	var math = __webpack_require__(228),
+	    utils = __webpack_require__(236),
+	    CONST = __webpack_require__(226),
 	    //StencilManager = require('../managers/StencilManager'),
-	    StencilMaskStack = __webpack_require__(236);
+	    StencilMaskStack = __webpack_require__(248);
 
 	/**
 	 * @author Mat Groves http://matgroves.com/ @Doormat23
@@ -13214,7 +16286,7 @@
 
 
 /***/ },
-/* 236 */
+/* 248 */
 /***/ function(module, exports) {
 
 	/**
@@ -13251,14 +16323,14 @@
 
 
 /***/ },
-/* 237 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WebGLManager = __webpack_require__(238),
-	    RenderTarget = __webpack_require__(235),
-	    CONST = __webpack_require__(213),
-	    Quad = __webpack_require__(239),
-	    math =  __webpack_require__(215);
+	var WebGLManager = __webpack_require__(250),
+	    RenderTarget = __webpack_require__(247),
+	    CONST = __webpack_require__(226),
+	    Quad = __webpack_require__(251),
+	    math =  __webpack_require__(228);
 
 	/**
 	 * @class
@@ -13707,7 +16779,7 @@
 
 
 /***/ },
-/* 238 */
+/* 250 */
 /***/ function(module, exports) {
 
 	/**
@@ -13752,7 +16824,7 @@
 
 
 /***/ },
-/* 239 */
+/* 251 */
 /***/ function(module, exports) {
 
 	/**
@@ -13911,7 +16983,7 @@
 
 
 /***/ },
-/* 240 */
+/* 252 */
 /***/ function(module, exports) {
 
 	/**
@@ -14015,12 +17087,12 @@
 
 
 /***/ },
-/* 241 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var math = __webpack_require__(215),
-	    DisplayObject = __webpack_require__(229),
-	    RenderTexture = __webpack_require__(230),
+	var math = __webpack_require__(228),
+	    DisplayObject = __webpack_require__(241),
+	    RenderTexture = __webpack_require__(242),
 	    _tempMatrix = new math.Matrix();
 
 	/**
@@ -14614,15 +17686,15 @@
 
 
 /***/ },
-/* 242 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var math = __webpack_require__(215),
-	    Texture = __webpack_require__(232),
-	    Container = __webpack_require__(241),
-	    CanvasTinter = __webpack_require__(243),
-	    utils = __webpack_require__(223),
-	    CONST = __webpack_require__(213),
+	var math = __webpack_require__(228),
+	    Texture = __webpack_require__(244),
+	    Container = __webpack_require__(253),
+	    CanvasTinter = __webpack_require__(255),
+	    utils = __webpack_require__(236),
+	    CONST = __webpack_require__(226),
 	    tempPoint = new math.Point();
 
 	/**
@@ -15187,10 +18259,10 @@
 
 
 /***/ },
-/* 243 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var utils = __webpack_require__(223);
+	var utils = __webpack_require__(236);
 
 	/**
 	 * Utility methods for Sprite/Texture tinting.
@@ -15443,11 +18515,11 @@
 
 
 /***/ },
-/* 244 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Container = __webpack_require__(241),
-	    CONST = __webpack_require__(213);
+	var Container = __webpack_require__(253),
+	    CONST = __webpack_require__(226);
 
 	/**
 	 * The ParticleContainer class is a really fast version of the Container built solely for speed,
@@ -15760,12 +18832,12 @@
 
 
 /***/ },
-/* 245 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ObjectRenderer = __webpack_require__(246),
-	    WebGLRenderer = __webpack_require__(247),
-	    CONST = __webpack_require__(213);
+	var ObjectRenderer = __webpack_require__(258),
+	    WebGLRenderer = __webpack_require__(259),
+	    CONST = __webpack_require__(226);
 
 	/**
 	 * @author Mat Groves
@@ -16234,10 +19306,10 @@
 
 
 /***/ },
-/* 246 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WebGLManager = __webpack_require__(238);
+	var WebGLManager = __webpack_require__(250);
 
 	/**
 	 * Base for a common object renderer that can be used as a system renderer plugin.
@@ -16296,20 +19368,20 @@
 
 
 /***/ },
-/* 247 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var SystemRenderer = __webpack_require__(248),
-	    ShaderManager = __webpack_require__(249),
-	    MaskManager = __webpack_require__(254),
-	    StencilManager = __webpack_require__(258),
-	    FilterManager = __webpack_require__(237),
-	    BlendModeManager = __webpack_require__(259),
-	    RenderTarget = __webpack_require__(235),
-	    ObjectRenderer = __webpack_require__(246),
-	    FXAAFilter = __webpack_require__(260),
-	    utils = __webpack_require__(223),
-	    CONST = __webpack_require__(213);
+	var SystemRenderer = __webpack_require__(260),
+	    ShaderManager = __webpack_require__(261),
+	    MaskManager = __webpack_require__(266),
+	    StencilManager = __webpack_require__(270),
+	    FilterManager = __webpack_require__(249),
+	    BlendModeManager = __webpack_require__(271),
+	    RenderTarget = __webpack_require__(247),
+	    ObjectRenderer = __webpack_require__(258),
+	    FXAAFilter = __webpack_require__(272),
+	    utils = __webpack_require__(236),
+	    CONST = __webpack_require__(226);
 
 	/**
 	 * The WebGLRenderer draws the scene and all its content onto a webGL enabled canvas. This renderer
@@ -16861,13 +19933,13 @@
 
 
 /***/ },
-/* 248 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var utils = __webpack_require__(223),
-	    math = __webpack_require__(215),
-	    CONST = __webpack_require__(213),
-	    EventEmitter = __webpack_require__(224);
+	var utils = __webpack_require__(236),
+	    math = __webpack_require__(228),
+	    CONST = __webpack_require__(226),
+	    EventEmitter = __webpack_require__(208);
 
 	/**
 	 * The CanvasRenderer draws the scene and all its content onto a 2d canvas. This renderer should be used for browsers that do not support webGL.
@@ -17126,14 +20198,14 @@
 
 
 /***/ },
-/* 249 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WebGLManager = __webpack_require__(238),
-	    TextureShader = __webpack_require__(250),
-	    ComplexPrimitiveShader = __webpack_require__(252),
-	    PrimitiveShader = __webpack_require__(253),
-	    utils = __webpack_require__(223);
+	var WebGLManager = __webpack_require__(250),
+	    TextureShader = __webpack_require__(262),
+	    ComplexPrimitiveShader = __webpack_require__(264),
+	    PrimitiveShader = __webpack_require__(265),
+	    utils = __webpack_require__(236);
 
 	/**
 	 * @class
@@ -17299,10 +20371,10 @@
 
 
 /***/ },
-/* 250 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Shader = __webpack_require__(251);
+	var Shader = __webpack_require__(263);
 
 	/**
 	 * @class
@@ -17414,11 +20486,11 @@
 
 
 /***/ },
-/* 251 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*global console */
-	var utils = __webpack_require__(223);
+	var utils = __webpack_require__(236);
 
 	/**
 	 * Base shader class for PIXI managed shaders.
@@ -17982,10 +21054,10 @@
 
 
 /***/ },
-/* 252 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Shader = __webpack_require__(251);
+	var Shader = __webpack_require__(263);
 
 	/**
 	 * This shader is used to draw complex primitive shapes for {@link PIXI.Graphics}.
@@ -18048,10 +21120,10 @@
 
 
 /***/ },
-/* 253 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Shader = __webpack_require__(251);
+	var Shader = __webpack_require__(263);
 
 	/**
 	 * This shader is used to draw simple primitive shapes for {@link PIXI.Graphics}.
@@ -18115,11 +21187,11 @@
 
 
 /***/ },
-/* 254 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WebGLManager = __webpack_require__(238),
-	    AlphaMaskFilter = __webpack_require__(255);
+	var WebGLManager = __webpack_require__(250),
+	    AlphaMaskFilter = __webpack_require__(267);
 
 	/**
 	 * @class
@@ -18234,14 +21306,14 @@
 
 
 /***/ },
-/* 255 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var AbstractFilter = __webpack_require__(256),
-	    math =  __webpack_require__(215);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var AbstractFilter = __webpack_require__(268),
+	    math =  __webpack_require__(228);
 
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * The SpriteMaskFilter class
@@ -18336,10 +21408,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 256 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var DefaultShader = __webpack_require__(250);
+	var DefaultShader = __webpack_require__(262);
 
 	/**
 	 * This is the base class for creating a PIXI filter. Currently only WebGL supports filters.
@@ -18452,17 +21524,17 @@
 
 
 /***/ },
-/* 257 */
+/* 269 */
 /***/ function(module, exports) {
 
 	
 
 /***/ },
-/* 258 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WebGLManager = __webpack_require__(238),
-	    utils = __webpack_require__(223);
+	var WebGLManager = __webpack_require__(250),
+	    utils = __webpack_require__(236);
 
 	/**
 	 * @class
@@ -18808,10 +21880,10 @@
 
 
 /***/ },
-/* 259 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WebGLManager = __webpack_require__(238);
+	var WebGLManager = __webpack_require__(250);
 
 	/**
 	 * @class
@@ -18856,12 +21928,12 @@
 
 
 /***/ },
-/* 260 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var AbstractFilter = __webpack_require__(256);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var AbstractFilter = __webpack_require__(268);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 *
@@ -18916,14 +21988,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 261 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ObjectRenderer = __webpack_require__(246),
-	    WebGLRenderer = __webpack_require__(247),
-	    ParticleShader = __webpack_require__(262),
-	    ParticleBuffer = __webpack_require__(263),
-	    math            = __webpack_require__(215);
+	var ObjectRenderer = __webpack_require__(258),
+	    WebGLRenderer = __webpack_require__(259),
+	    ParticleShader = __webpack_require__(274),
+	    ParticleBuffer = __webpack_require__(275),
+	    math            = __webpack_require__(228);
 
 	/**
 	 * @author Mat Groves
@@ -19396,10 +22468,10 @@
 
 
 /***/ },
-/* 262 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var TextureShader = __webpack_require__(250);
+	var TextureShader = __webpack_require__(262);
 
 	/**
 	 * @class
@@ -19478,7 +22550,7 @@
 
 
 /***/ },
-/* 263 */
+/* 275 */
 /***/ function(module, exports) {
 
 	
@@ -19702,14 +22774,14 @@
 
 
 /***/ },
-/* 264 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Sprite = __webpack_require__(242),
-	    Texture = __webpack_require__(232),
-	    math = __webpack_require__(215),
-	    utils = __webpack_require__(223),
-	    CONST = __webpack_require__(213);
+	var Sprite = __webpack_require__(254),
+	    Texture = __webpack_require__(244),
+	    math = __webpack_require__(228),
+	    utils = __webpack_require__(236),
+	    CONST = __webpack_require__(226);
 
 	/**
 	 * A Text Object will create a line or multiple lines of text. To split a line you can use '\n' in your text string,
@@ -20319,16 +23391,16 @@
 
 
 /***/ },
-/* 265 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Container = __webpack_require__(241),
-	    Texture = __webpack_require__(232),
-	    CanvasBuffer = __webpack_require__(240),
-	    CanvasGraphics = __webpack_require__(266),
-	    GraphicsData = __webpack_require__(267),
-	    math = __webpack_require__(215),
-	    CONST = __webpack_require__(213),
+	var Container = __webpack_require__(253),
+	    Texture = __webpack_require__(244),
+	    CanvasBuffer = __webpack_require__(252),
+	    CanvasGraphics = __webpack_require__(278),
+	    GraphicsData = __webpack_require__(279),
+	    math = __webpack_require__(228),
+	    CONST = __webpack_require__(226),
 	    tempPoint = new math.Point();
 
 	/**
@@ -21508,10 +24580,10 @@
 
 
 /***/ },
-/* 266 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CONST = __webpack_require__(213);
+	var CONST = __webpack_require__(226);
 
 	/**
 	 * A set of functions used by the canvas renderer to draw the primitive graphics data.
@@ -21866,7 +24938,7 @@
 
 
 /***/ },
-/* 267 */
+/* 279 */
 /***/ function(module, exports) {
 
 	/**
@@ -21963,16 +25035,16 @@
 
 
 /***/ },
-/* 268 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var utils = __webpack_require__(223),
-	    math = __webpack_require__(215),
-	    CONST = __webpack_require__(213),
-	    ObjectRenderer = __webpack_require__(246),
-	    WebGLRenderer = __webpack_require__(247),
-	    WebGLGraphicsData = __webpack_require__(269),
-	    earcut = __webpack_require__(270);
+	var utils = __webpack_require__(236),
+	    math = __webpack_require__(228),
+	    CONST = __webpack_require__(226),
+	    ObjectRenderer = __webpack_require__(258),
+	    WebGLRenderer = __webpack_require__(259),
+	    WebGLGraphicsData = __webpack_require__(281),
+	    earcut = __webpack_require__(282);
 
 	/**
 	 * Renders the graphics object.
@@ -22872,7 +25944,7 @@
 
 
 /***/ },
-/* 269 */
+/* 281 */
 /***/ function(module, exports) {
 
 	/**
@@ -22994,7 +26066,7 @@
 
 
 /***/ },
-/* 270 */
+/* 282 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23582,14 +26654,14 @@
 
 
 /***/ },
-/* 271 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var SystemRenderer = __webpack_require__(248),
-	    CanvasMaskManager = __webpack_require__(272),
-	    utils = __webpack_require__(223),
-	    math = __webpack_require__(215),
-	    CONST = __webpack_require__(213);
+	var SystemRenderer = __webpack_require__(260),
+	    CanvasMaskManager = __webpack_require__(284),
+	    utils = __webpack_require__(236),
+	    math = __webpack_require__(228),
+	    CONST = __webpack_require__(226);
 
 	/**
 	 * The CanvasRenderer draws the scene and all its content onto a 2d canvas. This renderer should be used for browsers that do not support webGL.
@@ -23850,10 +26922,10 @@
 
 
 /***/ },
-/* 272 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CanvasGraphics = __webpack_require__(266);
+	var CanvasGraphics = __webpack_require__(278);
 
 	/**
 	 * A set of functions used to handle masking.
@@ -23916,7 +26988,7 @@
 
 
 /***/ },
-/* 273 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23926,25 +26998,25 @@
 	 * @license     {@link https://github.com/pixijs/pixi.js/blob/master/LICENSE|MIT License}
 	 */
 
-	__webpack_require__(274);
-	__webpack_require__(275);
-	__webpack_require__(276);
+	__webpack_require__(286);
+	__webpack_require__(287);
+	__webpack_require__(288);
 
 	/**
 	 * @namespace PIXI.extras
 	 */
 	module.exports = {
-	    MovieClip:      __webpack_require__(277),
-	    TilingSprite:   __webpack_require__(278),
-	    BitmapText:     __webpack_require__(279)
+	    MovieClip:      __webpack_require__(289),
+	    TilingSprite:   __webpack_require__(290),
+	    BitmapText:     __webpack_require__(291)
 	};
 
 
 /***/ },
-/* 274 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212),
+	var core = __webpack_require__(225),
 	    DisplayObject = core.DisplayObject,
 	    _tempMatrix = new core.Matrix();
 
@@ -24217,10 +27289,10 @@
 
 
 /***/ },
-/* 275 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212);
+	var core = __webpack_require__(225);
 
 	/**
 	 * The instance name of the object.
@@ -24251,10 +27323,10 @@
 
 
 /***/ },
-/* 276 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212);
+	var core = __webpack_require__(225);
 
 	/**
 	* Returns the global position of the displayObject
@@ -24285,10 +27357,10 @@
 
 
 /***/ },
-/* 277 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212);
+	var core = __webpack_require__(225);
 
 	/**
 	 * A MovieClip is a simple way to display an animation depicted by a list of textures.
@@ -24609,13 +27681,13 @@
 	};
 
 /***/ },
-/* 278 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212),
+	var core = __webpack_require__(225),
 	    // a sprite use dfor rendering textures..
 	    tempPoint = new core.Point(),
-	    CanvasTinter = __webpack_require__(243);
+	    CanvasTinter = __webpack_require__(255);
 
 	/**
 	 * A tiling sprite is a fast way of rendering a tiling image
@@ -25065,10 +28137,10 @@
 
 
 /***/ },
-/* 279 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212);
+	var core = __webpack_require__(225);
 
 	/**
 	 * A BitmapText object will create a line or multiple lines of text using bitmap font. To
@@ -25457,7 +28529,7 @@
 
 
 /***/ },
-/* 280 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25471,41 +28543,41 @@
 	 * @namespace PIXI.filters
 	 */
 	module.exports = {
-	    AsciiFilter:        __webpack_require__(281),
-	    BloomFilter:        __webpack_require__(282),
-	    BlurFilter:         __webpack_require__(285),
-	    BlurXFilter:        __webpack_require__(283),
-	    BlurYFilter:        __webpack_require__(284),
-	    BlurDirFilter:      __webpack_require__(286),
-	    ColorMatrixFilter:  __webpack_require__(287),
-	    ColorStepFilter:    __webpack_require__(288),
-	    ConvolutionFilter:  __webpack_require__(289),
-	    CrossHatchFilter:   __webpack_require__(290),
-	    DisplacementFilter: __webpack_require__(291),
-	    DotScreenFilter:    __webpack_require__(292),
-	    GrayFilter:         __webpack_require__(293),
-	    DropShadowFilter:   __webpack_require__(294),
-	    InvertFilter:       __webpack_require__(296),
-	    NoiseFilter:        __webpack_require__(297),
-	    PixelateFilter:     __webpack_require__(298),
-	    RGBSplitFilter:     __webpack_require__(299),
-	    ShockwaveFilter:    __webpack_require__(300),
-	    SepiaFilter:        __webpack_require__(301),
-	    SmartBlurFilter:    __webpack_require__(302),
-	    TiltShiftFilter:    __webpack_require__(303),
-	    TiltShiftXFilter:   __webpack_require__(304),
-	    TiltShiftYFilter:   __webpack_require__(306),
-	    TwistFilter:        __webpack_require__(307)
+	    AsciiFilter:        __webpack_require__(293),
+	    BloomFilter:        __webpack_require__(294),
+	    BlurFilter:         __webpack_require__(297),
+	    BlurXFilter:        __webpack_require__(295),
+	    BlurYFilter:        __webpack_require__(296),
+	    BlurDirFilter:      __webpack_require__(298),
+	    ColorMatrixFilter:  __webpack_require__(299),
+	    ColorStepFilter:    __webpack_require__(300),
+	    ConvolutionFilter:  __webpack_require__(301),
+	    CrossHatchFilter:   __webpack_require__(302),
+	    DisplacementFilter: __webpack_require__(303),
+	    DotScreenFilter:    __webpack_require__(304),
+	    GrayFilter:         __webpack_require__(305),
+	    DropShadowFilter:   __webpack_require__(306),
+	    InvertFilter:       __webpack_require__(308),
+	    NoiseFilter:        __webpack_require__(309),
+	    PixelateFilter:     __webpack_require__(310),
+	    RGBSplitFilter:     __webpack_require__(311),
+	    ShockwaveFilter:    __webpack_require__(312),
+	    SepiaFilter:        __webpack_require__(313),
+	    SmartBlurFilter:    __webpack_require__(314),
+	    TiltShiftFilter:    __webpack_require__(315),
+	    TiltShiftXFilter:   __webpack_require__(316),
+	    TiltShiftYFilter:   __webpack_require__(318),
+	    TwistFilter:        __webpack_require__(319)
 	};
 
 
 /***/ },
-/* 281 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	// TODO (cengler) - The Y is flipped in this shader for some reason.
 
@@ -25562,12 +28634,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 282 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212),
-	    BlurXFilter = __webpack_require__(283),
-	    BlurYFilter = __webpack_require__(284);
+	var core = __webpack_require__(225),
+	    BlurXFilter = __webpack_require__(295),
+	    BlurYFilter = __webpack_require__(296);
 
 	/**
 	 * The BloomFilter applies a Gaussian blur to an object.
@@ -25667,12 +28739,12 @@
 
 
 /***/ },
-/* 283 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * The BlurXFilter applies a horizontal Gaussian blur to an object.
@@ -25765,12 +28837,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 284 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * The BlurYFilter applies a horizontal Gaussian blur to an object.
@@ -25856,12 +28928,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 285 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212),
-	    BlurXFilter = __webpack_require__(283),
-	    BlurYFilter = __webpack_require__(284);
+	var core = __webpack_require__(225),
+	    BlurXFilter = __webpack_require__(295),
+	    BlurYFilter = __webpack_require__(296);
 
 	/**
 	 * The BlurFilter applies a Gaussian blur to an object.
@@ -25970,11 +29042,11 @@
 
 
 /***/ },
-/* 286 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
-	var fs = __webpack_require__(257);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * The BlurDirFilter applies a Gaussian blur toward a direction to an object.
@@ -26117,12 +29189,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 287 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * The ColorMatrixFilter class lets you apply a 5x4 matrix transformation on the RGBA
@@ -26658,12 +29730,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 288 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * This lowers the color depth of your image by the given amount, producing an image with a smaller palette.
@@ -26712,12 +29784,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 289 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * The ConvolutionFilter class applies a matrix convolution filter effect.
@@ -26808,12 +29880,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 290 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * A Cross Hatch effect filter.
@@ -26839,12 +29911,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 291 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * The DisplacementFilter class uses the pixel values from the specified texture (called the displacement map) to perform a displacement of an object.
@@ -26928,12 +30000,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 292 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * @author Mat Groves http://matgroves.com/ @Doormat23
@@ -27005,12 +30077,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 293 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * This greyscales the palette of your Display Objects.
@@ -27059,12 +30131,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 294 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212),
-	    BlurXFilter = __webpack_require__(283),
-	    BlurYTintFilter = __webpack_require__(295);
+	var core = __webpack_require__(225),
+	    BlurXFilter = __webpack_require__(295),
+	    BlurYTintFilter = __webpack_require__(307);
 
 	/**
 	 * The DropShadowFilter applies a Gaussian blur to an object.
@@ -27256,13 +30328,13 @@
 
 
 /***/ },
-/* 295 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * The BlurYTintFilter applies a vertical Gaussian blur to an object.
@@ -27352,12 +30424,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 296 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * This inverts your Display Objects colors.
@@ -27407,12 +30479,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 297 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * @author Vico @vicocotea
@@ -27467,12 +30539,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 298 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * This filter applies a pixelate effect making display objects appear 'blocky'.
@@ -27523,12 +30595,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 299 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * An RGB Split Filter.
@@ -27614,12 +30686,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 300 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * The ColorMatrixFilter class lets you apply a 4x4 matrix transformation on the RGBA
@@ -27707,12 +30779,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 301 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * This applies a sepia effect to your Display Objects.
@@ -27762,12 +30834,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 302 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * A Smart Blur Filter.
@@ -27797,12 +30869,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 303 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212),
-	    TiltShiftXFilter = __webpack_require__(304),
-	    TiltShiftYFilter = __webpack_require__(306);
+	var core = __webpack_require__(225),
+	    TiltShiftXFilter = __webpack_require__(316),
+	    TiltShiftYFilter = __webpack_require__(318);
 
 	/**
 	 * @author Vico @vicocotea
@@ -27911,10 +30983,10 @@
 
 
 /***/ },
-/* 304 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var TiltShiftAxisFilter = __webpack_require__(305);
+	var TiltShiftAxisFilter = __webpack_require__(317);
 
 	/**
 	 * @author Vico @vicocotea
@@ -27953,12 +31025,12 @@
 
 
 /***/ },
-/* 305 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * @author Vico @vicocotea
@@ -28083,10 +31155,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 306 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var TiltShiftAxisFilter = __webpack_require__(305);
+	var TiltShiftAxisFilter = __webpack_require__(317);
 
 	/**
 	 * @author Vico @vicocotea
@@ -28125,12 +31197,12 @@
 
 
 /***/ },
-/* 307 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(212);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(257);
+	var fs = __webpack_require__(269);
 
 	/**
 	 * This filter applies a twist effect making display objects appear twisted in the given direction.
@@ -28215,7 +31287,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 308 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28229,17 +31301,17 @@
 	 * @namespace PIXI.interaction
 	 */
 	module.exports = {
-	    InteractionData:    __webpack_require__(309),
-	    InteractionManager: __webpack_require__(310),
-	    interactiveTarget:  __webpack_require__(311)
+	    InteractionData:    __webpack_require__(321),
+	    InteractionManager: __webpack_require__(322),
+	    interactiveTarget:  __webpack_require__(323)
 	};
 
 
 /***/ },
-/* 309 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212);
+	var core = __webpack_require__(225);
 
 	/**
 	 * Holds all information related to an Interaction event
@@ -28289,16 +31361,16 @@
 
 
 /***/ },
-/* 310 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212),
-	    InteractionData = __webpack_require__(309);
+	var core = __webpack_require__(225),
+	    InteractionData = __webpack_require__(321);
 
 	// Mix interactiveTarget into core.DisplayObject.prototype
 	Object.assign(
 	    core.DisplayObject.prototype,
-	    __webpack_require__(311)
+	    __webpack_require__(323)
 	);
 
 	/**
@@ -29148,7 +32220,7 @@
 
 
 /***/ },
-/* 311 */
+/* 323 */
 /***/ function(module, exports) {
 
 	/**
@@ -29201,7 +32273,7 @@
 
 
 /***/ },
-/* 312 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29215,24 +32287,24 @@
 	 * @namespace PIXI.loaders
 	 */
 	module.exports = {
-	    Loader:             __webpack_require__(313),
+	    Loader:             __webpack_require__(325),
 
 	    // parsers
-	    bitmapFontParser:   __webpack_require__(330),
-	    spritesheetParser:  __webpack_require__(328),
-	    textureParser:      __webpack_require__(327),
-	    Resource:           __webpack_require__(314).Resource
+	    bitmapFontParser:   __webpack_require__(329),
+	    spritesheetParser:  __webpack_require__(327),
+	    textureParser:      __webpack_require__(326),
+	    Resource:           __webpack_require__(197).Resource
 	};
 
 
 /***/ },
-/* 313 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ResourceLoader = __webpack_require__(314),
-	    textureParser = __webpack_require__(327),
-	    spritesheetParser = __webpack_require__(328),
-	    bitmapFontParser = __webpack_require__(330);
+	var ResourceLoader = __webpack_require__(197),
+	    textureParser = __webpack_require__(326),
+	    spritesheetParser = __webpack_require__(327),
+	    bitmapFontParser = __webpack_require__(329);
 
 	/**
 	 *
@@ -29292,4008 +32364,10 @@
 
 
 /***/ },
-/* 314 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(315);
-
-	module.exports.Resource = __webpack_require__(323);
-
-	module.exports.middleware = {
-	    caching: {
-	        memory: __webpack_require__(324)
-	    },
-	    parsing: {
-	        blob: __webpack_require__(325)
-	    }
-	};
-
-
-/***/ },
-/* 315 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var async       = __webpack_require__(316),
-	    urlParser   = __webpack_require__(317),
-	    Resource    = __webpack_require__(323),
-	    EventEmitter = __webpack_require__(224);
-
-	/**
-	 * Manages the state and loading of multiple resources to load.
-	 *
-	 * @class
-	 * @param [baseUrl=''] {string} The base url for all resources loaded by this loader.
-	 * @param [concurrency=10] {number} The number of resources to load concurrently.
-	 */
-	function Loader(baseUrl, concurrency) {
-	    EventEmitter.call(this);
-
-	    concurrency = concurrency || 10;
-
-	    /**
-	     * The base url for all resources loaded by this loader.
-	     *
-	     * @member {string}
-	     */
-	    this.baseUrl = baseUrl || '';
-
-	    /**
-	     * The progress percent of the loader going through the queue.
-	     *
-	     * @member {number}
-	     */
-	    this.progress = 0;
-
-	    /**
-	     * Loading state of the loader, true if it is currently loading resources.
-	     *
-	     * @member {boolean}
-	     */
-	    this.loading = false;
-
-	    /**
-	     * The percentage of total progress that a single resource represents.
-	     *
-	     * @member {number}
-	     */
-	    this._progressChunk = 0;
-
-	    /**
-	     * The middleware to run before loading each resource.
-	     *
-	     * @member {function[]}
-	     */
-	    this._beforeMiddleware = [];
-
-	    /**
-	     * The middleware to run after loading each resource.
-	     *
-	     * @member {function[]}
-	     */
-	    this._afterMiddleware = [];
-
-	    /**
-	     * The `_loadResource` function bound with this object context.
-	     *
-	     * @private
-	     * @member {function}
-	     */
-	    this._boundLoadResource = this._loadResource.bind(this);
-
-	    /**
-	     * The `_onLoad` function bound with this object context.
-	     *
-	     * @private
-	     * @member {function}
-	     */
-	    this._boundOnLoad = this._onLoad.bind(this);
-
-	    /**
-	     * The resource buffer that fills until `load` is called to start loading resources.
-	     *
-	     * @private
-	     * @member {Resource[]}
-	     */
-	    this._buffer = [];
-
-	    /**
-	     * Used to track load completion.
-	     *
-	     * @private
-	     * @member {number}
-	     */
-	    this._numToLoad = 0;
-
-	    /**
-	     * The resources waiting to be loaded.
-	     *
-	     * @private
-	     * @member {Resource[]}
-	     */
-	    this._queue = async.queue(this._boundLoadResource, concurrency);
-
-	    /**
-	     * All the resources for this loader keyed by name.
-	     *
-	     * @member {object<string, Resource>}
-	     */
-	    this.resources = {};
-
-	    /**
-	     * Emitted once per loaded or errored resource.
-	     *
-	     * @event progress
-	     * @memberof Loader#
-	     */
-
-	    /**
-	     * Emitted once per errored resource.
-	     *
-	     * @event error
-	     * @memberof Loader#
-	     */
-
-	    /**
-	     * Emitted once per loaded resource.
-	     *
-	     * @event load
-	     * @memberof Loader#
-	     */
-
-	    /**
-	     * Emitted when the loader begins to process the queue.
-	     *
-	     * @event start
-	     * @memberof Loader#
-	     */
-
-	    /**
-	     * Emitted when the queued resources all load.
-	     *
-	     * @event complete
-	     * @memberof Loader#
-	     */
-	}
-
-	Loader.prototype = Object.create(EventEmitter.prototype);
-	Loader.prototype.constructor = Loader;
-	module.exports = Loader;
-
-	/**
-	 * Adds a resource (or multiple resources) to the loader queue.
-	 *
-	 * This function can take a wide variety of different parameters. The only thing that is always
-	 * required the url to load. All the following will work:
-	 *
-	 * ```js
-	 * loader
-	 *     // normal param syntax
-	 *     .add('key', 'http://...', function () {})
-	 *     .add('http://...', function () {})
-	 *     .add('http://...')
-	 *
-	 *     // object syntax
-	 *     .add({
-	 *         name: 'key2',
-	 *         url: 'http://...'
-	 *     }, function () {})
-	 *     .add({
-	 *         url: 'http://...'
-	 *     }, function () {})
-	 *     .add({
-	 *         name: 'key3',
-	 *         url: 'http://...'
-	 *         onComplete: function () {}
-	 *     })
-	 *     .add({
-	 *         url: 'https://...',
-	 *         onComplete: function () {},
-	 *         crossOrigin: true
-	 *     })
-	 *
-	 *     // you can also pass an array of objects or urls or both
-	 *     .add([
-	 *         { name: 'key4', url: 'http://...', onComplete: function () {} },
-	 *         { url: 'http://...', onComplete: function () {} },
-	 *         'http://...'
-	 *     ]);
-	 * ```
-	 *
-	 * @alias enqueue
-	 * @param [name] {string} The name of the resource to load, if not passed the url is used.
-	 * @param url {string} The url for this resource, relative to the baseUrl of this loader.
-	 * @param [options] {object} The options for the load.
-	 * @param [options.crossOrigin] {boolean} Is this request cross-origin? Default is to determine automatically.
-	 * @param [options.loadType=Resource.LOAD_TYPE.XHR] {Resource.XHR_LOAD_TYPE} How should this resource be loaded?
-	 * @param [options.xhrType=Resource.XHR_RESPONSE_TYPE.DEFAULT] {Resource.XHR_RESPONSE_TYPE} How should the data being
-	 *      loaded be interpreted when using XHR?
-	 * @param [callback] {function} Function to call when this specific resource completes loading.
-	 * @return {Loader}
-	 */
-	Loader.prototype.add = Loader.prototype.enqueue = function (name, url, options, cb) {
-	    // special case of an array of objects or urls
-	    if (Array.isArray(name)) {
-	        for (var i = 0; i < name.length; ++i) {
-	            this.add(name[i]);
-	        }
-
-	        return this;
-	    }
-
-	    // if an object is passed instead of params
-	    if (typeof name === 'object') {
-	        cb = url || name.callback || name.onComplete;
-	        options = name;
-	        url = name.url;
-	        name = name.name || name.key || name.url;
-	    }
-
-	    // case where no name is passed shift all args over by one.
-	    if (typeof url !== 'string') {
-	        cb = options;
-	        options = url;
-	        url = name;
-	    }
-
-	    // now that we shifted make sure we have a proper url.
-	    if (typeof url !== 'string') {
-	        throw new Error('No url passed to add resource to loader.');
-	    }
-
-	    // options are optional so people might pass a function and no options
-	    if (typeof options === 'function') {
-	        cb = options;
-	        options = null;
-	    }
-
-	    // check if resource already exists.
-	    if (this.resources[name]) {
-	        throw new Error('Resource with name "' + name + '" already exists.');
-	    }
-
-	    // add base url if this isn't an absolute url
-	    url = this._handleBaseUrl(url);
-
-	    // create the store the resource
-	    this.resources[name] = new Resource(name, url, options);
-
-	    if (typeof cb === 'function') {
-	        this.resources[name].once('afterMiddleware', cb);
-	    }
-
-	    this._numToLoad++;
-
-	    // if already loading add it to the worker queue
-	    if (this._queue.started) {
-	        this._queue.push(this.resources[name]);
-	        this._progressChunk = (100 - this.progress) / (this._queue.length() + this._queue.running());
-	    }
-	    // otherwise buffer it to be added to the queue later
-	    else {
-	        this._buffer.push(this.resources[name]);
-	        this._progressChunk = 100 / this._buffer.length;
-	    }
-
-	    return this;
-	};
-
-	Loader.prototype._handleBaseUrl = function (url) {
-	    var parsedUrl = urlParser.parse(url);
-
-	    // absolute url, just use it as is.
-	    if (parsedUrl.protocol || parsedUrl.pathname.indexOf('//') === 0) {
-	        return url;
-	    }
-
-	    // if baseUrl doesn't end in slash and url doesn't start with slash, then add a slash inbetween
-	    if (
-	        this.baseUrl.length &&
-	        this.baseUrl.lastIndexOf('/') !== this.baseUrl.length - 1 &&
-	        url.lastIndexOf('/') !== url.length - 1
-	    ) {
-	        return this.baseUrl + '/' + url;
-	    }
-	    else {
-	        return this.baseUrl + url;
-	    }
-	};
-
-
-	/**
-	 * Sets up a middleware function that will run *before* the
-	 * resource is loaded.
-	 *
-	 * @alias pre
-	 * @param middleware {function} The middleware function to register.
-	 * @return {Loader}
-	 */
-	Loader.prototype.before = Loader.prototype.pre = function (fn) {
-	    this._beforeMiddleware.push(fn);
-
-	    return this;
-	};
-
-	/**
-	 * Sets up a middleware function that will run *after* the
-	 * resource is loaded.
-	 *
-	 * @alias use
-	 * @param middleware {function} The middleware function to register.
-	 * @return {Loader}
-	 */
-	Loader.prototype.after = Loader.prototype.use = function (fn) {
-	    this._afterMiddleware.push(fn);
-
-	    return this;
-	};
-
-	/**
-	 * Resets the queue of the loader to prepare for a new load.
-	 *
-	 * @return {Loader}
-	 */
-	Loader.prototype.reset = function () {
-	    // this.baseUrl = baseUrl || '';
-
-	    this.progress = 0;
-
-	    this.loading = false;
-
-	    this._progressChunk = 0;
-
-	    // this._beforeMiddleware.length = 0;
-	    // this._afterMiddleware.length = 0;
-
-	    this._buffer.length = 0;
-
-	    this._numToLoad = 0;
-
-	    this._queue.kill();
-	    this._queue.started = false;
-
-	    this.resources = {};
-	};
-
-	/**
-	 * Starts loading the queued resources.
-	 *
-	 * @fires start
-	 * @param [callback] {function} Optional callback that will be bound to the `complete` event.
-	 * @return {Loader}
-	 */
-	Loader.prototype.load = function (cb) {
-	    // register complete callback if they pass one
-	    if (typeof cb === 'function') {
-	        this.once('complete', cb);
-	    }
-
-	    // if the queue has already started we are done here
-	    if (this._queue.started) {
-	        return this;
-	    }
-
-	    // notify of start
-	    this.emit('start', this);
-
-	    // start the internal queue
-	    for (var i = 0; i < this._buffer.length; ++i) {
-	        this._queue.push(this._buffer[i]);
-	    }
-
-	    // empty the buffer
-	    this._buffer.length = 0;
-
-	    return this;
-	};
-
-	/**
-	 * Loads a single resource.
-	 *
-	 * @fires progress
-	 * @private
-	 */
-	Loader.prototype._loadResource = function (resource, dequeue) {
-	    var self = this;
-
-	    resource._dequeue = dequeue;
-
-	    this._runMiddleware(resource, this._beforeMiddleware, function () {
-	        // resource.on('progress', self.emit.bind(self, 'progress'));
-
-	        resource.load(self._boundOnLoad);
-	    });
-	};
-
-	/**
-	 * Called once each resource has loaded.
-	 *
-	 * @fires complete
-	 * @private
-	 */
-	Loader.prototype._onComplete = function () {
-	    this.emit('complete', this, this.resources);
-	};
-
-	/**
-	 * Called each time a resources is loaded.
-	 *
-	 * @fires progress
-	 * @fires error
-	 * @fires load
-	 * @private
-	 */
-	Loader.prototype._onLoad = function (resource) {
-	    this.progress += this._progressChunk;
-
-	    this.emit('progress', this, resource);
-
-	    // run middleware, this *must* happen before dequeue so sub-assets get added properly
-	    this._runMiddleware(resource, this._afterMiddleware, function () {
-	        resource.emit('afterMiddleware', resource);
-
-	        this._numToLoad--;
-
-	        // do completion check
-	        if (this._numToLoad === 0) {
-	            this.progress = 100;
-	            this._onComplete();
-	        }
-	        
-	        if (resource.error) {
-	            this.emit('error', resource.error, this, resource);
-	        }
-	        else {
-	            this.emit('load', this, resource);
-	        }
-	    });
-	    
-
-
-	    // remove this resource from the async queue
-	    resource._dequeue();
-	};
-
-	/**
-	 * Run middleware functions on a resource.
-	 *
-	 * @private
-	 */
-	Loader.prototype._runMiddleware = function (resource, fns, cb) {
-	    var self = this;
-
-	    async.eachSeries(fns, function (fn, next) {
-	        fn.call(self, resource, next);
-	    }, cb.bind(this, resource));
-	};
-
-	Loader.LOAD_TYPE = Resource.LOAD_TYPE;
-	Loader.XHR_READY_STATE = Resource.XHR_READY_STATE;
-	Loader.XHR_RESPONSE_TYPE = Resource.XHR_RESPONSE_TYPE;
-
-
-/***/ },
-/* 316 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, setImmediate) {/*!
-	 * async
-	 * https://github.com/caolan/async
-	 *
-	 * Copyright 2010-2014 Caolan McMahon
-	 * Released under the MIT license
-	 */
-	/*jshint onevar: false, indent:4 */
-	/*global setImmediate: false, setTimeout: false, console: false */
-	(function () {
-
-	    var async = {};
-
-	    // global on the server, window in the browser
-	    var root, previous_async;
-
-	    root = this;
-	    if (root != null) {
-	      previous_async = root.async;
-	    }
-
-	    async.noConflict = function () {
-	        root.async = previous_async;
-	        return async;
-	    };
-
-	    function only_once(fn) {
-	        var called = false;
-	        return function() {
-	            if (called) throw new Error("Callback was already called.");
-	            called = true;
-	            fn.apply(root, arguments);
-	        }
-	    }
-
-	    //// cross-browser compatiblity functions ////
-
-	    var _toString = Object.prototype.toString;
-
-	    var _isArray = Array.isArray || function (obj) {
-	        return _toString.call(obj) === '[object Array]';
-	    };
-
-	    var _each = function (arr, iterator) {
-	        for (var i = 0; i < arr.length; i += 1) {
-	            iterator(arr[i], i, arr);
-	        }
-	    };
-
-	    var _map = function (arr, iterator) {
-	        if (arr.map) {
-	            return arr.map(iterator);
-	        }
-	        var results = [];
-	        _each(arr, function (x, i, a) {
-	            results.push(iterator(x, i, a));
-	        });
-	        return results;
-	    };
-
-	    var _reduce = function (arr, iterator, memo) {
-	        if (arr.reduce) {
-	            return arr.reduce(iterator, memo);
-	        }
-	        _each(arr, function (x, i, a) {
-	            memo = iterator(memo, x, i, a);
-	        });
-	        return memo;
-	    };
-
-	    var _keys = function (obj) {
-	        if (Object.keys) {
-	            return Object.keys(obj);
-	        }
-	        var keys = [];
-	        for (var k in obj) {
-	            if (obj.hasOwnProperty(k)) {
-	                keys.push(k);
-	            }
-	        }
-	        return keys;
-	    };
-
-	    //// exported async module functions ////
-
-	    //// nextTick implementation with browser-compatible fallback ////
-	    if (typeof process === 'undefined' || !(process.nextTick)) {
-	        if (typeof setImmediate === 'function') {
-	            async.nextTick = function (fn) {
-	                // not a direct alias for IE10 compatibility
-	                setImmediate(fn);
-	            };
-	            async.setImmediate = async.nextTick;
-	        }
-	        else {
-	            async.nextTick = function (fn) {
-	                setTimeout(fn, 0);
-	            };
-	            async.setImmediate = async.nextTick;
-	        }
-	    }
-	    else {
-	        async.nextTick = process.nextTick;
-	        if (typeof setImmediate !== 'undefined') {
-	            async.setImmediate = function (fn) {
-	              // not a direct alias for IE10 compatibility
-	              setImmediate(fn);
-	            };
-	        }
-	        else {
-	            async.setImmediate = async.nextTick;
-	        }
-	    }
-
-	    async.each = function (arr, iterator, callback) {
-	        callback = callback || function () {};
-	        if (!arr.length) {
-	            return callback();
-	        }
-	        var completed = 0;
-	        _each(arr, function (x) {
-	            iterator(x, only_once(done) );
-	        });
-	        function done(err) {
-	          if (err) {
-	              callback(err);
-	              callback = function () {};
-	          }
-	          else {
-	              completed += 1;
-	              if (completed >= arr.length) {
-	                  callback();
-	              }
-	          }
-	        }
-	    };
-	    async.forEach = async.each;
-
-	    async.eachSeries = function (arr, iterator, callback) {
-	        callback = callback || function () {};
-	        if (!arr.length) {
-	            return callback();
-	        }
-	        var completed = 0;
-	        var iterate = function () {
-	            iterator(arr[completed], function (err) {
-	                if (err) {
-	                    callback(err);
-	                    callback = function () {};
-	                }
-	                else {
-	                    completed += 1;
-	                    if (completed >= arr.length) {
-	                        callback();
-	                    }
-	                    else {
-	                        iterate();
-	                    }
-	                }
-	            });
-	        };
-	        iterate();
-	    };
-	    async.forEachSeries = async.eachSeries;
-
-	    async.eachLimit = function (arr, limit, iterator, callback) {
-	        var fn = _eachLimit(limit);
-	        fn.apply(null, [arr, iterator, callback]);
-	    };
-	    async.forEachLimit = async.eachLimit;
-
-	    var _eachLimit = function (limit) {
-
-	        return function (arr, iterator, callback) {
-	            callback = callback || function () {};
-	            if (!arr.length || limit <= 0) {
-	                return callback();
-	            }
-	            var completed = 0;
-	            var started = 0;
-	            var running = 0;
-
-	            (function replenish () {
-	                if (completed >= arr.length) {
-	                    return callback();
-	                }
-
-	                while (running < limit && started < arr.length) {
-	                    started += 1;
-	                    running += 1;
-	                    iterator(arr[started - 1], function (err) {
-	                        if (err) {
-	                            callback(err);
-	                            callback = function () {};
-	                        }
-	                        else {
-	                            completed += 1;
-	                            running -= 1;
-	                            if (completed >= arr.length) {
-	                                callback();
-	                            }
-	                            else {
-	                                replenish();
-	                            }
-	                        }
-	                    });
-	                }
-	            })();
-	        };
-	    };
-
-
-	    var doParallel = function (fn) {
-	        return function () {
-	            var args = Array.prototype.slice.call(arguments);
-	            return fn.apply(null, [async.each].concat(args));
-	        };
-	    };
-	    var doParallelLimit = function(limit, fn) {
-	        return function () {
-	            var args = Array.prototype.slice.call(arguments);
-	            return fn.apply(null, [_eachLimit(limit)].concat(args));
-	        };
-	    };
-	    var doSeries = function (fn) {
-	        return function () {
-	            var args = Array.prototype.slice.call(arguments);
-	            return fn.apply(null, [async.eachSeries].concat(args));
-	        };
-	    };
-
-
-	    var _asyncMap = function (eachfn, arr, iterator, callback) {
-	        arr = _map(arr, function (x, i) {
-	            return {index: i, value: x};
-	        });
-	        if (!callback) {
-	            eachfn(arr, function (x, callback) {
-	                iterator(x.value, function (err) {
-	                    callback(err);
-	                });
-	            });
-	        } else {
-	            var results = [];
-	            eachfn(arr, function (x, callback) {
-	                iterator(x.value, function (err, v) {
-	                    results[x.index] = v;
-	                    callback(err);
-	                });
-	            }, function (err) {
-	                callback(err, results);
-	            });
-	        }
-	    };
-	    async.map = doParallel(_asyncMap);
-	    async.mapSeries = doSeries(_asyncMap);
-	    async.mapLimit = function (arr, limit, iterator, callback) {
-	        return _mapLimit(limit)(arr, iterator, callback);
-	    };
-
-	    var _mapLimit = function(limit) {
-	        return doParallelLimit(limit, _asyncMap);
-	    };
-
-	    // reduce only has a series version, as doing reduce in parallel won't
-	    // work in many situations.
-	    async.reduce = function (arr, memo, iterator, callback) {
-	        async.eachSeries(arr, function (x, callback) {
-	            iterator(memo, x, function (err, v) {
-	                memo = v;
-	                callback(err);
-	            });
-	        }, function (err) {
-	            callback(err, memo);
-	        });
-	    };
-	    // inject alias
-	    async.inject = async.reduce;
-	    // foldl alias
-	    async.foldl = async.reduce;
-
-	    async.reduceRight = function (arr, memo, iterator, callback) {
-	        var reversed = _map(arr, function (x) {
-	            return x;
-	        }).reverse();
-	        async.reduce(reversed, memo, iterator, callback);
-	    };
-	    // foldr alias
-	    async.foldr = async.reduceRight;
-
-	    var _filter = function (eachfn, arr, iterator, callback) {
-	        var results = [];
-	        arr = _map(arr, function (x, i) {
-	            return {index: i, value: x};
-	        });
-	        eachfn(arr, function (x, callback) {
-	            iterator(x.value, function (v) {
-	                if (v) {
-	                    results.push(x);
-	                }
-	                callback();
-	            });
-	        }, function (err) {
-	            callback(_map(results.sort(function (a, b) {
-	                return a.index - b.index;
-	            }), function (x) {
-	                return x.value;
-	            }));
-	        });
-	    };
-	    async.filter = doParallel(_filter);
-	    async.filterSeries = doSeries(_filter);
-	    // select alias
-	    async.select = async.filter;
-	    async.selectSeries = async.filterSeries;
-
-	    var _reject = function (eachfn, arr, iterator, callback) {
-	        var results = [];
-	        arr = _map(arr, function (x, i) {
-	            return {index: i, value: x};
-	        });
-	        eachfn(arr, function (x, callback) {
-	            iterator(x.value, function (v) {
-	                if (!v) {
-	                    results.push(x);
-	                }
-	                callback();
-	            });
-	        }, function (err) {
-	            callback(_map(results.sort(function (a, b) {
-	                return a.index - b.index;
-	            }), function (x) {
-	                return x.value;
-	            }));
-	        });
-	    };
-	    async.reject = doParallel(_reject);
-	    async.rejectSeries = doSeries(_reject);
-
-	    var _detect = function (eachfn, arr, iterator, main_callback) {
-	        eachfn(arr, function (x, callback) {
-	            iterator(x, function (result) {
-	                if (result) {
-	                    main_callback(x);
-	                    main_callback = function () {};
-	                }
-	                else {
-	                    callback();
-	                }
-	            });
-	        }, function (err) {
-	            main_callback();
-	        });
-	    };
-	    async.detect = doParallel(_detect);
-	    async.detectSeries = doSeries(_detect);
-
-	    async.some = function (arr, iterator, main_callback) {
-	        async.each(arr, function (x, callback) {
-	            iterator(x, function (v) {
-	                if (v) {
-	                    main_callback(true);
-	                    main_callback = function () {};
-	                }
-	                callback();
-	            });
-	        }, function (err) {
-	            main_callback(false);
-	        });
-	    };
-	    // any alias
-	    async.any = async.some;
-
-	    async.every = function (arr, iterator, main_callback) {
-	        async.each(arr, function (x, callback) {
-	            iterator(x, function (v) {
-	                if (!v) {
-	                    main_callback(false);
-	                    main_callback = function () {};
-	                }
-	                callback();
-	            });
-	        }, function (err) {
-	            main_callback(true);
-	        });
-	    };
-	    // all alias
-	    async.all = async.every;
-
-	    async.sortBy = function (arr, iterator, callback) {
-	        async.map(arr, function (x, callback) {
-	            iterator(x, function (err, criteria) {
-	                if (err) {
-	                    callback(err);
-	                }
-	                else {
-	                    callback(null, {value: x, criteria: criteria});
-	                }
-	            });
-	        }, function (err, results) {
-	            if (err) {
-	                return callback(err);
-	            }
-	            else {
-	                var fn = function (left, right) {
-	                    var a = left.criteria, b = right.criteria;
-	                    return a < b ? -1 : a > b ? 1 : 0;
-	                };
-	                callback(null, _map(results.sort(fn), function (x) {
-	                    return x.value;
-	                }));
-	            }
-	        });
-	    };
-
-	    async.auto = function (tasks, callback) {
-	        callback = callback || function () {};
-	        var keys = _keys(tasks);
-	        var remainingTasks = keys.length
-	        if (!remainingTasks) {
-	            return callback();
-	        }
-
-	        var results = {};
-
-	        var listeners = [];
-	        var addListener = function (fn) {
-	            listeners.unshift(fn);
-	        };
-	        var removeListener = function (fn) {
-	            for (var i = 0; i < listeners.length; i += 1) {
-	                if (listeners[i] === fn) {
-	                    listeners.splice(i, 1);
-	                    return;
-	                }
-	            }
-	        };
-	        var taskComplete = function () {
-	            remainingTasks--
-	            _each(listeners.slice(0), function (fn) {
-	                fn();
-	            });
-	        };
-
-	        addListener(function () {
-	            if (!remainingTasks) {
-	                var theCallback = callback;
-	                // prevent final callback from calling itself if it errors
-	                callback = function () {};
-
-	                theCallback(null, results);
-	            }
-	        });
-
-	        _each(keys, function (k) {
-	            var task = _isArray(tasks[k]) ? tasks[k]: [tasks[k]];
-	            var taskCallback = function (err) {
-	                var args = Array.prototype.slice.call(arguments, 1);
-	                if (args.length <= 1) {
-	                    args = args[0];
-	                }
-	                if (err) {
-	                    var safeResults = {};
-	                    _each(_keys(results), function(rkey) {
-	                        safeResults[rkey] = results[rkey];
-	                    });
-	                    safeResults[k] = args;
-	                    callback(err, safeResults);
-	                    // stop subsequent errors hitting callback multiple times
-	                    callback = function () {};
-	                }
-	                else {
-	                    results[k] = args;
-	                    async.setImmediate(taskComplete);
-	                }
-	            };
-	            var requires = task.slice(0, Math.abs(task.length - 1)) || [];
-	            var ready = function () {
-	                return _reduce(requires, function (a, x) {
-	                    return (a && results.hasOwnProperty(x));
-	                }, true) && !results.hasOwnProperty(k);
-	            };
-	            if (ready()) {
-	                task[task.length - 1](taskCallback, results);
-	            }
-	            else {
-	                var listener = function () {
-	                    if (ready()) {
-	                        removeListener(listener);
-	                        task[task.length - 1](taskCallback, results);
-	                    }
-	                };
-	                addListener(listener);
-	            }
-	        });
-	    };
-
-	    async.retry = function(times, task, callback) {
-	        var DEFAULT_TIMES = 5;
-	        var attempts = [];
-	        // Use defaults if times not passed
-	        if (typeof times === 'function') {
-	            callback = task;
-	            task = times;
-	            times = DEFAULT_TIMES;
-	        }
-	        // Make sure times is a number
-	        times = parseInt(times, 10) || DEFAULT_TIMES;
-	        var wrappedTask = function(wrappedCallback, wrappedResults) {
-	            var retryAttempt = function(task, finalAttempt) {
-	                return function(seriesCallback) {
-	                    task(function(err, result){
-	                        seriesCallback(!err || finalAttempt, {err: err, result: result});
-	                    }, wrappedResults);
-	                };
-	            };
-	            while (times) {
-	                attempts.push(retryAttempt(task, !(times-=1)));
-	            }
-	            async.series(attempts, function(done, data){
-	                data = data[data.length - 1];
-	                (wrappedCallback || callback)(data.err, data.result);
-	            });
-	        }
-	        // If a callback is passed, run this as a controll flow
-	        return callback ? wrappedTask() : wrappedTask
-	    };
-
-	    async.waterfall = function (tasks, callback) {
-	        callback = callback || function () {};
-	        if (!_isArray(tasks)) {
-	          var err = new Error('First argument to waterfall must be an array of functions');
-	          return callback(err);
-	        }
-	        if (!tasks.length) {
-	            return callback();
-	        }
-	        var wrapIterator = function (iterator) {
-	            return function (err) {
-	                if (err) {
-	                    callback.apply(null, arguments);
-	                    callback = function () {};
-	                }
-	                else {
-	                    var args = Array.prototype.slice.call(arguments, 1);
-	                    var next = iterator.next();
-	                    if (next) {
-	                        args.push(wrapIterator(next));
-	                    }
-	                    else {
-	                        args.push(callback);
-	                    }
-	                    async.setImmediate(function () {
-	                        iterator.apply(null, args);
-	                    });
-	                }
-	            };
-	        };
-	        wrapIterator(async.iterator(tasks))();
-	    };
-
-	    var _parallel = function(eachfn, tasks, callback) {
-	        callback = callback || function () {};
-	        if (_isArray(tasks)) {
-	            eachfn.map(tasks, function (fn, callback) {
-	                if (fn) {
-	                    fn(function (err) {
-	                        var args = Array.prototype.slice.call(arguments, 1);
-	                        if (args.length <= 1) {
-	                            args = args[0];
-	                        }
-	                        callback.call(null, err, args);
-	                    });
-	                }
-	            }, callback);
-	        }
-	        else {
-	            var results = {};
-	            eachfn.each(_keys(tasks), function (k, callback) {
-	                tasks[k](function (err) {
-	                    var args = Array.prototype.slice.call(arguments, 1);
-	                    if (args.length <= 1) {
-	                        args = args[0];
-	                    }
-	                    results[k] = args;
-	                    callback(err);
-	                });
-	            }, function (err) {
-	                callback(err, results);
-	            });
-	        }
-	    };
-
-	    async.parallel = function (tasks, callback) {
-	        _parallel({ map: async.map, each: async.each }, tasks, callback);
-	    };
-
-	    async.parallelLimit = function(tasks, limit, callback) {
-	        _parallel({ map: _mapLimit(limit), each: _eachLimit(limit) }, tasks, callback);
-	    };
-
-	    async.series = function (tasks, callback) {
-	        callback = callback || function () {};
-	        if (_isArray(tasks)) {
-	            async.mapSeries(tasks, function (fn, callback) {
-	                if (fn) {
-	                    fn(function (err) {
-	                        var args = Array.prototype.slice.call(arguments, 1);
-	                        if (args.length <= 1) {
-	                            args = args[0];
-	                        }
-	                        callback.call(null, err, args);
-	                    });
-	                }
-	            }, callback);
-	        }
-	        else {
-	            var results = {};
-	            async.eachSeries(_keys(tasks), function (k, callback) {
-	                tasks[k](function (err) {
-	                    var args = Array.prototype.slice.call(arguments, 1);
-	                    if (args.length <= 1) {
-	                        args = args[0];
-	                    }
-	                    results[k] = args;
-	                    callback(err);
-	                });
-	            }, function (err) {
-	                callback(err, results);
-	            });
-	        }
-	    };
-
-	    async.iterator = function (tasks) {
-	        var makeCallback = function (index) {
-	            var fn = function () {
-	                if (tasks.length) {
-	                    tasks[index].apply(null, arguments);
-	                }
-	                return fn.next();
-	            };
-	            fn.next = function () {
-	                return (index < tasks.length - 1) ? makeCallback(index + 1): null;
-	            };
-	            return fn;
-	        };
-	        return makeCallback(0);
-	    };
-
-	    async.apply = function (fn) {
-	        var args = Array.prototype.slice.call(arguments, 1);
-	        return function () {
-	            return fn.apply(
-	                null, args.concat(Array.prototype.slice.call(arguments))
-	            );
-	        };
-	    };
-
-	    var _concat = function (eachfn, arr, fn, callback) {
-	        var r = [];
-	        eachfn(arr, function (x, cb) {
-	            fn(x, function (err, y) {
-	                r = r.concat(y || []);
-	                cb(err);
-	            });
-	        }, function (err) {
-	            callback(err, r);
-	        });
-	    };
-	    async.concat = doParallel(_concat);
-	    async.concatSeries = doSeries(_concat);
-
-	    async.whilst = function (test, iterator, callback) {
-	        if (test()) {
-	            iterator(function (err) {
-	                if (err) {
-	                    return callback(err);
-	                }
-	                async.whilst(test, iterator, callback);
-	            });
-	        }
-	        else {
-	            callback();
-	        }
-	    };
-
-	    async.doWhilst = function (iterator, test, callback) {
-	        iterator(function (err) {
-	            if (err) {
-	                return callback(err);
-	            }
-	            var args = Array.prototype.slice.call(arguments, 1);
-	            if (test.apply(null, args)) {
-	                async.doWhilst(iterator, test, callback);
-	            }
-	            else {
-	                callback();
-	            }
-	        });
-	    };
-
-	    async.until = function (test, iterator, callback) {
-	        if (!test()) {
-	            iterator(function (err) {
-	                if (err) {
-	                    return callback(err);
-	                }
-	                async.until(test, iterator, callback);
-	            });
-	        }
-	        else {
-	            callback();
-	        }
-	    };
-
-	    async.doUntil = function (iterator, test, callback) {
-	        iterator(function (err) {
-	            if (err) {
-	                return callback(err);
-	            }
-	            var args = Array.prototype.slice.call(arguments, 1);
-	            if (!test.apply(null, args)) {
-	                async.doUntil(iterator, test, callback);
-	            }
-	            else {
-	                callback();
-	            }
-	        });
-	    };
-
-	    async.queue = function (worker, concurrency) {
-	        if (concurrency === undefined) {
-	            concurrency = 1;
-	        }
-	        function _insert(q, data, pos, callback) {
-	          if (!q.started){
-	            q.started = true;
-	          }
-	          if (!_isArray(data)) {
-	              data = [data];
-	          }
-	          if(data.length == 0) {
-	             // call drain immediately if there are no tasks
-	             return async.setImmediate(function() {
-	                 if (q.drain) {
-	                     q.drain();
-	                 }
-	             });
-	          }
-	          _each(data, function(task) {
-	              var item = {
-	                  data: task,
-	                  callback: typeof callback === 'function' ? callback : null
-	              };
-
-	              if (pos) {
-	                q.tasks.unshift(item);
-	              } else {
-	                q.tasks.push(item);
-	              }
-
-	              if (q.saturated && q.tasks.length === q.concurrency) {
-	                  q.saturated();
-	              }
-	              async.setImmediate(q.process);
-	          });
-	        }
-
-	        var workers = 0;
-	        var q = {
-	            tasks: [],
-	            concurrency: concurrency,
-	            saturated: null,
-	            empty: null,
-	            drain: null,
-	            started: false,
-	            paused: false,
-	            push: function (data, callback) {
-	              _insert(q, data, false, callback);
-	            },
-	            kill: function () {
-	              q.drain = null;
-	              q.tasks = [];
-	            },
-	            unshift: function (data, callback) {
-	              _insert(q, data, true, callback);
-	            },
-	            process: function () {
-	                if (!q.paused && workers < q.concurrency && q.tasks.length) {
-	                    var task = q.tasks.shift();
-	                    if (q.empty && q.tasks.length === 0) {
-	                        q.empty();
-	                    }
-	                    workers += 1;
-	                    var next = function () {
-	                        workers -= 1;
-	                        if (task.callback) {
-	                            task.callback.apply(task, arguments);
-	                        }
-	                        if (q.drain && q.tasks.length + workers === 0) {
-	                            q.drain();
-	                        }
-	                        q.process();
-	                    };
-	                    var cb = only_once(next);
-	                    worker(task.data, cb);
-	                }
-	            },
-	            length: function () {
-	                return q.tasks.length;
-	            },
-	            running: function () {
-	                return workers;
-	            },
-	            idle: function() {
-	                return q.tasks.length + workers === 0;
-	            },
-	            pause: function () {
-	                if (q.paused === true) { return; }
-	                q.paused = true;
-	            },
-	            resume: function () {
-	                if (q.paused === false) { return; }
-	                q.paused = false;
-	                // Need to call q.process once per concurrent
-	                // worker to preserve full concurrency after pause
-	                for (var w = 1; w <= q.concurrency; w++) {
-	                    async.setImmediate(q.process);
-	                }
-	            }
-	        };
-	        return q;
-	    };
-
-	    async.priorityQueue = function (worker, concurrency) {
-
-	        function _compareTasks(a, b){
-	          return a.priority - b.priority;
-	        };
-
-	        function _binarySearch(sequence, item, compare) {
-	          var beg = -1,
-	              end = sequence.length - 1;
-	          while (beg < end) {
-	            var mid = beg + ((end - beg + 1) >>> 1);
-	            if (compare(item, sequence[mid]) >= 0) {
-	              beg = mid;
-	            } else {
-	              end = mid - 1;
-	            }
-	          }
-	          return beg;
-	        }
-
-	        function _insert(q, data, priority, callback) {
-	          if (!q.started){
-	            q.started = true;
-	          }
-	          if (!_isArray(data)) {
-	              data = [data];
-	          }
-	          if(data.length == 0) {
-	             // call drain immediately if there are no tasks
-	             return async.setImmediate(function() {
-	                 if (q.drain) {
-	                     q.drain();
-	                 }
-	             });
-	          }
-	          _each(data, function(task) {
-	              var item = {
-	                  data: task,
-	                  priority: priority,
-	                  callback: typeof callback === 'function' ? callback : null
-	              };
-
-	              q.tasks.splice(_binarySearch(q.tasks, item, _compareTasks) + 1, 0, item);
-
-	              if (q.saturated && q.tasks.length === q.concurrency) {
-	                  q.saturated();
-	              }
-	              async.setImmediate(q.process);
-	          });
-	        }
-
-	        // Start with a normal queue
-	        var q = async.queue(worker, concurrency);
-
-	        // Override push to accept second parameter representing priority
-	        q.push = function (data, priority, callback) {
-	          _insert(q, data, priority, callback);
-	        };
-
-	        // Remove unshift function
-	        delete q.unshift;
-
-	        return q;
-	    };
-
-	    async.cargo = function (worker, payload) {
-	        var working     = false,
-	            tasks       = [];
-
-	        var cargo = {
-	            tasks: tasks,
-	            payload: payload,
-	            saturated: null,
-	            empty: null,
-	            drain: null,
-	            drained: true,
-	            push: function (data, callback) {
-	                if (!_isArray(data)) {
-	                    data = [data];
-	                }
-	                _each(data, function(task) {
-	                    tasks.push({
-	                        data: task,
-	                        callback: typeof callback === 'function' ? callback : null
-	                    });
-	                    cargo.drained = false;
-	                    if (cargo.saturated && tasks.length === payload) {
-	                        cargo.saturated();
-	                    }
-	                });
-	                async.setImmediate(cargo.process);
-	            },
-	            process: function process() {
-	                if (working) return;
-	                if (tasks.length === 0) {
-	                    if(cargo.drain && !cargo.drained) cargo.drain();
-	                    cargo.drained = true;
-	                    return;
-	                }
-
-	                var ts = typeof payload === 'number'
-	                            ? tasks.splice(0, payload)
-	                            : tasks.splice(0, tasks.length);
-
-	                var ds = _map(ts, function (task) {
-	                    return task.data;
-	                });
-
-	                if(cargo.empty) cargo.empty();
-	                working = true;
-	                worker(ds, function () {
-	                    working = false;
-
-	                    var args = arguments;
-	                    _each(ts, function (data) {
-	                        if (data.callback) {
-	                            data.callback.apply(null, args);
-	                        }
-	                    });
-
-	                    process();
-	                });
-	            },
-	            length: function () {
-	                return tasks.length;
-	            },
-	            running: function () {
-	                return working;
-	            }
-	        };
-	        return cargo;
-	    };
-
-	    var _console_fn = function (name) {
-	        return function (fn) {
-	            var args = Array.prototype.slice.call(arguments, 1);
-	            fn.apply(null, args.concat([function (err) {
-	                var args = Array.prototype.slice.call(arguments, 1);
-	                if (typeof console !== 'undefined') {
-	                    if (err) {
-	                        if (console.error) {
-	                            console.error(err);
-	                        }
-	                    }
-	                    else if (console[name]) {
-	                        _each(args, function (x) {
-	                            console[name](x);
-	                        });
-	                    }
-	                }
-	            }]));
-	        };
-	    };
-	    async.log = _console_fn('log');
-	    async.dir = _console_fn('dir');
-	    /*async.info = _console_fn('info');
-	    async.warn = _console_fn('warn');
-	    async.error = _console_fn('error');*/
-
-	    async.memoize = function (fn, hasher) {
-	        var memo = {};
-	        var queues = {};
-	        hasher = hasher || function (x) {
-	            return x;
-	        };
-	        var memoized = function () {
-	            var args = Array.prototype.slice.call(arguments);
-	            var callback = args.pop();
-	            var key = hasher.apply(null, args);
-	            if (key in memo) {
-	                async.nextTick(function () {
-	                    callback.apply(null, memo[key]);
-	                });
-	            }
-	            else if (key in queues) {
-	                queues[key].push(callback);
-	            }
-	            else {
-	                queues[key] = [callback];
-	                fn.apply(null, args.concat([function () {
-	                    memo[key] = arguments;
-	                    var q = queues[key];
-	                    delete queues[key];
-	                    for (var i = 0, l = q.length; i < l; i++) {
-	                      q[i].apply(null, arguments);
-	                    }
-	                }]));
-	            }
-	        };
-	        memoized.memo = memo;
-	        memoized.unmemoized = fn;
-	        return memoized;
-	    };
-
-	    async.unmemoize = function (fn) {
-	      return function () {
-	        return (fn.unmemoized || fn).apply(null, arguments);
-	      };
-	    };
-
-	    async.times = function (count, iterator, callback) {
-	        var counter = [];
-	        for (var i = 0; i < count; i++) {
-	            counter.push(i);
-	        }
-	        return async.map(counter, iterator, callback);
-	    };
-
-	    async.timesSeries = function (count, iterator, callback) {
-	        var counter = [];
-	        for (var i = 0; i < count; i++) {
-	            counter.push(i);
-	        }
-	        return async.mapSeries(counter, iterator, callback);
-	    };
-
-	    async.seq = function (/* functions... */) {
-	        var fns = arguments;
-	        return function () {
-	            var that = this;
-	            var args = Array.prototype.slice.call(arguments);
-	            var callback = args.pop();
-	            async.reduce(fns, args, function (newargs, fn, cb) {
-	                fn.apply(that, newargs.concat([function () {
-	                    var err = arguments[0];
-	                    var nextargs = Array.prototype.slice.call(arguments, 1);
-	                    cb(err, nextargs);
-	                }]))
-	            },
-	            function (err, results) {
-	                callback.apply(that, [err].concat(results));
-	            });
-	        };
-	    };
-
-	    async.compose = function (/* functions... */) {
-	      return async.seq.apply(null, Array.prototype.reverse.call(arguments));
-	    };
-
-	    var _applyEach = function (eachfn, fns /*args...*/) {
-	        var go = function () {
-	            var that = this;
-	            var args = Array.prototype.slice.call(arguments);
-	            var callback = args.pop();
-	            return eachfn(fns, function (fn, cb) {
-	                fn.apply(that, args.concat([cb]));
-	            },
-	            callback);
-	        };
-	        if (arguments.length > 2) {
-	            var args = Array.prototype.slice.call(arguments, 2);
-	            return go.apply(this, args);
-	        }
-	        else {
-	            return go;
-	        }
-	    };
-	    async.applyEach = doParallel(_applyEach);
-	    async.applyEachSeries = doSeries(_applyEach);
-
-	    async.forever = function (fn, callback) {
-	        function next(err) {
-	            if (err) {
-	                if (callback) {
-	                    return callback(err);
-	                }
-	                throw err;
-	            }
-	            fn(next);
-	        }
-	        next();
-	    };
-
-	    // Node.js
-	    if (typeof module !== 'undefined' && module.exports) {
-	        module.exports = async;
-	    }
-	    // AMD / RequireJS
-	    else if (true) {
-	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-	            return async;
-	        }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	    }
-	    // included directly via <script> tag
-	    else {
-	        root.async = async;
-	    }
-
-	}());
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(192), __webpack_require__(198).setImmediate))
-
-/***/ },
-/* 317 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// Copyright Joyent, Inc. and other Node contributors.
-	//
-	// Permission is hereby granted, free of charge, to any person obtaining a
-	// copy of this software and associated documentation files (the
-	// "Software"), to deal in the Software without restriction, including
-	// without limitation the rights to use, copy, modify, merge, publish,
-	// distribute, sublicense, and/or sell copies of the Software, and to permit
-	// persons to whom the Software is furnished to do so, subject to the
-	// following conditions:
-	//
-	// The above copyright notice and this permission notice shall be included
-	// in all copies or substantial portions of the Software.
-	//
-	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-	// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-	var punycode = __webpack_require__(318);
-
-	exports.parse = urlParse;
-	exports.resolve = urlResolve;
-	exports.resolveObject = urlResolveObject;
-	exports.format = urlFormat;
-
-	exports.Url = Url;
-
-	function Url() {
-	  this.protocol = null;
-	  this.slashes = null;
-	  this.auth = null;
-	  this.host = null;
-	  this.port = null;
-	  this.hostname = null;
-	  this.hash = null;
-	  this.search = null;
-	  this.query = null;
-	  this.pathname = null;
-	  this.path = null;
-	  this.href = null;
-	}
-
-	// Reference: RFC 3986, RFC 1808, RFC 2396
-
-	// define these here so at least they only have to be
-	// compiled once on the first module load.
-	var protocolPattern = /^([a-z0-9.+-]+:)/i,
-	    portPattern = /:[0-9]*$/,
-
-	    // RFC 2396: characters reserved for delimiting URLs.
-	    // We actually just auto-escape these.
-	    delims = ['<', '>', '"', '`', ' ', '\r', '\n', '\t'],
-
-	    // RFC 2396: characters not allowed for various reasons.
-	    unwise = ['{', '}', '|', '\\', '^', '`'].concat(delims),
-
-	    // Allowed by RFCs, but cause of XSS attacks.  Always escape these.
-	    autoEscape = ['\''].concat(unwise),
-	    // Characters that are never ever allowed in a hostname.
-	    // Note that any invalid chars are also handled, but these
-	    // are the ones that are *expected* to be seen, so we fast-path
-	    // them.
-	    nonHostChars = ['%', '/', '?', ';', '#'].concat(autoEscape),
-	    hostEndingChars = ['/', '?', '#'],
-	    hostnameMaxLen = 255,
-	    hostnamePartPattern = /^[a-z0-9A-Z_-]{0,63}$/,
-	    hostnamePartStart = /^([a-z0-9A-Z_-]{0,63})(.*)$/,
-	    // protocols that can allow "unsafe" and "unwise" chars.
-	    unsafeProtocol = {
-	      'javascript': true,
-	      'javascript:': true
-	    },
-	    // protocols that never have a hostname.
-	    hostlessProtocol = {
-	      'javascript': true,
-	      'javascript:': true
-	    },
-	    // protocols that always contain a // bit.
-	    slashedProtocol = {
-	      'http': true,
-	      'https': true,
-	      'ftp': true,
-	      'gopher': true,
-	      'file': true,
-	      'http:': true,
-	      'https:': true,
-	      'ftp:': true,
-	      'gopher:': true,
-	      'file:': true
-	    },
-	    querystring = __webpack_require__(320);
-
-	function urlParse(url, parseQueryString, slashesDenoteHost) {
-	  if (url && isObject(url) && url instanceof Url) return url;
-
-	  var u = new Url;
-	  u.parse(url, parseQueryString, slashesDenoteHost);
-	  return u;
-	}
-
-	Url.prototype.parse = function(url, parseQueryString, slashesDenoteHost) {
-	  if (!isString(url)) {
-	    throw new TypeError("Parameter 'url' must be a string, not " + typeof url);
-	  }
-
-	  var rest = url;
-
-	  // trim before proceeding.
-	  // This is to support parse stuff like "  http://foo.com  \n"
-	  rest = rest.trim();
-
-	  var proto = protocolPattern.exec(rest);
-	  if (proto) {
-	    proto = proto[0];
-	    var lowerProto = proto.toLowerCase();
-	    this.protocol = lowerProto;
-	    rest = rest.substr(proto.length);
-	  }
-
-	  // figure out if it's got a host
-	  // user@server is *always* interpreted as a hostname, and url
-	  // resolution will treat //foo/bar as host=foo,path=bar because that's
-	  // how the browser resolves relative URLs.
-	  if (slashesDenoteHost || proto || rest.match(/^\/\/[^@\/]+@[^@\/]+/)) {
-	    var slashes = rest.substr(0, 2) === '//';
-	    if (slashes && !(proto && hostlessProtocol[proto])) {
-	      rest = rest.substr(2);
-	      this.slashes = true;
-	    }
-	  }
-
-	  if (!hostlessProtocol[proto] &&
-	      (slashes || (proto && !slashedProtocol[proto]))) {
-
-	    // there's a hostname.
-	    // the first instance of /, ?, ;, or # ends the host.
-	    //
-	    // If there is an @ in the hostname, then non-host chars *are* allowed
-	    // to the left of the last @ sign, unless some host-ending character
-	    // comes *before* the @-sign.
-	    // URLs are obnoxious.
-	    //
-	    // ex:
-	    // http://a@b@c/ => user:a@b host:c
-	    // http://a@b?@c => user:a host:c path:/?@c
-
-	    // v0.12 TODO(isaacs): This is not quite how Chrome does things.
-	    // Review our test case against browsers more comprehensively.
-
-	    // find the first instance of any hostEndingChars
-	    var hostEnd = -1;
-	    for (var i = 0; i < hostEndingChars.length; i++) {
-	      var hec = rest.indexOf(hostEndingChars[i]);
-	      if (hec !== -1 && (hostEnd === -1 || hec < hostEnd))
-	        hostEnd = hec;
-	    }
-
-	    // at this point, either we have an explicit point where the
-	    // auth portion cannot go past, or the last @ char is the decider.
-	    var auth, atSign;
-	    if (hostEnd === -1) {
-	      // atSign can be anywhere.
-	      atSign = rest.lastIndexOf('@');
-	    } else {
-	      // atSign must be in auth portion.
-	      // http://a@b/c@d => host:b auth:a path:/c@d
-	      atSign = rest.lastIndexOf('@', hostEnd);
-	    }
-
-	    // Now we have a portion which is definitely the auth.
-	    // Pull that off.
-	    if (atSign !== -1) {
-	      auth = rest.slice(0, atSign);
-	      rest = rest.slice(atSign + 1);
-	      this.auth = decodeURIComponent(auth);
-	    }
-
-	    // the host is the remaining to the left of the first non-host char
-	    hostEnd = -1;
-	    for (var i = 0; i < nonHostChars.length; i++) {
-	      var hec = rest.indexOf(nonHostChars[i]);
-	      if (hec !== -1 && (hostEnd === -1 || hec < hostEnd))
-	        hostEnd = hec;
-	    }
-	    // if we still have not hit it, then the entire thing is a host.
-	    if (hostEnd === -1)
-	      hostEnd = rest.length;
-
-	    this.host = rest.slice(0, hostEnd);
-	    rest = rest.slice(hostEnd);
-
-	    // pull out port.
-	    this.parseHost();
-
-	    // we've indicated that there is a hostname,
-	    // so even if it's empty, it has to be present.
-	    this.hostname = this.hostname || '';
-
-	    // if hostname begins with [ and ends with ]
-	    // assume that it's an IPv6 address.
-	    var ipv6Hostname = this.hostname[0] === '[' &&
-	        this.hostname[this.hostname.length - 1] === ']';
-
-	    // validate a little.
-	    if (!ipv6Hostname) {
-	      var hostparts = this.hostname.split(/\./);
-	      for (var i = 0, l = hostparts.length; i < l; i++) {
-	        var part = hostparts[i];
-	        if (!part) continue;
-	        if (!part.match(hostnamePartPattern)) {
-	          var newpart = '';
-	          for (var j = 0, k = part.length; j < k; j++) {
-	            if (part.charCodeAt(j) > 127) {
-	              // we replace non-ASCII char with a temporary placeholder
-	              // we need this to make sure size of hostname is not
-	              // broken by replacing non-ASCII by nothing
-	              newpart += 'x';
-	            } else {
-	              newpart += part[j];
-	            }
-	          }
-	          // we test again with ASCII char only
-	          if (!newpart.match(hostnamePartPattern)) {
-	            var validParts = hostparts.slice(0, i);
-	            var notHost = hostparts.slice(i + 1);
-	            var bit = part.match(hostnamePartStart);
-	            if (bit) {
-	              validParts.push(bit[1]);
-	              notHost.unshift(bit[2]);
-	            }
-	            if (notHost.length) {
-	              rest = '/' + notHost.join('.') + rest;
-	            }
-	            this.hostname = validParts.join('.');
-	            break;
-	          }
-	        }
-	      }
-	    }
-
-	    if (this.hostname.length > hostnameMaxLen) {
-	      this.hostname = '';
-	    } else {
-	      // hostnames are always lower case.
-	      this.hostname = this.hostname.toLowerCase();
-	    }
-
-	    if (!ipv6Hostname) {
-	      // IDNA Support: Returns a puny coded representation of "domain".
-	      // It only converts the part of the domain name that
-	      // has non ASCII characters. I.e. it dosent matter if
-	      // you call it with a domain that already is in ASCII.
-	      var domainArray = this.hostname.split('.');
-	      var newOut = [];
-	      for (var i = 0; i < domainArray.length; ++i) {
-	        var s = domainArray[i];
-	        newOut.push(s.match(/[^A-Za-z0-9_-]/) ?
-	            'xn--' + punycode.encode(s) : s);
-	      }
-	      this.hostname = newOut.join('.');
-	    }
-
-	    var p = this.port ? ':' + this.port : '';
-	    var h = this.hostname || '';
-	    this.host = h + p;
-	    this.href += this.host;
-
-	    // strip [ and ] from the hostname
-	    // the host field still retains them, though
-	    if (ipv6Hostname) {
-	      this.hostname = this.hostname.substr(1, this.hostname.length - 2);
-	      if (rest[0] !== '/') {
-	        rest = '/' + rest;
-	      }
-	    }
-	  }
-
-	  // now rest is set to the post-host stuff.
-	  // chop off any delim chars.
-	  if (!unsafeProtocol[lowerProto]) {
-
-	    // First, make 100% sure that any "autoEscape" chars get
-	    // escaped, even if encodeURIComponent doesn't think they
-	    // need to be.
-	    for (var i = 0, l = autoEscape.length; i < l; i++) {
-	      var ae = autoEscape[i];
-	      var esc = encodeURIComponent(ae);
-	      if (esc === ae) {
-	        esc = escape(ae);
-	      }
-	      rest = rest.split(ae).join(esc);
-	    }
-	  }
-
-
-	  // chop off from the tail first.
-	  var hash = rest.indexOf('#');
-	  if (hash !== -1) {
-	    // got a fragment string.
-	    this.hash = rest.substr(hash);
-	    rest = rest.slice(0, hash);
-	  }
-	  var qm = rest.indexOf('?');
-	  if (qm !== -1) {
-	    this.search = rest.substr(qm);
-	    this.query = rest.substr(qm + 1);
-	    if (parseQueryString) {
-	      this.query = querystring.parse(this.query);
-	    }
-	    rest = rest.slice(0, qm);
-	  } else if (parseQueryString) {
-	    // no query string, but parseQueryString still requested
-	    this.search = '';
-	    this.query = {};
-	  }
-	  if (rest) this.pathname = rest;
-	  if (slashedProtocol[lowerProto] &&
-	      this.hostname && !this.pathname) {
-	    this.pathname = '/';
-	  }
-
-	  //to support http.request
-	  if (this.pathname || this.search) {
-	    var p = this.pathname || '';
-	    var s = this.search || '';
-	    this.path = p + s;
-	  }
-
-	  // finally, reconstruct the href based on what has been validated.
-	  this.href = this.format();
-	  return this;
-	};
-
-	// format a parsed object into a url string
-	function urlFormat(obj) {
-	  // ensure it's an object, and not a string url.
-	  // If it's an obj, this is a no-op.
-	  // this way, you can call url_format() on strings
-	  // to clean up potentially wonky urls.
-	  if (isString(obj)) obj = urlParse(obj);
-	  if (!(obj instanceof Url)) return Url.prototype.format.call(obj);
-	  return obj.format();
-	}
-
-	Url.prototype.format = function() {
-	  var auth = this.auth || '';
-	  if (auth) {
-	    auth = encodeURIComponent(auth);
-	    auth = auth.replace(/%3A/i, ':');
-	    auth += '@';
-	  }
-
-	  var protocol = this.protocol || '',
-	      pathname = this.pathname || '',
-	      hash = this.hash || '',
-	      host = false,
-	      query = '';
-
-	  if (this.host) {
-	    host = auth + this.host;
-	  } else if (this.hostname) {
-	    host = auth + (this.hostname.indexOf(':') === -1 ?
-	        this.hostname :
-	        '[' + this.hostname + ']');
-	    if (this.port) {
-	      host += ':' + this.port;
-	    }
-	  }
-
-	  if (this.query &&
-	      isObject(this.query) &&
-	      Object.keys(this.query).length) {
-	    query = querystring.stringify(this.query);
-	  }
-
-	  var search = this.search || (query && ('?' + query)) || '';
-
-	  if (protocol && protocol.substr(-1) !== ':') protocol += ':';
-
-	  // only the slashedProtocols get the //.  Not mailto:, xmpp:, etc.
-	  // unless they had them to begin with.
-	  if (this.slashes ||
-	      (!protocol || slashedProtocol[protocol]) && host !== false) {
-	    host = '//' + (host || '');
-	    if (pathname && pathname.charAt(0) !== '/') pathname = '/' + pathname;
-	  } else if (!host) {
-	    host = '';
-	  }
-
-	  if (hash && hash.charAt(0) !== '#') hash = '#' + hash;
-	  if (search && search.charAt(0) !== '?') search = '?' + search;
-
-	  pathname = pathname.replace(/[?#]/g, function(match) {
-	    return encodeURIComponent(match);
-	  });
-	  search = search.replace('#', '%23');
-
-	  return protocol + host + pathname + search + hash;
-	};
-
-	function urlResolve(source, relative) {
-	  return urlParse(source, false, true).resolve(relative);
-	}
-
-	Url.prototype.resolve = function(relative) {
-	  return this.resolveObject(urlParse(relative, false, true)).format();
-	};
-
-	function urlResolveObject(source, relative) {
-	  if (!source) return relative;
-	  return urlParse(source, false, true).resolveObject(relative);
-	}
-
-	Url.prototype.resolveObject = function(relative) {
-	  if (isString(relative)) {
-	    var rel = new Url();
-	    rel.parse(relative, false, true);
-	    relative = rel;
-	  }
-
-	  var result = new Url();
-	  Object.keys(this).forEach(function(k) {
-	    result[k] = this[k];
-	  }, this);
-
-	  // hash is always overridden, no matter what.
-	  // even href="" will remove it.
-	  result.hash = relative.hash;
-
-	  // if the relative url is empty, then there's nothing left to do here.
-	  if (relative.href === '') {
-	    result.href = result.format();
-	    return result;
-	  }
-
-	  // hrefs like //foo/bar always cut to the protocol.
-	  if (relative.slashes && !relative.protocol) {
-	    // take everything except the protocol from relative
-	    Object.keys(relative).forEach(function(k) {
-	      if (k !== 'protocol')
-	        result[k] = relative[k];
-	    });
-
-	    //urlParse appends trailing / to urls like http://www.example.com
-	    if (slashedProtocol[result.protocol] &&
-	        result.hostname && !result.pathname) {
-	      result.path = result.pathname = '/';
-	    }
-
-	    result.href = result.format();
-	    return result;
-	  }
-
-	  if (relative.protocol && relative.protocol !== result.protocol) {
-	    // if it's a known url protocol, then changing
-	    // the protocol does weird things
-	    // first, if it's not file:, then we MUST have a host,
-	    // and if there was a path
-	    // to begin with, then we MUST have a path.
-	    // if it is file:, then the host is dropped,
-	    // because that's known to be hostless.
-	    // anything else is assumed to be absolute.
-	    if (!slashedProtocol[relative.protocol]) {
-	      Object.keys(relative).forEach(function(k) {
-	        result[k] = relative[k];
-	      });
-	      result.href = result.format();
-	      return result;
-	    }
-
-	    result.protocol = relative.protocol;
-	    if (!relative.host && !hostlessProtocol[relative.protocol]) {
-	      var relPath = (relative.pathname || '').split('/');
-	      while (relPath.length && !(relative.host = relPath.shift()));
-	      if (!relative.host) relative.host = '';
-	      if (!relative.hostname) relative.hostname = '';
-	      if (relPath[0] !== '') relPath.unshift('');
-	      if (relPath.length < 2) relPath.unshift('');
-	      result.pathname = relPath.join('/');
-	    } else {
-	      result.pathname = relative.pathname;
-	    }
-	    result.search = relative.search;
-	    result.query = relative.query;
-	    result.host = relative.host || '';
-	    result.auth = relative.auth;
-	    result.hostname = relative.hostname || relative.host;
-	    result.port = relative.port;
-	    // to support http.request
-	    if (result.pathname || result.search) {
-	      var p = result.pathname || '';
-	      var s = result.search || '';
-	      result.path = p + s;
-	    }
-	    result.slashes = result.slashes || relative.slashes;
-	    result.href = result.format();
-	    return result;
-	  }
-
-	  var isSourceAbs = (result.pathname && result.pathname.charAt(0) === '/'),
-	      isRelAbs = (
-	          relative.host ||
-	          relative.pathname && relative.pathname.charAt(0) === '/'
-	      ),
-	      mustEndAbs = (isRelAbs || isSourceAbs ||
-	                    (result.host && relative.pathname)),
-	      removeAllDots = mustEndAbs,
-	      srcPath = result.pathname && result.pathname.split('/') || [],
-	      relPath = relative.pathname && relative.pathname.split('/') || [],
-	      psychotic = result.protocol && !slashedProtocol[result.protocol];
-
-	  // if the url is a non-slashed url, then relative
-	  // links like ../.. should be able
-	  // to crawl up to the hostname, as well.  This is strange.
-	  // result.protocol has already been set by now.
-	  // Later on, put the first path part into the host field.
-	  if (psychotic) {
-	    result.hostname = '';
-	    result.port = null;
-	    if (result.host) {
-	      if (srcPath[0] === '') srcPath[0] = result.host;
-	      else srcPath.unshift(result.host);
-	    }
-	    result.host = '';
-	    if (relative.protocol) {
-	      relative.hostname = null;
-	      relative.port = null;
-	      if (relative.host) {
-	        if (relPath[0] === '') relPath[0] = relative.host;
-	        else relPath.unshift(relative.host);
-	      }
-	      relative.host = null;
-	    }
-	    mustEndAbs = mustEndAbs && (relPath[0] === '' || srcPath[0] === '');
-	  }
-
-	  if (isRelAbs) {
-	    // it's absolute.
-	    result.host = (relative.host || relative.host === '') ?
-	                  relative.host : result.host;
-	    result.hostname = (relative.hostname || relative.hostname === '') ?
-	                      relative.hostname : result.hostname;
-	    result.search = relative.search;
-	    result.query = relative.query;
-	    srcPath = relPath;
-	    // fall through to the dot-handling below.
-	  } else if (relPath.length) {
-	    // it's relative
-	    // throw away the existing file, and take the new path instead.
-	    if (!srcPath) srcPath = [];
-	    srcPath.pop();
-	    srcPath = srcPath.concat(relPath);
-	    result.search = relative.search;
-	    result.query = relative.query;
-	  } else if (!isNullOrUndefined(relative.search)) {
-	    // just pull out the search.
-	    // like href='?foo'.
-	    // Put this after the other two cases because it simplifies the booleans
-	    if (psychotic) {
-	      result.hostname = result.host = srcPath.shift();
-	      //occationaly the auth can get stuck only in host
-	      //this especialy happens in cases like
-	      //url.resolveObject('mailto:local1@domain1', 'local2@domain2')
-	      var authInHost = result.host && result.host.indexOf('@') > 0 ?
-	                       result.host.split('@') : false;
-	      if (authInHost) {
-	        result.auth = authInHost.shift();
-	        result.host = result.hostname = authInHost.shift();
-	      }
-	    }
-	    result.search = relative.search;
-	    result.query = relative.query;
-	    //to support http.request
-	    if (!isNull(result.pathname) || !isNull(result.search)) {
-	      result.path = (result.pathname ? result.pathname : '') +
-	                    (result.search ? result.search : '');
-	    }
-	    result.href = result.format();
-	    return result;
-	  }
-
-	  if (!srcPath.length) {
-	    // no path at all.  easy.
-	    // we've already handled the other stuff above.
-	    result.pathname = null;
-	    //to support http.request
-	    if (result.search) {
-	      result.path = '/' + result.search;
-	    } else {
-	      result.path = null;
-	    }
-	    result.href = result.format();
-	    return result;
-	  }
-
-	  // if a url ENDs in . or .., then it must get a trailing slash.
-	  // however, if it ends in anything else non-slashy,
-	  // then it must NOT get a trailing slash.
-	  var last = srcPath.slice(-1)[0];
-	  var hasTrailingSlash = (
-	      (result.host || relative.host) && (last === '.' || last === '..') ||
-	      last === '');
-
-	  // strip single dots, resolve double dots to parent dir
-	  // if the path tries to go above the root, `up` ends up > 0
-	  var up = 0;
-	  for (var i = srcPath.length; i >= 0; i--) {
-	    last = srcPath[i];
-	    if (last == '.') {
-	      srcPath.splice(i, 1);
-	    } else if (last === '..') {
-	      srcPath.splice(i, 1);
-	      up++;
-	    } else if (up) {
-	      srcPath.splice(i, 1);
-	      up--;
-	    }
-	  }
-
-	  // if the path is allowed to go above the root, restore leading ..s
-	  if (!mustEndAbs && !removeAllDots) {
-	    for (; up--; up) {
-	      srcPath.unshift('..');
-	    }
-	  }
-
-	  if (mustEndAbs && srcPath[0] !== '' &&
-	      (!srcPath[0] || srcPath[0].charAt(0) !== '/')) {
-	    srcPath.unshift('');
-	  }
-
-	  if (hasTrailingSlash && (srcPath.join('/').substr(-1) !== '/')) {
-	    srcPath.push('');
-	  }
-
-	  var isAbsolute = srcPath[0] === '' ||
-	      (srcPath[0] && srcPath[0].charAt(0) === '/');
-
-	  // put the host back
-	  if (psychotic) {
-	    result.hostname = result.host = isAbsolute ? '' :
-	                                    srcPath.length ? srcPath.shift() : '';
-	    //occationaly the auth can get stuck only in host
-	    //this especialy happens in cases like
-	    //url.resolveObject('mailto:local1@domain1', 'local2@domain2')
-	    var authInHost = result.host && result.host.indexOf('@') > 0 ?
-	                     result.host.split('@') : false;
-	    if (authInHost) {
-	      result.auth = authInHost.shift();
-	      result.host = result.hostname = authInHost.shift();
-	    }
-	  }
-
-	  mustEndAbs = mustEndAbs || (result.host && srcPath.length);
-
-	  if (mustEndAbs && !isAbsolute) {
-	    srcPath.unshift('');
-	  }
-
-	  if (!srcPath.length) {
-	    result.pathname = null;
-	    result.path = null;
-	  } else {
-	    result.pathname = srcPath.join('/');
-	  }
-
-	  //to support request.http
-	  if (!isNull(result.pathname) || !isNull(result.search)) {
-	    result.path = (result.pathname ? result.pathname : '') +
-	                  (result.search ? result.search : '');
-	  }
-	  result.auth = relative.auth || result.auth;
-	  result.slashes = result.slashes || relative.slashes;
-	  result.href = result.format();
-	  return result;
-	};
-
-	Url.prototype.parseHost = function() {
-	  var host = this.host;
-	  var port = portPattern.exec(host);
-	  if (port) {
-	    port = port[0];
-	    if (port !== ':') {
-	      this.port = port.substr(1);
-	    }
-	    host = host.substr(0, host.length - port.length);
-	  }
-	  if (host) this.hostname = host;
-	};
-
-	function isString(arg) {
-	  return typeof arg === "string";
-	}
-
-	function isObject(arg) {
-	  return typeof arg === 'object' && arg !== null;
-	}
-
-	function isNull(arg) {
-	  return arg === null;
-	}
-	function isNullOrUndefined(arg) {
-	  return  arg == null;
-	}
-
-
-/***/ },
-/* 318 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/*! https://mths.be/punycode v1.3.2 by @mathias */
-	;(function(root) {
-
-		/** Detect free variables */
-		var freeExports = typeof exports == 'object' && exports &&
-			!exports.nodeType && exports;
-		var freeModule = typeof module == 'object' && module &&
-			!module.nodeType && module;
-		var freeGlobal = typeof global == 'object' && global;
-		if (
-			freeGlobal.global === freeGlobal ||
-			freeGlobal.window === freeGlobal ||
-			freeGlobal.self === freeGlobal
-		) {
-			root = freeGlobal;
-		}
-
-		/**
-		 * The `punycode` object.
-		 * @name punycode
-		 * @type Object
-		 */
-		var punycode,
-
-		/** Highest positive signed 32-bit float value */
-		maxInt = 2147483647, // aka. 0x7FFFFFFF or 2^31-1
-
-		/** Bootstring parameters */
-		base = 36,
-		tMin = 1,
-		tMax = 26,
-		skew = 38,
-		damp = 700,
-		initialBias = 72,
-		initialN = 128, // 0x80
-		delimiter = '-', // '\x2D'
-
-		/** Regular expressions */
-		regexPunycode = /^xn--/,
-		regexNonASCII = /[^\x20-\x7E]/, // unprintable ASCII chars + non-ASCII chars
-		regexSeparators = /[\x2E\u3002\uFF0E\uFF61]/g, // RFC 3490 separators
-
-		/** Error messages */
-		errors = {
-			'overflow': 'Overflow: input needs wider integers to process',
-			'not-basic': 'Illegal input >= 0x80 (not a basic code point)',
-			'invalid-input': 'Invalid input'
-		},
-
-		/** Convenience shortcuts */
-		baseMinusTMin = base - tMin,
-		floor = Math.floor,
-		stringFromCharCode = String.fromCharCode,
-
-		/** Temporary variable */
-		key;
-
-		/*--------------------------------------------------------------------------*/
-
-		/**
-		 * A generic error utility function.
-		 * @private
-		 * @param {String} type The error type.
-		 * @returns {Error} Throws a `RangeError` with the applicable error message.
-		 */
-		function error(type) {
-			throw RangeError(errors[type]);
-		}
-
-		/**
-		 * A generic `Array#map` utility function.
-		 * @private
-		 * @param {Array} array The array to iterate over.
-		 * @param {Function} callback The function that gets called for every array
-		 * item.
-		 * @returns {Array} A new array of values returned by the callback function.
-		 */
-		function map(array, fn) {
-			var length = array.length;
-			var result = [];
-			while (length--) {
-				result[length] = fn(array[length]);
-			}
-			return result;
-		}
-
-		/**
-		 * A simple `Array#map`-like wrapper to work with domain name strings or email
-		 * addresses.
-		 * @private
-		 * @param {String} domain The domain name or email address.
-		 * @param {Function} callback The function that gets called for every
-		 * character.
-		 * @returns {Array} A new string of characters returned by the callback
-		 * function.
-		 */
-		function mapDomain(string, fn) {
-			var parts = string.split('@');
-			var result = '';
-			if (parts.length > 1) {
-				// In email addresses, only the domain name should be punycoded. Leave
-				// the local part (i.e. everything up to `@`) intact.
-				result = parts[0] + '@';
-				string = parts[1];
-			}
-			// Avoid `split(regex)` for IE8 compatibility. See #17.
-			string = string.replace(regexSeparators, '\x2E');
-			var labels = string.split('.');
-			var encoded = map(labels, fn).join('.');
-			return result + encoded;
-		}
-
-		/**
-		 * Creates an array containing the numeric code points of each Unicode
-		 * character in the string. While JavaScript uses UCS-2 internally,
-		 * this function will convert a pair of surrogate halves (each of which
-		 * UCS-2 exposes as separate characters) into a single code point,
-		 * matching UTF-16.
-		 * @see `punycode.ucs2.encode`
-		 * @see <https://mathiasbynens.be/notes/javascript-encoding>
-		 * @memberOf punycode.ucs2
-		 * @name decode
-		 * @param {String} string The Unicode input string (UCS-2).
-		 * @returns {Array} The new array of code points.
-		 */
-		function ucs2decode(string) {
-			var output = [],
-			    counter = 0,
-			    length = string.length,
-			    value,
-			    extra;
-			while (counter < length) {
-				value = string.charCodeAt(counter++);
-				if (value >= 0xD800 && value <= 0xDBFF && counter < length) {
-					// high surrogate, and there is a next character
-					extra = string.charCodeAt(counter++);
-					if ((extra & 0xFC00) == 0xDC00) { // low surrogate
-						output.push(((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000);
-					} else {
-						// unmatched surrogate; only append this code unit, in case the next
-						// code unit is the high surrogate of a surrogate pair
-						output.push(value);
-						counter--;
-					}
-				} else {
-					output.push(value);
-				}
-			}
-			return output;
-		}
-
-		/**
-		 * Creates a string based on an array of numeric code points.
-		 * @see `punycode.ucs2.decode`
-		 * @memberOf punycode.ucs2
-		 * @name encode
-		 * @param {Array} codePoints The array of numeric code points.
-		 * @returns {String} The new Unicode string (UCS-2).
-		 */
-		function ucs2encode(array) {
-			return map(array, function(value) {
-				var output = '';
-				if (value > 0xFFFF) {
-					value -= 0x10000;
-					output += stringFromCharCode(value >>> 10 & 0x3FF | 0xD800);
-					value = 0xDC00 | value & 0x3FF;
-				}
-				output += stringFromCharCode(value);
-				return output;
-			}).join('');
-		}
-
-		/**
-		 * Converts a basic code point into a digit/integer.
-		 * @see `digitToBasic()`
-		 * @private
-		 * @param {Number} codePoint The basic numeric code point value.
-		 * @returns {Number} The numeric value of a basic code point (for use in
-		 * representing integers) in the range `0` to `base - 1`, or `base` if
-		 * the code point does not represent a value.
-		 */
-		function basicToDigit(codePoint) {
-			if (codePoint - 48 < 10) {
-				return codePoint - 22;
-			}
-			if (codePoint - 65 < 26) {
-				return codePoint - 65;
-			}
-			if (codePoint - 97 < 26) {
-				return codePoint - 97;
-			}
-			return base;
-		}
-
-		/**
-		 * Converts a digit/integer into a basic code point.
-		 * @see `basicToDigit()`
-		 * @private
-		 * @param {Number} digit The numeric value of a basic code point.
-		 * @returns {Number} The basic code point whose value (when used for
-		 * representing integers) is `digit`, which needs to be in the range
-		 * `0` to `base - 1`. If `flag` is non-zero, the uppercase form is
-		 * used; else, the lowercase form is used. The behavior is undefined
-		 * if `flag` is non-zero and `digit` has no uppercase form.
-		 */
-		function digitToBasic(digit, flag) {
-			//  0..25 map to ASCII a..z or A..Z
-			// 26..35 map to ASCII 0..9
-			return digit + 22 + 75 * (digit < 26) - ((flag != 0) << 5);
-		}
-
-		/**
-		 * Bias adaptation function as per section 3.4 of RFC 3492.
-		 * http://tools.ietf.org/html/rfc3492#section-3.4
-		 * @private
-		 */
-		function adapt(delta, numPoints, firstTime) {
-			var k = 0;
-			delta = firstTime ? floor(delta / damp) : delta >> 1;
-			delta += floor(delta / numPoints);
-			for (/* no initialization */; delta > baseMinusTMin * tMax >> 1; k += base) {
-				delta = floor(delta / baseMinusTMin);
-			}
-			return floor(k + (baseMinusTMin + 1) * delta / (delta + skew));
-		}
-
-		/**
-		 * Converts a Punycode string of ASCII-only symbols to a string of Unicode
-		 * symbols.
-		 * @memberOf punycode
-		 * @param {String} input The Punycode string of ASCII-only symbols.
-		 * @returns {String} The resulting string of Unicode symbols.
-		 */
-		function decode(input) {
-			// Don't use UCS-2
-			var output = [],
-			    inputLength = input.length,
-			    out,
-			    i = 0,
-			    n = initialN,
-			    bias = initialBias,
-			    basic,
-			    j,
-			    index,
-			    oldi,
-			    w,
-			    k,
-			    digit,
-			    t,
-			    /** Cached calculation results */
-			    baseMinusT;
-
-			// Handle the basic code points: let `basic` be the number of input code
-			// points before the last delimiter, or `0` if there is none, then copy
-			// the first basic code points to the output.
-
-			basic = input.lastIndexOf(delimiter);
-			if (basic < 0) {
-				basic = 0;
-			}
-
-			for (j = 0; j < basic; ++j) {
-				// if it's not a basic code point
-				if (input.charCodeAt(j) >= 0x80) {
-					error('not-basic');
-				}
-				output.push(input.charCodeAt(j));
-			}
-
-			// Main decoding loop: start just after the last delimiter if any basic code
-			// points were copied; start at the beginning otherwise.
-
-			for (index = basic > 0 ? basic + 1 : 0; index < inputLength; /* no final expression */) {
-
-				// `index` is the index of the next character to be consumed.
-				// Decode a generalized variable-length integer into `delta`,
-				// which gets added to `i`. The overflow checking is easier
-				// if we increase `i` as we go, then subtract off its starting
-				// value at the end to obtain `delta`.
-				for (oldi = i, w = 1, k = base; /* no condition */; k += base) {
-
-					if (index >= inputLength) {
-						error('invalid-input');
-					}
-
-					digit = basicToDigit(input.charCodeAt(index++));
-
-					if (digit >= base || digit > floor((maxInt - i) / w)) {
-						error('overflow');
-					}
-
-					i += digit * w;
-					t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
-
-					if (digit < t) {
-						break;
-					}
-
-					baseMinusT = base - t;
-					if (w > floor(maxInt / baseMinusT)) {
-						error('overflow');
-					}
-
-					w *= baseMinusT;
-
-				}
-
-				out = output.length + 1;
-				bias = adapt(i - oldi, out, oldi == 0);
-
-				// `i` was supposed to wrap around from `out` to `0`,
-				// incrementing `n` each time, so we'll fix that now:
-				if (floor(i / out) > maxInt - n) {
-					error('overflow');
-				}
-
-				n += floor(i / out);
-				i %= out;
-
-				// Insert `n` at position `i` of the output
-				output.splice(i++, 0, n);
-
-			}
-
-			return ucs2encode(output);
-		}
-
-		/**
-		 * Converts a string of Unicode symbols (e.g. a domain name label) to a
-		 * Punycode string of ASCII-only symbols.
-		 * @memberOf punycode
-		 * @param {String} input The string of Unicode symbols.
-		 * @returns {String} The resulting Punycode string of ASCII-only symbols.
-		 */
-		function encode(input) {
-			var n,
-			    delta,
-			    handledCPCount,
-			    basicLength,
-			    bias,
-			    j,
-			    m,
-			    q,
-			    k,
-			    t,
-			    currentValue,
-			    output = [],
-			    /** `inputLength` will hold the number of code points in `input`. */
-			    inputLength,
-			    /** Cached calculation results */
-			    handledCPCountPlusOne,
-			    baseMinusT,
-			    qMinusT;
-
-			// Convert the input in UCS-2 to Unicode
-			input = ucs2decode(input);
-
-			// Cache the length
-			inputLength = input.length;
-
-			// Initialize the state
-			n = initialN;
-			delta = 0;
-			bias = initialBias;
-
-			// Handle the basic code points
-			for (j = 0; j < inputLength; ++j) {
-				currentValue = input[j];
-				if (currentValue < 0x80) {
-					output.push(stringFromCharCode(currentValue));
-				}
-			}
-
-			handledCPCount = basicLength = output.length;
-
-			// `handledCPCount` is the number of code points that have been handled;
-			// `basicLength` is the number of basic code points.
-
-			// Finish the basic string - if it is not empty - with a delimiter
-			if (basicLength) {
-				output.push(delimiter);
-			}
-
-			// Main encoding loop:
-			while (handledCPCount < inputLength) {
-
-				// All non-basic code points < n have been handled already. Find the next
-				// larger one:
-				for (m = maxInt, j = 0; j < inputLength; ++j) {
-					currentValue = input[j];
-					if (currentValue >= n && currentValue < m) {
-						m = currentValue;
-					}
-				}
-
-				// Increase `delta` enough to advance the decoder's <n,i> state to <m,0>,
-				// but guard against overflow
-				handledCPCountPlusOne = handledCPCount + 1;
-				if (m - n > floor((maxInt - delta) / handledCPCountPlusOne)) {
-					error('overflow');
-				}
-
-				delta += (m - n) * handledCPCountPlusOne;
-				n = m;
-
-				for (j = 0; j < inputLength; ++j) {
-					currentValue = input[j];
-
-					if (currentValue < n && ++delta > maxInt) {
-						error('overflow');
-					}
-
-					if (currentValue == n) {
-						// Represent delta as a generalized variable-length integer
-						for (q = delta, k = base; /* no condition */; k += base) {
-							t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
-							if (q < t) {
-								break;
-							}
-							qMinusT = q - t;
-							baseMinusT = base - t;
-							output.push(
-								stringFromCharCode(digitToBasic(t + qMinusT % baseMinusT, 0))
-							);
-							q = floor(qMinusT / baseMinusT);
-						}
-
-						output.push(stringFromCharCode(digitToBasic(q, 0)));
-						bias = adapt(delta, handledCPCountPlusOne, handledCPCount == basicLength);
-						delta = 0;
-						++handledCPCount;
-					}
-				}
-
-				++delta;
-				++n;
-
-			}
-			return output.join('');
-		}
-
-		/**
-		 * Converts a Punycode string representing a domain name or an email address
-		 * to Unicode. Only the Punycoded parts of the input will be converted, i.e.
-		 * it doesn't matter if you call it on a string that has already been
-		 * converted to Unicode.
-		 * @memberOf punycode
-		 * @param {String} input The Punycoded domain name or email address to
-		 * convert to Unicode.
-		 * @returns {String} The Unicode representation of the given Punycode
-		 * string.
-		 */
-		function toUnicode(input) {
-			return mapDomain(input, function(string) {
-				return regexPunycode.test(string)
-					? decode(string.slice(4).toLowerCase())
-					: string;
-			});
-		}
-
-		/**
-		 * Converts a Unicode string representing a domain name or an email address to
-		 * Punycode. Only the non-ASCII parts of the domain name will be converted,
-		 * i.e. it doesn't matter if you call it with a domain that's already in
-		 * ASCII.
-		 * @memberOf punycode
-		 * @param {String} input The domain name or email address to convert, as a
-		 * Unicode string.
-		 * @returns {String} The Punycode representation of the given domain name or
-		 * email address.
-		 */
-		function toASCII(input) {
-			return mapDomain(input, function(string) {
-				return regexNonASCII.test(string)
-					? 'xn--' + encode(string)
-					: string;
-			});
-		}
-
-		/*--------------------------------------------------------------------------*/
-
-		/** Define the public API */
-		punycode = {
-			/**
-			 * A string representing the current Punycode.js version number.
-			 * @memberOf punycode
-			 * @type String
-			 */
-			'version': '1.3.2',
-			/**
-			 * An object of methods to convert from JavaScript's internal character
-			 * representation (UCS-2) to Unicode code points, and back.
-			 * @see <https://mathiasbynens.be/notes/javascript-encoding>
-			 * @memberOf punycode
-			 * @type Object
-			 */
-			'ucs2': {
-				'decode': ucs2decode,
-				'encode': ucs2encode
-			},
-			'decode': decode,
-			'encode': encode,
-			'toASCII': toASCII,
-			'toUnicode': toUnicode
-		};
-
-		/** Expose `punycode` */
-		// Some AMD build optimizers, like r.js, check for specific condition patterns
-		// like the following:
-		if (
-			true
-		) {
-			!(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
-				return punycode;
-			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else if (freeExports && freeModule) {
-			if (module.exports == freeExports) { // in Node.js or RingoJS v0.8.0+
-				freeModule.exports = punycode;
-			} else { // in Narwhal or RingoJS v0.7.0-
-				for (key in punycode) {
-					punycode.hasOwnProperty(key) && (freeExports[key] = punycode[key]);
-				}
-			}
-		} else { // in Rhino or a web browser
-			root.punycode = punycode;
-		}
-
-	}(this));
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(319)(module), (function() { return this; }())))
-
-/***/ },
-/* 319 */
-/***/ function(module, exports) {
-
-	module.exports = function(module) {
-		if(!module.webpackPolyfill) {
-			module.deprecate = function() {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
-		}
-		return module;
-	}
-
-
-/***/ },
-/* 320 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	exports.decode = exports.parse = __webpack_require__(321);
-	exports.encode = exports.stringify = __webpack_require__(322);
-
-
-/***/ },
-/* 321 */
-/***/ function(module, exports) {
-
-	// Copyright Joyent, Inc. and other Node contributors.
-	//
-	// Permission is hereby granted, free of charge, to any person obtaining a
-	// copy of this software and associated documentation files (the
-	// "Software"), to deal in the Software without restriction, including
-	// without limitation the rights to use, copy, modify, merge, publish,
-	// distribute, sublicense, and/or sell copies of the Software, and to permit
-	// persons to whom the Software is furnished to do so, subject to the
-	// following conditions:
-	//
-	// The above copyright notice and this permission notice shall be included
-	// in all copies or substantial portions of the Software.
-	//
-	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-	// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-	'use strict';
-
-	// If obj.hasOwnProperty has been overridden, then calling
-	// obj.hasOwnProperty(prop) will break.
-	// See: https://github.com/joyent/node/issues/1707
-	function hasOwnProperty(obj, prop) {
-	  return Object.prototype.hasOwnProperty.call(obj, prop);
-	}
-
-	module.exports = function(qs, sep, eq, options) {
-	  sep = sep || '&';
-	  eq = eq || '=';
-	  var obj = {};
-
-	  if (typeof qs !== 'string' || qs.length === 0) {
-	    return obj;
-	  }
-
-	  var regexp = /\+/g;
-	  qs = qs.split(sep);
-
-	  var maxKeys = 1000;
-	  if (options && typeof options.maxKeys === 'number') {
-	    maxKeys = options.maxKeys;
-	  }
-
-	  var len = qs.length;
-	  // maxKeys <= 0 means that we should not limit keys count
-	  if (maxKeys > 0 && len > maxKeys) {
-	    len = maxKeys;
-	  }
-
-	  for (var i = 0; i < len; ++i) {
-	    var x = qs[i].replace(regexp, '%20'),
-	        idx = x.indexOf(eq),
-	        kstr, vstr, k, v;
-
-	    if (idx >= 0) {
-	      kstr = x.substr(0, idx);
-	      vstr = x.substr(idx + 1);
-	    } else {
-	      kstr = x;
-	      vstr = '';
-	    }
-
-	    k = decodeURIComponent(kstr);
-	    v = decodeURIComponent(vstr);
-
-	    if (!hasOwnProperty(obj, k)) {
-	      obj[k] = v;
-	    } else if (Array.isArray(obj[k])) {
-	      obj[k].push(v);
-	    } else {
-	      obj[k] = [obj[k], v];
-	    }
-	  }
-
-	  return obj;
-	};
-
-
-/***/ },
-/* 322 */
-/***/ function(module, exports) {
-
-	// Copyright Joyent, Inc. and other Node contributors.
-	//
-	// Permission is hereby granted, free of charge, to any person obtaining a
-	// copy of this software and associated documentation files (the
-	// "Software"), to deal in the Software without restriction, including
-	// without limitation the rights to use, copy, modify, merge, publish,
-	// distribute, sublicense, and/or sell copies of the Software, and to permit
-	// persons to whom the Software is furnished to do so, subject to the
-	// following conditions:
-	//
-	// The above copyright notice and this permission notice shall be included
-	// in all copies or substantial portions of the Software.
-	//
-	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-	// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-	'use strict';
-
-	var stringifyPrimitive = function(v) {
-	  switch (typeof v) {
-	    case 'string':
-	      return v;
-
-	    case 'boolean':
-	      return v ? 'true' : 'false';
-
-	    case 'number':
-	      return isFinite(v) ? v : '';
-
-	    default:
-	      return '';
-	  }
-	};
-
-	module.exports = function(obj, sep, eq, name) {
-	  sep = sep || '&';
-	  eq = eq || '=';
-	  if (obj === null) {
-	    obj = undefined;
-	  }
-
-	  if (typeof obj === 'object') {
-	    return Object.keys(obj).map(function(k) {
-	      var ks = encodeURIComponent(stringifyPrimitive(k)) + eq;
-	      if (Array.isArray(obj[k])) {
-	        return obj[k].map(function(v) {
-	          return ks + encodeURIComponent(stringifyPrimitive(v));
-	        }).join(sep);
-	      } else {
-	        return ks + encodeURIComponent(stringifyPrimitive(obj[k]));
-	      }
-	    }).join(sep);
-
-	  }
-
-	  if (!name) return '';
-	  return encodeURIComponent(stringifyPrimitive(name)) + eq +
-	         encodeURIComponent(stringifyPrimitive(obj));
-	};
-
-
-/***/ },
-/* 323 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var EventEmitter = __webpack_require__(224),
-	    _url = __webpack_require__(317),
-	    // tests is CORS is supported in XHR, if not we need to use XDR
-	    useXdr = !!(window.XDomainRequest && !('withCredentials' in (new XMLHttpRequest()))),
-	    tempAnchor = null;
-
-	/**
-	 * Manages the state and loading of a single resource represented by
-	 * a single URL.
-	 *
-	 * @class
-	 * @param name {string} The name of the resource to load.
-	 * @param url {string|string[]} The url for this resource, for audio/video loads you can pass an array of sources.
-	 * @param [options] {object} The options for the load.
-	 * @param [options.crossOrigin] {boolean} Is this request cross-origin? Default is to determine automatically.
-	 * @param [options.loadType=Resource.LOAD_TYPE.XHR] {Resource.LOAD_TYPE} How should this resource be loaded?
-	 * @param [options.xhrType=Resource.XHR_RESPONSE_TYPE.DEFAULT] {Resource.XHR_RESPONSE_TYPE} How should the data being
-	 *      loaded be interpreted when using XHR?
-	 */
-	function Resource(name, url, options) {
-	    EventEmitter.call(this);
-
-	    options = options || {};
-
-	    if (typeof name !== 'string' || typeof url !== 'string') {
-	        throw new Error('Both name and url are required for constructing a resource.');
-	    }
-
-	    /**
-	     * The name of this resource.
-	     *
-	     * @member {string}
-	     * @readonly
-	     */
-	    this.name = name;
-
-	    /**
-	     * The url used to load this resource.
-	     *
-	     * @member {string}
-	     * @readonly
-	     */
-	    this.url = url;
-
-	    /**
-	     * Stores whether or not this url is a data url.
-	     *
-	     * @member {boolean}
-	     * @readonly
-	     */
-	    this.isDataUrl = this.url.indexOf('data:') === 0;
-
-	    /**
-	     * The data that was loaded by the resource.
-	     *
-	     * @member {any}
-	     */
-	    this.data = null;
-
-	    /**
-	     * Is this request cross-origin? If unset, determined automatically.
-	     *
-	     * @member {string}
-	     */
-	    this.crossOrigin = options.crossOrigin === true ? 'anonymous' : null;
-
-	    /**
-	     * The method of loading to use for this resource.
-	     *
-	     * @member {Resource.LOAD_TYPE}
-	     */
-	    this.loadType = options.loadType || this._determineLoadType();
-
-	    /**
-	     * The type used to load the resource via XHR. If unset, determined automatically.
-	     *
-	     * @member {string}
-	     */
-	    this.xhrType = options.xhrType;
-
-	    /**
-	     * The error that occurred while loading (if any).
-	     *
-	     * @member {Error}
-	     * @readonly
-	     */
-	    this.error = null;
-
-	    /**
-	     * The XHR object that was used to load this resource. This is only set
-	     * when `loadType` is `Resource.LOAD_TYPE.XHR`.
-	     *
-	     * @member {XMLHttpRequest}
-	     */
-	    this.xhr = null;
-
-	    /**
-	     * Describes if this resource was loaded as json. Only valid after the resource
-	     * has completely loaded.
-	     *
-	     * @member {boolean}
-	     */
-	    this.isJson = false;
-
-	    /**
-	     * Describes if this resource was loaded as xml. Only valid after the resource
-	     * has completely loaded.
-	     *
-	     * @member {boolean}
-	     */
-	    this.isXml = false;
-
-	    /**
-	     * Describes if this resource was loaded as an image tag. Only valid after the resource
-	     * has completely loaded.
-	     *
-	     * @member {boolean}
-	     */
-	    this.isImage = false;
-
-	    /**
-	     * Describes if this resource was loaded as an audio tag. Only valid after the resource
-	     * has completely loaded.
-	     *
-	     * @member {boolean}
-	     */
-	    this.isAudio = false;
-
-	    /**
-	     * Describes if this resource was loaded as a video tag. Only valid after the resource
-	     * has completely loaded.
-	     *
-	     * @member {boolean}
-	     */
-	    this.isVideo = false;
-
-	    /**
-	     * The `dequeue` method that will be used a storage place for the async queue dequeue method
-	     * used privately by the loader.
-	     *
-	     * @member {function}
-	     * @private
-	     */
-	    this._dequeue = null;
-
-	    /**
-	     * The `complete` function bound to this resource's context.
-	     *
-	     * @member {function}
-	     * @private
-	     */
-	    this._boundComplete = this.complete.bind(this);
-
-	    /**
-	     * The `_onError` function bound to this resource's context.
-	     *
-	     * @member {function}
-	     * @private
-	     */
-	    this._boundOnError = this._onError.bind(this);
-
-	    /**
-	     * The `_onProgress` function bound to this resource's context.
-	     *
-	     * @member {function}
-	     * @private
-	     */
-	    this._boundOnProgress = this._onProgress.bind(this);
-
-	    // xhr callbacks
-	    this._boundXhrOnError = this._xhrOnError.bind(this);
-	    this._boundXhrOnAbort = this._xhrOnAbort.bind(this);
-	    this._boundXhrOnLoad = this._xhrOnLoad.bind(this);
-	    this._boundXdrOnTimeout = this._xdrOnTimeout.bind(this);
-
-	    /**
-	     * Emitted when the resource beings to load.
-	     *
-	     * @event start
-	     * @memberof Resource#
-	     */
-
-	    /**
-	     * Emitted each time progress of this resource load updates.
-	     * Not all resources types and loader systems can support this event
-	     * so sometimes it may not be available. If the resource
-	     * is being loaded on a modern browser, using XHR, and the remote server
-	     * properly sets Content-Length headers, then this will be available.
-	     *
-	     * @event progress
-	     * @memberof Resource#
-	     */
-
-	    /**
-	     * Emitted once this resource has loaded, if there was an error it will
-	     * be in the `error` property.
-	     *
-	     * @event complete
-	     * @memberof Resource#
-	     */
-	}
-
-	Resource.prototype = Object.create(EventEmitter.prototype);
-	Resource.prototype.constructor = Resource;
-	module.exports = Resource;
-
-	/**
-	 * Marks the resource as complete.
-	 *
-	 * @fires complete
-	 */
-	Resource.prototype.complete = function () {
-	    // TODO: Clean this up in a wrapper or something...gross....
-	    if (this.data && this.data.removeEventListener) {
-	        this.data.removeEventListener('error', this._boundOnError);
-	        this.data.removeEventListener('load', this._boundComplete);
-	        this.data.removeEventListener('progress', this._boundOnProgress);
-	        this.data.removeEventListener('canplaythrough', this._boundComplete);
-	    }
-
-	    if (this.xhr) {
-	        if (this.xhr.removeEventListener) {
-	            this.xhr.removeEventListener('error', this._boundXhrOnError);
-	            this.xhr.removeEventListener('abort', this._boundXhrOnAbort);
-	            this.xhr.removeEventListener('progress', this._boundOnProgress);
-	            this.xhr.removeEventListener('load', this._boundXhrOnLoad);
-	        }
-	        else {
-	            this.xhr.onerror = null;
-	            this.xhr.ontimeout = null;
-	            this.xhr.onprogress = null;
-	            this.xhr.onload = null;
-	        }
-	    }
-
-	    this.emit('complete', this);
-	};
-
-	/**
-	 * Kicks off loading of this resource.
-	 *
-	 * @fires start
-	 * @param [callback] {function} Optional callback to call once the resource is loaded.
-	 */
-	Resource.prototype.load = function (cb) {
-	    this.emit('start', this);
-
-	    // if a callback is set, listen for complete event
-	    if (cb) {
-	        this.once('complete', cb);
-	    }
-
-	    // if unset, determine the value
-	    if (typeof this.crossOrigin !== 'string') {
-	        this.crossOrigin = this._determineCrossOrigin(this.url);
-	    }
-
-	    switch(this.loadType) {
-	        case Resource.LOAD_TYPE.IMAGE:
-	            this._loadImage();
-	            break;
-
-	        case Resource.LOAD_TYPE.AUDIO:
-	            this._loadElement('audio');
-	            break;
-
-	        case Resource.LOAD_TYPE.VIDEO:
-	            this._loadElement('video');
-	            break;
-
-	        case Resource.LOAD_TYPE.XHR:
-	            /* falls through */
-	        default:
-	            if (useXdr && this.crossOrigin) {
-	                this._loadXdr();
-	            }
-	            else {
-	                this._loadXhr();
-	            }
-	            break;
-	    }
-	};
-
-	/**
-	 * Loads this resources using an Image object.
-	 *
-	 * @private
-	 */
-	Resource.prototype._loadImage = function () {
-	    this.data = new Image();
-
-	    if (this.crossOrigin) {
-	        this.data.crossOrigin = this.crossOrigin;
-	    }
-
-	    this.data.src = this.url;
-
-	    this.isImage = true;
-
-	    this.data.addEventListener('error', this._boundOnError, false);
-	    this.data.addEventListener('load', this._boundComplete, false);
-	    this.data.addEventListener('progress', this._boundOnProgress, false);
-	};
-
-	/**
-	 * Loads this resources using an HTMLAudioElement or HTMLVideoElement.
-	 *
-	 * @private
-	 */
-	Resource.prototype._loadElement = function (type) {
-	    if (type === 'audio' && typeof Audio !== 'undefined') {
-	        this.data = new Audio();
-	    }
-	    else {
-	        this.data = document.createElement(type);
-	    }
-
-	    if (this.data === null) {
-	        this.error = new Error('Unsupported element ' + type);
-	        this.complete();
-	        return;
-	    }
-
-	    // support for CocoonJS Canvas+ runtime, lacks document.createElement('source')
-	    if (navigator.isCocoonJS) {
-	        this.data.src = Array.isArray(this.url) ? this.url[0] : this.url;
-	    }
-	    else {
-	        if (Array.isArray(this.url)) {
-	            for (var i = 0; i < this.url.length; ++i) {
-	                this.data.appendChild(this._createSource(type, this.url[i]));
-	            }
-	        }
-	        else {
-	            this.data.appendChild(this._createSource(type, this.url));
-	        }
-	    }
-
-	    this['is' + type[0].toUpperCase() + type.substring(1)] = true;
-
-	    this.data.addEventListener('error', this._boundOnError, false);
-	    this.data.addEventListener('load', this._boundComplete, false);
-	    this.data.addEventListener('progress', this._boundOnProgress, false);
-	    this.data.addEventListener('canplaythrough', this._boundComplete, false);
-
-	    this.data.load();
-	};
-
-	/**
-	 * Loads this resources using an XMLHttpRequest.
-	 *
-	 * @private
-	 */
-	Resource.prototype._loadXhr = function () {
-	    // if unset, determine the value
-	    if (typeof this.xhrType !== 'string') {
-	        this.xhrType = this._determineXhrType();
-	    }
-
-	    var xhr = this.xhr = new XMLHttpRequest();
-
-	    // set the request type and url
-	    xhr.open('GET', this.url, true);
-
-	    // load json as text and parse it ourselves. We do this because some browsers
-	    // *cough* safari *cough* can't deal with it.
-	    if (this.xhrType === Resource.XHR_RESPONSE_TYPE.JSON || this.xhrType === Resource.XHR_RESPONSE_TYPE.DOCUMENT) {
-	        xhr.responseType = Resource.XHR_RESPONSE_TYPE.TEXT;
-	    }
-	    else {
-	        xhr.responseType = this.xhrType;
-	    }
-
-	    xhr.addEventListener('error', this._boundXhrOnError, false);
-	    xhr.addEventListener('abort', this._boundXhrOnAbort, false);
-	    xhr.addEventListener('progress', this._boundOnProgress, false);
-	    xhr.addEventListener('load', this._boundXhrOnLoad, false);
-
-	    xhr.send();
-	};
-
-	/**
-	 * Loads this resources using an XDomainRequest. This is here because we need to support IE9 (gross).
-	 *
-	 * @private
-	 */
-	Resource.prototype._loadXdr = function () {
-	    // if unset, determine the value
-	    if (typeof this.xhrType !== 'string') {
-	        this.xhrType = this._determineXhrType();
-	    }
-
-	    var xdr = this.xhr = new XDomainRequest();
-
-	    // XDomainRequest has a few quirks. Occasionally it will abort requests
-	    // A way to avoid this is to make sure ALL callbacks are set even if not used
-	    // More info here: http://stackoverflow.com/questions/15786966/xdomainrequest-aborts-post-on-ie-9
-	    xdr.timeout = 5000;
-
-	    xdr.onerror = this._boundXhrOnError;
-	    xdr.ontimeout = this._boundXdrOnTimeout;
-	    xdr.onprogress = this._boundOnProgress;
-	    xdr.onload = this._boundXhrOnLoad;
-
-	    xdr.open('GET', this.url, true);
-
-	    //  Note: The xdr.send() call is wrapped in a timeout to prevent an issue with the interface where some requests are lost
-	    //  if multiple XDomainRequests are being sent at the same time.
-	    // Some info here: https://github.com/photonstorm/phaser/issues/1248
-	    setTimeout(function () {
-	        xdr.send();
-	    }, 0);
-	};
-
-	/**
-	 * Creates a source used in loading via an element.
-	 *
-	 * @param type {string} The element type (video or audio).
-	 * @param url {string} The source URL to load from.
-	 * @param [mime] {string} The mime type of the video
-	 * @private
-	 */
-	Resource.prototype._createSource = function (type, url, mime) {
-	    if (!mime) {
-	        mime = type + '/' + url.substr(url.lastIndexOf('.') + 1);
-	    }
-
-	    var source = document.createElement('source');
-
-	    source.src = url;
-	    source.type = mime;
-
-	    return source;
-	};
-
-	/**
-	 * Called if a load errors out.
-	 *
-	 * @param event {Event} The error event from the element that emits it.
-	 * @private
-	 */
-	Resource.prototype._onError = function (event) {
-	    this.error = new Error('Failed to load element using ' + event.target.nodeName);
-	    this.complete();
-	};
-
-	/**
-	 * Called if a load progress event fires for xhr/xdr.
-	 *
-	 * @fires progress
-	 * @param event {XMLHttpRequestProgressEvent|Event}
-	 * @private
-	 */
-	Resource.prototype._onProgress =  function (event) {
-	    if (event && event.lengthComputable) {
-	        this.emit('progress', this, event.loaded / event.total);
-	    }
-	};
-
-	/**
-	 * Called if an error event fires for xhr/xdr.
-	 *
-	 * @param event {XMLHttpRequestErrorEvent|Event}
-	 * @private
-	 */
-	Resource.prototype._xhrOnError = function () {
-	    this.error = new Error(
-	        reqType(this.xhr) + ' Request failed. ' +
-	        'Status: ' + this.xhr.status + ', text: "' + this.xhr.statusText + '"'
-	    );
-
-	    this.complete();
-	};
-
-	/**
-	 * Called if an abort event fires for xhr.
-	 *
-	 * @param event {XMLHttpRequestAbortEvent}
-	 * @private
-	 */
-	Resource.prototype._xhrOnAbort = function () {
-	    this.error = new Error(reqType(this.xhr) + ' Request was aborted by the user.');
-	    this.complete();
-	};
-
-	/**
-	 * Called if a timeout event fires for xdr.
-	 *
-	 * @param event {Event}
-	 * @private
-	 */
-	Resource.prototype._xdrOnTimeout = function () {
-	    this.error = new Error(reqType(this.xhr) + ' Request timed out.');
-	    this.complete();
-	};
-
-	/**
-	 * Called when data successfully loads from an xhr/xdr request.
-	 *
-	 * @param event {XMLHttpRequestLoadEvent|Event}
-	 * @private
-	 */
-	Resource.prototype._xhrOnLoad = function () {
-	    var xhr = this.xhr,
-	        status = xhr.status !== undefined ? xhr.status : 200; //XDR has no `.status`, assume 200.
-
-	    // status can be 0 when using the file:// protocol, also check if a response was found
-	    if (status === 200 || status === 204 || (status === 0 && xhr.responseText.length > 0)) {
-	        // if text, just return it
-	        if (this.xhrType === Resource.XHR_RESPONSE_TYPE.TEXT) {
-	            this.data = xhr.responseText;
-	        }
-	        // if json, parse into json object
-	        else if (this.xhrType === Resource.XHR_RESPONSE_TYPE.JSON) {
-	            try {
-	                this.data = JSON.parse(xhr.responseText);
-	                this.isJson = true;
-	            } catch(e) {
-	                this.error = new Error('Error trying to parse loaded json:', e);
-	            }
-	        }
-	        // if xml, parse into an xml document or div element
-	        else if (this.xhrType === Resource.XHR_RESPONSE_TYPE.DOCUMENT) {
-	            try {
-	                if (window.DOMParser) {
-	                    var domparser = new DOMParser();
-	                    this.data = domparser.parseFromString(xhr.responseText, 'text/xml');
-	                }
-	                else {
-	                    var div = document.createElement('div');
-	                    div.innerHTML = xhr.responseText;
-	                    this.data = div;
-	                }
-	                this.isXml = true;
-	            } catch (e) {
-	                this.error = new Error('Error trying to parse loaded xml:', e);
-	            }
-	        }
-	        // other types just return the response
-	        else {
-	            this.data = xhr.response || xhr.responseText;
-	        }
-	    }
-	    else {
-	        this.error = new Error('[' + xhr.status + ']' + xhr.statusText + ':' + xhr.responseURL);
-	    }
-
-	    this.complete();
-	};
-
-	function reqType(xhr) {
-	    return xhr.toString().replace('object ', '');
-	}
-
-	/**
-	 * Sets the `crossOrigin` property for this resource based on if the url
-	 * for this resource is cross-origin. If crossOrigin was manually set, this
-	 * function does nothing.
-	 *
-	 * @private
-	 * @param url {string} The url to test.
-	 * @param [location=window.location] {object} The location object to test against.
-	 * @return {string} The crossOrigin value to use (or empty string for none).
-	 */
-	Resource.prototype._determineCrossOrigin = function (url, loc) {
-	    // data: and javascript: urls are considered same-origin
-	    if (url.indexOf('data:') === 0) {
-	        return '';
-	    }
-
-	    // default is window.location
-	    loc = loc || window.location;
-
-	    if (!tempAnchor) {
-	        tempAnchor = document.createElement('a');
-	    }
-
-	    // let the browser determine the full href for the url of this resource and then
-	    // parse with the node url lib, we can't use the properties of the anchor element
-	    // because they don't work in IE9 :(
-	    tempAnchor.href = url;
-	    url = _url.parse(tempAnchor.href);
-
-	    var samePort = (!url.port && loc.port === '') || (url.port === loc.port);
-
-	    // if cross origin
-	    if (url.hostname !== loc.hostname || !samePort || url.protocol !== loc.protocol) {
-	        return 'anonymous';
-	    }
-
-	    return '';
-	};
-
-	/**
-	 * Determines the responseType of an XHR request based on the extension of the
-	 * resource being loaded.
-	 *
-	 * @private
-	 * @return {Resource.XHR_RESPONSE_TYPE} The responseType to use.
-	 */
-	Resource.prototype._determineXhrType = function () {
-	    return Resource._xhrTypeMap[this._getExtension()] || Resource.XHR_RESPONSE_TYPE.TEXT;
-	};
-
-	Resource.prototype._determineLoadType = function () {
-	    return Resource._loadTypeMap[this._getExtension()] || Resource.LOAD_TYPE.XHR;
-	};
-
-	Resource.prototype._getExtension = function () {
-	    var url = this.url,
-	        ext;
-
-	    if (this.isDataUrl) {
-	        var slashIndex = url.indexOf('/');
-	        ext = url.substring(slashIndex + 1, url.indexOf(';', slashIndex));
-	    }
-	    else {
-	        var queryStart = url.indexOf('?');
-	        if (queryStart !== -1) {
-	            url = url.substring(0, queryStart);
-	        }
-
-	        ext = url.substring(url.lastIndexOf('.') + 1);
-	    }
-
-	    return ext;
-	};
-
-	/**
-	 * Determines the mime type of an XHR request based on the responseType of
-	 * resource being loaded.
-	 *
-	 * @private
-	 * @return {string} The mime type to use.
-	 */
-	Resource.prototype._getMimeFromXhrType = function (type) {
-	    switch(type) {
-	        case Resource.XHR_RESPONSE_TYPE.BUFFER:
-	            return 'application/octet-binary';
-
-	        case Resource.XHR_RESPONSE_TYPE.BLOB:
-	            return 'application/blob';
-
-	        case Resource.XHR_RESPONSE_TYPE.DOCUMENT:
-	            return 'application/xml';
-
-	        case Resource.XHR_RESPONSE_TYPE.JSON:
-	            return 'application/json';
-
-	        case Resource.XHR_RESPONSE_TYPE.DEFAULT:
-	        case Resource.XHR_RESPONSE_TYPE.TEXT:
-	            /* falls through */
-	        default:
-	            return 'text/plain';
-
-	    }
-	};
-
-	/**
-	 * The types of loading a resource can use.
-	 *
-	 * @static
-	 * @constant
-	 * @property {object} LOAD_TYPE
-	 * @property {number} LOAD_TYPE.XHR - Uses XMLHttpRequest to load the resource.
-	 * @property {number} LOAD_TYPE.IMAGE - Uses an `Image` object to load the resource.
-	 * @property {number} LOAD_TYPE.AUDIO - Uses an `Audio` object to load the resource.
-	 * @property {number} LOAD_TYPE.VIDEO - Uses a `Video` object to load the resource.
-	 */
-	Resource.LOAD_TYPE = {
-	    XHR:    1,
-	    IMAGE:  2,
-	    AUDIO:  3,
-	    VIDEO:  4
-	};
-
-	/**
-	 * The XHR ready states, used internally.
-	 *
-	 * @static
-	 * @constant
-	 * @property {object} XHR_READY_STATE
-	 * @property {number} XHR_READY_STATE.UNSENT - open()has not been called yet.
-	 * @property {number} XHR_READY_STATE.OPENED - send()has not been called yet.
-	 * @property {number} XHR_READY_STATE.HEADERS_RECEIVED - send() has been called, and headers and status are available.
-	 * @property {number} XHR_READY_STATE.LOADING - Downloading; responseText holds partial data.
-	 * @property {number} XHR_READY_STATE.DONE - The operation is complete.
-	 */
-	Resource.XHR_READY_STATE = {
-	    UNSENT: 0,
-	    OPENED: 1,
-	    HEADERS_RECEIVED: 2,
-	    LOADING: 3,
-	    DONE: 4
-	};
-
-	/**
-	 * The XHR ready states, used internally.
-	 *
-	 * @static
-	 * @constant
-	 * @property {object} XHR_RESPONSE_TYPE
-	 * @property {string} XHR_RESPONSE_TYPE.DEFAULT - defaults to text
-	 * @property {string} XHR_RESPONSE_TYPE.BUFFER - ArrayBuffer
-	 * @property {string} XHR_RESPONSE_TYPE.BLOB - Blob
-	 * @property {string} XHR_RESPONSE_TYPE.DOCUMENT - Document
-	 * @property {string} XHR_RESPONSE_TYPE.JSON - Object
-	 * @property {string} XHR_RESPONSE_TYPE.TEXT - String
-	 */
-	Resource.XHR_RESPONSE_TYPE = {
-	    DEFAULT:    'text',
-	    BUFFER:     'arraybuffer',
-	    BLOB:       'blob',
-	    DOCUMENT:   'document',
-	    JSON:       'json',
-	    TEXT:       'text'
-	};
-
-	Resource._loadTypeMap = {
-	    'gif':      Resource.LOAD_TYPE.IMAGE,
-	    'png':      Resource.LOAD_TYPE.IMAGE,
-	    'bmp':      Resource.LOAD_TYPE.IMAGE,
-	    'jpg':      Resource.LOAD_TYPE.IMAGE,
-	    'jpeg':     Resource.LOAD_TYPE.IMAGE,
-	    'tif':      Resource.LOAD_TYPE.IMAGE,
-	    'tiff':     Resource.LOAD_TYPE.IMAGE,
-	    'webp':     Resource.LOAD_TYPE.IMAGE,
-	    'tga':      Resource.LOAD_TYPE.IMAGE
-	};
-
-	Resource._xhrTypeMap = {
-	    // xml
-	    'xhtml':    Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-	    'html':     Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-	    'htm':      Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-	    'xml':      Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-	    'tmx':      Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-	    'tsx':      Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-	    'svg':      Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-
-	    // images
-	    'gif':      Resource.XHR_RESPONSE_TYPE.BLOB,
-	    'png':      Resource.XHR_RESPONSE_TYPE.BLOB,
-	    'bmp':      Resource.XHR_RESPONSE_TYPE.BLOB,
-	    'jpg':      Resource.XHR_RESPONSE_TYPE.BLOB,
-	    'jpeg':     Resource.XHR_RESPONSE_TYPE.BLOB,
-	    'tif':      Resource.XHR_RESPONSE_TYPE.BLOB,
-	    'tiff':     Resource.XHR_RESPONSE_TYPE.BLOB,
-	    'webp':     Resource.XHR_RESPONSE_TYPE.BLOB,
-	    'tga':      Resource.XHR_RESPONSE_TYPE.BLOB,
-
-	    // json
-	    'json':     Resource.XHR_RESPONSE_TYPE.JSON,
-
-	    // text
-	    'text':     Resource.XHR_RESPONSE_TYPE.TEXT,
-	    'txt':      Resource.XHR_RESPONSE_TYPE.TEXT
-	};
-
-	/**
-	 * Sets the load type to be used for a specific extension.
-	 *
-	 * @static
-	 * @param extname {string} The extension to set the type for, e.g. "png" or "fnt"
-	 * @param loadType {Resource.LOAD_TYPE} The load type to set it to.
-	 */
-	Resource.setExtensionLoadType = function (extname, loadType) {
-	    setExtMap(Resource._loadTypeMap, extname, loadType);
-	};
-
-	/**
-	 * Sets the load type to be used for a specific extension.
-	 *
-	 * @static
-	 * @param extname {string} The extension to set the type for, e.g. "png" or "fnt"
-	 * @param xhrType {Resource.XHR_RESPONSE_TYPE} The xhr type to set it to.
-	 */
-	Resource.setExtensionXhrType = function (extname, xhrType) {
-	    setExtMap(Resource._xhrTypeMap, extname, xhrType);
-	};
-
-	function setExtMap(map, extname, val) {
-	    if (extname && extname.indexOf('.') === 0) {
-	        extname = extname.substring(1);
-	    }
-
-	    if (!extname) {
-	        return;
-	    }
-
-	    map[extname] = val;
-	}
-
-
-/***/ },
-/* 324 */
-/***/ function(module, exports) {
-
-	// a simple in-memory cache for resources
-	var cache = {};
-
-	module.exports = function () {
-	    return function (resource, next) {
-	        // if cached, then set data and complete the resource
-	        if (cache[resource.url]) {
-	            resource.data = cache[resource.url];
-	            resource.complete();
-	        }
-	        // if not cached, wait for complete and store it in the cache.
-	        else {
-	            resource.once('complete', function () {
-	               cache[this.url] = this.data;
-	            });
-
-	            next();
-	        }
-	    };
-	};
-
-
-/***/ },
-/* 325 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Resource = __webpack_require__(323),
-	    b64 = __webpack_require__(326);
-
-	window.URL = window.URL || window.webkitURL;
-
-	// a middleware for transforming XHR loaded Blobs into more useful objects
-
-	module.exports = function () {
-	    return function (resource, next) {
-	        if (!resource.data) {
-	            return next();
-	        }
-
-	        // if this was an XHR load of a blob
-	        if (resource.xhr && resource.xhrType === Resource.XHR_RESPONSE_TYPE.BLOB) {
-	            // if there is no blob support we probably got a binary string back
-	            if (!window.Blob || typeof resource.data === 'string') {
-	                var type = resource.xhr.getResponseHeader('content-type');
-
-	                // this is an image, convert the binary string into a data url
-	                if (type && type.indexOf('image') === 0) {
-	                    resource.data = new Image();
-	                    resource.data.src = 'data:' + type + ';base64,' + b64.encodeBinary(resource.xhr.responseText);
-
-	                    resource.isImage = true;
-
-	                    // wait until the image loads and then callback
-	                    resource.data.onload = function () {
-	                        resource.data.onload = null;
-
-	                        next();
-	                    };
-	                }
-	            }
-	            // if content type says this is an image, then we should transform the blob into an Image object
-	            else if (resource.data.type.indexOf('image') === 0) {
-	                var src = URL.createObjectURL(resource.data);
-
-	                resource.blob = resource.data;
-	                resource.data = new Image();
-	                resource.data.src = src;
-
-	                resource.isImage = true;
-
-	                // cleanup the no longer used blob after the image loads
-	                resource.data.onload = function () {
-	                    URL.revokeObjectURL(src);
-	                    resource.data.onload = null;
-
-	                    next();
-	                };
-	            }
-	        }
-	        else {
-	            next();
-	        }
-	    };
-	};
-
-
-/***/ },
 /* 326 */
-/***/ function(module, exports) {
-
-	module.exports = {
-
-	    // private property
-	    _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
-
-	    encodeBinary: function (input) {
-	        var output = "";
-	        var bytebuffer;
-	        var encodedCharIndexes = new Array(4);
-	        var inx = 0;
-	        var jnx = 0;
-	        var paddingBytes = 0;
-
-	        while (inx < input.length) {
-	            // Fill byte buffer array
-	            bytebuffer = new Array(3);
-	            for (jnx = 0; jnx < bytebuffer.length; jnx++) {
-	                if (inx < input.length) {
-	                    // throw away high-order byte, as documented at:
-	                    // https://developer.mozilla.org/En/Using_XMLHttpRequest#Handling_binary_data
-	                    bytebuffer[jnx] = input.charCodeAt(inx++) & 0xff;
-	                }
-	                else {
-	                    bytebuffer[jnx] = 0;
-	                }
-	            }
-
-	            // Get each encoded character, 6 bits at a time
-	            // index 1: first 6 bits
-	            encodedCharIndexes[0] = bytebuffer[0] >> 2;
-	            // index 2: second 6 bits (2 least significant bits from input byte 1 + 4 most significant bits from byte 2)
-	            encodedCharIndexes[1] = ((bytebuffer[0] & 0x3) << 4) | (bytebuffer[1] >> 4);
-	            // index 3: third 6 bits (4 least significant bits from input byte 2 + 2 most significant bits from byte 3)
-	            encodedCharIndexes[2] = ((bytebuffer[1] & 0x0f) << 2) | (bytebuffer[2] >> 6);
-	            // index 3: forth 6 bits (6 least significant bits from input byte 3)
-	            encodedCharIndexes[3] = bytebuffer[2] & 0x3f;
-
-	            // Determine whether padding happened, and adjust accordingly
-	            paddingBytes = inx - (input.length - 1);
-	            switch (paddingBytes) {
-	                case 2:
-	                    // Set last 2 characters to padding char
-	                    encodedCharIndexes[3] = 64;
-	                    encodedCharIndexes[2] = 64;
-	                    break;
-
-	                case 1:
-	                    // Set last character to padding char
-	                    encodedCharIndexes[3] = 64;
-	                    break;
-
-	                default:
-	                    break; // No padding - proceed
-	            }
-
-	            // Now we will grab each appropriate character out of our keystring
-	            // based on our index array and append it to the output string
-	            for (jnx = 0; jnx < encodedCharIndexes.length; jnx++) {
-	                output += this._keyStr.charAt(encodedCharIndexes[jnx]);
-	            }
-	        }
-	        return output;
-	    }
-	};
-
-
-/***/ },
-/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212);
+	var core = __webpack_require__(225);
 
 	module.exports = function ()
 	{
@@ -33316,12 +32390,12 @@
 
 
 /***/ },
-/* 328 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Resource = __webpack_require__(314).Resource,
-	    path = __webpack_require__(329),
-	    core = __webpack_require__(212);
+	var Resource = __webpack_require__(197).Resource,
+	    path = __webpack_require__(328),
+	    core = __webpack_require__(225);
 
 	module.exports = function ()
 	{
@@ -33403,7 +32477,7 @@
 
 
 /***/ },
-/* 329 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -33634,13 +32708,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(192)))
 
 /***/ },
-/* 330 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Resource = __webpack_require__(314).Resource,
-	    core = __webpack_require__(212),
-	    extras = __webpack_require__(273),
-	    path = __webpack_require__(329);
+	var Resource = __webpack_require__(197).Resource,
+	    core = __webpack_require__(225),
+	    extras = __webpack_require__(285),
+	    path = __webpack_require__(328);
 
 
 	function parse(resource, texture) {
@@ -33758,7 +32832,7 @@
 
 
 /***/ },
-/* 331 */
+/* 330 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33772,18 +32846,18 @@
 	 * @namespace PIXI.mesh
 	 */
 	module.exports = {
-	    Mesh:           __webpack_require__(332),
-	    Rope:           __webpack_require__(333),
-	    MeshRenderer:   __webpack_require__(334),
-	    MeshShader:     __webpack_require__(335)
+	    Mesh:           __webpack_require__(331),
+	    Rope:           __webpack_require__(332),
+	    MeshRenderer:   __webpack_require__(333),
+	    MeshShader:     __webpack_require__(334)
 	};
 
 
 /***/ },
-/* 332 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212),
+	var core = __webpack_require__(225),
 	    tempPoint = new core.Point(),
 	    tempPolygon = new core.Polygon();
 
@@ -34253,11 +33327,11 @@
 
 
 /***/ },
-/* 333 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Mesh = __webpack_require__(332);
-	var core = __webpack_require__(212);
+	var Mesh = __webpack_require__(331);
+	var core = __webpack_require__(225);
 
 	/**
 	 * The rope allows you to draw a texture across several points and them manipulate these points
@@ -34470,11 +33544,11 @@
 
 
 /***/ },
-/* 334 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212),
-	    Mesh = __webpack_require__(332);
+	var core = __webpack_require__(225),
+	    Mesh = __webpack_require__(331);
 
 	/**
 	 * @author Mat Groves
@@ -34689,10 +33763,10 @@
 
 
 /***/ },
-/* 335 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(212);
+	var core = __webpack_require__(225);
 
 	/**
 	 * @class
@@ -34754,14 +33828,14 @@
 
 
 /***/ },
-/* 336 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*global console */
-	var core = __webpack_require__(212),
-	    mesh = __webpack_require__(331),
-	    extras = __webpack_require__(273),
-	    filters = __webpack_require__(280);
+	var core = __webpack_require__(225),
+	    mesh = __webpack_require__(330),
+	    extras = __webpack_require__(285),
+	    filters = __webpack_require__(292);
 
 	/**
 	 * @class
@@ -35109,7 +34183,7 @@
 
 
 /***/ },
-/* 337 */
+/* 336 */
 /***/ function(module, exports) {
 
 	/**
@@ -35160,7 +34234,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 338 */
+/* 337 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35171,31 +34245,31 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interfacesI_Resource = __webpack_require__(339);
+	var _interface = __webpack_require__(338);
 
-	var _interfacesI_Resource2 = _interopRequireDefault(_interfacesI_Resource);
+	var _interface2 = _interopRequireDefault(_interface);
 
 	exports['default'] = function () {
 	  var data = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
-	  var keys = Object.keys(_interfacesI_Resource2['default']);
+	  var keys = Object.keys(_interface2['default']);
 
 	  keys.forEach(function (name) {
 	    if (typeof data[name] === 'undefined') {
 	      throw new Error('data not compatible with resource interface: ' + name + ' is missing');
 	    } else {
-	      _interfacesI_Resource2['default'][name] = data[name];
+	      _interface2['default'][name] = data[name];
 	    }
 	  });
 
-	  return _interfacesI_Resource2['default'];
+	  return _interface2['default'];
 	};
 
 	;
 	module.exports = exports['default'];
 
 /***/ },
-/* 339 */
+/* 338 */
 /***/ function(module, exports) {
 
 	/**
@@ -35218,7 +34292,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 340 */
+/* 339 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["GW"] = __webpack_require__(193);

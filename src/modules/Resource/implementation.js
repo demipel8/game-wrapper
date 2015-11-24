@@ -1,4 +1,4 @@
-import base from '../interfaces/I_Resource'
+import base from './interface'
 
 export default function( data = {} ) {
   let keys = Object.keys( base );

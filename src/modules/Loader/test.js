@@ -1,16 +1,12 @@
 /**
  * Created by demi on 11/8/15.
  */
-import Loader from '../src/js/modules/M_Loader';
+import Loader from './implementation';
 
 describe ( 'Loader Module default implementation in GW - resource-loader', function() {
 
   beforeEach( () => {
     Loader.initialize();
-  });
-
-  it('should have correct properties', () => {
-    expect(Loader).to.have.property('resources');
   });
 
   it('should have correct public methods', () => {
@@ -19,6 +15,7 @@ describe ( 'Loader Module default implementation in GW - resource-loader', funct
     expect(Loader).to.have.property('image').instanceOf(Function);
     expect(Loader).to.have.property('audio').instanceOf(Function);
     expect(Loader).to.have.property('json').instanceOf(Function);
+    expect(Loader).to.have.property('getResource').instanceOf(Function);
   });
 
   describe( '#initialize', () => {

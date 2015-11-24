@@ -5,5 +5,5 @@
 const empty = () => {};
 
 export default {
-  launch: empty
+  launch: function( game ){}
 }

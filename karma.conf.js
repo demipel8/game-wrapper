@@ -1,44 +1,44 @@
 /**
  * Created by demi on 11/7/15.
  */
+var path = require('path');
+
 module.exports = function(config) {
   config.set({
     // ... normal karma configuration
     frameworks: ['mocha', 'chai'],
     files: [
-      // all files ending in "_test"
-      //'node_modules/babel-core/browser-polyfill.js',
-      'spec/*_test.js',
-      'spec/**/*_test.js',
-      {pattern: 'spec/assets/**/*.png', watched: false, included: false, served: true},
-      {pattern: 'spec/assets/*.jpg', watched: false, included: false, served: true, nocache: true}
-      // each file acts as entry point for the webpack configuration
+      './node_modules/phantomjs-polyfill/bind-polyfill.js',
+      'spec.bundle.js'
     ],
 
-    proxies:{
-      '/assets/': 'spec/assets/'
-    },
-
     preprocessors: {
-      // add webpack as preprocessor
-      'spec/*.js': ['webpack'],
-      'spec/**/*.js': ['webpack']
+      'spec.bundle.js': ['webpack']
     },
 
     reporters: ['spec', 'coverage'],
 
     coverageReporter: {
-      type: 'html',
-      dir: 'build/coverage/'
+      type: 'text'
     },
 
     webpack: {
-      // karma watches the test entry points
-      // (you don't need to specify the entry option)
-      // webpack watches dependencies
-
-      // webpack configuration
       module: {
+        preloaders: [
+          {
+            test: /\.js/,
+            exclude: [
+              path.resolve('src/modules/'),
+              path.resolve('node_modules/')
+            ],
+            loader: 'babel-loader'
+          },
+          {
+            test: /\.js$/,
+            include: path.resolve('src/modules/'),
+            loader: 'isparta'
+          }
+        ],
         loaders: [ {
             test: /\.js/,
             exclude: /node_modules/,
@@ -67,7 +67,12 @@ module.exports = function(config) {
       require("karma-spec-reporter")
     ],
 
-    browser: [ 'PhantomJS' ]
+    browsers: [ 'Chrome','PhantomJS' ],
+
+    phantomjsLauncher: {
+      // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
+      exitOnResourceError: true
+    }
 
   });
 };

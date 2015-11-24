@@ -1,8 +1,8 @@
 /**
  * Created by demi on 11/24/15.
  */
-import base from '../src/js/interfaces/I_Resource';
-import Resource from '../src/js/modules/M_Resource';
+import base from './interface';
+import Resource from './implementation';
 
 describe ( 'Interface has the required properties', function() {
 

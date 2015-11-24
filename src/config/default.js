@@ -1,12 +1,12 @@
 /**
  * Created by demi on 11/7/15.
  */
-import Loader from '../js/modules/M_Loader'
-import Loop from '../js/modules/M_Loop'
-import Controller from '../js/modules/M_Controller'
-import Render from '../js/modules/M_Render'
-import Sprite from '../js/modules/M_Sprite'
-import Resource from '../js/modules/M_Resource'
+import Loader from '../modules/Loader/implementation'
+import Loop from '../modules/Loop/implementation'
+import Controller from '../modules/Controller/implementation'
+import Render from '../modules/Render/implementation'
+import Sprite from '../modules/Sprite/implementation'
+import Resource from '../modules/Resource/implementation'
 
 export default {
   loader: Loader,
