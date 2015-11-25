@@ -10056,7 +10056,7 @@
 
 	  //Initialize modules
 	  game.loader.initialize(game);
-	  game.render.initialize(game, width, height); //temporalmente size fijo
+	  game.render.initialize(game, width, height, renderer);
 
 	  /**
 	   * Adds every element of one type to the loader queue
