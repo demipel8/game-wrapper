@@ -5,10 +5,17 @@ import base from './interface'
 import pixi from 'pixi.js'
 
 let stage;
+let renderers = {
+  ['Canvas'] : pixi.CanvasRenderer,
+  ['webGL'] : pixi.WebGLRenderer
+}
 
-base.initialize = function( game, width, height ) {
+base.initialize = function( game, width = base.width, height = base.height, rendertech = 'webGL' ) {
 
-  let renderer = new pixi.WebGLRenderer(width, height);
+  base.width = width;
+  base.height = height;
+
+  let renderer = new renderers[ rendertech ](width, height);
   document.body.appendChild(renderer.view);
 
   stage = new pixi.Container();

@@ -15,12 +15,12 @@ import base from './interface'
  *    json: { 'icon': './assets/data.json' }
  * } ).then( function( game ){} );
  */
-base.launch = function( game, [ jsonData ] ) {
+base.launch = function( game, [ jsonData, width, height, renderer ] ) {
   const types = [ 'image', 'audio', 'json' ];
 
   //Initialize modules
   game.loader.initialize( game );
-  game.render.initialize( game, 800, 600); //temporalmente size fijo
+  game.render.initialize( game, width, height, renderer);
 
   /**
    * Adds every element of one type to the loader queue
