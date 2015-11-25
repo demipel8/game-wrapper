@@ -18,10 +18,10 @@ base.getFPS = function() {
   return Math.round( MainLoop.getMaxAllowedFPS() );
 };
 
-base.process.bind( executeAll );
-base.update.bind( executeAll );
-base.render.bind( executeAll );
-base.postRender.bind( executeAll );
+base._setProcess( executeAll );
+base._setUpdate( executeAll );
+base._setRender( executeAll );
+base._setPostRender( executeAll );
 
 base.start = function() {
   MainLoop

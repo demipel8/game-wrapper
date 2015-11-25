@@ -15,7 +15,7 @@ import base from './interface'
  *    json: { 'icon': './assets/data.json' }
  * } ).then( function( game ){} );
  */
-base.launch = function( [ jsonData ], game ) {
+base.launch = function( game, [ jsonData ] ) {
   const types = [ 'image', 'audio', 'json' ];
 
   //Initialize modules

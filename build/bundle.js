@@ -5320,11 +5320,13 @@
 
 	  var modules = Object.assign(_configDefault2['default'], userModules, { gameObjects: [] });
 
-	  for (var _len = arguments.length, gameData = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-	    gameData[_key - 1] = arguments[_key];
-	  }
+	  return function LaunchGame() {
+	    for (var _len = arguments.length, gameData = Array(_len), _key = 0; _key < _len; _key++) {
+	      gameData[_key] = arguments[_key];
+	    }
 
-	  return modules.controller.launch(gameData, modules);
+	    return modules.controller.launch(modules, gameData);
+	  };
 	}
 
 	exports['default'] = GW;
@@ -9878,18 +9880,20 @@
 	  _mainloopJsBuildMainloopMin2['default'].setMaxAllowedFPS(fps);
 	};
 
-	_interface2['default'].getFPS = function (fps) {
-	  _mainloopJsBuildMainloopMin2['default'].getFPS(fps);
+	_interface2['default'].getFPS = function () {
+	  return Math.round(_mainloopJsBuildMainloopMin2['default'].getMaxAllowedFPS());
 	};
 
-	_interface2['default'].process.bind(executeAll);
-	_interface2['default'].update.bind(executeAll);
-	_interface2['default'].render.bind(executeAll);
-	_interface2['default'].postRender.bind(executeAll);
+	_interface2['default']._setProcess(executeAll);
+	_interface2['default']._setUpdate(executeAll);
+	_interface2['default']._setRender(executeAll);
+	_interface2['default']._setPostRender(executeAll);
 
 	_interface2['default'].start = function () {
 	  _mainloopJsBuildMainloopMin2['default'].setBegin(_interface2['default'].process).setUpdate(_interface2['default'].update).setDraw(_interface2['default'].render).setEnd(_interface2['default'].postRender).start();
 	};
+
+	_interface2['default'].setFPS(_interface2['default'].FPS);
 
 	exports['default'] = _interface2['default'];
 	module.exports = exports['default'];
@@ -9936,24 +9940,25 @@
 	    throw new Error('function is not part of ' + stage);
 	  }
 
-	  buckets[type].splice(index, 1);
+	  buckets[stage].splice(index, 1);
 	}
 
 	/**
 	 * Injects the asked bucket on to a callback function
-	 * @param bucket { object } - list of functions
-	 * @param callback { fucntion } - callback function
+	 * @param stage { string } - bucket identifier
+	 * @param callback { function } - callback function
 	 * @private
 	 *
 	 */
-	function _callbackWithBucket(bucket, callback) {
-	  callback(bucket);
+	function _callbackWithBucket(stage, callback) {
+	  loop[stage] = callback.bind(null, buckets[stage]);
 	}
 
 	for (var stage in buckets) {
 	  var capitalizeFistLetter = stage.charAt(0).toUpperCase() + stage.slice(1);
 	  loop['add' + capitalizeFistLetter] = add.bind(null, stage);
 	  loop['remove' + capitalizeFistLetter] = remove.bind(null, stage);
+	  loop['_set' + capitalizeFistLetter] = _callbackWithBucket.bind(null, stage);
 	}
 
 	exports['default'] = Object.assign(loop, {
@@ -9964,7 +9969,7 @@
 	  /**
 	   * executed before the update method to perform activities such as user input
 	   */
-	  process: _callbackWithBucket.bind(null, buckets.process),
+	  process: empty,
 	  /**
 	   * Updates state of the objects
 	   */
@@ -10039,7 +10044,7 @@
 	 *    json: { 'icon': './assets/data.json' }
 	 * } ).then( function( game ){} );
 	 */
-	_interface2['default'].launch = function (_ref, game) {
+	_interface2['default'].launch = function (game, _ref) {
 	  var _ref2 = _slicedToArray(_ref, 1);
 
 	  var jsonData = _ref2[0];

@@ -36,21 +36,21 @@ function remove( stage , func ) {
 
 /**
  * Injects the asked bucket on to a callback function
- * @param bucket { object } - list of functions
- * @param callback { fucntion } - callback function
+ * @param stage { string } - bucket identifier
+ * @param callback { function } - callback function
  * @private
  *
  */
-function _callbackWithBucket( bucket, callback ) {
-  callback( bucket );
+function _callbackWithBucket( stage, callback ) {
+  loop[stage] = callback.bind( null, buckets[stage] );
 }
 
 for( let stage in buckets ) {
   let capitalizeFistLetter = stage.charAt(0).toUpperCase() + stage.slice(1);
   loop[ `add${capitalizeFistLetter}`] = add.bind( null, stage );
   loop[ `remove${capitalizeFistLetter}`] = remove.bind( null, stage );
+  loop[ `_set${capitalizeFistLetter}` ] = _callbackWithBucket.bind( null, stage );
 }
-
 
 export default Object.assign( loop, {
   /**
@@ -60,7 +60,7 @@ export default Object.assign( loop, {
   /**
    * executed before the update method to perform activities such as user input
    */
-  process: _callbackWithBucket.bind( null, buckets.process ),
+  process: empty,
   /**
    * Updates state of the objects
    */
