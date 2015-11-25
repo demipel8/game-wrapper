@@ -10045,11 +10045,12 @@
 	 * } ).then( function( game ){} );
 	 */
 	_interface2['default'].launch = function (game, _ref) {
-	  var _ref2 = _slicedToArray(_ref, 3);
+	  var _ref2 = _slicedToArray(_ref, 4);
 
 	  var jsonData = _ref2[0];
 	  var width = _ref2[1];
 	  var height = _ref2[2];
+	  var renderer = _ref2[3];
 
 	  var types = ['image', 'audio', 'json'];
 
@@ -10115,7 +10116,11 @@
 	  value: true
 	});
 
+	var _renderers;
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 	var _interface = __webpack_require__(218);
 
@@ -10126,10 +10131,17 @@
 	var _pixiJs2 = _interopRequireDefault(_pixiJs);
 
 	var stage = undefined;
+	var renderers = (_renderers = {}, _defineProperty(_renderers, 'Canvas', _pixiJs2['default'].CanvasRenderer), _defineProperty(_renderers, 'webGL', _pixiJs2['default'].WebGLRenderer), _renderers);
 
-	_interface2['default'].initialize = function (game, width, height) {
+	_interface2['default'].initialize = function (game) {
+	  var width = arguments.length <= 1 || arguments[1] === undefined ? _interface2['default'].width : arguments[1];
+	  var height = arguments.length <= 2 || arguments[2] === undefined ? _interface2['default'].height : arguments[2];
+	  var rendertech = arguments.length <= 3 || arguments[3] === undefined ? 'webGL' : arguments[3];
 
-	  var renderer = new _pixiJs2['default'].WebGLRenderer(width, height);
+	  _interface2['default'].width = width;
+	  _interface2['default'].height = height;
+
+	  var renderer = new renderers[rendertech](width, height);
 	  document.body.appendChild(renderer.view);
 
 	  stage = new _pixiJs2['default'].Container();
@@ -10171,7 +10183,9 @@
 	   */
 	  initialize: empty,
 	  addSprite: empty,
-	  removeSprite: empty
+	  removeSprite: empty,
+	  width: 800,
+	  height: 600
 	};
 	module.exports = exports["default"];
 
