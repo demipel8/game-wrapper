@@ -41,12 +41,8 @@ describe ( 'Loader Module default implementation in GW - resource-loader', funct
     var loading = Loader.start();
 
     loading.then( function ( data ) {
-      console.log( data );
-      console.log( 'paso' );
       expect( 3 ).not.to.equal( undefined );
     },  function( error) {
-      console.log( error );
-      console.log( 'fallo' )
     });
 
   } );

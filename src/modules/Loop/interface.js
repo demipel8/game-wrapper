@@ -31,7 +31,7 @@ function remove( stage , func ) {
     throw new Error( 'function is not part of ' + stage );
   }
 
-  buckets[type].splice(index, 1);
+  buckets[ stage ].splice(index, 1);
 }
 
 /**

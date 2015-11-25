@@ -14,8 +14,8 @@ base.setFPS = function( fps ) {
   MainLoop.setMaxAllowedFPS( fps );
 };
 
-base.getFPS = function( fps ) {
-  MainLoop.getFPS( fps );
+base.getFPS = function() {
+  return Math.round( MainLoop.getMaxAllowedFPS() );
 };
 
 base.process.bind( executeAll );
@@ -31,5 +31,7 @@ base.start = function() {
     .setEnd( base.postRender )
     .start();
 };
+
+base.setFPS( base.FPS );
 
 export default base;
