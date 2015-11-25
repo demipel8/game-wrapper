@@ -10045,15 +10045,17 @@
 	 * } ).then( function( game ){} );
 	 */
 	_interface2['default'].launch = function (game, _ref) {
-	  var _ref2 = _slicedToArray(_ref, 1);
+	  var _ref2 = _slicedToArray(_ref, 3);
 
 	  var jsonData = _ref2[0];
+	  var width = _ref2[1];
+	  var height = _ref2[2];
 
 	  var types = ['image', 'audio', 'json'];
 
 	  //Initialize modules
 	  game.loader.initialize(game);
-	  game.render.initialize(game, 800, 600); //temporalmente size fijo
+	  game.render.initialize(game, width, height); //temporalmente size fijo
 
 	  /**
 	   * Adds every element of one type to the loader queue
