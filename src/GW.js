@@ -3,11 +3,13 @@
  */
 import defaultModules from './config/default';
 
-function GW( userModules = {}, ...gameData ) {
+function GW( userModules = {} ) {
 
   const modules = Object.assign( defaultModules, userModules, { gameObjects: [] } );
 
-  return modules.controller.launch( gameData, modules );
+  return function LaunchGame( ...gameData ) {
+     return modules.controller.launch( modules, gameData );
+  }
 }
 
 export default GW;

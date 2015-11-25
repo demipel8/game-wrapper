@@ -11,4 +11,6 @@ function myGame( game ) {
   }, 500 );
 }
 
-GW({}, { image: { 'icon': './assets/icon.png' } } ).then( myGame );
+var game = GW(); // selects modules
+
+game( { image: { 'icon': './assets/icon.png' } } ).then( myGame ); // launches the game
