@@ -6,7 +6,10 @@ import pixi from 'pixi.js'
 
 let stage;
 
-base.initialize = function( game, width, height ) {
+base.initialize = function( game, width = base.width, height = base.height ) {
+
+  base.width = width;
+  base.height = height;
 
   let renderer = new pixi.WebGLRenderer(width, height);
   document.body.appendChild(renderer.view);

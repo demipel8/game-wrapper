@@ -9,5 +9,7 @@ export default {
    */
   initialize: empty,
   addSprite: empty,
-  removeSprite: empty
+  removeSprite: empty,
+  width: 800,
+  height: 600
 }
