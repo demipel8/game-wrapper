@@ -7,6 +7,7 @@ import Controller from '../modules/Controller/implementation'
 import Render from '../modules/Render/implementation'
 import Sprite from '../modules/Sprite/implementation'
 import Resource from '../modules/Resource/implementation'
+import World from '../modules/World/implementation'
 
 export default {
   loader: Loader,
@@ -14,5 +15,6 @@ export default {
   controller: Controller,
   render: Render,
   sprite: Sprite,
-  resource: Resource
+  resource: Resource,
+  world: World
 }

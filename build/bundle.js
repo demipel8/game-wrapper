@@ -71,7 +71,7 @@
 
 	var _GW2 = _interopRequireDefault(_GW);
 
-	__webpack_require__(339);exports['default'] = _GW2['default'];
+	__webpack_require__(341);exports['default'] = _GW2['default'];
 	module.exports = exports['default'];
 
 /***/ },
@@ -5371,13 +5371,18 @@
 
 	var _modulesResourceImplementation2 = _interopRequireDefault(_modulesResourceImplementation);
 
+	var _modulesWorldImplementation = __webpack_require__(339);
+
+	var _modulesWorldImplementation2 = _interopRequireDefault(_modulesWorldImplementation);
+
 	exports['default'] = {
 	  loader: _modulesLoaderImplementation2['default'],
 	  loop: _modulesLoopImplementation2['default'],
 	  controller: _modulesControllerImplementation2['default'],
 	  render: _modulesRenderImplementation2['default'],
 	  sprite: _modulesSpriteImplementation2['default'],
-	  resource: _modulesResourceImplementation2['default']
+	  resource: _modulesResourceImplementation2['default'],
+	  world: _modulesWorldImplementation2['default']
 	};
 	module.exports = exports['default'];
 
@@ -10035,7 +10040,10 @@
 	/**
 	 * Loads and starts game loop
 	 * @param jsonData {object} - assets the game must load. Can have 3 subobjects: audio, image, json
-	 * @param game
+	 * @param game {object} - game object, injected by GW
+	 * @param width [number] - Game width
+	 * @param height [number] - Game height
+	 * @param renderer [string]
 	 * @returns {*} {Promise<object>} - if all assets are loaded, it returns an instance of the game
 	 * @example
 	 * GW({}, {
@@ -10055,8 +10063,13 @@
 	  var types = ['image', 'audio', 'json'];
 
 	  //Initialize modules
-	  game.loader.initialize(game);
 	  game.render.initialize(game, width, height, renderer);
+
+	  Object.keys(game).forEach(function (module) {
+	    if (module !== 'render' && game[module].initialize) {
+	      game[module].initialize(game);
+	    }
+	  });
 
 	  /**
 	   * Adds every element of one type to the loader queue
@@ -34230,6 +34243,8 @@
 	  var loadedImage = game.loader.getResource(image);
 	  var sprite = game.render.addSprite(loadedImage.url, x, y);
 
+	  game.world.add(sprite);
+
 	  function scale(x, y) {
 	    sprite.scale.x = x;
 	    sprite.scale.y = y;
@@ -34323,6 +34338,72 @@
 
 /***/ },
 /* 339 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by demi on 11/21/15.
+	 */
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _interface = __webpack_require__(340);
+
+	var _interface2 = _interopRequireDefault(_interface);
+
+	_interface2['default'].initialize = function (game) {
+	  game.loop.addUpdate(function () {
+	    _interface2['default'].objects.forEach(function (element) {
+	      if (element.update) {
+	        element.update();
+	      }
+	    });
+	  });
+	};
+
+	_interface2['default'].add = function (element) {
+	  _interface2['default'].objects.push(element);
+	};
+
+	_interface2['default'].remove = function (element) {
+	  var index = _interface2['default'].objects.indexOf(element);
+
+	  if (! ~index) {
+	    throw new Error('Element ' + element + ' is not on the world');
+	  }
+
+	  _interface2['default'].objects.splice(index, 1);
+	};
+
+	exports['default'] = _interface2['default'];
+	module.exports = exports['default'];
+
+/***/ },
+/* 340 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by demi on 11/21/15.
+	 */
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports["default"] = {
+	  objects: [],
+	  add: function add(element) {},
+	  remove: function remove(element) {}
+	};
+	module.exports = exports["default"];
+
+/***/ },
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["GW"] = __webpack_require__(193);

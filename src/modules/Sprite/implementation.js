@@ -6,6 +6,8 @@ export default function( game, image, x, y ) {
   let loadedImage = game.loader.getResource( image );
   let sprite = game.render.addSprite( loadedImage.url , x, y );
 
+  game.world.add( sprite );
+
   function scale( x, y ) {
     sprite.scale.x = x;
     sprite.scale.y = y;

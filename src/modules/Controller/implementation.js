@@ -6,7 +6,10 @@ import base from './interface'
 /**
  * Loads and starts game loop
  * @param jsonData {object} - assets the game must load. Can have 3 subobjects: audio, image, json
- * @param game
+ * @param game {object} - game object, injected by GW
+ * @param width [number] - Game width
+ * @param height [number] - Game height
+ * @param renderer [string]
  * @returns {*} {Promise<object>} - if all assets are loaded, it returns an instance of the game
  * @example
  * GW({}, {
@@ -19,8 +22,13 @@ base.launch = function( game, [ jsonData, width, height, renderer ] ) {
   const types = [ 'image', 'audio', 'json' ];
 
   //Initialize modules
-  game.loader.initialize( game );
   game.render.initialize( game, width, height, renderer);
+
+  Object.keys( game ).forEach( function( module ) {
+    if( module !== 'render' && game[module].initialize ) {
+      game[module].initialize( game );
+    }
+  });
 
   /**
    * Adds every element of one type to the loader queue
