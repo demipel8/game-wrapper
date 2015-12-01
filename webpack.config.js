@@ -1,4 +1,5 @@
 var path = require('path');
+var pkg = require('./package.json');
 
 module.exports = {
     entry: {
@@ -7,7 +8,7 @@ module.exports = {
     output: {
         path: require('path').resolve('build'),
         publicPath: '/',
-        filename: 'bundle.js'
+        filename: 'gw.' + pkg.version + '.js'
     },
     node: {
       fs: 'empty'
