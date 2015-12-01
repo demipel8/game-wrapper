@@ -16,6 +16,7 @@
     "babel-polyfill": "^6.0.16",
     "chai": "^3.4.0",
     "colors": "^1.1.0",
+    "howler": "^1.1.28",
     "isparta-loader": "^2.0.0",
     "istanbul": "^0.3.13",
     "istanbul-instrumenter-loader": "^0.1.2",
