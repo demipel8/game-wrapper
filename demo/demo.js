@@ -11,8 +11,20 @@ function myGame( game ) {
   }, 500 );*/
 
   sprite.update( function() {
-    if( game.input.keyboard.isDown[ 'down '] ){
+    if( game.input.keyboard.isDown( 'down' ) ){
       sprite.position( sprite.x(), sprite.y() + 10 );
+    }
+
+    if( game.input.keyboard.isDown( 'left' ) ){
+      sprite.position( sprite.x() - 10 , sprite.y() );
+    }
+
+    if( game.input.keyboard.isDown( 'up') ){
+      sprite.position( sprite.x(), sprite.y() - 10 );
+    }
+
+    if( game.input.keyboard.isDown( 'right') ){
+      sprite.position( sprite.x() + 10, sprite.y() );
     }
   });
 
