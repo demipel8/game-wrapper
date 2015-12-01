@@ -8,6 +8,7 @@ import Render from '../modules/Render/implementation'
 import Sprite from '../modules/Sprite/implementation'
 import Resource from '../modules/Resource/implementation'
 import World from '../modules/World/implementation'
+import Input from '../modules/Input/facade'
 
 export default {
   loader: Loader,
@@ -16,5 +17,6 @@ export default {
   render: Render,
   sprite: Sprite,
   resource: Resource,
-  world: World
+  world: World,
+  input: Input
 }

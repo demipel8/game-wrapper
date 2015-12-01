@@ -6,9 +6,29 @@ function myGame( game ) {
 
   var sprite = game.sprite( game, 'icon', 100, 100 );
 
-  setInterval( function() {
+  /*setInterval( function() {
     sprite.position( sprite.x() + 3, sprite.y() );
-  }, 500 );
+  }, 500 );*/
+
+  sprite.update( function() {
+    if( game.input.keyboard.isDown( 'down' ) ){
+      sprite.position( sprite.x(), sprite.y() + 10 );
+    }
+
+    if( game.input.keyboard.isDown( 'left' ) ){
+      sprite.position( sprite.x() - 10 , sprite.y() );
+    }
+
+    if( game.input.keyboard.isDown( 'up') ){
+      sprite.position( sprite.x(), sprite.y() - 10 );
+    }
+
+    if( game.input.keyboard.isDown( 'right') ){
+      sprite.position( sprite.x() + 10, sprite.y() );
+    }
+  });
+
+
 }
 
 var game = GW(); // selects modules

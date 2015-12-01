@@ -85,18 +85,11 @@ describe('Loop: Implementation must work', () => {
   it('should go through the loop after start is executed', ( done ) => { //not working correctly
     var spy = true;
     var func = function(){
-      expect(spy).to.equal( true );
+      expect(spy).to.be.true;
+      done();
     };
 
-    var func2 = function(){
-      check( done, function() {
-        expect(spy).to.equal( true );
-      });
-
-    };
-
-    Loop.addRender( func2 );
-    Loop.addPostRender( func2 );
+    Loop.addPostRender( func );
     Loop.start();
   });
 

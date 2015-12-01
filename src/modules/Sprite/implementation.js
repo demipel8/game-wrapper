@@ -30,10 +30,15 @@ export default function( game, image, x, y ) {
     return sprite.y
   }
 
+  function setUpdate( callback ) {
+    sprite.update = callback;
+  }
+
   return {
     scale,
     position,
     rotate,
+    update: setUpdate,
     x : getX,
     y : getY
   };
