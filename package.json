@@ -28,6 +28,7 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-spec-reporter": "0.0.18",
     "karma-webpack": "^1.7.0",
+    "keypress.js": "^2.1.0-1",
     "mainloop.js": "^1.0.1",
     "mocha": "^2.3.3",
     "mocha-loader": "^0.7.1",

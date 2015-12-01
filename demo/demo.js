@@ -6,9 +6,17 @@ function myGame( game ) {
 
   var sprite = game.sprite( game, 'icon', 100, 100 );
 
-  setInterval( function() {
+  /*setInterval( function() {
     sprite.position( sprite.x() + 3, sprite.y() );
-  }, 500 );
+  }, 500 );*/
+
+  sprite.update( function() {
+    if( game.input.keyboard.isDown[ 'down '] ){
+      sprite.position( sprite.x(), sprite.y() + 10 );
+    }
+  });
+
+
 }
 
 var game = GW(); // selects modules
