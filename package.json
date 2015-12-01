@@ -1,12 +1,13 @@
 {
   "name": "GE",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
     "start": "webpack-dev-server",
     "web": "webpack",
     "test": "./node_modules/.bin/karma start",
-    "docs": "rm -r ./docs/; ./node_modules/.bin/jsdoc -c jsdoc.config.json"
+    "docs": "rm -r ./docs/; ./node_modules/.bin/jsdoc -c jsdoc.config.json",
+    "module": "./node_modules/.bin/gulp module -0"
   },
   "author": "demi ( Alvaro Martinez de Miguel )",
   "license": "",
@@ -16,6 +17,8 @@
     "babel-polyfill": "^6.0.16",
     "chai": "^3.4.0",
     "colors": "^1.1.0",
+    "gulp": "^3.9.0",
+    "gulp-file": "^0.2.0",
     "isparta-loader": "^2.0.0",
     "istanbul": "^0.3.13",
     "istanbul-instrumenter-loader": "^0.1.2",
