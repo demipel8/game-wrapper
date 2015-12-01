@@ -4,9 +4,9 @@
 import base from './interface'
 import MainLoop from 'mainloop.js/build/mainloop.min'
 
-function executeAll( bucket ) {
+function executeAll( bucket , delta ) {
   bucket.forEach( function( func ) {
-    func();
+    func( delta ); //for update functions
   })
 }
 

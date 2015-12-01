@@ -6,9 +6,14 @@ function myGame( game ) {
 
   var sprite = game.sprite( game, 'icon', 100, 100 );
 
-  /*setInterval( function() {
-    sprite.position( sprite.x() + 3, sprite.y() );
-  }, 500 );*/
+  var pos = { x: sprite.x(), y : sprite.y() };
+  game.tween.get( pos )
+    .to( { x: 500} )
+    .easing( game.tween.easing.Cubic.In)
+    .onUpdate( function() {
+      sprite.position( pos.x, pos.y )}
+    )
+    .start();
 
   sprite.update( function() {
     if( game.input.keyboard.isDown( 'down' ) ){

@@ -9,6 +9,7 @@ import Sprite from '../modules/Sprite/implementation'
 import Resource from '../modules/Resource/implementation'
 import World from '../modules/World/implementation'
 import Input from '../modules/Input/facade'
+import Tween from '../modules/Tween/facade'
 
 export default {
   loader: Loader,
@@ -18,5 +19,6 @@ export default {
   sprite: Sprite,
   resource: Resource,
   world: World,
-  input: Input
+  input: Input,
+  tween: Tween
 }
