@@ -4,7 +4,7 @@
 
 The wiki contains all the project document.
 
-##Launch a game factory
+## Launch a game factory
 
  ```
  var engine = GW( customModules ); //if no parameter is send, it will use the default modules
@@ -14,7 +14,7 @@ The wiki contains all the project document.
  });
  ```
  
-##Extend an existing module
+## Extend an existing module
  
  - Create the new folder with:
  ```
@@ -25,6 +25,6 @@ The wiki contains all the project document.
  - Copy the tests and make sure it passes all.
  - Launch the factory with your module as a parameter
 
-###TODO list
+### TODO list
 
  - Lots of things
