@@ -1,6 +1,8 @@
-GW is a wrapper for HTML5 game oriented libraries. Test any particular library and make your games!
+**GW** is a wrapper for HTML5 game oriented libraries. Test any particular library and make your games!
 
 *This project is part of the authors degree final project*
+
+The wiki contains all the project document
 
 ##Launch a game factory
 
@@ -12,9 +14,9 @@ GW is a wrapper for HTML5 game oriented libraries. Test any particular library a
  });
  ```
  
- ##Extend an existing module
+##Extend an existing module
  
-   - Create the new folder with
+ - Create the new folder with
  ```
  npm run module -- {module name}
  ```
