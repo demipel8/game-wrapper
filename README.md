@@ -1,8 +1,8 @@
 **GW** is a wrapper for HTML5 game oriented libraries. Test any particular library and make your games!
 
-*This project is part of the authors degree final project*
+*This project is part of the authors degree final project.*
 
-The wiki contains all the project document
+The wiki contains all the project document.
 
 ##Launch a game factory
 
@@ -16,15 +16,14 @@ The wiki contains all the project document
  
 ##Extend an existing module
  
- - Create the new folder with
+ - Create the new folder with:
  ```
  npm run module -- {module name}
  ```
  
-   - Read the module docs and implement your solution.
-   - Copy the tests and make sure it passes all.
- 
-   - Launch the factory with your module as a parameter
+ - Read the module docs and implement your solution.
+ - Copy the tests and make sure it passes all.
+ - Launch the factory with your module as a parameter
 
 ###TODO list
 
