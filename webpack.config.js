@@ -8,7 +8,7 @@ module.exports = {
     output: {
         path: require('path').resolve('build'),
         publicPath: '/',
-        filename: 'gw.' + pkg.version + '.js'
+        filename: 'gw.js'
     },
     node: {
       fs: 'empty'

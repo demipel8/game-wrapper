@@ -1,7 +1,7 @@
 {
-  "name": "GE",
+  "name": "GW",
   "version": "0.1.0",
-  "description": "",
+  "description": "Game wrapper for HTML5 game oriented libraries. Test any particular library and make your games",
   "scripts": {
     "start": "webpack-dev-server",
     "web": "webpack",
@@ -10,19 +10,37 @@
     "module": "./node_modules/.bin/gulp module -0"
   },
   "author": "demi ( Alvaro Martinez de Miguel )",
-  "license": "",
+  "license": "GPL-3.0",
+  "keywords": [
+    "game",
+    "wrapper",
+    "HTML5",
+    "javascript",
+    "2d",
+    "UPV"
+  ],
+  "bugs": {
+    "url" : "https://github.com/Hooptap/HooptapMechanics/issues",
+    "email" : "demipel8@gmail.com"
+  },
+  "main": "./build/gw.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/demipel8/game-wrapper.git"
+  },
+  "homepage": "http://game-wrapper.launchrock.com/",
   "devDependencies": {
     "babel-core": "^5.2.6",
     "babel-loader": "^5.0.0",
     "babel-polyfill": "^6.0.16",
     "chai": "^3.4.0",
     "colors": "^1.1.0",
+    "expose-loader": "^0.7.1",
     "gulp": "^3.9.0",
     "gulp-file": "^0.2.0",
     "isparta-loader": "^2.0.0",
-    "istanbul": "^0.3.13",
-    "istanbul-instrumenter-loader": "^0.1.2",
     "jsdoc": "^3.4.0",
+    "jsdocs": "^0.1.0",
     "json-loader": "^0.5.3",
     "karma": "^0.13.15",
     "karma-chai": "^0.1.0",
@@ -31,16 +49,20 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-spec-reporter": "0.0.18",
     "karma-webpack": "^1.7.0",
-    "keypress.js": "^2.1.0-1",
-    "mainloop.js": "^1.0.1",
     "mocha": "^2.3.3",
     "mocha-loader": "^0.7.1",
     "phantomjs": "^1.9.19",
     "phantomjs-polyfill": "0.0.1",
-    "pixi": "^0.3.1",
-    "pixi.js": "^3.0.8",
-    "tween.js": "^16.3.1",
     "webpack": "^1.8.11",
     "webpack-dev-server": "^1.8.2"
+  },
+  "dependencies": {
+    "howler": "^1.1.28",
+    "keypress.js": "^2.1.0-1",
+    "mainloop.js": "^1.0.1",
+    "matter-js": "^0.8.0",
+    "pixi.js": "^3.0.8",
+    "tween.js": "^16.3.1",
+    "signals": "^1.0.0"
   }
 }
