@@ -1,6 +1,6 @@
 {
   "name": "game-wrapper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Game wrapper for HTML5 game oriented libraries. Test any particular library and make your games",
   "scripts": {
     "start": "webpack-dev-server",
