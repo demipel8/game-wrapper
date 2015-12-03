@@ -33,11 +33,16 @@ function myGame( game ) {
     }
   });
 
+  game.audio.play('audio');
+
 
 }
 
 var game = GW(); // selects modules
 
-game( { image: { 'icon': './assets/icon.png' } } , 800, 600, 'webGL' ).then( myGame );
+game( {
+  image: { 'icon': './assets/icon.png' },
+  audio: { 'audio': './assets/audio.mp3' }
+} , 800, 600, 'webGL' ).then( myGame );
 
 // Change initialization to a config object pattern

@@ -2,41 +2,69 @@
 import base from './interface'
 import Audio from 'howler'
 
-const sounds = [];
-base.initialize = function( game ) {
+const formats = ['mp3', 'ogg', 'wav' ];
 
-
-};
-
-base.get = function( name ) {
-  let requested = sounds[ name ];
-
-  if ( checkAudio( requested ) ) {
-    return requested;
-  }
-};
-
-base.sounds = sounds;
+let sounds = {};
+let game;
 
 function executeSoundAction( action, name ) {
-  let requested = sounds[ name ];
 
-  if ( checkAudio( requested ) ) {
-    requested[ action ]();
+  if ( checkAudio( name ) ) {
+    return sounds[ name ][ action ]();
   }
+  return false;
 }
 
-function checkAudio( requested ) {
+function checkAudio( name ) {
+
+  let requested = sounds[ name ];
+
   if ( !requested ) {
-    throw new Error( `the audio ${name} doesn't exists` );
+
+    let audioResource = game.loader.getResource( name );
+
+    if ( audioResource && checkFormat( audioResource.url ) ) {
+      sounds[ name ] = new Audio.Howl( {
+          urls: [ audioResource.url ]
+      } );
+
+    } else {
+      throw new Error( `the audio ${name} doesn't exists` );
+
+    }
   }
 
   return true;
 }
 
-base.play = executeSoundAction.bind( null, 'play' );
-base.pause = executeSoundAction.bind( null, 'pause' );
-base.stop = executeSoundAction.bind( null, 'stop' );
+function checkFormat( audio ) {
+  let format = audio.substr(-3);  //all formats have 3 letters name
 
+  return !!~formats.indexOf( format );
+}
 
-export default base;
+export default Object.assign({}, base, {
+
+  play: executeSoundAction.bind( null, 'play' ),
+
+  pause: executeSoundAction.bind( null, 'pause' ),
+
+  stop: executeSoundAction.bind( null, 'stop' ),
+
+  initialize( gameInstance ){
+    game = gameInstance;
+    sounds = {};
+  },
+
+  getSounds() {
+    return sounds;
+  },
+
+  get( name ) {
+
+    if ( checkAudio( name ) ) {
+      return sounds[ name ];
+    }
+  }
+
+});

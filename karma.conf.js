@@ -8,6 +8,7 @@ module.exports = function(config) {
     // ... normal karma configuration
     frameworks: ['mocha', 'chai'],
     files: [
+      {pattern: 'demo/assets/*', watched: false, included: false, served: true, nocache: false},
       './node_modules/phantomjs-polyfill/bind-polyfill.js',
       'spec.bundle.js'
     ],
@@ -16,7 +17,7 @@ module.exports = function(config) {
       'spec.bundle.js': ['webpack']
     },
 
-    reporters: ['spec', 'coverage'],
+    reporters: ['mocha',/* 'coverage'*/],
 
     coverageReporter: {
       type: 'text'
@@ -59,12 +60,12 @@ module.exports = function(config) {
 
     plugins: [
       require("karma-webpack"),
-      require("istanbul-instrumenter-loader"),
       require("karma-mocha"),
       require("karma-chai"),
       require("karma-coverage"),
       require("karma-phantomjs-launcher"),
-      require("karma-spec-reporter")
+      require("karma-spec-reporter"),
+      require("karma-mocha-reporter")
     ],
 
     browsers: [ 'Chrome','PhantomJS' ],
