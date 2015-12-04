@@ -29,7 +29,7 @@ The wiki contains all the project document.
 
  **Check-Redo**
  
- - [ ] Controller: tests, docs and facade mode
+ - [x] Controller: tests, docs and facade mode
  - [ ] Input: tests, docs and facade mode
  - [x] Loader: tests, docs and facade mode
  - [ ] Loop: tests, docs and facade mode

@@ -3,53 +3,44 @@
  */
 import base from './interface'
 
+const types = [ 'image', 'audio', 'json' ]; //TODO Loader should have the types
+
 /**
- * Loads and starts game loop
- * @param jsonData {object} - assets the game must load. Can have 3 subobjects: audio, image, json
- * @param game {object} - game object, injected by GW
- * @param width [number] - Game width
- * @param height [number] - Game height
- * @param renderer [string]
- * @returns {*} {Promise<object>} - if all assets are loaded, it returns an instance of the game
- * @example
- * GW({}, {
- *    image: { 'icon': './assets/icon.png' },
- *    audio: { 'audio': './assets/audio.mp3' },
- *    json: { 'icon': './assets/data.json' }
- * } ).then( function( game ){} );
+ * Adds every element of one type to the loader queue
+ * @private
+ * @param assets {Object} - object containing all assets
+ * @param type {string} - type name
  */
-base.launch = function( game, [ jsonData, width, height, renderer ] ) {
-  const types = [ 'image', 'audio', 'json' ];
+function loadType( assets, type ) {
 
-  //Initialize modules
-  game.render.initialize( game, width, height, renderer);
+  if ( assets[ type ] ) {
 
-  Object.keys( game ).forEach( function( module ) {
-    if( module !== 'render' && game[module].initialize ) {
-      game[module].initialize( game );
-    }
-  });
+    let keys = Object.keys( jsonData[ type ] );
 
-  /**
-   * Adds every element of one type to the loader queue
-   * @param type {string} - type name
-     */
-  function loadType( type ) {
-    if( jsonData[ type ] ){
-      let keys = Object.keys( jsonData[ type ] );
-
-      keys.forEach( function( element ) {
-        game.loader[ type ]( element, jsonData[ type ][ element ]);
-      });
-    }
+    keys.forEach( function( element ) {
+      game.loader[ type ]( element, assets[ type ][ element ]);
+    });
   }
+}
 
-  types.forEach( loadType );
+export default Object.assign({}, base, {
 
-  return game.loader.start().then( () => {
-    game.loop.start();
-    return game;
-  } );
-};
+  launch( game, [ jsonData, width, height, renderer ] ) {
 
-export default base
+    //Initialize modules
+    game.render.initialize( game, width, height, renderer );
+
+    Object.keys( game ).forEach( function( module ) {
+      if( module !== 'render' && game[module].initialize ) {
+        game[module].initialize( game );
+      }
+    });
+
+    types.forEach( loadType.bind( null, jsonData) );
+
+    return game.loader.start().then( () => {
+      game.loop.start();
+      return game;
+    } );
+  }
+})
