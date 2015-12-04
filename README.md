@@ -32,7 +32,7 @@ The wiki contains all the project document.
  - [x] Controller: tests, docs and facade mode
  - [ ] Input: tests, docs and facade mode
  - [x] Loader: tests, docs and facade mode
- - [ ] Loop: tests, docs and facade mode
+ - [x] Loop: tests, docs and facade mode
  - [ ] Render: tests, docs and facade mode
  - [ ] Resource: tests, docs and facade mode
  - [ ] Sprite: tests, docs and facade mode

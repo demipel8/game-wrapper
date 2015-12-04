@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: Loop</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: Loop</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">Loop module. Main loop of the game</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>demipel8 [demipel8@gmail.com]</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".addPostRender"><span class="type-signature">(static) </span>addPostRender<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Adds a function callback to the post render stage
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line90">line 90</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loop.addPostRender( () => {} );</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".addProcess"><span class="type-signature">(static) </span>addProcess<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Adds a function callback to the process stage
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line38">line 38</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loop.addProcess( () => {} );</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".addRender"><span class="type-signature">(static) </span>addRender<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Adds a function callback to the render stage
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line72">line 72</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loop.addRender( () => {} );</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".addUpdate"><span class="type-signature">(static) </span>addUpdate<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Adds a function callback to the update stage
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loop.addUpdate( () => {} );</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".getFPS"><span class="type-signature">(static) </span>getFPS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Get the number of FPS the game is running at
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line106">line 106</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>let actualFPS = game.loop.getFPS();</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".initialize"><span class="type-signature">(static) </span>initialize<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Used to configure any initial state required by the implementation.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loader.initialize( game );</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".removePostRender"><span class="type-signature">(static) </span>removePostRender<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Removes a function callback from the post render stage
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line99">line 99</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loop.removePostRender( () => {} );</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".removeProcess"><span class="type-signature">(static) </span>removeProcess<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Removes a function callback from the process stage
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line47">line 47</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loop.removeProcess( () => {} );</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".removeRender"><span class="type-signature">(static) </span>removeRender<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Removes a function callback from the render stage
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line82">line 82</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loop.removeRender( () => {} );</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".removeUpdate"><span class="type-signature">(static) </span>removeUpdate<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Removes a function callback from the update stage
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line64">line 64</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loop.removeUpdate( () => {} );</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".setFPS"><span class="type-signature">(static) </span>setFPS<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Set Desired FPS
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line114">line 114</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loop.setFPS( 30 );</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".start"><span class="type-signature">(static) </span>start<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Get the loop running
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loop.start();</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".stop"><span class="type-signature">(static) </span>stop<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Stops the loop
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Loop_facade.js.html">Loop/facade.js</a>, <a href="Loop_facade.js.html#line30">line 30</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loop.stop();</code></pre>
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="GW.module_Audio.html">Audio</a></li><li><a href="GW.module_Controller.html">Controller</a></li><li><a href="GW.module_Loader.html">Loader</a></li><li><a href="GW.module_Loop.html">Loop</a></li><li><a href="GW.module_Resource.html">Resource</a></li></ul><h3>Global</h3><ul><li><a href="global.html#add">add</a></li><li><a href="global.html#empty">empty</a></li><li><a href="global.html#remove">remove</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Dec 04 2015 23:11:25 GMT+0100 (CET)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
