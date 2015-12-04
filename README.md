@@ -29,15 +29,15 @@ The wiki contains all the project document.
 
  **Check-Redo**
  
- - Controller: tests, docs and facade mode
- - Input: tests, docs and facade mode
- - Loader: tests, docs and facade mode
- - Loop: tests, docs and facade mode
- - Render: tests, docs and facade mode
- - Resource: tests, docs and facade mode
- - Sprite: tests, docs and facade mode
- - Tween: tests, docs and facade mode
- - World: tests, docs and facade mode
- - Physics: tests, docs and facade mode
+ - [ ] Controller: tests, docs and facade mode
+ - [ ] Input: tests, docs and facade mode
+ - [x] Loader: tests, docs and facade mode
+ - [ ] Loop: tests, docs and facade mode
+ - [ ] Render: tests, docs and facade mode
+ - [ ] Resource: tests, docs and facade mode
+ - [ ] Sprite: tests, docs and facade mode
+ - [ ] Tween: tests, docs and facade mode
+ - [ ] World: tests, docs and facade mode
+ - [ ] Physics: tests, docs and facade mode
 
  - Lots of things
