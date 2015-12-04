@@ -9,7 +9,7 @@ import audio from './implementation';
 export default {
   /**
    * Used to configure any initial state required by the implementation
-   * @param game - game object
+   * @param game {Object} - game object
    * @example
    * game.audio.initialize( game );
    */

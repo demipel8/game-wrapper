@@ -1,13 +1,13 @@
 /**
  * Created by demi on 11/7/15.
  */
-import Loader from '../modules/Loader/implementation'
-import Loop from '../modules/Loop/implementation'
-import Controller from '../modules/Controller/implementation'
-import Render from '../modules/Render/implementation'
-import Sprite from '../modules/Sprite/implementation'
-import Resource from '../modules/Resource/implementation'
-import World from '../modules/World/implementation'
+import Loader from '../modules/Loader/facade'
+import Loop from '../modules/Loop/facade'
+import Controller from '../modules/Controller/facade'
+import Render from '../modules/Render/facade'
+import Sprite from '../modules/Sprite/facade'
+import Resource from '../modules/Resource/facade'
+import World from '../modules/World/facade'
 import Input from '../modules/Input/facade'
 import Tween from '../modules/Tween/facade'
 import Audio from '../modules/Audio/facade'
