@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: Resource</title>
+    <title>JSDoc: Module: Controller</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: Resource</h1>
+    <h1 class="page-title">Module: Controller</h1>
 
     
 
@@ -34,7 +34,9 @@
     <div class="container-overview">
     
         
-            <div class="description">Object Factory. Parses a set of data into a defined resource object</div>
+            <div class="description">Controller module. Controls the flow of the game. In this case
+Initializes all modules, loads the assets and return control
+to the developer</div>
         
 
         
@@ -76,7 +78,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Resource_interface.js.html">Resource/interface.js</a>, <a href="Resource_interface.js.html#line1">line 1</a>
+        <a href="Controller_facade.js.html">Controller/facade.js</a>, <a href="Controller_facade.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -107,13 +109,13 @@
 
         
             
-<h4 class="name" id=".name"><span class="type-signature">(static) </span>name<span class="type-signature"></span></h4>
+<h4 class="name" id=".launch"><span class="type-signature">(static) </span>launch<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    Logic name of the resource
+    Loads and starts game loop
 </div>
 
 
@@ -151,7 +153,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Resource_interface.js.html">Resource/interface.js</a>, <a href="Resource_interface.js.html#line9">line 9</a>
+        <a href="Controller_facade.js.html">Controller/facade.js</a>, <a href="Controller_facade.js.html#line26">line 26</a>
     </li></ul></dd>
     
 
@@ -166,66 +168,13 @@
 
 
 
-
-        
-            
-<h4 class="name" id=".url"><span class="type-signature">(static) </span>url<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    Path to the resource
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
+    <h5>Example</h5>
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Resource_interface.js.html">Resource/interface.js</a>, <a href="Resource_interface.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
+    <pre class="prettyprint"><code>GW({}, {
+   image: { 'icon': './assets/icon.png' },
+   audio: { 'audio': './assets/audio.mp3' },
+   json: { 'icon': './assets/data.json' }
+} ).then( function( game ){} );</code></pre>
 
 
 

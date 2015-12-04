@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Render/interface.js</title>
+    <title>JSDoc: Source: Controller/facade.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Render/interface.js</h1>
+    <h1 class="page-title">Source: Controller/facade.js</h1>
 
     
 
@@ -27,19 +27,31 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Created by demi on 11/22/15.
+ * Controller module. Controls the flow of the game. In this case
+ * Initializes all modules, loads the assets and return control
+ * to the developer
+ * @module GW.Controller
+ * @author demipel8 [demipel8@gmail.com]
  */
-const empty = () => {};
+import controller from './implementation'
 
 export default {
   /**
-   * Creates the rendering area, add rendering function to the loop render function
+   * Loads and starts game loop
+   * @param game {object} - game object, injected by GW
+   * @param jsonData {object} - assets the game must load. Can have 3 subobjects: audio, image, json
+   * @param width [number] - game width
+   * @param height [number] - game height
+   * @param renderer [string] - type of render
+   * @returns {*} {Promise&lt;object>} - if all assets are loaded, it returns an instance of the game
+   * @example
+   * GW({}, {
+ *    image: { 'icon': './assets/icon.png' },
+ *    audio: { 'audio': './assets/audio.mp3' },
+ *    json: { 'icon': './assets/data.json' }
+ * } ).then( function( game ){} );
    */
-  initialize: empty,
-  addSprite: empty,
-  removeSprite: empty,
-  width: 800,
-  height: 600
+  launch: controller.launch
 }
 </code></pre>
         </article>
