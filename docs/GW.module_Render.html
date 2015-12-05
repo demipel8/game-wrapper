@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: Audio</title>
+    <title>JSDoc: Module: Render</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: Audio</h1>
+    <h1 class="page-title">Module: Render</h1>
 
     
 
@@ -34,7 +34,7 @@
     <div class="container-overview">
     
         
-            <div class="description">Audio module. Manages audio features in the games</div>
+            <div class="description">Render module. Renders the view onto the screen</div>
         
 
         
@@ -76,7 +76,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line1">line 1</a>
+        <a href="Render_facade.js.html">Render/facade.js</a>, <a href="Render_facade.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -107,13 +107,13 @@
 
         
             
-<h4 class="name" id=".get"><span class="type-signature">(static) </span>get<span class="type-signature"></span></h4>
+<h4 class="name" id=".addSprite"><span class="type-signature">(static) </span>addSprite<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    Returns a specified audio
+    Generate a new sprite object
 </div>
 
 
@@ -151,7 +151,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line55">line 55</a>
+        <a href="Render_facade.js.html">Render/facade.js</a>, <a href="Render_facade.js.html#line28">line 28</a>
     </li></ul></dd>
     
 
@@ -168,19 +168,19 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>game.audio.stop('audio');</code></pre>
+    <pre class="prettyprint"><code>let sprite = game.render.addSprite( loadedImage.url , x, y );</code></pre>
 
 
 
         
             
-<h4 class="name" id=".getSounds"><span class="type-signature">(static) </span>getSounds<span class="type-signature"></span></h4>
+<h4 class="name" id=".addText"><span class="type-signature">(static) </span>addText<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    Returns the sounds container entirely
+    Generate a new text object
 </div>
 
 
@@ -218,7 +218,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line23">line 23</a>
+        <a href="Render_facade.js.html">Render/facade.js</a>, <a href="Render_facade.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -235,19 +235,19 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>let allSounds = game.audio.getSounds();</code></pre>
+    <pre class="prettyprint"><code>let text = game.render.addText( 'A string into the game' , x, y );</code></pre>
 
 
 
         
             
-<h4 class="name" id=".initialize"><span class="type-signature">(static) </span>initialize<span class="type-signature"></span></h4>
+<h4 class="name" id=".getHeight"><span class="type-signature">(static) </span>getHeight<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    Used to configure any initial state required by the implementation
+    Gets the screen height
 </div>
 
 
@@ -285,7 +285,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line16">line 16</a>
+        <a href="Render_facade.js.html">Render/facade.js</a>, <a href="Render_facade.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -298,23 +298,18 @@
 
 
 
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>game.audio.initialize( game );</code></pre>
 
 
 
         
             
-<h4 class="name" id=".pause"><span class="type-signature">(static) </span>pause<span class="type-signature"></span></h4>
+<h4 class="name" id=".getWidth"><span class="type-signature">(static) </span>getWidth<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    Pauses a specified audio
+    Gets the screen width
 </div>
 
 
@@ -352,7 +347,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line39">line 39</a>
+        <a href="Render_facade.js.html">Render/facade.js</a>, <a href="Render_facade.js.html#line61">line 61</a>
     </li></ul></dd>
     
 
@@ -365,23 +360,18 @@
 
 
 
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>game.audio.pause('audio');</code></pre>
 
 
 
         
             
-<h4 class="name" id=".play"><span class="type-signature">(static) </span>play<span class="type-signature"></span></h4>
+<h4 class="name" id=".removeSprite"><span class="type-signature">(static) </span>removeSprite<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    Plays a specified audio
+    Removes a sprite from the stage
 </div>
 
 
@@ -419,7 +409,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line31">line 31</a>
+        <a href="Render_facade.js.html">Render/facade.js</a>, <a href="Render_facade.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -436,19 +426,19 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>game.audio.play('audio');</code></pre>
+    <pre class="prettyprint"><code>game.render.removeSprite( gameSprite );</code></pre>
 
 
 
         
             
-<h4 class="name" id=".stop"><span class="type-signature">(static) </span>stop<span class="type-signature"></span></h4>
+<h4 class="name" id=".removeText"><span class="type-signature">(static) </span>removeText<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    Stops a specified audio
+    Removes a text from the stage
 </div>
 
 
@@ -486,7 +476,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line47">line 47</a>
+        <a href="Render_facade.js.html">Render/facade.js</a>, <a href="Render_facade.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -503,7 +493,74 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>game.audio.stop('audio');</code></pre>
+    <pre class="prettyprint"><code>game.render.removeText( textFromTheGame );</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="~initialize"><span class="type-signature">(inner) </span>initialize<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Used to configure any initial state required by the implementation.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Render_facade.js.html">Render/facade.js</a>, <a href="Render_facade.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.loader.initialize( game );</code></pre>
 
 
 

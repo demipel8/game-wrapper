@@ -1,37 +1,83 @@
-/**
- * Created by demi on 11/22/15.
- */
+
 import base from './interface'
-import pixi from 'pixi.js'
+import pixi from 'pixi.js/bin/pixi'
 
 let stage;
-let renderers = {
+let width;
+let height;
+let defaultWith = 800;
+let defaultHeight = 600;
+let renders = {
   ['Canvas'] : pixi.CanvasRenderer,
   ['webGL'] : pixi.WebGLRenderer
+};
+
+
+function moveTo( obj, x, y ) {
+  obj.position.x = x;
+  obj.position.y = y;
 }
 
-base.initialize = function( game, width = base.width, height = base.height, rendertech = 'webGL' ) {
+function addToStage( obj ) {
 
-  base.width = width;
-  base.height = height;
+  stage.addChild(obj);
+}
 
-  let renderer = new renderers[ rendertech ](width, height);
-  document.body.appendChild(renderer.view);
+/**
+ * Sets an object to a position and adds it to the stage
+ * @private
+ * @param {Object} obj - new object
+ * @param {number} x=0  - x position
+ * @param {number} y=0 - y position
+ * @returns {Object} - the new object
+ */
+function getReady( obj, x = 0, y = 0  ) {
+  moveTo( obj, x, y );
+  addToStage( obj );
 
-  stage = new pixi.Container();
+  return obj;
+}
 
-  game.loop.addRender( renderer.render.bind( renderer, stage) );
-};
+export default Object.assign( {}, base, {
 
-base.addSprite = function( image , x, y) {
-  let sprite = new PIXI.Sprite.fromImage( image );
+  initialize( game, gameWidth = defaultWith, gameHeight = defaultHeight, renderTech = 'webGL' ) {
 
-  sprite.position.x = x;
-  sprite.position.y = y;
+    width = gameWidth;
+    height = gameHeight;
 
-  stage.addChild(sprite);
+    let renderer = new renders[ renderTech ](width, height);
+    document.body.appendChild(renderer.view);
 
-  return sprite;
-};
+    stage = new pixi.Container();
 
-export default base;
+    game.loop.addRender( renderer.render.bind( renderer, stage ) );
+
+  },
+
+  addSprite( image , x, y ) {
+
+    return getReady( new PIXI.Sprite.fromImage( image ), x, y );
+  },
+
+  removeSprite( sprite ) {
+    stage.removeChild( sprite );
+  },
+
+  addText( text, x, y, style ){
+
+    return getReady( new PIXI.Text(text , style ), x, y );
+  },
+
+  removeText( text ){
+    stage.removeChild( text );
+  },
+
+  getWidth() {
+    return width;
+  },
+
+  getHeight() {
+    return height;
+  }
+
+});

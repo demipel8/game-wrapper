@@ -1,6 +1,5 @@
-/**
- * Created by demi on 11/23/15.
- */
+import base from './interface';
+
 export default function( game, image, x, y ) {
 
   let loadedImage = game.loader.getResource( image );

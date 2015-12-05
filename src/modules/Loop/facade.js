@@ -48,7 +48,7 @@ export default {
 
   /**
    * Adds a function callback to the update stage
-   * @param callback {function} - callback function
+   * @param {function} callback - callback function
    * @example
    * game.loop.addUpdate( () => {} );
    */
@@ -56,7 +56,7 @@ export default {
 
   /**
    * Removes a function callback from the update stage
-   * @param callback {function} - callback function
+   * @param {function} callback - callback function
    * @returns {function} - deleted function
    * @example
    * game.loop.removeUpdate( () => {} );
@@ -65,7 +65,7 @@ export default {
 
   /**
    * Adds a function callback to the render stage
-   * @param callback {function} - callback function
+   * @param {function} callback - callback function
    * @example
    * game.loop.addRender( () => {} );
    */
@@ -73,7 +73,7 @@ export default {
 
   /**
    * Removes a function callback from the render stage
-   * @param callback {function} - callback function
+   * @param {function} callback - callback function
    * @returns {function} - deleted function
    * @example
    * game.loop.removeRender( () => {} );
@@ -83,7 +83,7 @@ export default {
 
   /**
    * Adds a function callback to the post render stage
-   * @param callback {function} - callback function
+   * @param {function} callback - callback function
    * @example
    * game.loop.addPostRender( () => {} );
    */
@@ -91,7 +91,7 @@ export default {
 
   /**
    * Removes a function callback from the post render stage
-   * @param callback {function} - callback function
+   * @param {function} callback - callback function
    * @returns {function} - deleted function
    * @example
    * game.loop.removePostRender( () => {} );
@@ -107,7 +107,7 @@ export default {
 
   /**
    * Set Desired FPS
-   * @param FPS {number} - desired value
+   * @param {number} FPS - desired value
    * @example
    * game.loop.setFPS( 30 );
    */

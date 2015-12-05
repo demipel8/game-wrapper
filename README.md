@@ -33,11 +33,12 @@ The wiki contains all the project document.
  - [ ] Input: tests, docs and facade mode
  - [x] Loader: tests, docs and facade mode
  - [x] Loop: tests, docs and facade mode
- - [ ] Render: tests, docs and facade mode
+ - [x] Render: tests, docs and facade mode
  - [ ] Resource: tests, docs and facade mode
  - [ ] Sprite: tests, docs and facade mode
  - [ ] Tween: tests, docs and facade mode
  - [ ] World: tests, docs and facade mode
  - [ ] Physics: tests, docs and facade mode
+ - [x] Audio: tests, docs and facade mode
 
  - Lots of things

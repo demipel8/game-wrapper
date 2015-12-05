@@ -10,11 +10,11 @@ import controller from './implementation'
 export default {
   /**
    * Loads and starts game loop
-   * @param game {object} - game object, injected by GW
-   * @param jsonData {object} - assets the game must load. Can have 3 subobjects: audio, image, json
-   * @param width [number] - game width
-   * @param height [number] - game height
-   * @param renderer [string] - type of render
+   * @param {object} game - game object, injected by GW
+   * @param {object} jsonData - assets the game must load. Can have 3 subobjects: audio, image, json
+   * @param {number} [width=800] - game width
+   * @param {number} [height=600] - game height
+   * @param {string} [renderer] - type of render
    * @returns {*} {Promise<object>} - if all assets are loaded, it returns an instance of the game
    * @example
    * GW({}, {

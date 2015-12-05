@@ -9,46 +9,46 @@ import audio from './implementation';
 export default {
   /**
    * Used to configure any initial state required by the implementation
-   * @param game {Object} - game object
+   * @param {Object} game - game object
    * @example
    * game.audio.initialize( game );
    */
   initialize: audio.initialize,
   /**
    * Returns the sounds container entirely
-   * @returns sounds {Object} - The sounds container
+   * @returns {Object} sounds - The sounds container
    * @example
    * let allSounds = game.audio.getSounds();
    */
   getSounds: audio.getSounds,
   /**
    * Plays a specified audio
-   * @param name {string} - audio id string
-   * @returns sound {Object} - The sounds that is playing
+   * @param  {string} name - audio id string
+   * @returns {Object} sound - The sounds that is playing
    * @example
    * game.audio.play('audio');
    */
   play: audio.play,
   /**
    * Pauses a specified audio
-   * @param name {string} - audio id string
-   * @returns sound {Object} - The sounds that is being Paused
+   * @param {string} name - audio id string
+   * @returns {Object} sound - The sounds that is being Paused
    * @example
    * game.audio.pause('audio');
    */
   pause: audio.pause,
   /**
    * Stops a specified audio
-   * @param name {string} - audio id string
-   * @returns sound {Object} - The sound that has been stopped
+   * @param {string} name - audio id string
+   * @returns {Object} sound - The sound that has been stopped
    * @example
    * game.audio.stop('audio');
    */
   stop: audio.stop,
   /**
    * Returns a specified audio
-   * @param name {string} - audio id string
-   * @returns sound {Object} - The sound
+   * @param {string} name - audio id string
+   * @returns {Object} sound - The sound
    * @example
    * game.audio.stop('audio');
    */

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Loader/facade.js</title>
+    <title>JSDoc: Source: Render/facade.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Loader/facade.js</h1>
+    <h1 class="page-title">Source: Render/facade.js</h1>
 
     
 
@@ -27,60 +27,72 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Loader modules. Loads assets onto the clients browser
- * @module GW.Loader
+ * Render module. Renders the view onto the screen
+ * @module GW.Render
  * @author demipel8 [demipel8@gmail.com]
  */
-import loader from './implementation';
+import render from './implementation'
 
 export default {
 
   /**
    * Used to configure any initial state required by the implementation.
+   * @name initialize
    * @param game - game object
    * @example
    * game.loader.initialize( game );
    */
-  initialize : loader.initialize,
+  initialize: render.initialize,
+
   /**
-   * Starts loading all the elements queued.
-   * @return {Promise} - Resolved when loading has finished
+   * Generate a new sprite object
+   * @param image {string} - image url
+   * @param {number} x - x position
+   * @param {number} y - y position
+   * @returns {Object} the new sprite
    * @example
-   * game.loader.start();
+   * let sprite = game.render.addSprite( loadedImage.url , x, y );
    */
-  start: loader.start,
+  addSprite: render.addSprite,
+
   /**
-   * Adds an image to the queue.
-   * @param {string} name - name of the asset
-   * @param {string} url - path to the asset
+   * Removes a sprite from the stage
+   * @param {Object} sprite - sprite to remove
    * @example
-   * game.loader.image( 'image', 'http://path.to.the.asset' );
+   * game.render.removeSprite( gameSprite );
    */
-  image: loader.image,
+  removeSprite: render.removeSprite,
+
   /**
-   * Adds an audio to the queue.
-   * @param {string} name - name of the asset
-   * @param {string} url - path to the asset
+   * Generate a new text object
+   * @param text {string} - text string
+   * @param {number} x - x position
+   * @param {number} y - y position
+   * @returns {Object} the new text
    * @example
-   * game.loader.audio( 'audio', 'http://path.to.the.asset' );
+   * let text = game.render.addText( 'A string into the game' , x, y );
    */
-  audio: loader.audio,
+  addText: render.addText,
+
   /**
-   * Adds a json file to the queue.
-   * @param {string} name - name of the file
-   * @param {string} url - path to the file
+   * Removes a text from the stage
+   * @param {Object} text - text to remove
    * @example
-   * game.loader.json( 'jsonName', 'http://path.to.the.asset' );
+   * game.render.removeText( textFromTheGame );
    */
-  json: loader.json,
+  removeText: render.removeText,
+
   /**
-   * Return a specific resource.
-   * @param {string} name - name of the resource
-   * @returns {Resource}
-   * @example
-   * let resource = game.loader.getResource( 'audio' );
+   * Gets the screen width
+   * @returns {number} game width
    */
-  getResource: loader.getResource
+  getWidth: render.getWidth,
+
+  /**
+   * Gets the screen height
+   * @returns {number} game height
+   */
+  getHeight: render.getHeight
 }
 </code></pre>
         </article>
