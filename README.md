@@ -35,7 +35,7 @@ The wiki contains all the project document.
  - [x] Loop: tests, docs and facade mode
  - [x] Render: tests, docs and facade mode
  - [x] Resource: tests, docs and facade mode
- - [ ] Sprite: tests, docs and facade mode
+ - [x] Sprite: tests, docs and facade mode
  - [ ] Tween: tests, docs and facade mode
  - [ ] World: tests, docs and facade mode
  - [ ] Physics: tests, docs and facade mode

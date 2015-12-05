@@ -1,3 +1,20 @@
-/**
- * Created by demi on 11/24/15.
- */
+
+const empty = () => {};
+
+export default {
+
+  scale: empty,
+
+  position: empty,
+
+  rotate: empty,
+
+  update: empty,
+
+  destroy: empty,
+
+  x: empty,
+
+  y: empty
+
+}

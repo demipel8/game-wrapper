@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Controller/facade.js</title>
+    <title>JSDoc: Source: Sprite/facade.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Controller/facade.js</h1>
+    <h1 class="page-title">Source: Sprite/facade.js</h1>
 
     
 
@@ -26,33 +26,19 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Controller module. Controls the flow of the game. In this case
- * Initializes all modules, loads the assets and return control
- * to the developer
- * @module GW.Controller
- * @author demipel8 [demipel8@gmail.com]
- */
-import controller from './implementation'
+            <pre class="prettyprint source linenums"><code>import sprite from './implementation'
 
-export default {
-  /**
-   * Loads and starts game loop
-   * @param {object} game - game object, injected by GW
-   * @param {object} jsonData - assets the game must load. Can have 3 subobjects: audio, image, json
-   * @param {number} [width=800] - game width
-   * @param {number} [height=600] - game height
-   * @param {string} [renderer] - type of render
-   * @returns {*} {Promise&lt;object>} - if all assets are loaded, it returns an instance of the game
-   * @example
-   * GW({}, {
- *    image: { 'icon': './assets/icon.png' },
- *    audio: { 'audio': './assets/audio.mp3' },
- *    json: { 'icon': './assets/data.json' }
- * } ).then( function( game ){} );
-   */
-  launch: controller.launch
-}
+/**
+ * Object Factory. Return an added to the world and screen sprite
+ * @module GW.Resource
+ * @param {Object} game - game instance
+ * @param {string} image - image name
+ * @param {number} x - x position
+ * @param {number} y - y position
+ * @author demipel8 [demipel8@gmail.com]
+ * @returns {Object} - Resource
+ */
+export default sprite;
 </code></pre>
         </article>
     </section>
