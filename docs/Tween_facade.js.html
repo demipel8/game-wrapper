@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Sprite/facade.js</title>
+    <title>JSDoc: Source: Tween/facade.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Sprite/facade.js</h1>
+    <h1 class="page-title">Source: Tween/facade.js</h1>
 
     
 
@@ -26,19 +26,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import sprite from './implementation'
-
-/**
- * Object Factory. Return an added to the world and screen sprite
- * @module GW.Resource
- * @param {Object} game - game instance
- * @param {string} image - image name
- * @param {number} x - x position
- * @param {number} y - y position
+            <pre class="prettyprint source linenums"><code>/**
+ * Tween module. Tween for game objects
+ * @module GW.Tween
  * @author demipel8 [demipel8@gmail.com]
- * @returns {Object} - Resource
  */
-export default sprite;
+import tween from './implementation'
+
+export default {
+
+  /**
+   * Used to configure any initial state required by the implementation.
+   * @param game - game object
+   * @example
+   * game.tween.initialize( game );
+   */
+  initialize: tween.initialize,
+
+  /**
+   * Tween Factory.
+   * @param {Object} obj - object to modify by the tween
+   * @example
+   * let obj = { x : 100, y: 0 }
+   * let tweenObject = game.tween.get( obj );
+   */
+  get: tween.get,
+
+  /**
+   * Collection of tween function
+   * @typeof {Object}
+   */
+  easing: tween.easing
+}
 </code></pre>
         </article>
     </section>

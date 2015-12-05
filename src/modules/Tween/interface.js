@@ -1,8 +1,8 @@
-/**
- * Created by demi on 11/29/15.
- */
+
+let empty = () => {};
 
 export default  {
-  initialize: () => {},
-  get: () => {}
+  initialize: empty,
+  get: empty,
+  easing: empty
 }

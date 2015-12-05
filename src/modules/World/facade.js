@@ -11,7 +11,7 @@ export default {
    * Used to configure any initial state required by the implementation.
    * @param game - game object
    * @example
-   * game.loader.initialize( game );
+   * game.world.initialize( game );
    */
   initialize: world.initialize,
   /**

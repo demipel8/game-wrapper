@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: Resource</title>
+    <title>JSDoc: Module: Tween</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: Resource</h1>
+    <h1 class="page-title">Module: Tween</h1>
 
     
 
@@ -34,7 +34,7 @@
     <div class="container-overview">
     
         
-            <div class="description">Object Factory. Parses a set of data into a defined resource object</div>
+            <div class="description">Tween module. Tween for game objects</div>
         
 
         
@@ -76,7 +76,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Resource_facade.js.html">Resource/facade.js</a>, <a href="Resource_facade.js.html#line3">line 3</a>
+        <a href="Tween_facade.js.html">Tween/facade.js</a>, <a href="Tween_facade.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -103,36 +103,23 @@
     
 
     
-
-    
-
-    
-
-    
-</article>
-
-</section>
-
-
-
-
-
-
-
-<section>
-
-<header>
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">Object Factory. Return an added to the world and screen sprite</div>
-        
+        <h3 class="subsection-title">Members</h3>
 
         
+            
+<h4 class="name" id=".easing"><span class="type-signature">(static) </span>easing<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Collection of tween function
+</div>
+
+
+
+
+
 
 
 <dl class="details">
@@ -154,13 +141,6 @@
     
 
     
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>demipel8 [demipel8@gmail.com]</li>
-        </ul>
-    </dd>
-    
 
     
 
@@ -171,7 +151,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Sprite_facade.js.html">Sprite/facade.js</a>, <a href="Sprite_facade.js.html#line3">line 3</a>
+        <a href="Tween_facade.js.html">Tween/facade.js</a>, <a href="Tween_facade.js.html#line31">line 31</a>
     </li></ul></dd>
     
 
@@ -183,9 +163,28 @@
 </dl>
 
 
+
+
+
+
         
-    
-    </div>
+            
+<h4 class="name" id=".get"><span class="type-signature">(static) </span>get<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Tween Factory.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
 
     
 
@@ -193,10 +192,117 @@
 
     
 
-     
+    
 
     
 
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Tween_facade.js.html">Tween/facade.js</a>, <a href="Tween_facade.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>let obj = { x : 100, y: 0 }
+let tweenObject = game.tween.get( obj );</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".initialize"><span class="type-signature">(static) </span>initialize<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Used to configure any initial state required by the implementation.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Tween_facade.js.html">Tween/facade.js</a>, <a href="Tween_facade.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>game.tween.initialize( game );</code></pre>
+
+
+
+        
     
 
     

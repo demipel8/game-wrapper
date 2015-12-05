@@ -71,7 +71,7 @@
 
 	var _GW2 = _interopRequireDefault(_GW);
 
-	__webpack_require__(353);exports['default'] = _GW2['default'];
+	__webpack_require__(361);exports['default'] = _GW2['default'];
 	module.exports = exports['default'];
 
 /***/ },
@@ -5347,54 +5347,54 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _modulesLoaderImplementation = __webpack_require__(195);
+	var _modulesLoaderFacade = __webpack_require__(195);
 
-	var _modulesLoaderImplementation2 = _interopRequireDefault(_modulesLoaderImplementation);
+	var _modulesLoaderFacade2 = _interopRequireDefault(_modulesLoaderFacade);
 
-	var _modulesLoopImplementation = __webpack_require__(212);
+	var _modulesLoopFacade = __webpack_require__(213);
 
-	var _modulesLoopImplementation2 = _interopRequireDefault(_modulesLoopImplementation);
+	var _modulesLoopFacade2 = _interopRequireDefault(_modulesLoopFacade);
 
-	var _modulesControllerImplementation = __webpack_require__(215);
+	var _modulesControllerFacade = __webpack_require__(217);
 
-	var _modulesControllerImplementation2 = _interopRequireDefault(_modulesControllerImplementation);
+	var _modulesControllerFacade2 = _interopRequireDefault(_modulesControllerFacade);
 
-	var _modulesRenderImplementation = __webpack_require__(217);
+	var _modulesRenderFacade = __webpack_require__(220);
 
-	var _modulesRenderImplementation2 = _interopRequireDefault(_modulesRenderImplementation);
+	var _modulesRenderFacade2 = _interopRequireDefault(_modulesRenderFacade);
 
-	var _modulesSpriteImplementation = __webpack_require__(336);
+	var _modulesSpriteFacade = __webpack_require__(340);
 
-	var _modulesSpriteImplementation2 = _interopRequireDefault(_modulesSpriteImplementation);
+	var _modulesSpriteFacade2 = _interopRequireDefault(_modulesSpriteFacade);
 
-	var _modulesResourceImplementation = __webpack_require__(337);
+	var _modulesResourceFacade = __webpack_require__(343);
 
-	var _modulesResourceImplementation2 = _interopRequireDefault(_modulesResourceImplementation);
+	var _modulesResourceFacade2 = _interopRequireDefault(_modulesResourceFacade);
 
-	var _modulesWorldImplementation = __webpack_require__(339);
+	var _modulesWorldFacade = __webpack_require__(346);
 
-	var _modulesWorldImplementation2 = _interopRequireDefault(_modulesWorldImplementation);
+	var _modulesWorldFacade2 = _interopRequireDefault(_modulesWorldFacade);
 
-	var _modulesInputFacade = __webpack_require__(341);
+	var _modulesInputFacade = __webpack_require__(349);
 
 	var _modulesInputFacade2 = _interopRequireDefault(_modulesInputFacade);
 
-	var _modulesTweenFacade = __webpack_require__(345);
+	var _modulesTweenFacade = __webpack_require__(353);
 
 	var _modulesTweenFacade2 = _interopRequireDefault(_modulesTweenFacade);
 
-	var _modulesAudioFacade = __webpack_require__(349);
+	var _modulesAudioFacade = __webpack_require__(357);
 
 	var _modulesAudioFacade2 = _interopRequireDefault(_modulesAudioFacade);
 
 	exports['default'] = {
-	  loader: _modulesLoaderImplementation2['default'],
-	  loop: _modulesLoopImplementation2['default'],
-	  controller: _modulesControllerImplementation2['default'],
-	  render: _modulesRenderImplementation2['default'],
-	  sprite: _modulesSpriteImplementation2['default'],
-	  resource: _modulesResourceImplementation2['default'],
-	  world: _modulesWorldImplementation2['default'],
+	  loader: _modulesLoaderFacade2['default'],
+	  loop: _modulesLoopFacade2['default'],
+	  controller: _modulesControllerFacade2['default'],
+	  render: _modulesRenderFacade2['default'],
+	  sprite: _modulesSpriteFacade2['default'],
+	  resource: _modulesResourceFacade2['default'],
+	  world: _modulesWorldFacade2['default'],
 	  input: _modulesInputFacade2['default'],
 	  tween: _modulesTweenFacade2['default'],
 	  audio: _modulesAudioFacade2['default']
@@ -5403,6 +5403,78 @@
 
 /***/ },
 /* 195 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Loader modules. Loads assets onto the clients browser
+	 * @module GW.Loader
+	 * @author demipel8 [demipel8@gmail.com]
+	 */
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _implementation = __webpack_require__(196);
+
+	var _implementation2 = _interopRequireDefault(_implementation);
+
+	exports['default'] = {
+
+	  /**
+	   * Used to configure any initial state required by the implementation.
+	   * @param game - game object
+	   * @example
+	   * game.loader.initialize( game );
+	   */
+	  initialize: _implementation2['default'].initialize,
+	  /**
+	   * Starts loading all the elements queued.
+	   * @return {Promise} - Resolved when loading has finished
+	   * @example
+	   * game.loader.start();
+	   */
+	  start: _implementation2['default'].start,
+	  /**
+	   * Adds an image to the queue.
+	   * @param {string} name - name of the asset
+	   * @param {string} url - path to the asset
+	   * @example
+	   * game.loader.image( 'image', 'http://path.to.the.asset' );
+	   */
+	  image: _implementation2['default'].image,
+	  /**
+	   * Adds an audio to the queue.
+	   * @param {string} name - name of the asset
+	   * @param {string} url - path to the asset
+	   * @example
+	   * game.loader.audio( 'audio', 'http://path.to.the.asset' );
+	   */
+	  audio: _implementation2['default'].audio,
+	  /**
+	   * Adds a json file to the queue.
+	   * @param {string} name - name of the file
+	   * @param {string} url - path to the file
+	   * @example
+	   * game.loader.json( 'jsonName', 'http://path.to.the.asset' );
+	   */
+	  json: _implementation2['default'].json,
+	  /**
+	   * Return a specific resource.
+	   * @param {string} name - name of the resource
+	   * @returns {Resource}
+	   * @example
+	   * let resource = game.loader.getResource( 'audio' );
+	   */
+	  getResource: _implementation2['default'].getResource
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -5416,135 +5488,102 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interface = __webpack_require__(196);
+	var _interface = __webpack_require__(197);
 
 	var _interface2 = _interopRequireDefault(_interface);
 
-	var _resourceLoaderSrcIndex = __webpack_require__(197);
+	var _resourceLoaderSrcIndex = __webpack_require__(198);
 
 	var _resourceLoaderSrcIndex2 = _interopRequireDefault(_resourceLoaderSrcIndex);
 
-	var loader = {};
 	var loadedResources = {};
-	var gameRef = undefined;
-
-	function initialize(game) {
-	  //TODO ¿Inject game reference?
-	  gameRef = game;
-	  loader = new _resourceLoaderSrcIndex2['default']();
-	  return _interface2['default'];
-	}
-
-	function start() {
-	  return new Promise(function (resolve, reject) {
-	    loader.load(function (loader, resources) {
-	      loadedResources = Object.assign(loadedResources, resources);
-	    });
-
-	    loader.on('complete', resolve);
-	    loader.on('error', reject);
-	  });
-	}
+	var loader = undefined;
+	var game = undefined;
 
 	function genericLoad(name, url) {
 	  loader.add(name, url);
 	}
 
-	function getResource(name) {
-	  return gameRef.resource(loadedResources[name]);
-	}
+	exports['default'] = Object.assign({}, _interface2['default'], {
 
-	_interface2['default'].initialize = initialize;
-	_interface2['default'].start = start;
-	_interface2['default'].image = genericLoad;
-	_interface2['default'].audio = genericLoad;
-	_interface2['default'].json = genericLoad;
-	_interface2['default'].getResource = getResource;
+	  image: genericLoad,
 
-	exports['default'] = _interface2['default'];
+	  audio: genericLoad,
+
+	  json: genericLoad,
+
+	  initialize: function initialize(gameInstance) {
+	    //TODO ¿Inject game reference?
+	    game = gameInstance;
+	    loader = new _resourceLoaderSrcIndex2['default']();
+	    return this;
+	  },
+
+	  start: function start() {
+	    return new Promise(function (resolve, reject) {
+	      loader.load(function (loader, resources) {
+	        loadedResources = Object.assign(loadedResources, resources);
+	      });
+
+	      loader.on('complete', resolve);
+	      loader.on('error', reject);
+	    });
+	  },
+
+	  getResource: function getResource(name) {
+	    return game.resource(loadedResources[name]);
+	  }
+	});
 	module.exports = exports['default'];
 
 /***/ },
-/* 196 */
+/* 197 */
 /***/ function(module, exports) {
-
-	/**
-	 * Loader modules. Loads assets onto the clients browser
-	 * @module GW.Loader
-	 * @author demipel8 [demipel8@gmail.com]
-	 */
 
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var empty = function empty() {};
+
 	exports["default"] = {
-	  /**
-	   * Used to configure any initial state required by the implementation
-	   * @param game - game object
-	   */
-	  initialize: function initialize(game) {},
-	  /**
-	   * Starts loading all the elements queued
-	   * @return {Promise} - Resolved when loading has finished
-	   */
-	  start: function start() {
-	    return new Promise();
-	  },
-	  /**
-	   * Adds an image to the queue
-	   * @param name {string} - name of the asset
-	   * @param url {string} - path to the asset
-	   */
-	  image: function image(name, url) {},
-	  /**
-	   * Adds an audio to the queue
-	   * @param name {string} - name of the asset
-	   * @param url {string} - path to the asset
-	   */
-	  audio: function audio(name, url) {},
-	  /**
-	   * Adds a json file to the queue
-	   * @param name {string} - name of the file
-	   * @param url {string} - path to the file
-	   */
-	  json: function json(name, url) {},
-	  /**
-	   *
-	   * @param name {string} - name of the resource
-	   * @return {Resource}
-	   */
-	  getResource: function getResource(name) {}
+	  initialize: empty,
+	  start: empty,
+	  image: empty,
+	  audio: empty,
+	  json: empty,
+	  getResource: empty
 	};
 	module.exports = exports["default"];
-
-/***/ },
-/* 197 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(198);
-
-	module.exports.Resource = __webpack_require__(207);
-
-	module.exports.middleware = {
-	    caching: {
-	        memory: __webpack_require__(209)
-	    },
-	    parsing: {
-	        blob: __webpack_require__(210)
-	    }
-	};
-
 
 /***/ },
 /* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var async       = __webpack_require__(199),
-	    urlParser   = __webpack_require__(201),
-	    Resource    = __webpack_require__(207),
-	    EventEmitter = __webpack_require__(208);
+	module.exports = __webpack_require__(199);
+
+	module.exports.Resource = __webpack_require__(208);
+
+	module.exports.middleware = {
+	    caching: {
+	        memory: __webpack_require__(210)
+	    },
+	    parsing: {
+	        blob: __webpack_require__(211)
+	    }
+	};
+
+
+/***/ },
+/* 199 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var async       = __webpack_require__(200),
+	    urlParser   = __webpack_require__(202),
+	    Resource    = __webpack_require__(208),
+	    EventEmitter = __webpack_require__(209);
 
 	/**
 	 * Manages the state and loading of multiple resources to load.
@@ -6000,7 +6039,7 @@
 
 
 /***/ },
-/* 199 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, setImmediate) {/*!
@@ -7127,10 +7166,10 @@
 
 	}());
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(192), __webpack_require__(200).setImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(192), __webpack_require__(201).setImmediate))
 
 /***/ },
-/* 200 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(192).nextTick;
@@ -7209,10 +7248,10 @@
 	exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
 	  delete immediateIds[id];
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(200).setImmediate, __webpack_require__(200).clearImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(201).setImmediate, __webpack_require__(201).clearImmediate))
 
 /***/ },
-/* 201 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -7236,7 +7275,7 @@
 	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 	// USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-	var punycode = __webpack_require__(202);
+	var punycode = __webpack_require__(203);
 
 	exports.parse = urlParse;
 	exports.resolve = urlResolve;
@@ -7308,7 +7347,7 @@
 	      'gopher:': true,
 	      'file:': true
 	    },
-	    querystring = __webpack_require__(204);
+	    querystring = __webpack_require__(205);
 
 	function urlParse(url, parseQueryString, slashesDenoteHost) {
 	  if (url && isObject(url) && url instanceof Url) return url;
@@ -7925,7 +7964,7 @@
 
 
 /***/ },
-/* 202 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/*! https://mths.be/punycode v1.3.2 by @mathias */
@@ -8457,10 +8496,10 @@
 
 	}(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(203)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(204)(module), (function() { return this; }())))
 
 /***/ },
-/* 203 */
+/* 204 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -8476,17 +8515,17 @@
 
 
 /***/ },
-/* 204 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	exports.decode = exports.parse = __webpack_require__(205);
-	exports.encode = exports.stringify = __webpack_require__(206);
+	exports.decode = exports.parse = __webpack_require__(206);
+	exports.encode = exports.stringify = __webpack_require__(207);
 
 
 /***/ },
-/* 205 */
+/* 206 */
 /***/ function(module, exports) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -8572,7 +8611,7 @@
 
 
 /***/ },
-/* 206 */
+/* 207 */
 /***/ function(module, exports) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -8642,11 +8681,11 @@
 
 
 /***/ },
-/* 207 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var EventEmitter = __webpack_require__(208),
-	    _url = __webpack_require__(201),
+	var EventEmitter = __webpack_require__(209),
+	    _url = __webpack_require__(202),
 	    // tests is CORS is supported in XHR, if not we need to use XDR
 	    useXdr = !!(window.XDomainRequest && !('withCredentials' in (new XMLHttpRequest()))),
 	    tempAnchor = null;
@@ -9440,7 +9479,7 @@
 
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9708,7 +9747,7 @@
 
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports) {
 
 	// a simple in-memory cache for resources
@@ -9734,11 +9773,11 @@
 
 
 /***/ },
-/* 210 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Resource = __webpack_require__(207),
-	    b64 = __webpack_require__(211);
+	var Resource = __webpack_require__(208),
+	    b64 = __webpack_require__(212);
 
 	window.URL = window.URL || window.webkitURL;
 
@@ -9798,7 +9837,7 @@
 
 
 /***/ },
-/* 211 */
+/* 212 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -9868,7 +9907,139 @@
 
 
 /***/ },
-/* 212 */
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Loop module. Main loop of the game
+	 * @module GW.Loop
+	 * @author demipel8 [demipel8@gmail.com]
+	 */
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _implementation = __webpack_require__(214);
+
+	var _implementation2 = _interopRequireDefault(_implementation);
+
+	exports['default'] = {
+
+	  /**
+	   * Used to configure any initial state required by the implementation.
+	   * @param game - game object
+	   * @example
+	   * game.loader.initialize( game );
+	   */
+	  initialize: _implementation2['default'].initialize,
+
+	  /**
+	   * Get the loop running
+	   * @example
+	   * game.loop.start();
+	   */
+	  start: _implementation2['default'].start,
+
+	  /**
+	   * Stops the loop
+	   * @example
+	   * game.loop.stop();
+	   */
+	  stop: _implementation2['default'].stop,
+
+	  /**
+	   * Adds a function callback to the process stage
+	   * @param callback {function} - callback function
+	   * @example
+	   * game.loop.addProcess( () => {} );
+	   */
+	  addProcess: _implementation2['default'].addProcess,
+
+	  /**
+	   * Removes a function callback from the process stage
+	   * @param callback {function} - callback function
+	   * @returns {function} - deleted function
+	   * @example
+	   * game.loop.removeProcess( () => {} );
+	   */
+	  removeProcess: _implementation2['default'].removeProcess,
+
+	  /**
+	   * Adds a function callback to the update stage
+	   * @param {function} callback - callback function
+	   * @example
+	   * game.loop.addUpdate( () => {} );
+	   */
+	  addUpdate: _implementation2['default'].addUpdate,
+
+	  /**
+	   * Removes a function callback from the update stage
+	   * @param {function} callback - callback function
+	   * @returns {function} - deleted function
+	   * @example
+	   * game.loop.removeUpdate( () => {} );
+	   */
+	  removeUpdate: _implementation2['default'].removeUpdate,
+
+	  /**
+	   * Adds a function callback to the render stage
+	   * @param {function} callback - callback function
+	   * @example
+	   * game.loop.addRender( () => {} );
+	   */
+	  addRender: _implementation2['default'].addRender,
+
+	  /**
+	   * Removes a function callback from the render stage
+	   * @param {function} callback - callback function
+	   * @returns {function} - deleted function
+	   * @example
+	   * game.loop.removeRender( () => {} );
+	   */
+
+	  removeRender: _implementation2['default'].removeRender,
+
+	  /**
+	   * Adds a function callback to the post render stage
+	   * @param {function} callback - callback function
+	   * @example
+	   * game.loop.addPostRender( () => {} );
+	   */
+	  addPostRender: _implementation2['default'].addPostRender,
+
+	  /**
+	   * Removes a function callback from the post render stage
+	   * @param {function} callback - callback function
+	   * @returns {function} - deleted function
+	   * @example
+	   * game.loop.removePostRender( () => {} );
+	   */
+	  removePostRender: _implementation2['default'].removePostRender,
+
+	  /**
+	   * Get the number of FPS the game is running at
+	   * @example
+	   * let actualFPS = game.loop.getFPS();
+	   */
+	  getFPS: _implementation2['default'].getFPS,
+
+	  /**
+	   * Set Desired FPS
+	   * @param {number} FPS - desired value
+	   * @example
+	   * game.loop.setFPS( 30 );
+	   */
+	  setFPS: _implementation2['default'].setFPS
+
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -9882,13 +10053,46 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interface = __webpack_require__(213);
+	var _interface = __webpack_require__(215);
 
 	var _interface2 = _interopRequireDefault(_interface);
 
-	var _mainloopJsBuildMainloopMin = __webpack_require__(214);
+	var _mainloopJsBuildMainloopMin = __webpack_require__(216);
 
 	var _mainloopJsBuildMainloopMin2 = _interopRequireDefault(_mainloopJsBuildMainloopMin);
+
+	var FPS = 60;
+	var buckets = {
+	  process: [],
+	  update: [],
+	  render: [],
+	  postRender: []
+	};
+
+	/**
+	 * Adds a function to one of the different stages of the loop
+	 * @param bucket {Array} - Stage of the loop
+	 * @param func {function} - function to add to the arrays
+	 */
+	function add(bucket, func) {
+	  bucket.push(func);
+	}
+
+	/**
+	 * Removes a function from one of the different stages of the loop
+	 * @param bucket {Array} - Stage of the loop
+	 * @param func {function} - function to remove from the arrays
+	 * @returns {function} - deleted function
+	 */
+	function remove(bucket, func) {
+	  var index = bucket.indexOf(func);
+
+	  if (! ~index) {
+	    throw new Error('function is not part of this bucket');
+	  }
+
+	  return bucket.splice(index, 1)[0];
+	}
 
 	function executeAll(bucket, delta) {
 	  bucket.forEach(function (func) {
@@ -9896,129 +10100,87 @@
 	  });
 	}
 
-	_interface2['default'].setFPS = function (fps) {
+	var process = executeAll.bind(null, buckets.process);
+	var update = executeAll.bind(null, buckets.update);
+	var render = executeAll.bind(null, buckets.render);
+	var postRender = executeAll.bind(null, buckets.postRender);
+
+	function setFPS(fps) {
 	  _mainloopJsBuildMainloopMin2['default'].setMaxAllowedFPS(fps);
-	};
+	}
 
-	_interface2['default'].getFPS = function () {
-	  return Math.round(_mainloopJsBuildMainloopMin2['default'].getMaxAllowedFPS());
-	};
+	exports['default'] = Object.assign({}, _interface2['default'], {
 
-	_interface2['default']._setProcess(executeAll);
-	_interface2['default']._setUpdate(executeAll);
-	_interface2['default']._setRender(executeAll);
-	_interface2['default']._setPostRender(executeAll);
+	  addProcess: add.bind(null, buckets.process),
 
-	_interface2['default'].start = function () {
-	  _mainloopJsBuildMainloopMin2['default'].setBegin(_interface2['default'].process).setUpdate(_interface2['default'].update).setDraw(_interface2['default'].render).setEnd(_interface2['default'].postRender).start();
-	};
+	  addUpdate: add.bind(null, buckets.update),
 
-	_interface2['default'].setFPS(_interface2['default'].FPS);
+	  addRender: add.bind(null, buckets.render),
 
-	exports['default'] = _interface2['default'];
+	  addPostRender: add.bind(null, buckets.postRender),
+
+	  removeProcess: remove.bind(null, buckets.process),
+
+	  removeUpdate: remove.bind(null, buckets.update),
+
+	  removeRender: remove.bind(null, buckets.render),
+
+	  removePostRender: remove.bind(null, buckets.postRender),
+
+	  setFPS: setFPS,
+
+	  initialize: function initialize() {
+	    setFPS(FPS);
+	  },
+
+	  start: function start() {
+	    _mainloopJsBuildMainloopMin2['default'].setBegin(process).setUpdate(update).setDraw(render).setEnd(postRender).start();
+	  },
+
+	  stop: function stop() {
+	    if (_mainloopJsBuildMainloopMin2['default'].isRunning()) {
+	      _mainloopJsBuildMainloopMin2['default'].stop();
+	    }
+	  },
+
+	  getFPS: function getFPS() {
+	    return Math.round(_mainloopJsBuildMainloopMin2['default'].getMaxAllowedFPS());
+	  }
+
+	});
 	module.exports = exports['default'];
 
 /***/ },
-/* 213 */
+/* 215 */
 /***/ function(module, exports) {
 
 	/**
 	 * Created by demi on 11/21/15.
 	 */
 
-	'use strict';
+	"use strict";
 
-	Object.defineProperty(exports, '__esModule', {
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	var empty = function empty() {};
-	var loop = {};
-	var buckets = {
-	  process: [],
-	  update: [],
-	  render: [],
-	  postRender: []
-	};
-	/**
-	 * Adds a function to one of the different stages of the loop
-	 * @param stage {string} - Stage of the loop
-	 * @param func {function} - function to add to the arrays
-	 */
-	function add(stage, func) {
-	  buckets[stage].push(func);
-	}
 
-	/**
-	 * Removes a function from one of the different stages of the loop
-	 * @param stage {string} - Stage of the loop
-	 * @param func {function} - function to remove from the arrays
-	 */
-	function remove(stage, func) {
-	  var index = buckets[stage].indexOf(func);
+	exports["default"] = {
 
-	  if (! ~index) {
-	    throw new Error('function is not part of ' + stage);
-	  }
-
-	  buckets[stage].splice(index, 1);
-	}
-
-	/**
-	 * Injects the asked bucket on to a callback function
-	 * @param stage { string } - bucket identifier
-	 * @param callback { function } - callback function
-	 * @private
-	 *
-	 */
-	function _callbackWithBucket(stage, callback) {
-	  loop[stage] = callback.bind(null, buckets[stage]);
-	}
-
-	for (var stage in buckets) {
-	  var capitalizeFistLetter = stage.charAt(0).toUpperCase() + stage.slice(1);
-	  loop['add' + capitalizeFistLetter] = add.bind(null, stage);
-	  loop['remove' + capitalizeFistLetter] = remove.bind(null, stage);
-	  loop['_set' + capitalizeFistLetter] = _callbackWithBucket.bind(null, stage);
-	}
-
-	exports['default'] = Object.assign(loop, {
-	  /**
-	   * used to start the loop
-	   */
+	  initialize: empty,
 	  start: empty,
-	  /**
-	   * executed before the update method to perform activities such as user input
-	   */
+	  stop: empty,
 	  process: empty,
-	  /**
-	   * Updates state of the objects
-	   */
-	  update: _callbackWithBucket.bind(null, buckets.update),
-	  /**
-	   * render function
-	   */
-	  render: _callbackWithBucket.bind(null, buckets.render),
-	  /**
-	   * Executes after rendering function to polish results
-	   */
-	  postRender: _callbackWithBucket.bind(null, buckets.postRender),
-	  /**
-	   * get the number of FPS the game is running at
-	   */
+	  update: empty,
+	  render: empty,
+	  postRender: empty,
 	  getFPS: empty,
-	  /**
-	   * Set Desired FPS
-	   */
-	  setFPS: empty,
-	  /**
-	   * Default FPS
-	   */
-	  FPS: 60
-	});
-	module.exports = exports['default'];
+	  setFPS: empty
+	};
+	module.exports = exports["default"];
 
 /***/ },
-/* 214 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -10032,7 +10194,50 @@
 	//# sourceMappingURL=mainloop.min.js.map
 
 /***/ },
-/* 215 */
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Controller module. Controls the flow of the game. In this case
+	 * Initializes all modules, loads the assets and return control
+	 * to the developer
+	 * @module GW.Controller
+	 * @author demipel8 [demipel8@gmail.com]
+	 */
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _implementation = __webpack_require__(218);
+
+	var _implementation2 = _interopRequireDefault(_implementation);
+
+	exports['default'] = {
+	  /**
+	   * Loads and starts game loop
+	   * @param {object} game - game object, injected by GW
+	   * @param {object} jsonData - assets the game must load. Can have 3 subobjects: audio, image, json
+	   * @param {number} [width=800] - game width
+	   * @param {number} [height=600] - game height
+	   * @param {string} [renderer] - type of render
+	   * @returns {*} {Promise<object>} - if all assets are loaded, it returns an instance of the game
+	   * @example
+	   * GW({}, {
+	  *    image: { 'icon': './assets/icon.png' },
+	  *    audio: { 'audio': './assets/audio.mp3' },
+	  *    json: { 'icon': './assets/data.json' }
+	  * } ).then( function( game ){} );
+	   */
+	  launch: _implementation2['default'].launch
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -10048,71 +10253,61 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interface = __webpack_require__(216);
+	var _interface = __webpack_require__(219);
 
 	var _interface2 = _interopRequireDefault(_interface);
 
+	var types = ['image', 'audio', 'json']; //TODO Loader should have the types
+
 	/**
-	 * Loads and starts game loop
-	 * @param jsonData {object} - assets the game must load. Can have 3 subobjects: audio, image, json
-	 * @param game {object} - game object, injected by GW
-	 * @param width [number] - Game width
-	 * @param height [number] - Game height
-	 * @param renderer [string]
-	 * @returns {*} {Promise<object>} - if all assets are loaded, it returns an instance of the game
-	 * @example
-	 * GW({}, {
-	 *    image: { 'icon': './assets/icon.png' },
-	 *    audio: { 'audio': './assets/audio.mp3' },
-	 *    json: { 'icon': './assets/data.json' }
-	 * } ).then( function( game ){} );
+	 * Adds every element of one type to the loader queue
+	 * @private
+	 * @param {Object} assets - object containing all assets
+	 * @param {string} type - type name
 	 */
-	_interface2['default'].launch = function (game, _ref) {
-	  var _ref2 = _slicedToArray(_ref, 4);
+	function loadType(assets, type) {
 
-	  var jsonData = _ref2[0];
-	  var width = _ref2[1];
-	  var height = _ref2[2];
-	  var renderer = _ref2[3];
+	  if (assets[type]) {
 
-	  var types = ['image', 'audio', 'json'];
+	    var keys = Object.keys(jsonData[type]);
 
-	  //Initialize modules
-	  game.render.initialize(game, width, height, renderer);
-
-	  Object.keys(game).forEach(function (module) {
-	    if (module !== 'render' && game[module].initialize) {
-	      game[module].initialize(game);
-	    }
-	  });
-
-	  /**
-	   * Adds every element of one type to the loader queue
-	   * @param type {string} - type name
-	     */
-	  function loadType(type) {
-	    if (jsonData[type]) {
-	      var keys = Object.keys(jsonData[type]);
-
-	      keys.forEach(function (element) {
-	        game.loader[type](element, jsonData[type][element]);
-	      });
-	    }
+	    keys.forEach(function (element) {
+	      game.loader[type](element, assets[type][element]);
+	    });
 	  }
+	}
 
-	  types.forEach(loadType);
+	exports['default'] = Object.assign({}, _interface2['default'], {
 
-	  return game.loader.start().then(function () {
-	    game.loop.start();
-	    return game;
-	  });
-	};
+	  launch: function launch(game, _ref) {
+	    var _ref2 = _slicedToArray(_ref, 4);
 
-	exports['default'] = _interface2['default'];
+	    var jsonData = _ref2[0];
+	    var width = _ref2[1];
+	    var height = _ref2[2];
+	    var renderer = _ref2[3];
+
+	    //Initialize modules
+	    game.render.initialize(game, width, height, renderer);
+
+	    Object.keys(game).forEach(function (module) {
+	      if (module !== 'render' && game[module].initialize) {
+	        game[module].initialize(game);
+	      }
+	    });
+
+	    types.forEach(loadType.bind(null, jsonData));
+
+	    return game.loader.start().then(function () {
+	      game.loop.start();
+	      return game;
+	    });
+	  }
+	});
 	module.exports = exports['default'];
 
 /***/ },
-/* 216 */
+/* 219 */
 /***/ function(module, exports) {
 
 	/**
@@ -10127,16 +10322,18 @@
 	var empty = function empty() {};
 
 	exports["default"] = {
-	  launch: function launch(game) {}
+	  launch: empty
 	};
 	module.exports = exports["default"];
 
 /***/ },
-/* 217 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	 * Created by demi on 11/22/15.
+	 * Render module. Renders the view onto the screen
+	 * @module GW.Render
+	 * @author demipel8 [demipel8@gmail.com]
 	 */
 	'use strict';
 
@@ -10144,60 +10341,184 @@
 	  value: true
 	});
 
-	var _renderers;
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _implementation = __webpack_require__(221);
+
+	var _implementation2 = _interopRequireDefault(_implementation);
+
+	exports['default'] = {
+
+	  /**
+	   * Used to configure any initial state required by the implementation.
+	   * @param game - game object
+	   * @example
+	   * game.loader.initialize( game );
+	   */
+	  initialize: _implementation2['default'].initialize,
+
+	  /**
+	   * Generate a new sprite object
+	   * @param image {string} - image url
+	   * @param {number} x - x position
+	   * @param {number} y - y position
+	   * @returns {Object} the new sprite
+	   * @example
+	   * let sprite = game.render.addSprite( loadedImage.url , x, y );
+	   */
+	  addSprite: _implementation2['default'].addSprite,
+
+	  /**
+	   * Removes a sprite from the stage
+	   * @param {Object} sprite - sprite to remove
+	   * @example
+	   * game.render.removeSprite( gameSprite );
+	   */
+	  removeSprite: _implementation2['default'].removeSprite,
+
+	  /**
+	   * Generate a new text object
+	   * @param text {string} - text string
+	   * @param {number} x - x position
+	   * @param {number} y - y position
+	   * @returns {Object} the new text
+	   * @example
+	   * let text = game.render.addText( 'A string into the game' , x, y );
+	   */
+	  addText: _implementation2['default'].addText,
+
+	  /**
+	   * Removes a text from the stage
+	   * @param {Object} text - text to remove
+	   * @example
+	   * game.render.removeText( textFromTheGame );
+	   */
+	  removeText: _implementation2['default'].removeText,
+
+	  /**
+	   * Gets the screen width
+	   * @returns {number} game width
+	   */
+	  getWidth: _implementation2['default'].getWidth,
+
+	  /**
+	   * Gets the screen height
+	   * @returns {number} game height
+	   */
+	  getHeight: _implementation2['default'].getHeight
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _renders;
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-	var _interface = __webpack_require__(218);
+	var _interface = __webpack_require__(222);
 
 	var _interface2 = _interopRequireDefault(_interface);
 
-	var _pixiJs = __webpack_require__(219);
+	var _pixiJs = __webpack_require__(223);
 
 	var _pixiJs2 = _interopRequireDefault(_pixiJs);
 
 	var stage = undefined;
-	var renderers = (_renderers = {}, _defineProperty(_renderers, 'Canvas', _pixiJs2['default'].CanvasRenderer), _defineProperty(_renderers, 'webGL', _pixiJs2['default'].WebGLRenderer), _renderers);
+	var width = undefined;
+	var height = undefined;
+	var defaultWith = 800;
+	var defaultHeight = 600;
+	var renders = (_renders = {}, _defineProperty(_renders, 'Canvas', _pixiJs2['default'].CanvasRenderer), _defineProperty(_renders, 'webGL', _pixiJs2['default'].WebGLRenderer), _renders);
 
-	_interface2['default'].initialize = function (game) {
-	  var width = arguments.length <= 1 || arguments[1] === undefined ? _interface2['default'].width : arguments[1];
-	  var height = arguments.length <= 2 || arguments[2] === undefined ? _interface2['default'].height : arguments[2];
-	  var rendertech = arguments.length <= 3 || arguments[3] === undefined ? 'webGL' : arguments[3];
+	function moveTo(obj, x, y) {
+	  obj.position.x = x;
+	  obj.position.y = y;
+	}
 
-	  _interface2['default'].width = width;
-	  _interface2['default'].height = height;
+	function addToStage(obj) {
 
-	  var renderer = new renderers[rendertech](width, height);
-	  document.body.appendChild(renderer.view);
+	  stage.addChild(obj);
+	}
 
-	  stage = new _pixiJs2['default'].Container();
+	/**
+	 * Sets an object to a position and adds it to the stage
+	 * @private
+	 * @param {Object} obj - new object
+	 * @param {number} x=0  - x position
+	 * @param {number} y=0 - y position
+	 * @returns {Object} - the new object
+	 */
+	function getReady(obj) {
+	  var x = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
+	  var y = arguments.length <= 2 || arguments[2] === undefined ? 0 : arguments[2];
 
-	  game.loop.addRender(renderer.render.bind(renderer, stage));
-	};
+	  moveTo(obj, x, y);
+	  addToStage(obj);
 
-	_interface2['default'].addSprite = function (image, x, y) {
-	  var sprite = new PIXI.Sprite.fromImage(image);
+	  return obj;
+	}
 
-	  sprite.position.x = x;
-	  sprite.position.y = y;
+	exports['default'] = Object.assign({}, _interface2['default'], {
 
-	  stage.addChild(sprite);
+	  initialize: function initialize(game) {
+	    var gameWidth = arguments.length <= 1 || arguments[1] === undefined ? defaultWith : arguments[1];
+	    var gameHeight = arguments.length <= 2 || arguments[2] === undefined ? defaultHeight : arguments[2];
+	    var renderTech = arguments.length <= 3 || arguments[3] === undefined ? 'webGL' : arguments[3];
 
-	  return sprite;
-	};
+	    width = gameWidth;
+	    height = gameHeight;
 
-	exports['default'] = _interface2['default'];
+	    var renderer = new renders[renderTech](width, height);
+	    document.body.appendChild(renderer.view);
+
+	    stage = new _pixiJs2['default'].Container();
+
+	    game.loop.addRender(renderer.render.bind(renderer, stage));
+	  },
+
+	  addSprite: function addSprite(image, x, y) {
+
+	    return getReady(new PIXI.Sprite.fromImage(image), x, y);
+	  },
+
+	  removeSprite: function removeSprite(sprite) {
+	    stage.removeChild(sprite);
+	  },
+
+	  addText: function addText(text, x, y, style) {
+
+	    return getReady(new PIXI.Text(text, style), x, y);
+	  },
+
+	  removeText: function removeText(text) {
+	    stage.removeChild(text);
+	  },
+
+	  getWidth: function getWidth() {
+	    return width;
+	  },
+
+	  getHeight: function getHeight() {
+	    return height;
+	  }
+
+	});
 	module.exports = exports['default'];
 
 /***/ },
-/* 218 */
+/* 222 */
 /***/ function(module, exports) {
 
-	/**
-	 * Created by demi on 11/22/15.
-	 */
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
@@ -10206,32 +10527,31 @@
 	var empty = function empty() {};
 
 	exports["default"] = {
-	  /**
-	   * Creates the rendering area, add rendering function to the loop render function
-	   */
 	  initialize: empty,
 	  addSprite: empty,
 	  removeSprite: empty,
-	  width: 800,
-	  height: 600
+	  addText: empty,
+	  removeText: empty,
+	  getWidth: empty,
+	  getHeight: empty
 	};
 	module.exports = exports["default"];
 
 /***/ },
-/* 219 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {// run the polyfills
-	__webpack_require__(220);
+	__webpack_require__(224);
 
-	var core = module.exports = __webpack_require__(225);
+	var core = module.exports = __webpack_require__(229);
 
 	// add core plugins.
-	core.extras         = __webpack_require__(285);
-	core.filters        = __webpack_require__(292);
-	core.interaction    = __webpack_require__(320);
-	core.loaders        = __webpack_require__(324);
-	core.mesh           = __webpack_require__(330);
+	core.extras         = __webpack_require__(289);
+	core.filters        = __webpack_require__(296);
+	core.interaction    = __webpack_require__(324);
+	core.loaders        = __webpack_require__(328);
+	core.mesh           = __webpack_require__(334);
 
 	// export a premade loader instance
 	/**
@@ -10244,7 +10564,7 @@
 	core.loader = new core.loaders.Loader();
 
 	// mixin the deprecation features.
-	Object.assign(core, __webpack_require__(335));
+	Object.assign(core, __webpack_require__(339));
 
 	// Always export pixi globally.
 	global.PIXI = core;
@@ -10252,16 +10572,16 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 220 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(221);
-	__webpack_require__(223);
-	__webpack_require__(224);
+	__webpack_require__(225);
+	__webpack_require__(227);
+	__webpack_require__(228);
 
 
 /***/ },
-/* 221 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// References:
@@ -10270,12 +10590,12 @@
 
 	if (!Object.assign)
 	{
-	    Object.assign = __webpack_require__(222);
+	    Object.assign = __webpack_require__(226);
 	}
 
 
 /***/ },
-/* 222 */
+/* 226 */
 /***/ function(module, exports) {
 
 	/* eslint-disable no-unused-vars */
@@ -10320,7 +10640,7 @@
 
 
 /***/ },
-/* 223 */
+/* 227 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {// References:
@@ -10393,7 +10713,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 224 */
+/* 228 */
 /***/ function(module, exports) {
 
 	// References:
@@ -10413,7 +10733,7 @@
 
 
 /***/ },
-/* 225 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -10427,52 +10747,52 @@
 	 * @namespace PIXI
 	 */
 	// export core and const. We assign core to const so that the non-reference types in const remain in-tact
-	var core = module.exports = Object.assign(__webpack_require__(226), __webpack_require__(228), {
+	var core = module.exports = Object.assign(__webpack_require__(230), __webpack_require__(232), {
 	    // utils
-	    utils: __webpack_require__(236),
-	    ticker: __webpack_require__(239),
+	    utils: __webpack_require__(240),
+	    ticker: __webpack_require__(243),
 
 	    // display
-	    DisplayObject:          __webpack_require__(241),
-	    Container:              __webpack_require__(253),
+	    DisplayObject:          __webpack_require__(245),
+	    Container:              __webpack_require__(257),
 
 	    // sprites
-	    Sprite:                 __webpack_require__(254),
-	    ParticleContainer:      __webpack_require__(256),
-	    SpriteRenderer:         __webpack_require__(257),
-	    ParticleRenderer:       __webpack_require__(273),
+	    Sprite:                 __webpack_require__(258),
+	    ParticleContainer:      __webpack_require__(260),
+	    SpriteRenderer:         __webpack_require__(261),
+	    ParticleRenderer:       __webpack_require__(277),
 
 	    // text
-	    Text:                   __webpack_require__(276),
+	    Text:                   __webpack_require__(280),
 
 	    // primitives
-	    Graphics:               __webpack_require__(277),
-	    GraphicsData:           __webpack_require__(279),
-	    GraphicsRenderer:       __webpack_require__(280),
+	    Graphics:               __webpack_require__(281),
+	    GraphicsData:           __webpack_require__(283),
+	    GraphicsRenderer:       __webpack_require__(284),
 
 	    // textures
-	    Texture:                __webpack_require__(244),
-	    BaseTexture:            __webpack_require__(243),
-	    RenderTexture:          __webpack_require__(242),
-	    VideoBaseTexture:       __webpack_require__(245),
-	    TextureUvs:             __webpack_require__(246),
+	    Texture:                __webpack_require__(248),
+	    BaseTexture:            __webpack_require__(247),
+	    RenderTexture:          __webpack_require__(246),
+	    VideoBaseTexture:       __webpack_require__(249),
+	    TextureUvs:             __webpack_require__(250),
 
 	    // renderers - canvas
-	    CanvasRenderer:         __webpack_require__(283),
-	    CanvasGraphics:         __webpack_require__(278),
-	    CanvasBuffer:           __webpack_require__(252),
+	    CanvasRenderer:         __webpack_require__(287),
+	    CanvasGraphics:         __webpack_require__(282),
+	    CanvasBuffer:           __webpack_require__(256),
 
 	    // renderers - webgl
-	    WebGLRenderer:          __webpack_require__(259),
-	    ShaderManager:          __webpack_require__(261),
-	    Shader:                 __webpack_require__(263),
-	    ObjectRenderer:         __webpack_require__(258),
-	    RenderTarget:           __webpack_require__(247),
+	    WebGLRenderer:          __webpack_require__(263),
+	    ShaderManager:          __webpack_require__(265),
+	    Shader:                 __webpack_require__(267),
+	    ObjectRenderer:         __webpack_require__(262),
+	    RenderTarget:           __webpack_require__(251),
 
 	    // filters - webgl
-	    AbstractFilter:         __webpack_require__(268),
-	    FXAAFilter:             __webpack_require__(272),
-	    SpriteMaskFilter:       __webpack_require__(267),
+	    AbstractFilter:         __webpack_require__(272),
+	    FXAAFilter:             __webpack_require__(276),
+	    SpriteMaskFilter:       __webpack_require__(271),
 
 	    /**
 	     * This helper function will automatically detect which renderer you should be using.
@@ -10509,7 +10829,7 @@
 
 
 /***/ },
-/* 226 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -10525,7 +10845,7 @@
 	     * @constant
 	     * @property {string} VERSION
 	     */
-	    VERSION: __webpack_require__(227).version,
+	    VERSION: __webpack_require__(231).version,
 
 	    /**
 	     * @property {number} PI_2 - Two Pi
@@ -10736,7 +11056,7 @@
 
 
 /***/ },
-/* 227 */
+/* 231 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -10872,7 +11192,7 @@
 	};
 
 /***/ },
-/* 228 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -10886,19 +11206,19 @@
 	    // to avoid circular dependencies and cut down on
 	    // internal module requires.
 
-	    Point:      __webpack_require__(229),
-	    Matrix:     __webpack_require__(230),
+	    Point:      __webpack_require__(233),
+	    Matrix:     __webpack_require__(234),
 
-	    Circle:     __webpack_require__(231),
-	    Ellipse:    __webpack_require__(233),
-	    Polygon:    __webpack_require__(234),
-	    Rectangle:  __webpack_require__(232),
-	    RoundedRectangle: __webpack_require__(235)
+	    Circle:     __webpack_require__(235),
+	    Ellipse:    __webpack_require__(237),
+	    Polygon:    __webpack_require__(238),
+	    Rectangle:  __webpack_require__(236),
+	    RoundedRectangle: __webpack_require__(239)
 	};
 
 
 /***/ },
-/* 229 */
+/* 233 */
 /***/ function(module, exports) {
 
 	/**
@@ -10972,10 +11292,10 @@
 
 
 /***/ },
-/* 230 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Point = __webpack_require__(229);
+	var Point = __webpack_require__(233);
 
 	/**
 	 * The pixi Matrix class as an object, which makes it a lot faster,
@@ -11343,11 +11663,11 @@
 
 
 /***/ },
-/* 231 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Rectangle = __webpack_require__(232),
-	    CONST = __webpack_require__(226);
+	var Rectangle = __webpack_require__(236),
+	    CONST = __webpack_require__(230);
 
 	/**
 	 * The Circle object can be used to specify a hit area for displayObjects
@@ -11435,10 +11755,10 @@
 
 
 /***/ },
-/* 232 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CONST = __webpack_require__(226);
+	var CONST = __webpack_require__(230);
 
 	/**
 	 * the Rectangle object is an area defined by its position, as indicated by its top-left corner point (x, y) and by its width and its height.
@@ -11533,11 +11853,11 @@
 
 
 /***/ },
-/* 233 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Rectangle = __webpack_require__(232),
-	    CONST = __webpack_require__(226);
+	var Rectangle = __webpack_require__(236),
+	    CONST = __webpack_require__(230);
 
 	/**
 	 * The Ellipse object can be used to specify a hit area for displayObjects
@@ -11632,11 +11952,11 @@
 
 
 /***/ },
-/* 234 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Point = __webpack_require__(229),
-	    CONST = __webpack_require__(226);
+	var Point = __webpack_require__(233),
+	    CONST = __webpack_require__(230);
 
 	/**
 	 * @class
@@ -11739,10 +12059,10 @@
 
 
 /***/ },
-/* 235 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CONST = __webpack_require__(226);
+	var CONST = __webpack_require__(230);
 
 	/**
 	 * The Rounded Rectangle object is an area that has nice rounded corners, as indicated by its top-left corner point (x, y) and by its width and its height and its radius.
@@ -11835,10 +12155,10 @@
 
 
 /***/ },
-/* 236 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CONST = __webpack_require__(226);
+	var CONST = __webpack_require__(230);
 
 	/**
 	 * @namespace PIXI.utils
@@ -11847,9 +12167,9 @@
 	    _uid: 0,
 	    _saidHello: false,
 
-	    EventEmitter:   __webpack_require__(208),
-	    pluginTarget:   __webpack_require__(237),
-	    async:          __webpack_require__(238),
+	    EventEmitter:   __webpack_require__(209),
+	    pluginTarget:   __webpack_require__(241),
+	    async:          __webpack_require__(242),
 
 	    /**
 	     * Gets the next unique identifier
@@ -12090,7 +12410,7 @@
 
 
 /***/ },
-/* 237 */
+/* 241 */
 /***/ function(module, exports) {
 
 	/**
@@ -12164,7 +12484,7 @@
 
 
 /***/ },
-/* 238 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, setImmediate, process) {/*!
@@ -13428,13 +13748,13 @@
 
 	}());
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(200).setImmediate, __webpack_require__(192)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(201).setImmediate, __webpack_require__(192)))
 
 /***/ },
-/* 239 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Ticker = __webpack_require__(240);
+	var Ticker = __webpack_require__(244);
 
 	/**
 	 * The shared ticker instance used by {@link PIXI.extras.MovieClip}.
@@ -13491,11 +13811,11 @@
 
 
 /***/ },
-/* 240 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CONST = __webpack_require__(226),
-	    EventEmitter = __webpack_require__(208),
+	var CONST = __webpack_require__(230),
+	    EventEmitter = __webpack_require__(209),
 	    // Internal event used by composed emitter
 	    TICK = 'tick';
 
@@ -13850,13 +14170,13 @@
 
 
 /***/ },
-/* 241 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var math = __webpack_require__(228),
-	    RenderTexture = __webpack_require__(242),
-	    EventEmitter = __webpack_require__(208),
-	    CONST = __webpack_require__(226),
+	var math = __webpack_require__(232),
+	    RenderTexture = __webpack_require__(246),
+	    EventEmitter = __webpack_require__(209),
+	    CONST = __webpack_require__(230),
 	    _tempMatrix = new math.Matrix(),
 	    _tempDisplayObjectParent = {worldTransform:new math.Matrix(), worldAlpha:1, children:[]};
 
@@ -14353,16 +14673,16 @@
 
 
 /***/ },
-/* 242 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var BaseTexture = __webpack_require__(243),
-	    Texture = __webpack_require__(244),
-	    RenderTarget = __webpack_require__(247),
-	    FilterManager = __webpack_require__(249),
-	    CanvasBuffer = __webpack_require__(252),
-	    math = __webpack_require__(228),
-	    CONST = __webpack_require__(226),
+	var BaseTexture = __webpack_require__(247),
+	    Texture = __webpack_require__(248),
+	    RenderTarget = __webpack_require__(251),
+	    FilterManager = __webpack_require__(253),
+	    CanvasBuffer = __webpack_require__(256),
+	    math = __webpack_require__(232),
+	    CONST = __webpack_require__(230),
 	    tempMatrix = new math.Matrix();
 
 	/**
@@ -14836,12 +15156,12 @@
 
 
 /***/ },
-/* 243 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var utils = __webpack_require__(236),
-	    CONST = __webpack_require__(226),
-	    EventEmitter = __webpack_require__(208);
+	var utils = __webpack_require__(240),
+	    CONST = __webpack_require__(230),
+	    EventEmitter = __webpack_require__(209);
 
 	/**
 	 * A texture stores the information that represents an image. All textures have a base texture.
@@ -15274,15 +15594,15 @@
 
 
 /***/ },
-/* 244 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var BaseTexture = __webpack_require__(243),
-	    VideoBaseTexture = __webpack_require__(245),
-	    TextureUvs = __webpack_require__(246),
-	    EventEmitter = __webpack_require__(208),
-	    math = __webpack_require__(228),
-	    utils = __webpack_require__(236);
+	var BaseTexture = __webpack_require__(247),
+	    VideoBaseTexture = __webpack_require__(249),
+	    TextureUvs = __webpack_require__(250),
+	    EventEmitter = __webpack_require__(209),
+	    math = __webpack_require__(232),
+	    utils = __webpack_require__(240);
 
 	/**
 	 * A texture stores the information that represents an image or part of an image. It cannot be added
@@ -15704,11 +16024,11 @@
 
 
 /***/ },
-/* 245 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var BaseTexture = __webpack_require__(243),
-	    utils = __webpack_require__(236);
+	var BaseTexture = __webpack_require__(247),
+	    utils = __webpack_require__(240);
 
 	/**
 	 * A texture of a [playing] Video.
@@ -15945,7 +16265,7 @@
 
 
 /***/ },
-/* 246 */
+/* 250 */
 /***/ function(module, exports) {
 
 	
@@ -16018,14 +16338,14 @@
 
 
 /***/ },
-/* 247 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var math = __webpack_require__(228),
-	    utils = __webpack_require__(236),
-	    CONST = __webpack_require__(226),
+	var math = __webpack_require__(232),
+	    utils = __webpack_require__(240),
+	    CONST = __webpack_require__(230),
 	    //StencilManager = require('../managers/StencilManager'),
-	    StencilMaskStack = __webpack_require__(248);
+	    StencilMaskStack = __webpack_require__(252);
 
 	/**
 	 * @author Mat Groves http://matgroves.com/ @Doormat23
@@ -16344,7 +16664,7 @@
 
 
 /***/ },
-/* 248 */
+/* 252 */
 /***/ function(module, exports) {
 
 	/**
@@ -16381,14 +16701,14 @@
 
 
 /***/ },
-/* 249 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WebGLManager = __webpack_require__(250),
-	    RenderTarget = __webpack_require__(247),
-	    CONST = __webpack_require__(226),
-	    Quad = __webpack_require__(251),
-	    math =  __webpack_require__(228);
+	var WebGLManager = __webpack_require__(254),
+	    RenderTarget = __webpack_require__(251),
+	    CONST = __webpack_require__(230),
+	    Quad = __webpack_require__(255),
+	    math =  __webpack_require__(232);
 
 	/**
 	 * @class
@@ -16837,7 +17157,7 @@
 
 
 /***/ },
-/* 250 */
+/* 254 */
 /***/ function(module, exports) {
 
 	/**
@@ -16882,7 +17202,7 @@
 
 
 /***/ },
-/* 251 */
+/* 255 */
 /***/ function(module, exports) {
 
 	/**
@@ -17041,7 +17361,7 @@
 
 
 /***/ },
-/* 252 */
+/* 256 */
 /***/ function(module, exports) {
 
 	/**
@@ -17145,12 +17465,12 @@
 
 
 /***/ },
-/* 253 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var math = __webpack_require__(228),
-	    DisplayObject = __webpack_require__(241),
-	    RenderTexture = __webpack_require__(242),
+	var math = __webpack_require__(232),
+	    DisplayObject = __webpack_require__(245),
+	    RenderTexture = __webpack_require__(246),
 	    _tempMatrix = new math.Matrix();
 
 	/**
@@ -17744,15 +18064,15 @@
 
 
 /***/ },
-/* 254 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var math = __webpack_require__(228),
-	    Texture = __webpack_require__(244),
-	    Container = __webpack_require__(253),
-	    CanvasTinter = __webpack_require__(255),
-	    utils = __webpack_require__(236),
-	    CONST = __webpack_require__(226),
+	var math = __webpack_require__(232),
+	    Texture = __webpack_require__(248),
+	    Container = __webpack_require__(257),
+	    CanvasTinter = __webpack_require__(259),
+	    utils = __webpack_require__(240),
+	    CONST = __webpack_require__(230),
 	    tempPoint = new math.Point();
 
 	/**
@@ -18317,10 +18637,10 @@
 
 
 /***/ },
-/* 255 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var utils = __webpack_require__(236);
+	var utils = __webpack_require__(240);
 
 	/**
 	 * Utility methods for Sprite/Texture tinting.
@@ -18573,11 +18893,11 @@
 
 
 /***/ },
-/* 256 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Container = __webpack_require__(253),
-	    CONST = __webpack_require__(226);
+	var Container = __webpack_require__(257),
+	    CONST = __webpack_require__(230);
 
 	/**
 	 * The ParticleContainer class is a really fast version of the Container built solely for speed,
@@ -18890,12 +19210,12 @@
 
 
 /***/ },
-/* 257 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ObjectRenderer = __webpack_require__(258),
-	    WebGLRenderer = __webpack_require__(259),
-	    CONST = __webpack_require__(226);
+	var ObjectRenderer = __webpack_require__(262),
+	    WebGLRenderer = __webpack_require__(263),
+	    CONST = __webpack_require__(230);
 
 	/**
 	 * @author Mat Groves
@@ -19364,10 +19684,10 @@
 
 
 /***/ },
-/* 258 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WebGLManager = __webpack_require__(250);
+	var WebGLManager = __webpack_require__(254);
 
 	/**
 	 * Base for a common object renderer that can be used as a system renderer plugin.
@@ -19426,20 +19746,20 @@
 
 
 /***/ },
-/* 259 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var SystemRenderer = __webpack_require__(260),
-	    ShaderManager = __webpack_require__(261),
-	    MaskManager = __webpack_require__(266),
-	    StencilManager = __webpack_require__(270),
-	    FilterManager = __webpack_require__(249),
-	    BlendModeManager = __webpack_require__(271),
-	    RenderTarget = __webpack_require__(247),
-	    ObjectRenderer = __webpack_require__(258),
-	    FXAAFilter = __webpack_require__(272),
-	    utils = __webpack_require__(236),
-	    CONST = __webpack_require__(226);
+	var SystemRenderer = __webpack_require__(264),
+	    ShaderManager = __webpack_require__(265),
+	    MaskManager = __webpack_require__(270),
+	    StencilManager = __webpack_require__(274),
+	    FilterManager = __webpack_require__(253),
+	    BlendModeManager = __webpack_require__(275),
+	    RenderTarget = __webpack_require__(251),
+	    ObjectRenderer = __webpack_require__(262),
+	    FXAAFilter = __webpack_require__(276),
+	    utils = __webpack_require__(240),
+	    CONST = __webpack_require__(230);
 
 	/**
 	 * The WebGLRenderer draws the scene and all its content onto a webGL enabled canvas. This renderer
@@ -19991,13 +20311,13 @@
 
 
 /***/ },
-/* 260 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var utils = __webpack_require__(236),
-	    math = __webpack_require__(228),
-	    CONST = __webpack_require__(226),
-	    EventEmitter = __webpack_require__(208);
+	var utils = __webpack_require__(240),
+	    math = __webpack_require__(232),
+	    CONST = __webpack_require__(230),
+	    EventEmitter = __webpack_require__(209);
 
 	/**
 	 * The CanvasRenderer draws the scene and all its content onto a 2d canvas. This renderer should be used for browsers that do not support webGL.
@@ -20256,14 +20576,14 @@
 
 
 /***/ },
-/* 261 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WebGLManager = __webpack_require__(250),
-	    TextureShader = __webpack_require__(262),
-	    ComplexPrimitiveShader = __webpack_require__(264),
-	    PrimitiveShader = __webpack_require__(265),
-	    utils = __webpack_require__(236);
+	var WebGLManager = __webpack_require__(254),
+	    TextureShader = __webpack_require__(266),
+	    ComplexPrimitiveShader = __webpack_require__(268),
+	    PrimitiveShader = __webpack_require__(269),
+	    utils = __webpack_require__(240);
 
 	/**
 	 * @class
@@ -20429,10 +20749,10 @@
 
 
 /***/ },
-/* 262 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Shader = __webpack_require__(263);
+	var Shader = __webpack_require__(267);
 
 	/**
 	 * @class
@@ -20544,11 +20864,11 @@
 
 
 /***/ },
-/* 263 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*global console */
-	var utils = __webpack_require__(236);
+	var utils = __webpack_require__(240);
 
 	/**
 	 * Base shader class for PIXI managed shaders.
@@ -21112,10 +21432,10 @@
 
 
 /***/ },
-/* 264 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Shader = __webpack_require__(263);
+	var Shader = __webpack_require__(267);
 
 	/**
 	 * This shader is used to draw complex primitive shapes for {@link PIXI.Graphics}.
@@ -21178,10 +21498,10 @@
 
 
 /***/ },
-/* 265 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Shader = __webpack_require__(263);
+	var Shader = __webpack_require__(267);
 
 	/**
 	 * This shader is used to draw simple primitive shapes for {@link PIXI.Graphics}.
@@ -21245,11 +21565,11 @@
 
 
 /***/ },
-/* 266 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WebGLManager = __webpack_require__(250),
-	    AlphaMaskFilter = __webpack_require__(267);
+	var WebGLManager = __webpack_require__(254),
+	    AlphaMaskFilter = __webpack_require__(271);
 
 	/**
 	 * @class
@@ -21364,14 +21684,14 @@
 
 
 /***/ },
-/* 267 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var AbstractFilter = __webpack_require__(268),
-	    math =  __webpack_require__(228);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var AbstractFilter = __webpack_require__(272),
+	    math =  __webpack_require__(232);
 
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * The SpriteMaskFilter class
@@ -21466,10 +21786,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 268 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var DefaultShader = __webpack_require__(262);
+	var DefaultShader = __webpack_require__(266);
 
 	/**
 	 * This is the base class for creating a PIXI filter. Currently only WebGL supports filters.
@@ -21582,17 +21902,17 @@
 
 
 /***/ },
-/* 269 */
+/* 273 */
 /***/ function(module, exports) {
 
 	
 
 /***/ },
-/* 270 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WebGLManager = __webpack_require__(250),
-	    utils = __webpack_require__(236);
+	var WebGLManager = __webpack_require__(254),
+	    utils = __webpack_require__(240);
 
 	/**
 	 * @class
@@ -21938,10 +22258,10 @@
 
 
 /***/ },
-/* 271 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WebGLManager = __webpack_require__(250);
+	var WebGLManager = __webpack_require__(254);
 
 	/**
 	 * @class
@@ -21986,12 +22306,12 @@
 
 
 /***/ },
-/* 272 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var AbstractFilter = __webpack_require__(268);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var AbstractFilter = __webpack_require__(272);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 *
@@ -22046,14 +22366,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 273 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ObjectRenderer = __webpack_require__(258),
-	    WebGLRenderer = __webpack_require__(259),
-	    ParticleShader = __webpack_require__(274),
-	    ParticleBuffer = __webpack_require__(275),
-	    math            = __webpack_require__(228);
+	var ObjectRenderer = __webpack_require__(262),
+	    WebGLRenderer = __webpack_require__(263),
+	    ParticleShader = __webpack_require__(278),
+	    ParticleBuffer = __webpack_require__(279),
+	    math            = __webpack_require__(232);
 
 	/**
 	 * @author Mat Groves
@@ -22526,10 +22846,10 @@
 
 
 /***/ },
-/* 274 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var TextureShader = __webpack_require__(262);
+	var TextureShader = __webpack_require__(266);
 
 	/**
 	 * @class
@@ -22608,7 +22928,7 @@
 
 
 /***/ },
-/* 275 */
+/* 279 */
 /***/ function(module, exports) {
 
 	
@@ -22832,14 +23152,14 @@
 
 
 /***/ },
-/* 276 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Sprite = __webpack_require__(254),
-	    Texture = __webpack_require__(244),
-	    math = __webpack_require__(228),
-	    utils = __webpack_require__(236),
-	    CONST = __webpack_require__(226);
+	var Sprite = __webpack_require__(258),
+	    Texture = __webpack_require__(248),
+	    math = __webpack_require__(232),
+	    utils = __webpack_require__(240),
+	    CONST = __webpack_require__(230);
 
 	/**
 	 * A Text Object will create a line or multiple lines of text. To split a line you can use '\n' in your text string,
@@ -23449,16 +23769,16 @@
 
 
 /***/ },
-/* 277 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Container = __webpack_require__(253),
-	    Texture = __webpack_require__(244),
-	    CanvasBuffer = __webpack_require__(252),
-	    CanvasGraphics = __webpack_require__(278),
-	    GraphicsData = __webpack_require__(279),
-	    math = __webpack_require__(228),
-	    CONST = __webpack_require__(226),
+	var Container = __webpack_require__(257),
+	    Texture = __webpack_require__(248),
+	    CanvasBuffer = __webpack_require__(256),
+	    CanvasGraphics = __webpack_require__(282),
+	    GraphicsData = __webpack_require__(283),
+	    math = __webpack_require__(232),
+	    CONST = __webpack_require__(230),
 	    tempPoint = new math.Point();
 
 	/**
@@ -24638,10 +24958,10 @@
 
 
 /***/ },
-/* 278 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CONST = __webpack_require__(226);
+	var CONST = __webpack_require__(230);
 
 	/**
 	 * A set of functions used by the canvas renderer to draw the primitive graphics data.
@@ -24996,7 +25316,7 @@
 
 
 /***/ },
-/* 279 */
+/* 283 */
 /***/ function(module, exports) {
 
 	/**
@@ -25093,16 +25413,16 @@
 
 
 /***/ },
-/* 280 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var utils = __webpack_require__(236),
-	    math = __webpack_require__(228),
-	    CONST = __webpack_require__(226),
-	    ObjectRenderer = __webpack_require__(258),
-	    WebGLRenderer = __webpack_require__(259),
-	    WebGLGraphicsData = __webpack_require__(281),
-	    earcut = __webpack_require__(282);
+	var utils = __webpack_require__(240),
+	    math = __webpack_require__(232),
+	    CONST = __webpack_require__(230),
+	    ObjectRenderer = __webpack_require__(262),
+	    WebGLRenderer = __webpack_require__(263),
+	    WebGLGraphicsData = __webpack_require__(285),
+	    earcut = __webpack_require__(286);
 
 	/**
 	 * Renders the graphics object.
@@ -26002,7 +26322,7 @@
 
 
 /***/ },
-/* 281 */
+/* 285 */
 /***/ function(module, exports) {
 
 	/**
@@ -26124,7 +26444,7 @@
 
 
 /***/ },
-/* 282 */
+/* 286 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -26712,14 +27032,14 @@
 
 
 /***/ },
-/* 283 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var SystemRenderer = __webpack_require__(260),
-	    CanvasMaskManager = __webpack_require__(284),
-	    utils = __webpack_require__(236),
-	    math = __webpack_require__(228),
-	    CONST = __webpack_require__(226);
+	var SystemRenderer = __webpack_require__(264),
+	    CanvasMaskManager = __webpack_require__(288),
+	    utils = __webpack_require__(240),
+	    math = __webpack_require__(232),
+	    CONST = __webpack_require__(230);
 
 	/**
 	 * The CanvasRenderer draws the scene and all its content onto a 2d canvas. This renderer should be used for browsers that do not support webGL.
@@ -26980,10 +27300,10 @@
 
 
 /***/ },
-/* 284 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CanvasGraphics = __webpack_require__(278);
+	var CanvasGraphics = __webpack_require__(282);
 
 	/**
 	 * A set of functions used to handle masking.
@@ -27046,7 +27366,7 @@
 
 
 /***/ },
-/* 285 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27056,25 +27376,25 @@
 	 * @license     {@link https://github.com/pixijs/pixi.js/blob/master/LICENSE|MIT License}
 	 */
 
-	__webpack_require__(286);
-	__webpack_require__(287);
-	__webpack_require__(288);
+	__webpack_require__(290);
+	__webpack_require__(291);
+	__webpack_require__(292);
 
 	/**
 	 * @namespace PIXI.extras
 	 */
 	module.exports = {
-	    MovieClip:      __webpack_require__(289),
-	    TilingSprite:   __webpack_require__(290),
-	    BitmapText:     __webpack_require__(291)
+	    MovieClip:      __webpack_require__(293),
+	    TilingSprite:   __webpack_require__(294),
+	    BitmapText:     __webpack_require__(295)
 	};
 
 
 /***/ },
-/* 286 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225),
+	var core = __webpack_require__(229),
 	    DisplayObject = core.DisplayObject,
 	    _tempMatrix = new core.Matrix();
 
@@ -27347,10 +27667,10 @@
 
 
 /***/ },
-/* 287 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225);
+	var core = __webpack_require__(229);
 
 	/**
 	 * The instance name of the object.
@@ -27381,10 +27701,10 @@
 
 
 /***/ },
-/* 288 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225);
+	var core = __webpack_require__(229);
 
 	/**
 	* Returns the global position of the displayObject
@@ -27415,10 +27735,10 @@
 
 
 /***/ },
-/* 289 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225);
+	var core = __webpack_require__(229);
 
 	/**
 	 * A MovieClip is a simple way to display an animation depicted by a list of textures.
@@ -27739,13 +28059,13 @@
 	};
 
 /***/ },
-/* 290 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225),
+	var core = __webpack_require__(229),
 	    // a sprite use dfor rendering textures..
 	    tempPoint = new core.Point(),
-	    CanvasTinter = __webpack_require__(255);
+	    CanvasTinter = __webpack_require__(259);
 
 	/**
 	 * A tiling sprite is a fast way of rendering a tiling image
@@ -28195,10 +28515,10 @@
 
 
 /***/ },
-/* 291 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225);
+	var core = __webpack_require__(229);
 
 	/**
 	 * A BitmapText object will create a line or multiple lines of text using bitmap font. To
@@ -28587,7 +28907,7 @@
 
 
 /***/ },
-/* 292 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28601,41 +28921,41 @@
 	 * @namespace PIXI.filters
 	 */
 	module.exports = {
-	    AsciiFilter:        __webpack_require__(293),
-	    BloomFilter:        __webpack_require__(294),
-	    BlurFilter:         __webpack_require__(297),
-	    BlurXFilter:        __webpack_require__(295),
-	    BlurYFilter:        __webpack_require__(296),
-	    BlurDirFilter:      __webpack_require__(298),
-	    ColorMatrixFilter:  __webpack_require__(299),
-	    ColorStepFilter:    __webpack_require__(300),
-	    ConvolutionFilter:  __webpack_require__(301),
-	    CrossHatchFilter:   __webpack_require__(302),
-	    DisplacementFilter: __webpack_require__(303),
-	    DotScreenFilter:    __webpack_require__(304),
-	    GrayFilter:         __webpack_require__(305),
-	    DropShadowFilter:   __webpack_require__(306),
-	    InvertFilter:       __webpack_require__(308),
-	    NoiseFilter:        __webpack_require__(309),
-	    PixelateFilter:     __webpack_require__(310),
-	    RGBSplitFilter:     __webpack_require__(311),
-	    ShockwaveFilter:    __webpack_require__(312),
-	    SepiaFilter:        __webpack_require__(313),
-	    SmartBlurFilter:    __webpack_require__(314),
-	    TiltShiftFilter:    __webpack_require__(315),
-	    TiltShiftXFilter:   __webpack_require__(316),
-	    TiltShiftYFilter:   __webpack_require__(318),
-	    TwistFilter:        __webpack_require__(319)
+	    AsciiFilter:        __webpack_require__(297),
+	    BloomFilter:        __webpack_require__(298),
+	    BlurFilter:         __webpack_require__(301),
+	    BlurXFilter:        __webpack_require__(299),
+	    BlurYFilter:        __webpack_require__(300),
+	    BlurDirFilter:      __webpack_require__(302),
+	    ColorMatrixFilter:  __webpack_require__(303),
+	    ColorStepFilter:    __webpack_require__(304),
+	    ConvolutionFilter:  __webpack_require__(305),
+	    CrossHatchFilter:   __webpack_require__(306),
+	    DisplacementFilter: __webpack_require__(307),
+	    DotScreenFilter:    __webpack_require__(308),
+	    GrayFilter:         __webpack_require__(309),
+	    DropShadowFilter:   __webpack_require__(310),
+	    InvertFilter:       __webpack_require__(312),
+	    NoiseFilter:        __webpack_require__(313),
+	    PixelateFilter:     __webpack_require__(314),
+	    RGBSplitFilter:     __webpack_require__(315),
+	    ShockwaveFilter:    __webpack_require__(316),
+	    SepiaFilter:        __webpack_require__(317),
+	    SmartBlurFilter:    __webpack_require__(318),
+	    TiltShiftFilter:    __webpack_require__(319),
+	    TiltShiftXFilter:   __webpack_require__(320),
+	    TiltShiftYFilter:   __webpack_require__(322),
+	    TwistFilter:        __webpack_require__(323)
 	};
 
 
 /***/ },
-/* 293 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	// TODO (cengler) - The Y is flipped in this shader for some reason.
 
@@ -28692,12 +29012,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 294 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225),
-	    BlurXFilter = __webpack_require__(295),
-	    BlurYFilter = __webpack_require__(296);
+	var core = __webpack_require__(229),
+	    BlurXFilter = __webpack_require__(299),
+	    BlurYFilter = __webpack_require__(300);
 
 	/**
 	 * The BloomFilter applies a Gaussian blur to an object.
@@ -28797,12 +29117,12 @@
 
 
 /***/ },
-/* 295 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * The BlurXFilter applies a horizontal Gaussian blur to an object.
@@ -28895,12 +29215,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 296 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * The BlurYFilter applies a horizontal Gaussian blur to an object.
@@ -28986,12 +29306,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 297 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225),
-	    BlurXFilter = __webpack_require__(295),
-	    BlurYFilter = __webpack_require__(296);
+	var core = __webpack_require__(229),
+	    BlurXFilter = __webpack_require__(299),
+	    BlurYFilter = __webpack_require__(300);
 
 	/**
 	 * The BlurFilter applies a Gaussian blur to an object.
@@ -29100,11 +29420,11 @@
 
 
 /***/ },
-/* 298 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
-	var fs = __webpack_require__(269);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * The BlurDirFilter applies a Gaussian blur toward a direction to an object.
@@ -29247,12 +29567,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 299 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * The ColorMatrixFilter class lets you apply a 5x4 matrix transformation on the RGBA
@@ -29788,12 +30108,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 300 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * This lowers the color depth of your image by the given amount, producing an image with a smaller palette.
@@ -29842,12 +30162,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 301 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * The ConvolutionFilter class applies a matrix convolution filter effect.
@@ -29938,12 +30258,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 302 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * A Cross Hatch effect filter.
@@ -29969,12 +30289,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 303 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * The DisplacementFilter class uses the pixel values from the specified texture (called the displacement map) to perform a displacement of an object.
@@ -30058,12 +30378,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 304 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * @author Mat Groves http://matgroves.com/ @Doormat23
@@ -30135,12 +30455,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 305 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * This greyscales the palette of your Display Objects.
@@ -30189,12 +30509,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 306 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225),
-	    BlurXFilter = __webpack_require__(295),
-	    BlurYTintFilter = __webpack_require__(307);
+	var core = __webpack_require__(229),
+	    BlurXFilter = __webpack_require__(299),
+	    BlurYTintFilter = __webpack_require__(311);
 
 	/**
 	 * The DropShadowFilter applies a Gaussian blur to an object.
@@ -30386,13 +30706,13 @@
 
 
 /***/ },
-/* 307 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * The BlurYTintFilter applies a vertical Gaussian blur to an object.
@@ -30482,12 +30802,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 308 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * This inverts your Display Objects colors.
@@ -30537,12 +30857,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 309 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * @author Vico @vicocotea
@@ -30597,12 +30917,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 310 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * This filter applies a pixelate effect making display objects appear 'blocky'.
@@ -30653,12 +30973,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 311 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * An RGB Split Filter.
@@ -30744,12 +31064,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 312 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * The ColorMatrixFilter class lets you apply a 4x4 matrix transformation on the RGBA
@@ -30837,12 +31157,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 313 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * This applies a sepia effect to your Display Objects.
@@ -30892,12 +31212,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 314 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * A Smart Blur Filter.
@@ -30927,12 +31247,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 315 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225),
-	    TiltShiftXFilter = __webpack_require__(316),
-	    TiltShiftYFilter = __webpack_require__(318);
+	var core = __webpack_require__(229),
+	    TiltShiftXFilter = __webpack_require__(320),
+	    TiltShiftYFilter = __webpack_require__(322);
 
 	/**
 	 * @author Vico @vicocotea
@@ -31041,10 +31361,10 @@
 
 
 /***/ },
-/* 316 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var TiltShiftAxisFilter = __webpack_require__(317);
+	var TiltShiftAxisFilter = __webpack_require__(321);
 
 	/**
 	 * @author Vico @vicocotea
@@ -31083,12 +31403,12 @@
 
 
 /***/ },
-/* 317 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * @author Vico @vicocotea
@@ -31213,10 +31533,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 318 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var TiltShiftAxisFilter = __webpack_require__(317);
+	var TiltShiftAxisFilter = __webpack_require__(321);
 
 	/**
 	 * @author Vico @vicocotea
@@ -31255,12 +31575,12 @@
 
 
 /***/ },
-/* 319 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(225);
+	/* WEBPACK VAR INJECTION */(function(__dirname) {var core = __webpack_require__(229);
 	// @see https://github.com/substack/brfs/issues/25
-	var fs = __webpack_require__(269);
+	var fs = __webpack_require__(273);
 
 	/**
 	 * This filter applies a twist effect making display objects appear twisted in the given direction.
@@ -31345,7 +31665,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
-/* 320 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31359,17 +31679,17 @@
 	 * @namespace PIXI.interaction
 	 */
 	module.exports = {
-	    InteractionData:    __webpack_require__(321),
-	    InteractionManager: __webpack_require__(322),
-	    interactiveTarget:  __webpack_require__(323)
+	    InteractionData:    __webpack_require__(325),
+	    InteractionManager: __webpack_require__(326),
+	    interactiveTarget:  __webpack_require__(327)
 	};
 
 
 /***/ },
-/* 321 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225);
+	var core = __webpack_require__(229);
 
 	/**
 	 * Holds all information related to an Interaction event
@@ -31419,16 +31739,16 @@
 
 
 /***/ },
-/* 322 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225),
-	    InteractionData = __webpack_require__(321);
+	var core = __webpack_require__(229),
+	    InteractionData = __webpack_require__(325);
 
 	// Mix interactiveTarget into core.DisplayObject.prototype
 	Object.assign(
 	    core.DisplayObject.prototype,
-	    __webpack_require__(323)
+	    __webpack_require__(327)
 	);
 
 	/**
@@ -32278,7 +32598,7 @@
 
 
 /***/ },
-/* 323 */
+/* 327 */
 /***/ function(module, exports) {
 
 	/**
@@ -32331,7 +32651,7 @@
 
 
 /***/ },
-/* 324 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32345,24 +32665,24 @@
 	 * @namespace PIXI.loaders
 	 */
 	module.exports = {
-	    Loader:             __webpack_require__(325),
+	    Loader:             __webpack_require__(329),
 
 	    // parsers
-	    bitmapFontParser:   __webpack_require__(329),
-	    spritesheetParser:  __webpack_require__(327),
-	    textureParser:      __webpack_require__(326),
-	    Resource:           __webpack_require__(197).Resource
+	    bitmapFontParser:   __webpack_require__(333),
+	    spritesheetParser:  __webpack_require__(331),
+	    textureParser:      __webpack_require__(330),
+	    Resource:           __webpack_require__(198).Resource
 	};
 
 
 /***/ },
-/* 325 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ResourceLoader = __webpack_require__(197),
-	    textureParser = __webpack_require__(326),
-	    spritesheetParser = __webpack_require__(327),
-	    bitmapFontParser = __webpack_require__(329);
+	var ResourceLoader = __webpack_require__(198),
+	    textureParser = __webpack_require__(330),
+	    spritesheetParser = __webpack_require__(331),
+	    bitmapFontParser = __webpack_require__(333);
 
 	/**
 	 *
@@ -32422,10 +32742,10 @@
 
 
 /***/ },
-/* 326 */
+/* 330 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225);
+	var core = __webpack_require__(229);
 
 	module.exports = function ()
 	{
@@ -32448,12 +32768,12 @@
 
 
 /***/ },
-/* 327 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Resource = __webpack_require__(197).Resource,
-	    path = __webpack_require__(328),
-	    core = __webpack_require__(225);
+	var Resource = __webpack_require__(198).Resource,
+	    path = __webpack_require__(332),
+	    core = __webpack_require__(229);
 
 	module.exports = function ()
 	{
@@ -32535,7 +32855,7 @@
 
 
 /***/ },
-/* 328 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -32766,13 +33086,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(192)))
 
 /***/ },
-/* 329 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Resource = __webpack_require__(197).Resource,
-	    core = __webpack_require__(225),
-	    extras = __webpack_require__(285),
-	    path = __webpack_require__(328);
+	var Resource = __webpack_require__(198).Resource,
+	    core = __webpack_require__(229),
+	    extras = __webpack_require__(289),
+	    path = __webpack_require__(332);
 
 
 	function parse(resource, texture) {
@@ -32890,7 +33210,7 @@
 
 
 /***/ },
-/* 330 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32904,18 +33224,18 @@
 	 * @namespace PIXI.mesh
 	 */
 	module.exports = {
-	    Mesh:           __webpack_require__(331),
-	    Rope:           __webpack_require__(332),
-	    MeshRenderer:   __webpack_require__(333),
-	    MeshShader:     __webpack_require__(334)
+	    Mesh:           __webpack_require__(335),
+	    Rope:           __webpack_require__(336),
+	    MeshRenderer:   __webpack_require__(337),
+	    MeshShader:     __webpack_require__(338)
 	};
 
 
 /***/ },
-/* 331 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225),
+	var core = __webpack_require__(229),
 	    tempPoint = new core.Point(),
 	    tempPolygon = new core.Polygon();
 
@@ -33385,11 +33705,11 @@
 
 
 /***/ },
-/* 332 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Mesh = __webpack_require__(331);
-	var core = __webpack_require__(225);
+	var Mesh = __webpack_require__(335);
+	var core = __webpack_require__(229);
 
 	/**
 	 * The rope allows you to draw a texture across several points and them manipulate these points
@@ -33602,11 +33922,11 @@
 
 
 /***/ },
-/* 333 */
+/* 337 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225),
-	    Mesh = __webpack_require__(331);
+	var core = __webpack_require__(229),
+	    Mesh = __webpack_require__(335);
 
 	/**
 	 * @author Mat Groves
@@ -33821,10 +34141,10 @@
 
 
 /***/ },
-/* 334 */
+/* 338 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(225);
+	var core = __webpack_require__(229);
 
 	/**
 	 * @class
@@ -33886,14 +34206,14 @@
 
 
 /***/ },
-/* 335 */
+/* 339 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*global console */
-	var core = __webpack_require__(225),
-	    mesh = __webpack_require__(330),
-	    extras = __webpack_require__(285),
-	    filters = __webpack_require__(292);
+	var core = __webpack_require__(229),
+	    mesh = __webpack_require__(334),
+	    extras = __webpack_require__(289),
+	    filters = __webpack_require__(296);
 
 	/**
 	 * @class
@@ -34241,65 +34561,7 @@
 
 
 /***/ },
-/* 336 */
-/***/ function(module, exports) {
-
-	/**
-	 * Created by demi on 11/23/15.
-	 */
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	exports["default"] = function (game, image, x, y) {
-
-	  var loadedImage = game.loader.getResource(image);
-	  var sprite = game.render.addSprite(loadedImage.url, x, y);
-
-	  game.world.add(sprite);
-
-	  function scale(x, y) {
-	    sprite.scale.x = x;
-	    sprite.scale.y = y;
-	  }
-
-	  function position(x, y) {
-	    sprite.position.x = x;
-	    sprite.position.y = y;
-	  }
-
-	  function rotate(amount) {
-	    sprite.rotation += amount;
-	  }
-
-	  function getX() {
-	    return sprite.x;
-	  }
-
-	  function getY() {
-	    return sprite.y;
-	  }
-
-	  function setUpdate(callback) {
-	    sprite.update = callback;
-	  }
-
-	  return {
-	    scale: scale,
-	    position: position,
-	    rotate: rotate,
-	    update: setUpdate,
-	    x: getX,
-	    y: getY
-	  };
-	};
-
-	module.exports = exports["default"];
-
-/***/ },
-/* 337 */
+/* 340 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34310,37 +34572,198 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interface = __webpack_require__(338);
+	var _implementation = __webpack_require__(341);
+
+	var _implementation2 = _interopRequireDefault(_implementation);
+
+	/**
+	 * Object Factory. Return an added to the world and screen sprite
+	 * @module GW.Resource
+	 * @param {Object} game - game instance
+	 * @param {string} image - image name
+	 * @param {number} x - x position
+	 * @param {number} y - y position
+	 * @author demipel8 [demipel8@gmail.com]
+	 * @returns {Object} - Resource
+	 */
+	exports['default'] = _implementation2['default'];
+	module.exports = exports['default'];
+
+/***/ },
+/* 341 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _interface = __webpack_require__(342);
+
+	var _interface2 = _interopRequireDefault(_interface);
+
+	exports['default'] = function (game, image, x, y) {
+
+	  var loadedImage = game.loader.getResource(image);
+	  var sprite = game.render.addSprite(loadedImage.url, x, y);
+
+	  game.world.add(sprite);
+
+	  return Object.assign({}, _interface2['default'], {
+
+	    scale: function scale(x, y) {
+	      sprite.scale.x = x;
+	      sprite.scale.y = y;
+	    },
+
+	    position: function position(x, y) {
+	      sprite.position.x = x;
+	      sprite.position.y = y;
+	    },
+
+	    rotate: function rotate(amount) {
+	      sprite.rotation += amount;
+	    },
+
+	    update: function update(callback) {
+	      sprite.update = callback;
+	    },
+
+	    destroy: function destroy() {
+	      game.render.removeSprite(sprite);
+	    },
+
+	    x: function x() {
+	      return sprite.x;
+	    },
+
+	    y: function y() {
+	      return sprite.y;
+	    }
+
+	  });
+	};
+
+	module.exports = exports['default'];
+
+/***/ },
+/* 342 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var empty = function empty() {};
+
+	exports["default"] = {
+
+	  scale: empty,
+
+	  position: empty,
+
+	  rotate: empty,
+
+	  update: empty,
+
+	  destroy: empty,
+
+	  x: empty,
+
+	  y: empty
+
+	};
+	module.exports = exports["default"];
+
+/***/ },
+/* 343 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _implementation = __webpack_require__(344);
+
+	var _implementation2 = _interopRequireDefault(_implementation);
+
+	/**
+	 * Object Factory. Parses a set of data into a defined resource object
+	 * @module GW.Resource
+	 * @param data {object} - resource data
+	 * @author demipel8 [demipel8@gmail.com]
+	 * @returns {Object} - Resource
+	 */
+	exports['default'] = _implementation2['default'];
+	module.exports = exports['default'];
+
+/***/ },
+/* 344 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _interface = __webpack_require__(345);
 
 	var _interface2 = _interopRequireDefault(_interface);
 
 	exports['default'] = function () {
 	  var data = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
-	  var keys = Object.keys(_interface2['default']);
+	  var resource = Object.assign({}, _interface2['default']);
+	  var keys = Object.keys(resource);
 
 	  keys.forEach(function (name) {
 	    if (typeof data[name] === 'undefined') {
 	      throw new Error('data not compatible with resource interface: ' + name + ' is missing');
 	    } else {
-	      _interface2['default'][name] = data[name];
+	      resource[name] = data[name];
 	    }
 	  });
 
-	  return _interface2['default'];
+	  return resource;
 	};
 
 	;
 	module.exports = exports['default'];
 
 /***/ },
-/* 338 */
+/* 345 */
 /***/ function(module, exports) {
 
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	exports['default'] = {
+	  name: '',
+	  url: ''
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 346 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/**
-	 * Object Factory. Parses a set of data into a defined resource object
-	 * @module GW.Resource
-	 * @param data {object} - resource data
+	 * World module. Contains all modules present in the game
+	 * @module GW.World
 	 * @author demipel8 [demipel8@gmail.com]
 	 */
 	'use strict';
@@ -34348,21 +34771,45 @@
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _implementation = __webpack_require__(347);
+
+	var _implementation2 = _interopRequireDefault(_implementation);
+
 	exports['default'] = {
-	  /** Logic name of the resource */
-	  name: '',
-	  /** Path to the resource */
-	  url: ''
+
+	  /**
+	   * Used to configure any initial state required by the implementation.
+	   * @param game - game object
+	   * @example
+	   * game.loader.initialize( game );
+	   */
+	  initialize: _implementation2['default'].initialize,
+	  /**
+	   * @property {array} objects - All game objects
+	   */
+	  objects: _implementation2['default'].objects,
+
+	  /**
+	   * Add an element to the world
+	   * @param {Object} obj - object to add
+	   */
+	  add: _implementation2['default'].add,
+
+	  /**
+	   * Remove an element from the world
+	   * @param {Object} obj - object to remove
+	   */
+	  remove: _implementation2['default'].remove
 	};
 	module.exports = exports['default'];
 
 /***/ },
-/* 339 */
+/* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Created by demi on 11/21/15.
-	 */
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
@@ -34371,59 +34818,63 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interface = __webpack_require__(340);
+	var _interface = __webpack_require__(348);
 
 	var _interface2 = _interopRequireDefault(_interface);
 
-	_interface2['default'].initialize = function (game) {
-	  game.loop.addUpdate(function () {
-	    _interface2['default'].objects.forEach(function (element) {
-	      if (element.update) {
-	        element.update();
-	      }
+	var objects = [];
+
+	exports['default'] = Object.assign({}, _interface2['default'], {
+
+	  objects: objects,
+
+	  initialize: function initialize(game) {
+	    game.loop.addUpdate(function () {
+	      objects.forEach(function (element) {
+	        if (element.update) {
+	          element.update();
+	        }
+	      });
 	    });
-	  });
-	};
+	  },
 
-	_interface2['default'].add = function (element) {
-	  _interface2['default'].objects.push(element);
-	};
+	  add: function add(element) {
+	    objects.push(element);
+	  },
 
-	_interface2['default'].remove = function (element) {
-	  var index = _interface2['default'].objects.indexOf(element);
+	  remove: function remove(element) {
+	    var index = objects.indexOf(element);
 
-	  if (! ~index) {
-	    throw new Error('Element ' + element + ' is not on the world');
+	    if (! ~index) {
+	      throw new Error('Element ' + element + ' is not on the world');
+	    }
+
+	    objects.splice(index, 1);
 	  }
-
-	  _interface2['default'].objects.splice(index, 1);
-	};
-
-	exports['default'] = _interface2['default'];
+	});
 	module.exports = exports['default'];
 
 /***/ },
-/* 340 */
+/* 348 */
 /***/ function(module, exports) {
-
-	/**
-	 * Created by demi on 11/21/15.
-	 */
 
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var empty = function empty() {};
+
 	exports["default"] = {
-	  objects: [],
-	  add: function add(element) {},
-	  remove: function remove(element) {}
+	  objects: empty,
+	  add: empty,
+	  remove: empty
 	};
 	module.exports = exports["default"];
 
 /***/ },
-/* 341 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34437,7 +34888,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _keyboardImplementation = __webpack_require__(342);
+	var _keyboardImplementation = __webpack_require__(350);
 
 	var _keyboardImplementation2 = _interopRequireDefault(_keyboardImplementation);
 
@@ -34451,7 +34902,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 342 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34466,11 +34917,11 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interface = __webpack_require__(343);
+	var _interface = __webpack_require__(351);
 
 	var _interface2 = _interopRequireDefault(_interface);
 
-	var _keypressJs = __webpack_require__(344);
+	var _keypressJs = __webpack_require__(352);
 
 	var _keypressJs2 = _interopRequireDefault(_keypressJs);
 
@@ -34508,7 +34959,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 343 */
+/* 351 */
 /***/ function(module, exports) {
 
 	/**
@@ -34527,7 +34978,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 344 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Generated by CoffeeScript 1.8.0
@@ -35665,14 +36116,9 @@
 
 
 /***/ },
-/* 345 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Created by demi on 11/30/15.
-	 */
-
-	//maybe move tween to factory objects
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
@@ -35681,7 +36127,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _implementation = __webpack_require__(346);
+	var _implementation = __webpack_require__(354);
 
 	var _implementation2 = _interopRequireDefault(_implementation);
 
@@ -35693,7 +36139,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 346 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35704,31 +36150,35 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interface = __webpack_require__(347);
+	var _interface = __webpack_require__(355);
 
 	var _interface2 = _interopRequireDefault(_interface);
 
-	var _tweenJs = __webpack_require__(348);
+	var _tweenJs = __webpack_require__(356);
 
 	var _tweenJs2 = _interopRequireDefault(_tweenJs);
 
-	_interface2['default'].initialize = function (game) {
-	  game.loop.addUpdate(function () {
-	    _tweenJs2['default'].update();
-	  });
-	};
-
-	_interface2['default'].get = function (obj) {
-	  return new _tweenJs2['default'].Tween(obj);
-	};
-
 	_interface2['default'].easing = _tweenJs2['default'].Easing;
 
-	exports['default'] = _interface2['default'];
+	exports['default'] = Object.assign({}, _interface2['default'], {
+
+	  initialize: function initialize(game) {
+	    game.loop.addUpdate(function () {
+	      _tweenJs2['default'].update();
+	    });
+	  },
+
+	  get: function get(obj) {
+	    return new _tweenJs2['default'].Tween(obj);
+	  },
+
+	  easing: _tweenJs2['default'].Easing
+
+	});
 	module.exports = exports['default'];
 
 /***/ },
-/* 347 */
+/* 355 */
 /***/ function(module, exports) {
 
 	/**
@@ -35747,7 +36197,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 348 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -36627,14 +37077,15 @@
 
 
 /***/ },
-/* 349 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	 * Created by demi on 11/30/15.
+	 * Audio module. Manages audio features in the games
+	 * @module GW.Audio
+	 * @author demipel8 [demipel8@gmail.com]
 	 */
 
-	//maybe move tween to factory objects
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
@@ -36643,22 +37094,62 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _implementation = __webpack_require__(350);
+	var _implementation = __webpack_require__(358);
 
 	var _implementation2 = _interopRequireDefault(_implementation);
 
 	exports['default'] = {
+	  /**
+	   * Used to configure any initial state required by the implementation
+	   * @param {Object} game - game object
+	   * @example
+	   * game.audio.initialize( game );
+	   */
 	  initialize: _implementation2['default'].initialize,
-	  sounds: _implementation2['default'].sounds,
+	  /**
+	   * Returns the sounds container entirely
+	   * @returns {Object} sounds - The sounds container
+	   * @example
+	   * let allSounds = game.audio.getSounds();
+	   */
+	  getSounds: _implementation2['default'].getSounds,
+	  /**
+	   * Plays a specified audio
+	   * @param  {string} name - audio id string
+	   * @returns {Object} sound - The sounds that is playing
+	   * @example
+	   * game.audio.play('audio');
+	   */
 	  play: _implementation2['default'].play,
+	  /**
+	   * Pauses a specified audio
+	   * @param {string} name - audio id string
+	   * @returns {Object} sound - The sounds that is being Paused
+	   * @example
+	   * game.audio.pause('audio');
+	   */
 	  pause: _implementation2['default'].pause,
+	  /**
+	   * Stops a specified audio
+	   * @param {string} name - audio id string
+	   * @returns {Object} sound - The sound that has been stopped
+	   * @example
+	   * game.audio.stop('audio');
+	   */
 	  stop: _implementation2['default'].stop,
+	  /**
+	   * Returns a specified audio
+	   * @param {string} name - audio id string
+	   * @returns {Object} sound - The sound
+	   * @example
+	   * game.audio.stop('audio');
+	   */
 	  get: _implementation2['default'].get
 	};
 	module.exports = exports['default'];
 
 /***/ },
-/* 350 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36669,24 +37160,25 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _interface = __webpack_require__(351);
+	var _interface = __webpack_require__(359);
 
 	var _interface2 = _interopRequireDefault(_interface);
 
-	var _howler = __webpack_require__(352);
+	var _howler = __webpack_require__(360);
 
 	var _howler2 = _interopRequireDefault(_howler);
 
 	var formats = ['mp3', 'ogg', 'wav'];
 
-	var sounds = [];
+	var sounds = {};
 	var game = undefined;
 
 	function executeSoundAction(action, name) {
 
 	  if (checkAudio(name)) {
-	    sounds[name][action]();
+	    return sounds[name][action]();
 	  }
+	  return false;
 	}
 
 	function checkAudio(name) {
@@ -36698,7 +37190,7 @@
 	    var audioResource = game.loader.getResource(name);
 
 	    if (audioResource && checkFormat(audioResource.url)) {
-	      sounds[name] = new Howl({
+	      sounds[name] = new _howler2['default'].Howl({
 	        urls: [audioResource.url]
 	      });
 	    } else {
@@ -36717,8 +37209,6 @@
 
 	exports['default'] = Object.assign({}, _interface2['default'], {
 
-	  sounds: sounds,
-
 	  play: executeSoundAction.bind(null, 'play'),
 
 	  pause: executeSoundAction.bind(null, 'pause'),
@@ -36727,6 +37217,11 @@
 
 	  initialize: function initialize(gameInstance) {
 	    game = gameInstance;
+	    sounds = {};
+	  },
+
+	  getSounds: function getSounds() {
+	    return sounds;
 	  },
 
 	  get: function get(name) {
@@ -36740,7 +37235,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 351 */
+/* 359 */
 /***/ function(module, exports) {
 
 	/**
@@ -36765,7 +37260,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 352 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -38124,7 +38619,7 @@
 
 
 /***/ },
-/* 353 */
+/* 361 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["GW"] = __webpack_require__(193);
