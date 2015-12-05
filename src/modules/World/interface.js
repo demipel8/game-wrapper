@@ -1,9 +1,8 @@
-/**
- * Created by demi on 11/21/15.
- */
+
+let empty = () => {};
 
 export default {
-  objects: [],
-  add: function( element ){},
-  remove: function( element ){}
+  objects: empty,
+  add: empty,
+  remove: empty
 }

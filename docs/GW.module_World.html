@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: Audio</title>
+    <title>JSDoc: Module: World</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: Audio</h1>
+    <h1 class="page-title">Module: World</h1>
 
     
 
@@ -34,7 +34,7 @@
     <div class="container-overview">
     
         
-            <div class="description">Audio module. Manages audio features in the games</div>
+            <div class="description">World module. Contains all modules present in the game</div>
         
 
         
@@ -76,7 +76,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line1">line 1</a>
+        <a href="World_facade.js.html">World/facade.js</a>, <a href="World_facade.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -107,13 +107,13 @@
 
         
             
-<h4 class="name" id=".get"><span class="type-signature">(static) </span>get<span class="type-signature"></span></h4>
+<h4 class="name" id=".add"><span class="type-signature">(static) </span>add<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    Returns a specified audio
+    Add an element to the world
 </div>
 
 
@@ -151,7 +151,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line55">line 55</a>
+        <a href="World_facade.js.html">World/facade.js</a>, <a href="World_facade.js.html#line26">line 26</a>
     </li></ul></dd>
     
 
@@ -164,78 +164,6 @@
 
 
 
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>game.audio.stop('audio');</code></pre>
-
-
-
-        
-            
-<h4 class="name" id=".getSounds"><span class="type-signature">(static) </span>getSounds<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    Returns the sounds container entirely
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line23">line 23</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>let allSounds = game.audio.getSounds();</code></pre>
 
 
 
@@ -247,7 +175,7 @@
 
 
 <div class="description">
-    Used to configure any initial state required by the implementation
+    Used to configure any initial state required by the implementation.
 </div>
 
 
@@ -285,7 +213,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line16">line 16</a>
+        <a href="World_facade.js.html">World/facade.js</a>, <a href="World_facade.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -302,23 +230,71 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>game.audio.initialize( game );</code></pre>
+    <pre class="prettyprint"><code>game.loader.initialize( game );</code></pre>
 
 
 
         
             
-<h4 class="name" id=".pause"><span class="type-signature">(static) </span>pause<span class="type-signature"></span></h4>
+<h4 class="name" id=".objects"><span class="type-signature">(static) </span>objects<span class="type-signature"></span></h4>
 
 
 
 
-<div class="description">
-    Pauses a specified audio
-</div>
 
 
 
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>objects</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">All game objects</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -352,7 +328,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line39">line 39</a>
+        <a href="World_facade.js.html">World/facade.js</a>, <a href="World_facade.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -365,23 +341,18 @@
 
 
 
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>game.audio.pause('audio');</code></pre>
 
 
 
         
             
-<h4 class="name" id=".play"><span class="type-signature">(static) </span>play<span class="type-signature"></span></h4>
+<h4 class="name" id=".remove"><span class="type-signature">(static) </span>remove<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    Plays a specified audio
+    Remove an element from the world
 </div>
 
 
@@ -419,7 +390,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line31">line 31</a>
+        <a href="World_facade.js.html">World/facade.js</a>, <a href="World_facade.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -432,78 +403,6 @@
 
 
 
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>game.audio.play('audio');</code></pre>
-
-
-
-        
-            
-<h4 class="name" id=".stop"><span class="type-signature">(static) </span>stop<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    Stops a specified audio
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Audio_facade.js.html">Audio/facade.js</a>, <a href="Audio_facade.js.html#line47">line 47</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>game.audio.stop('audio');</code></pre>
 
 
 

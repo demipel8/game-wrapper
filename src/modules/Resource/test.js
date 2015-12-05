@@ -17,7 +17,7 @@ describe ( 'Resource facade', () => {
   });
 
   it( 'resource factory should fail if entry is empty', () => {
-     expect( facade.bind( {} ) ).to.throw( Error );
+     expect( facade.bind( null, {} ) ).to.throw( Error );
   });
 
 });
