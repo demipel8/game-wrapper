@@ -1,6 +1,5 @@
-/**
- * Created by demi on 11/23/15.
- */
+import base from './interface';
+
 export default function( game, image, x, y ) {
 
   let loadedImage = game.loader.getResource( image );
@@ -8,38 +7,37 @@ export default function( game, image, x, y ) {
 
   game.world.add( sprite );
 
-  function scale( x, y ) {
-    sprite.scale.x = x;
-    sprite.scale.y = y;
-  }
+  return Object.assign( {}, base, {
 
-  function position( x, y ) {
-    sprite.position.x = x;
-    sprite.position.y = y;
-  }
+    scale( x, y ) {
+      sprite.scale.x = x;
+      sprite.scale.y = y;
+    },
 
-  function rotate( amount ) {
-    sprite.rotation += amount;
-  }
+    position( x, y ) {
+      sprite.position.x = x;
+      sprite.position.y = y;
+    },
 
-  function getX() {
-    return sprite.x
-  }
+    rotate( amount ) {
+      sprite.rotation += amount;
+    },
 
-  function getY() {
-    return sprite.y
-  }
+    update( callback ) {
+      sprite.update = callback;
+    },
 
-  function setUpdate( callback ) {
-    sprite.update = callback;
-  }
+    destroy() {
+      game.render.removeSprite( sprite );
+    },
 
-  return {
-    scale,
-    position,
-    rotate,
-    update: setUpdate,
-    x : getX,
-    y : getY
-  };
+    x() {
+      return sprite.x;
+    },
+
+    y() {
+      return sprite.y;
+    }
+
+  });
 }

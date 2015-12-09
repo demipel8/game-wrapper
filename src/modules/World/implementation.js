@@ -1,26 +1,28 @@
-/**
- * Created by demi on 11/21/15.
- */
-import base from './interface'
+import base from './interface';
 
-base.initialize = function( game ) {
-  game.loop.addUpdate( function() {
-    base.objects.forEach( ( element ) => { if( element.update ) { element.update() } });
-  });
-};
+let objects = [];
 
-base.add = function( element ) {
-  base.objects.push( element );
-};
+export default Object.assign({}, base, {
 
-base.remove = function ( element ) {
-  var index = base.objects.indexOf( element );
+  objects,
 
-  if( !~index ) {
-    throw new Error( `Element ${element} is not on the world` );
+  initialize( game ) {
+    game.loop.addUpdate( function() {
+      objects.forEach( ( element ) => { if( element.update ) { element.update() } });
+    });
+  },
+
+  add( element ) {
+    objects.push( element );
+  },
+
+  remove( element ) {
+    let index = objects.indexOf( element );
+
+    if( !~index ) {
+      throw new Error( `Element ${element} is not on the world` );
+    }
+
+    objects.splice(index, 1);
   }
-
-  base.objects.splice(index, 1);
-};
-
-export default base
+});

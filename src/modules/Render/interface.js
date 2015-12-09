@@ -1,15 +1,11 @@
-/**
- * Created by demi on 11/22/15.
- */
 const empty = () => {};
 
 export default {
-  /**
-   * Creates the rendering area, add rendering function to the loop render function
-   */
   initialize: empty,
   addSprite: empty,
   removeSprite: empty,
-  width: 800,
-  height: 600
+  addText: empty,
+  removeText: empty,
+  getWidth: empty,
+  getHeight: empty
 }

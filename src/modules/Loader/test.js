@@ -1,50 +1,95 @@
 /**
  * Created by demi on 11/8/15.
  */
-import Loader from './implementation';
+import facade from './facade';
 
-describe ( 'Loader Module default implementation in GW - resource-loader', function() {
+let mock = {
+  game() {
+    return {
+      resource: (asset) => asset
+    }
+  }
+};
 
-  beforeEach( () => {
-    Loader.initialize();
+describe ( 'Loader facade', () => {
+
+  it( 'should have correct public methods', () => {
+    expect(facade).to.have.property('initialize').instanceOf(Function);
+    expect(facade).to.have.property('start').instanceOf(Function);
+    expect(facade).to.have.property('image').instanceOf(Function);
+    expect(facade).to.have.property('audio').instanceOf(Function);
+    expect(facade).to.have.property('json').instanceOf(Function);
+    expect(facade).to.have.property('getResource').instanceOf(Function);
   });
 
-  it('should have correct public methods', () => {
-    expect(Loader).to.have.property('initialize').instanceOf(Function);
-    expect(Loader).to.have.property('start').instanceOf(Function);
-    expect(Loader).to.have.property('image').instanceOf(Function);
-    expect(Loader).to.have.property('audio').instanceOf(Function);
-    expect(Loader).to.have.property('json').instanceOf(Function);
-    expect(Loader).to.have.property('getResource').instanceOf(Function);
+  it( 'initialize should return himself', () => {
+    facade.initialize( mock.game() );
+
+    expect(facade.initialize( mock.game() )).to.deep.equal( facade );
   });
 
-  describe( '#initialize', () => {
-    it('works based on the two tests above', () => true );
+  it( 'start should return a promise', () => {
+    facade.initialize( mock.game() );
+
+    expect(facade.start()).instanceOf( Promise );
   });
 
-  describe( '#start', () => {
-    it('returns a promise', () => {
-      var promise = Loader.start();
-      expect(promise).instanceOf( Promise );
-    } );
-
-    it('works without loading anything', () => {
-      var promise = Loader.start();
-      //expect(Loader.start().then( () => 3)).to.equal( 3 );
-    } );
+  it( 'start work without loading any resource', () => {
+    facade.initialize( mock.game() );
+    facade.start().then( () => {
+        done();
+    })
   });
 
-  it ( 'should work', function() {
-    Loader.initialize();
-    Loader.image( './assets/demi.jpg');
+  it('should load an image', (done) => {
+    facade.initialize( mock.game() );
 
-    var loading = Loader.start();
+    let resource = {
+      name: 'image',
+      url: 'http://localhost:9876/base/demo/assets/icon.png'
+    };
 
-    loading.then( function ( data ) {
-      expect( 3 ).not.to.equal( undefined );
-    },  function( error) {
-    });
+    facade.image( resource.name, resource.url );
 
-  } );
+    facade.start().then( () => {
+      if ( facade.getResource( resource.name ).url = resource.url ) {
+        done();
+      }
+    })
+  });
+
+  it('should load an audio', (done) => {
+    facade.initialize( mock.game() );
+
+    let resource = {
+      name: 'audio',
+      url: 'http://localhost:9876/base/demo/assets/audio.mp3'
+    };
+
+    facade.audio( resource.name, resource.url );
+
+    facade.start().then( () => {
+      if ( facade.getResource( resource.name ).url = resource.url ) {
+        done();
+      }
+    })
+  });
+
+  it('should load a json', (done) => {
+    facade.initialize( mock.game() );
+
+    let resource = {
+      name: 'json',
+      url: 'http://localhost:9876/base/demo/assets/text.json'
+    };
+
+    facade.audio( resource.name, resource.url );
+
+    facade.start().then( () => {
+      if ( facade.getResource( resource.name ).url = resource.url ) {
+        done();
+      }
+    })
+  });
 
 } );

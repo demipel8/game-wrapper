@@ -1,12 +1,12 @@
-/**
- * Created by demi on 11/30/15.
- */
-import keyboard from './keyboard/implementation'
+import keyboard from './Keyboard/implementation'
+import pointer from './Pointer/implementation'
 
 function initialize( game ) {
   keyboard.initialize( game );
+  pointer.initialize( game );
 }
 export default {
   initialize,
-  keyboard
+  keyboard,
+  pointer
 }

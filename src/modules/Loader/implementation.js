@@ -4,42 +4,42 @@
 import base from './interface'
 import RL from 'resource-loader/src/index'
 
-let loader = {};
 let loadedResources = {};
-let gameRef;
-
-function initialize( game ) { //TODO ¿Inject game reference?
-  gameRef = game;
-  loader = new RL();
-  return base;
-}
-
-function start() {
-  return new Promise(
-    function( resolve, reject ) {
-      loader.load(function (loader, resources) {
-        loadedResources = Object.assign( loadedResources, resources );
-      });
-
-      loader.on( 'complete', resolve );
-      loader.on('error', reject );
-    }
-  )
-}
+let loader;
+let game;
 
 function genericLoad( name, url ) {
   loader.add( name, url );
 }
 
-function getResource( name ) {
-  return gameRef.resource( loadedResources[ name ] );
-}
+export default Object.assign({}, base, {
 
-base.initialize = initialize;
-base.start = start;
-base.image = genericLoad;
-base.audio = genericLoad;
-base.json = genericLoad;
-base.getResource = getResource;
+  image: genericLoad,
 
-export default base;
+  audio: genericLoad,
+
+  json: genericLoad,
+
+  initialize( gameInstance ) { //TODO ¿Inject game reference?
+    game = gameInstance;
+    loader = new RL();
+    return this;
+  },
+
+  start() {
+    return new Promise(
+      function( resolve, reject ) {
+        loader.load(function (loader, resources) {
+          loadedResources = Object.assign( loadedResources, resources );
+        });
+
+        loader.on( 'complete', resolve );
+        loader.on('error', reject );
+      }
+    )
+  },
+
+  getResource( name ) {
+    return game.resource( loadedResources[ name ] );
+  }
+});
