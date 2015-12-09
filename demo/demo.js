@@ -4,12 +4,17 @@
 
 function myGame( game ) {
 
+  game.input.pointer.onClick( function( e ) {
+    console.log( 'Me llega el siguiente evento!' );
+    console.log( e );
+  });
+
   var sprite = game.sprite( game, 'icon', 100, 100 );
 
   var pos = { x: sprite.x(), y : sprite.y() };
   game.tween.get( pos )
     .to( { x: 500} )
-    .easing( game.tween.easing.Cubic.In)
+    .easing( game.tween.easing.Cubic.In )
     .onUpdate( function() {
       sprite.position( pos.x, pos.y )}
     )

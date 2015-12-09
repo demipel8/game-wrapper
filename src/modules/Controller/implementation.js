@@ -11,11 +11,11 @@ const types = [ 'image', 'audio', 'json' ]; //TODO Loader should have the types
  * @param {Object} assets - object containing all assets
  * @param {string} type - type name
  */
-function loadType( assets, type ) {
+function loadType( game, assets, type ) {
 
   if ( assets[ type ] ) {
 
-    let keys = Object.keys( jsonData[ type ] );
+    let keys = Object.keys( assets[ type ] );
 
     keys.forEach( function( element ) {
       game.loader[ type ]( element, assets[ type ][ element ]);
@@ -36,7 +36,7 @@ export default Object.assign({}, base, {
       }
     });
 
-    types.forEach( loadType.bind( null, jsonData) );
+    types.forEach( loadType.bind( null, game, jsonData) );
 
     return game.loader.start().then( () => {
       game.loop.start();
