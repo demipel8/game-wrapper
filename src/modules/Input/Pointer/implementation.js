@@ -24,7 +24,7 @@ document.addEventListener( 'mousedown', ( e ) => {
   globalClick( e );
 });
 
-document.addEventListener( 'mousemove',  setbutton.bind( null, pointers[0], e ));
+document.addEventListener( 'mousemove',  setbutton.bind( null, pointers[0] ));
 
 document.addEventListener( 'mouseup', () => {
   pointers[0].isDown = false;
