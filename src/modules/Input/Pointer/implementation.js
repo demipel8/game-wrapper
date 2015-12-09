@@ -33,7 +33,7 @@ document.addEventListener( 'mouseup', () => {
 document.addEventListener( 'touchstart', ( e ) => {
   e.preventDefault();
 
-  e.touches.forEach( ( e, index ) => {
+  Array.from( e.touches).forEach( ( e, index ) => {
     pointers[ index ].isDown = true;
     setbutton( pointers[ index ], { x: e.clientX, y: e.clientY } );
   });
@@ -44,7 +44,7 @@ document.addEventListener( 'touchstart', ( e ) => {
 document.addEventListener( 'touchmove',  ( e ) => {
   e.preventDefault();
 
-  e.touches.forEach( ( e, index ) => {
+  Array.from( e.touches).forEach( ( e, index ) => {
     pointers[ index ].isDown = true;
     setbutton( pointers[ index ], { x: e.clientX, y: e.clientY } );
   });

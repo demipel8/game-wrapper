@@ -40282,7 +40282,7 @@
 	  globalClick(e);
 	});
 
-	document.addEventListener('mousemove', setbutton.bind(null, pointers[0], e));
+	document.addEventListener('mousemove', setbutton.bind(null, pointers[0]));
 
 	document.addEventListener('mouseup', function () {
 	  pointers[0].isDown = false;
@@ -40291,7 +40291,7 @@
 	document.addEventListener('touchstart', function (e) {
 	  e.preventDefault();
 
-	  e.touches.forEach(function (e, index) {
+	  Array.from(e.touches).forEach(function (e, index) {
 	    pointers[index].isDown = true;
 	    setbutton(pointers[index], { x: e.clientX, y: e.clientY });
 	  });
@@ -40302,7 +40302,7 @@
 	document.addEventListener('touchmove', function (e) {
 	  e.preventDefault();
 
-	  e.touches.forEach(function (e, index) {
+	  Array.from(e.touches).forEach(function (e, index) {
 	    pointers[index].isDown = true;
 	    setbutton(pointers[index], { x: e.clientX, y: e.clientY });
 	  });
