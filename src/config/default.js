@@ -10,6 +10,7 @@ import Resource from '../modules/Resource/implementation'
 import World from '../modules/World/implementation'
 import Input from '../modules/Input/facade'
 import Tween from '../modules/Tween/facade'
+import Physics from '../modules/Physics/facade'
 
 export default {
   loader: Loader,
@@ -20,5 +21,6 @@ export default {
   resource: Resource,
   world: World,
   input: Input,
-  tween: Tween
+  tween: Tween,
+  physics: Physics
 }
