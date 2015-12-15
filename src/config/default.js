@@ -11,6 +11,7 @@ import World from '../modules/World/facade'
 import Input from '../modules/Input/facade'
 import Tween from '../modules/Tween/facade'
 import Audio from '../modules/Audio/facade'
+import Physics from '../modules/Physics/facade'
 
 export default {
   loader: Loader,
@@ -22,5 +23,6 @@ export default {
   world: World,
   input: Input,
   tween: Tween,
+  physics: Physics,
   audio: Audio
 }

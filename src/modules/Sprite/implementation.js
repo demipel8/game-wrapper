@@ -37,7 +37,9 @@ export default function( game, image, x, y ) {
 
     y() {
       return sprite.y;
-    }
+    },
+
+    raw: sprite //temporary
 
   });
 }
