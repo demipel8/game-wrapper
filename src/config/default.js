@@ -20,5 +20,6 @@ export default {
   resource: Resource,
   world: World,
   input: Input,
-  tween: Tween
+  tween: Tween,
+  text: Text
 }
