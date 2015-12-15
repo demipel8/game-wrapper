@@ -1,17 +1,12 @@
 import base from './interface'
-import { Engine, Runner, Events, Bodies, Body } from 'matter-js'
+import { Engine, Events, Bodies, Body, World } from 'matter-js'
 import Signals from 'signals'
 import Render from './render'
 import events from './propagation'
+import {setPosition, setAngle} from './Polyfill'
 
-//let Engine = Matter.Engine;
-//let Runner = Matter.Runner;
-//let Events = Matter.Events;
-//let Bodies = Matter.Bodies;
-//let Body = Matter.Body;
 
 let engine;
-let runner;
 let game;
 
 export default Object.assign( {}, base, {
@@ -20,23 +15,31 @@ export default Object.assign( {}, base, {
     game = gameInstance;
   },
 
-  usePhysics() {
+  usePhysics( properties = {} ) {
     engine = Engine.create( {
+      render: {
+        controller: Render,
+        options: {
+          width: game.render.getWidth(),
+          height: game.render.getHeight(),
+          hasBounds: properties.hasBounds || false,
+          showDebug: false
+        }
+      },
       world: {
         bounds: {
           min: { x: 0, y: 0},
-          max: { x: game.render.width, y: game.render.height}
+          max: { x: game.render.getWidth(), y: game.render.getHeight()}
         }
       }
     } );
 
-    runner = Runner.create();
-
     game.loop.addUpdate( function( delta ) {
-      Runner.tick(runner, engine, delta );
+      Engine.update(engine, delta);
+      engine.render.controller.world(engine);
     });
 
-    events.propagateEvents( Events )
+    events.propagateEvents( engine, Events );
 
   },
 
@@ -45,37 +48,45 @@ export default Object.assign( {}, base, {
   },
 
   rectangle( sprite, options = {} ) {
-    sprite._physicBody = Bodies.rectangle( sprite.x + ( sprite.width / 2 ),
-      sprite.y + ( sprite.height / 2 ),
-      sprite.width,
-      sprite.height,
-      options
-    );
+    setTimeout(function(){ //Not the solution, temporary fix
+      sprite._physicBody = Bodies.rectangle( sprite.x + ( sprite.width / 2 ),
+        sprite.y + ( sprite.height / 2 ),
+        sprite.width,
+        sprite.height,
+        options
+      );
 
-    sprite._physicBody.entity = sprite;
-    sprite.matterMoved = false;
+      sprite._physicBody.entity = sprite;
+      sprite.matterMoved = false;
 
-    game.render.addUpdate( () => {
+      game.loop.addUpdate( () => {
 
-      if ( sprite.matterMoved ) {
-        sprite.matterMoved = false;
-        return;
-      }
+        if ( sprite.matterMoved ) {
+          sprite.matterMoved = false;
+          return;
+        }
 
-      Body.setPosition ( sprite._physicBody, {
-        x: sprite.x + sprite.width / 2,
-        y: sprite.y + sprite.height / 2
-      } );
+        setPosition ( sprite._physicBody, {
+          x: sprite.x + sprite.width / 2,
+          y: sprite.y + sprite.height / 2
+        } );
 
-      Body.setAngle ( sprite._physicBody, sprite.rotation );
+        setAngle ( sprite._physicBody, sprite.rotation );
 
-    });
+      });
 
-    //inject signals;
+      World.addBody( engine.world, sprite._physicBody );
 
-    sprite.collisionStart = new Signals.Signal();
-    sprite.collisionEnd = new Signals.Signal();
-    sprite.collisionActive = new Signals.Signal();
+      sprite.applyForce = Body.applyForce.bind( sprite,
+        sprite._physicBody,
+        sprite._physicBody.position );
+      //inject signals;
+
+      sprite.collisionStart = new Signals.Signal();
+      sprite.collisionEnd = new Signals.Signal();
+      sprite.collisionActive = new Signals.Signal();
+    }, 10);
+
   }
 
 });

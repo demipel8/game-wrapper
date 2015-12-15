@@ -4,10 +4,10 @@
 
 function myGame( game ) {
 
-  game.input.pointer.onClick( function( e ) {
+  /*game.input.pointer.onClick( function( e ) {
     console.log( 'Me llega el siguiente evento!' );
     console.log( e );
-  });
+  });*/
 
   var sprite = game.sprite( game, 'icon', 100, 100 );
 
@@ -40,6 +40,18 @@ function myGame( game ) {
 
   game.audio.play('audio');
 
+  var sprite2 = game.sprite( game, 'icon', 200, 200 );
+  game.physics.usePhysics();
+  game.physics.setGravity({ x:0, y: 0.22222});
+
+  game.physics.rectangle(sprite2.raw);
+
+  setTimeout( function(){sprite2.raw.applyForce( {x: 2, y:0})}, 100)
+
+  setInterval( function() {
+    //console.log(sprite2.raw._physicBody)
+    console.log(sprite2.raw._physicBody.position.x,sprite2.raw._physicBody.position.y)
+  }, 500);
 
 }
 

@@ -1,3 +1,5 @@
+import { Common, Composite, Bounds } from 'matter-js'
+
 /**
 * Moves an entity according to matter calculations
  * @private
@@ -38,7 +40,7 @@ function _rotateEntity( entity, angle ) {
 
 let Render = {
   create: function (options) {
-    var defaults = {
+    let defaults = {
       controller: Render,
       element: null,
       options: {
@@ -66,7 +68,8 @@ let Render = {
       }
     };
 
-    var render = Common.extend( defaults, options );
+    let fusedOptions = Object.assign({}, defaults.options, options.options);
+    var render = Object.assign({}, defaults, options, { options: fusedOptions});
 
     render.textures = {};
 
@@ -84,7 +87,21 @@ let Render = {
     return render;
   },
 
-  world : ( engine ) => {},
+  world : ( engine ) => {
+    let world = engine.world;
+    let render = engine.render;
+    let allBodies = Composite.allBodies(world);
+    let bodies = [];
+
+
+    for (let i = 0; i < allBodies.length; i++) {
+      var body = allBodies[i];
+      if (Bounds.overlaps(body.bounds, render.bounds))
+        bodies.push(body);
+    }
+
+    Render.bodies( engine, bodies );
+  },
   debug : ( engine ) => {},
   constraints : ( constraints ) => {},
   bodies : ( engine, bodies ) => {

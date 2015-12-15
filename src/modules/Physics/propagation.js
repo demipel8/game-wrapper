@@ -4,7 +4,7 @@
 
 
 export default  {
-  propagateEvents( Events ) {
+  propagateEvents( engine, Events ) {
     ['collisionStart', 'collisionEnd', 'collisionActive'].forEach(function (collisionEvent) {
       Events.on(engine, collisionEvent, function (e) {
         var pairs = e.pairs;
