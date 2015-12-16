@@ -71,7 +71,7 @@
 
 	var _GW2 = _interopRequireDefault(_GW);
 
-	__webpack_require__(257);exports['default'] = _GW2['default'];
+	__webpack_require__(259);exports['default'] = _GW2['default'];
 	module.exports = exports['default'];
 
 /***/ },
@@ -5391,6 +5391,10 @@
 
 	var _modulesPhysicsFacade2 = _interopRequireDefault(_modulesPhysicsFacade);
 
+	var _modulesTextFacade = __webpack_require__(257);
+
+	var _modulesTextFacade2 = _interopRequireDefault(_modulesTextFacade);
+
 	exports['default'] = {
 	  loader: _modulesLoaderFacade2['default'],
 	  loop: _modulesLoopFacade2['default'],
@@ -5401,6 +5405,7 @@
 	  world: _modulesWorldFacade2['default'],
 	  input: _modulesInputFacade2['default'],
 	  tween: _modulesTweenFacade2['default'],
+	  text: _modulesTextFacade2['default'],
 	  physics: _modulesPhysicsFacade2['default'],
 	  audio: _modulesAudioFacade2['default']
 	};
@@ -38768,6 +38773,7 @@
 
 	    destroy: function destroy() {
 	      game.render.removeSprite(sprite);
+	      game.world.remove(sprite);
 	    },
 
 	    x: function x() {
@@ -41456,6 +41462,15 @@
 	   */
 	  stop: _implementation2['default'].stop,
 	  /**
+	   * Sets the loop of a specified audio
+	   * @param {string} name - audio id string
+	   * @param {Boolean} loop
+	   * @returns {Object} sound - The sound
+	   * @example
+	   * game.audio.loop('audio', true);
+	   */
+	  loop: _implementation2['default'].loop,
+	  /**
 	   * Returns a specified audio
 	   * @param {string} name - audio id string
 	   * @returns {Object} sound - The sound
@@ -41491,10 +41506,10 @@
 	var sounds = {};
 	var game = undefined;
 
-	function executeSoundAction(action, name) {
+	function executeSoundAction(action, name, param) {
 
 	  if (checkAudio(name)) {
-	    return sounds[name][action]();
+	    return sounds[name][action](param);
 	  }
 	  return false;
 	}
@@ -41532,6 +41547,8 @@
 	  pause: executeSoundAction.bind(null, 'pause'),
 
 	  stop: executeSoundAction.bind(null, 'stop'),
+
+	  loop: executeSoundAction.bind(null, 'loop'),
 
 	  initialize: function initialize(gameInstance) {
 	    game = gameInstance;
@@ -43044,30 +43061,34 @@
 	      sprite._physicBody.entity = sprite;
 	      sprite.matterMoved = false;
 
-	      game.loop.addUpdate(function () {
+	      if (!options.isStatic) {
+	        game.loop.addProcess(function () {
 
-	        if (sprite.matterMoved) {
-	          sprite.matterMoved = false;
-	          return;
-	        }
+	          if (sprite.matterMoved) {
+	            sprite.matterMoved = false;
+	            return;
+	          }
 
-	        (0, _Polyfill.setPosition)(sprite._physicBody, {
-	          x: sprite.x + sprite.width / 2,
-	          y: sprite.y + sprite.height / 2
+	          (0, _Polyfill.setPosition)(sprite._physicBody, {
+	            x: sprite.x + sprite.width / 2,
+	            y: sprite.y + sprite.height / 2
+	          });
+
+	          (0, _Polyfill.setAngle)(sprite._physicBody, sprite.rotation);
 	        });
-
-	        (0, _Polyfill.setAngle)(sprite._physicBody, sprite.rotation);
-	      });
+	      }
 
 	      _matterJs.World.addBody(engine.world, sprite._physicBody);
 
 	      sprite.applyForce = _matterJs.Body.applyForce.bind(sprite, sprite._physicBody, sprite._physicBody.position);
 	      //inject signals;
 
+	      sprite.setStatic = _matterJs.Body.setStatic.bind(sprite, sprite._physicBody);
+
 	      sprite.collisionStart = new _signals2['default'].Signal();
 	      sprite.collisionEnd = new _signals2['default'].Signal();
 	      sprite.collisionActive = new _signals2['default'].Signal();
-	    }, 10);
+	    }, 1000);
 	  }
 
 	});
@@ -43668,7 +43689,7 @@
 
 	    for (var i = 0; i < allBodies.length; i++) {
 	      var body = allBodies[i];
-	      if (_matterJs.Bounds.overlaps(body.bounds, render.bounds)) bodies.push(body);
+	      if (_matterJs.Bounds.overlaps(body.bounds, render.bounds) && !body.isStatic) bodies.push(body);
 	    }
 
 	    Render.bodies(engine, bodies);
@@ -43800,6 +43821,86 @@
 
 /***/ },
 /* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by demi on 12/15/15.
+	 */
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _implementation = __webpack_require__(258);
+
+	var _implementation2 = _interopRequireDefault(_implementation);
+
+	exports['default'] = _implementation2['default'];
+	module.exports = exports['default'];
+
+/***/ },
+/* 258 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by demi on 11/23/15.
+	 */
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	exports["default"] = function (game, text, x, y, styles) {
+
+	  var textObject = game.render.addText(text, x, y, styles);
+
+	  game.world.add(textObject);
+
+	  function scale(x, y) {
+	    textObject.scale.x = x;
+	    textObject.scale.y = y;
+	  }
+
+	  function position(x, y) {
+	    textObject.position.x = x;
+	    textObject.position.y = y;
+	  }
+
+	  function rotate(amount) {
+	    textObject.rotation += amount;
+	  }
+
+	  function getX() {
+	    return textObject.x;
+	  }
+
+	  function getY() {
+	    return textObject.y;
+	  }
+
+	  function setUpdate(callback) {
+	    textObject.update = callback;
+	  }
+
+	  return {
+	    scale: scale,
+	    position: position,
+	    rotate: rotate,
+	    update: setUpdate,
+	    x: getX,
+	    y: getY,
+	    raw: textObject
+	  };
+	};
+
+	module.exports = exports["default"];
+
+/***/ },
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["GW"] = __webpack_require__(193);

@@ -41,4 +41,5 @@ The wiki contains all the project document.
  - [ ] Physics: tests, docs and facade mode
  - [x] Audio: tests, docs and facade mode
 
+ - Test loop on audio
  - Lots of things

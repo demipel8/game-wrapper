@@ -96,7 +96,7 @@ let Render = {
 
     for (let i = 0; i < allBodies.length; i++) {
       var body = allBodies[i];
-      if (Bounds.overlaps(body.bounds, render.bounds))
+      if (Bounds.overlaps(body.bounds, render.bounds) && !body.isStatic)
         bodies.push(body);
     }
 

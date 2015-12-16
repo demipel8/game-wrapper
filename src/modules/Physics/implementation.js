@@ -48,6 +48,7 @@ export default Object.assign( {}, base, {
   },
 
   rectangle( sprite, options = {} ) {
+
     setTimeout(function(){ //Not the solution, temporary fix
       sprite._physicBody = Bodies.rectangle( sprite.x + ( sprite.width / 2 ),
         sprite.y + ( sprite.height / 2 ),
@@ -59,21 +60,23 @@ export default Object.assign( {}, base, {
       sprite._physicBody.entity = sprite;
       sprite.matterMoved = false;
 
-      game.loop.addUpdate( () => {
+      if (!options.isStatic ) {
+        game.loop.addProcess( () => {
 
-        if ( sprite.matterMoved ) {
-          sprite.matterMoved = false;
-          return;
-        }
+          if ( sprite.matterMoved ) {
+            sprite.matterMoved = false;
+            return;
+          }
 
-        setPosition ( sprite._physicBody, {
-          x: sprite.x + sprite.width / 2,
-          y: sprite.y + sprite.height / 2
-        } );
+          setPosition ( sprite._physicBody, {
+            x: sprite.x + sprite.width / 2,
+            y: sprite.y + sprite.height / 2
+          } );
 
-        setAngle ( sprite._physicBody, sprite.rotation );
+          setAngle ( sprite._physicBody, sprite.rotation );
 
-      });
+        });
+      }
 
       World.addBody( engine.world, sprite._physicBody );
 
@@ -82,10 +85,12 @@ export default Object.assign( {}, base, {
         sprite._physicBody.position );
       //inject signals;
 
+      sprite.setStatic = Body.setStatic.bind( sprite, sprite._physicBody );
+
       sprite.collisionStart = new Signals.Signal();
       sprite.collisionEnd = new Signals.Signal();
       sprite.collisionActive = new Signals.Signal();
-    }, 10);
+    }, 1000);
 
   }
 

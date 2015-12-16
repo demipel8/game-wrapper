@@ -1,37 +1,36 @@
 /**
  * Created by demi on 11/23/15.
  */
-export default function( game, image, x, y ) {
+export default function( game, text, x, y, styles ) {
 
-  let loadedImage = game.loader.getResource( image );
-  let sprite = game.render.addSprite( loadedImage.url , x, y );
+  let textObject = game.render.addText( text , x, y, styles);
 
-  game.world.add( sprite );
+  game.world.add( textObject );
 
   function scale( x, y ) {
-    sprite.scale.x = x;
-    sprite.scale.y = y;
+    textObject.scale.x = x;
+    textObject.scale.y = y;
   }
 
   function position( x, y ) {
-    sprite.position.x = x;
-    sprite.position.y = y;
+    textObject.position.x = x;
+    textObject.position.y = y;
   }
 
   function rotate( amount ) {
-    sprite.rotation += amount;
+    textObject.rotation += amount;
   }
 
   function getX() {
-    return sprite.x
+    return textObject.x
   }
 
   function getY() {
-    return sprite.y
+    return textObject.y
   }
 
   function setUpdate( callback ) {
-    sprite.update = callback;
+    textObject.update = callback;
   }
 
   return {
@@ -40,6 +39,7 @@ export default function( game, image, x, y ) {
     rotate,
     update: setUpdate,
     x : getX,
-    y : getY
+    y : getY,
+    raw: textObject
   };
 }

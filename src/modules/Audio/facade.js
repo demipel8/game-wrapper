@@ -46,6 +46,15 @@ export default {
    */
   stop: audio.stop,
   /**
+   * Sets the loop of a specified audio
+   * @param {string} name - audio id string
+   * @param {Boolean} loop
+   * @returns {Object} sound - The sound
+   * @example
+   * game.audio.loop('audio', true);
+   */
+  loop: audio.loop,
+  /**
    * Returns a specified audio
    * @param {string} name - audio id string
    * @returns {Object} sound - The sound

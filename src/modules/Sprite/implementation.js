@@ -29,6 +29,7 @@ export default function( game, image, x, y ) {
 
     destroy() {
       game.render.removeSprite( sprite );
+      game.world.remove( sprite );
     },
 
     x() {

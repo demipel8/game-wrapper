@@ -7,10 +7,10 @@ const formats = ['mp3', 'ogg', 'wav' ];
 let sounds = {};
 let game;
 
-function executeSoundAction( action, name ) {
+function executeSoundAction( action, name, param ) {
 
   if ( checkAudio( name ) ) {
-    return sounds[ name ][ action ]();
+    return sounds[ name ][ action ]( param );
   }
   return false;
 }
@@ -50,6 +50,8 @@ export default Object.assign({}, base, {
   pause: executeSoundAction.bind( null, 'pause' ),
 
   stop: executeSoundAction.bind( null, 'stop' ),
+
+  loop: executeSoundAction.bind( null, 'loop' ),
 
   initialize( gameInstance ){
     game = gameInstance;
